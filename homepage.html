@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/assets/img/tab_icon.png">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,13 +14,14 @@
             }
         </style>
     </head>
-
     <body>
+
         <!--
-            DIV CONTAINER FOR HEADER AND NAVBAR
+            HEADER CONTAINER FOR HEADER AND NAVBAR
             Navbar inside of shrinking header
         -->
-        <div id="navbar">
+
+        <header id="navbar">
             <div class="container-fluid">
                 <a href="#default" id="logo"><img src="/assets/img/ConnServ_Logo.png" alt="ConnServ" style="height: 50px;"></a>
             </div>
@@ -31,280 +33,280 @@
                     <button class="btnaccount"><a href="#contact">Sign Up</a></button>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <!--
-            CONTAINER FLUID FOR MAIN BODY OF PAGE
+        <!--CONTAINER FLUID
+             FOR MAIN BODY OF PAGE
         -->
-        <div class="col-md-12">
-            <div style="margin-top:250px; padding:15px 15px;" class="row">
-                <div class="container-fluid">
-                    <!--
-                        Category Table
-                        Each td contains clickable link for a certain category
-                    -->
-                    <table id="category_tbl">
-                        <tr>
-                            <th style="font-size: 25px !important; padding: 5px;">Categories</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="category_card card" style="width: 10rem; height: 10rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                                <h6 style="margin-top: 90%;">Computer</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card" style="width: 10rem; height: 10rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/clothes.jpg" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                                <h6 style="margin-top: 90%;">Clothes</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card" style="width: 10rem; height: 10rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/cosmetics.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                                <h6 style="margin-top: 90%;">Cosmetics</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card" style="width: 10rem; height: 10rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/emergency.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                                <h6 style="margin-top: 90%;">Emergency</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card" style="width: 10rem; height: 10rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/construction.jpg" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                                <h6 style="margin-top: 90%;">Construction</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card" style="width: 10rem; height: 10rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/education.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                                <h6 style="margin-top: 90%;">Education</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card" style="width: 10rem; height: 10rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/paint_palette.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                                <h6 style="margin-top: 90%;">Arts & Styles</h6>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                            <td><button id="more_categories">See more</button></td>
-                        </tr>
-                    </table>
-                </div>
-    
-                <!--
-                    FEATURED PARTNERS TABLE
-    
-                    One partner per <tr>
-                    every <td> inside <tr> contains clickable images
-                    for different featured services
-                -->
-    
-                <div class="container-fluid" id="featured">
-                    <table id="featured_tbl">
-                        <tr>
-                            <th style="font-size: 25px !important; padding: 5px;"><a href="#" style="color: black;">Featured Partners</a></th>
-                        </tr>
-    
-                        <!----- Server ROW 1 ------>
-                        <tr>
-                            <td>
-                                <div class="card" style="width: 20em; height: 15rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td><td>
-                                <div class="card" style="width: 20em; height: 15rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td><td>
-                                <div class="card" style="width: 20em; height: 15rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td><td>
-                                <div class="card" style="width: 20em; height: 15rem;">
-                                    <a href="#">
-                                        <div class="text-center">
-                                            <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                            <div class="card-img-overlay">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <!--
-                    NEW SERVICES TABLE
-    
-                    One service per <tr>
-                    every <td> inside <tr> contains clickable images
-                    for different featured services
-                -->
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="container-fluid" id="featured">
-                            <table id="featured_tbl">
-                                <tr>
-                                    <th style="font-size: 25px !important; padding: 5px;"><a href="#">New Services</a></th>
-                                </tr>
-                                <!----- PARTNER ROW 1 ------>
-                                <tr>
-                                    <td>
-                                        <div class="card" style="width: 20em; height: 15rem;">
-                                            <a href="#">
-                                                <div class="text-center">
-                                                    <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                                    <div class="card-img-overlay">
-                                                    </div>
+        <section>
+            <div class="col-md-12">
+                <div style="margin-top:250px; padding:15px 15px;" class="row">
+                    <div class="container-fluid">
+                        <!--
+                            Category Table
+                            Each td contains clickable link for a certain category
+                        -->
+                        <table id="category_tbl">
+                            <tr>
+                                <th style="font-size: 25px !important; padding: 5px;">Categories</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="category_card card" style="width: 10rem; height: 10rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                    <h6 style="margin-top: 90%;">Computer</h6>
                                                 </div>
-                                            </a>
-                                        </div>
-                                    </td><td>
-                                        <div class="card" style="width: 20em; height: 15rem;">
-                                            <a href="#">
-                                                <div class="text-center">
-                                                    <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                                    <div class="card-img-overlay">
-                                                    </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card" style="width: 10rem; height: 10rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/clothes.jpg" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                    <h6 style="margin-top: 90%;">Clothes</h6>
                                                 </div>
-                                            </a>
-                                        </div>
-                                    </td><td>
-                                        <div class="card" style="width: 20em; height: 15rem;">
-                                            <a href="#">
-                                                <div class="text-center">
-                                                    <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                                    <div class="card-img-overlay">
-                                                    </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card" style="width: 10rem; height: 10rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/cosmetics.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                    <h6 style="margin-top: 90%;">Cosmetics</h6>
                                                 </div>
-                                            </a>
-                                        </div>
-                                    </td><td>
-                                        <div class="card" style="width: 20em; height: 15rem;">
-                                            <a href="#">
-                                                <div class="text-center">
-                                                    <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
-                                                    <div class="card-img-overlay">
-                                                    </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card" style="width: 10rem; height: 10rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/emergency.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                    <h6 style="margin-top: 90%;">Emergency</h6>
                                                 </div>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card" style="width: 10rem; height: 10rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/construction.jpg" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                    <h6 style="margin-top: 90%;">Construction</h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card" style="width: 10rem; height: 10rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/education.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                    <h6 style="margin-top: 90%;">Education</h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card" style="width: 10rem; height: 10rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/paint_palette.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                    <h6 style="margin-top: 90%;">Arts & Styles</h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td><button id="more_categories">See more</button></td>
+                            </tr>
+                        </table>
                     </div>
-                </div>
-            </div>
-
-        </div>
         
-        <div class="col-md-12" id="footer">
-            <div class="row">
-                <div class="container">
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="/assets/img/ConnServ_Logo.png" width="150px">
-                            </td>
-                            <td>
-
-                            </td>
-                        </tr>
-                    </table>
-                    <hr style="background-color: white;">
-                </div>
-            </div>
-            <div class="row">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p><b>About ConnServ</b></p>
-                            <p class="abtconnserv" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">A service directory in Metro Manila, Philippines</p>
-                            <p class="abtconnserv" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">Founded in 2021, ConnServ focuses on small businesses</p>
-                            <p class="abtconnserv" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">and freelancers from all over Metro manila</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p><b>Corporate Office</b></p>
+                    <!--
+                        FEATURED PARTNERS TABLE
+        
+                        One partner per <tr>
+                        every <td> inside <tr> contains clickable images
+                        for different featured services
+                    -->
+        
+                    <div class="container-fluid" id="featured">
+                        <table id="featured_tbl">
+                            <tr>
+                                <th style="font-size: 25px !important; padding: 5px;"><a href="#" style="color: black;">Featured Partners</a></th>
+                            </tr>
+                            <!----- Server ROW 1 ------>
+                            <tr>
+                                <td>
+                                    <div class="card" style="width: 20em; height: 15rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td><td>
+                                    <div class="card" style="width: 20em; height: 15rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td><td>
+                                    <div class="card" style="width: 20em; height: 15rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td><td>
+                                    <div class="card" style="width: 20em; height: 15rem;">
+                                        <a href="#">
+                                            <div class="text-center">
+                                                <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                <div class="card-img-overlay">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--
+                        NEW SERVICES TABLE
+        
+                        One service per <tr>
+                        every <td> inside <tr> contains clickable images
+                        for different featured services
+                    -->
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="container-fluid" id="featured">
+                                <table id="featured_tbl">
+                                    <tr>
+                                        <th style="font-size: 25px !important; padding: 5px;"><a href="#">New Services</a></th>
+                                    </tr>
+                                    <!----- PARTNER ROW 1 ------>
+                                    <tr>
+                                        <td>
+                                            <div class="card" style="width: 20em; height: 15rem;">
+                                                <a href="#">
+                                                    <div class="text-center">
+                                                        <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                        <div class="card-img-overlay">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td><td>
+                                            <div class="card" style="width: 20em; height: 15rem;">
+                                                <a href="#">
+                                                    <div class="text-center">
+                                                        <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                        <div class="card-img-overlay">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td><td>
+                                            <div class="card" style="width: 20em; height: 15rem;">
+                                                <a href="#">
+                                                    <div class="text-center">
+                                                        <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                        <div class="card-img-overlay">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td><td>
+                                            <div class="card" style="width: 20em; height: 15rem;">
+                                                <a href="#">
+                                                    <div class="text-center">
+                                                        <img class="card-img-top" src="/assets/img/categories/computer.png" alt="Card image cap">
+                                                        <div class="card-img-overlay">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="container">
-                    <hr style="background-color: white;">  
-                    <div class="col-sm-12" style="text-align: center;">
-                        <p>Copyright © 2019 All Rights Reserved. Directories Philippines Corporation.</p>
+        </section>
+        
+        <footer id="footer">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="container">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="/assets/img/ConnServ_Logo.png" width="150px">
+                                </td>
+                                <td>
+    
+                                </td>
+                            </tr>
+                        </table>
+                        <hr style="background-color: white;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>About ConnServ</b></p>
+                                <p class="abtconnserv" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">A service directory in Metro Manila, Philippines</p>
+                                <p class="abtconnserv" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">Founded in 2021, ConnServ focuses on small businesses</p>
+                                <p class="abtconnserv" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">and freelancers from all over Metro manila</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>Corporate Office</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <hr style="background-color: white;">  
+                        <div class="col-sm-12" style="text-align: center;">
+                            <p>Copyright © 2019 All Rights Reserved. Directories Philippines Corporation.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
+        </footer>
         <!--
             SCRIPT LINK FOR BOOTSTRAP AND DESIGNING
         -->
@@ -312,11 +314,12 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         
-        
+        <!-- 
+            SHRINKING HEADER
+            When the user scrolls down 80px from the top of the document
+        resize the navbar's padding and the logo's font size-->
         <script>
-        // SHRINKING HEADER
-        // When the user scrolls down 80px from the top of the document
-        // resize the navbar's padding and the logo's font size
+        
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
