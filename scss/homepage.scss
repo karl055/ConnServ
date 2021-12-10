@@ -95,42 +95,19 @@ color: #5e0cc4;
 */
 
 /* MAIN BODY CONTENT */
-.main-body-content {
+
+@media screen and (max-width: 420px) {
+}
+.main_body_content {
   width: 100vw;
-}
-.card {
-  img {
-    height: 150px;
-    width: 150px;
+  .row {
+    .container-fluid {
+      .card {
+        position: relative;
+        margin-left: 1%;
+      }
+    }
   }
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  a:hover {
-    transition: 0.5s;
-    color: #b42bab;
-    opacity: 80%;
-  }
-}
-
-#category_tbl td {
-  padding: 5px;
-}
-
-#more_categories {
-  height: 40px;
-  background-color: #b42bab;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-/* ------------- FEATURED PARTNERS ------------*/
-
-#featured {
-  margin-top: 20px;
 }
 
 /* -------------- FOOTER ----------------*/
