@@ -93,6 +93,11 @@ color: #252424;
 color: #b42bab;
 color: #5e0cc4;
 */
+
+/* MAIN BODY CONTENT */
+.main-body-content {
+  width: 100vw;
+}
 .card {
   img {
     height: 150px;
@@ -126,4 +131,10 @@ color: #5e0cc4;
 
 #featured {
   margin-top: 20px;
+}
+
+/* -------------- FOOTER ----------------*/
+
+#footer {
+  background-color: rosybrown;
 }
