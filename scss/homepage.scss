@@ -2,90 +2,54 @@
   box-sizing: border-box;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
 body {
   margin: 0;
-  height: 1000px;
 }
-a {
-  color: black;
-}
-a:hover {
-  text-decoration: none;
-  color: black;
-}
-/* NAV BAR */
-#navbar {
-  overflow: hidden;
-  background-image: url("/assets/img/heading_img.png");
-  background-size: cover;
-  background-color: #252424;
-  padding: 90px 10px;
-  transition: 0.4s;
-  position: fixed;
-  width: 100vw;
-  top: 0;
-  z-index: 99;
-  a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
-  }
-  a:hover {
-    color: #b42bab;
-    transition: 0.5s;
-  }
+// ALL MEDIA QUERY HAS THEIR OWN DIFFERENT STYLES THAT APPLIES DEPENDS ON THE SIZE OF THE DEVICES' SCREEN
 
-  a.active {
-    width: 100px;
-    background-color: #b42bab;
-    color: white;
-  }
-  #logo {
-    font-size: 35px;
-    font-weight: bold;
+// MEDIA QUERY USE FOR PC AND LAPTOP SCREENS
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* NAV BAR */
+  #navbar {
+    width: 100vw;
+    height: 20%;
+    position: fixed;
+    overflow: hidden;
+    padding: 10px;
     transition: 0.4s;
+    top: 0;
+    z-index: 99;
+    background-image: url("/assets/img/heading_img.png");
+    background-size: cover;
+    background-color: #252424;
+    .row {
+      padding: 3% 0% 5%;
+      display: flexbox;
+    }
+    .logo {
+      width: 40%;
+    }
+    .txtSearch {
+      width: 28%;
+      height: 3rem;
+      border-radius: 4px;
+      border: none;
+      &&:focus {
+        outline: none;
+      }
+    }
+    .btnsignin {
+      width: 15%;
+      height: 3rem;
+    }
+    .btnaccount {
+      width: 15%;
+      height: 3rem;
+    }
   }
-}
-#navbar-right {
-  float: right;
 }
 
 @media screen and (max-width: 450px) {
-  #navbar {
-    padding: 20px 10px !important;
-  }
-  #navbar a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  #navbar-right {
-    float: none;
-  }
-  .txtSearch {
-    float: none;
-    display: block;
-  }
-}
-
-.btnaccount {
-  background-color: transparent;
-  border: none;
-}
-.txtSearch {
-  margin-right: 10px;
-  height: 50px;
-  width: 200px;
-  float: left;
-  border-width: thin;
-  border-radius: 10px;
-  padding: 10px;
 }
 /*
 Color Palette:
@@ -93,25 +57,4 @@ color: #252424;
 color: #b42bab;
 color: #5e0cc4;
 */
-
-/* MAIN BODY CONTENT */
-
-@media screen and (max-width: 420px) {
-}
-.main_body_content {
-  width: 100vw;
-  .row {
-    .container-fluid {
-      .card {
-        position: relative;
-        margin-left: 1%;
-      }
-    }
-  }
-}
-
 /* -------------- FOOTER ----------------*/
-
-#footer {
-  background-color: rosybrown;
-}
