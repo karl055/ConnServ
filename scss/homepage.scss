@@ -1,3 +1,8 @@
+:root {
+  --fs-1200: 1rem;
+  --fs-720: ;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -5,96 +10,72 @@
 body {
   margin: 0;
 }
-// ALL MEDIA QUERY HAS THEIR OWN DIFFERENT STYLES THAT APPLIES DEPENDS ON THE SIZE OF THE DEVICES' SCREEN
-
-// MEDIA QUERY USE FOR PC AND LAPTOP SCREENS
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-  /* NAV BAR */
-  #navbar {
-    width: 100vw;
-    height: 20%;
-    position: fixed;
-    overflow: hidden;
-    padding: 10px;
-    transition: 0.4s;
-    top: 0;
-    z-index: 99;
-    background-image: url("/assets/img/heading_img.png");
-    background-size: cover;
-    background-color: #252424;
-    .row {
-      padding: 3% 0% 5%;
-      display: flexbox;
-    }
-    .logo {
-      width: 40%;
-    }
-    .txtSearch {
-      width: 28%;
-      height: 3rem;
-      border-radius: 4px;
-      border: none;
-      padding: 2%;
-    }
-    .btnsignin {
-      width: 15%;
-      height: 3rem;
-      background: #b42bab;
-      border: none;
-      a {
-        color: white;
-      }
-      :hover {
-        text-decoration: none;
-      }
-    }
-    .btnaccount {
-      width: 15%;
-      height: 3rem;
-      background: transparent;
-      border: none;
-      a {
-        color: white;
-      }
-      :hover {
-        color: #b42bab;
-        text-decoration: none;
-        transition: 0.3s;
-      }
-    }
-    :focus {
-      outline: none;
-    }
-  }
-}
-
-@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  #navbar {
-    width: 100vw;
-    height: 10%;
-    position: fixed;
-    overflow: hidden;
-    padding: 10px;
-    transition: 0.4s;
-    top: 0;
-    z-index: 99;
-    background-image: url("/assets/img/heading_img.png");
-    background-size: cover;
-    background-color: #252424;
-  }
+/* NAV BAR */
+#navbar {
+  width: 100vw;
+  height: 20%;
+  position: fixed;
+  overflow: hidden;
+  padding: 10px;
+  transition: 0.4s;
+  top: 0;
+  z-index: 99;
+  background-image: url("/assets/img/heading_img.png");
+  background-size: cover;
+  background-color: #252424;
   .row {
     padding: 3% 0% 5%;
     display: flexbox;
   }
   .logo {
-    width: 120%;
+    width: 40%;
   }
   .txtSearch {
-    width: 50%;
+    width: 28%;
     height: 3rem;
     border-radius: 4px;
     border: none;
     padding: 2%;
+  }
+  .btnsignin {
+    width: 15%;
+    height: 3rem;
+    background: #b42bab;
+    border: none;
+    a {
+      font-size: var(--fs-1200);
+      color: white;
+    }
+    :hover {
+      text-decoration: none;
+    }
+  }
+  .btnaccount {
+    width: 15%;
+    height: 3rem;
+    background: transparent;
+    border: none;
+    a {
+      font-size: var(--fs-1200);
+      color: white;
+    }
+    :hover {
+      color: #b42bab;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+  }
+  :focus {
+    outline: none;
+  }
+}
+
+// ALL MEDIA QUERY HAS THEIR OWN DIFFERENT STYLES THAT APPLIES DEPENDS ON THE SIZE OF THE DEVICES' SCREEN
+
+// MEDIA QUERY USE FOR PC AND LAPTOP SCREENS
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  :root {
+    --fs-1200: 0.8rem;
   }
 }
 /*
