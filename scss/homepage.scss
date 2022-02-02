@@ -34,22 +34,68 @@ body {
       height: 3rem;
       border-radius: 4px;
       border: none;
-      &&:focus {
-        outline: none;
-      }
+      padding: 2%;
     }
     .btnsignin {
       width: 15%;
       height: 3rem;
+      background: #b42bab;
+      border: none;
+      a {
+        color: white;
+      }
+      :hover {
+        text-decoration: none;
+      }
     }
     .btnaccount {
       width: 15%;
       height: 3rem;
+      background: transparent;
+      border: none;
+      a {
+        color: white;
+      }
+      :hover {
+        color: #b42bab;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+    }
+    :focus {
+      outline: none;
     }
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #navbar {
+    width: 100vw;
+    height: 10%;
+    position: fixed;
+    overflow: hidden;
+    padding: 10px;
+    transition: 0.4s;
+    top: 0;
+    z-index: 99;
+    background-image: url("/assets/img/heading_img.png");
+    background-size: cover;
+    background-color: #252424;
+  }
+  .row {
+    padding: 3% 0% 5%;
+    display: flexbox;
+  }
+  .logo {
+    width: 120%;
+  }
+  .txtSearch {
+    width: 50%;
+    height: 3rem;
+    border-radius: 4px;
+    border: none;
+    padding: 2%;
+  }
 }
 /*
 Color Palette:
