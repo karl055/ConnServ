@@ -1,0 +1,93 @@
+@import "./variables";
+$txtParentsize: 10rem;
+nav {
+  top: 0;
+  display: flex;
+  position: sticky;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 10vh;
+  background-image: url("/assets/img/heading_img.png");
+  background-size: cover;
+  background-color: #252424;
+  z-index: 99;
+  .container-fluid {
+    display: flex;
+  }
+  .logo {
+    width: 30%;
+    .logo-img {
+      width: 10rem;
+      margin: 5px;
+    }
+  }
+  .search-div {
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    .servicetxt {
+      width: 30%;
+      height: 2.5rem;
+      border-radius: 5px;
+      border: none;
+      padding: 5px;
+      margin: 5px;
+    }
+    .locationtxt {
+      width: 20%;
+      height: 2.5rem;
+      border-radius: 5px;
+      border: none;
+      padding: 5px;
+      margin: 5px;
+    }
+    .searchbtn {
+      width: 2.5rem;
+      height: 2.58rem;
+      border-radius: 5px;
+      border: none;
+      margin: 5px 3px;
+    }
+  }
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+    margin: auto;
+    li {
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  :focus {
+    outline: none;
+  }
+}
+
+// ALL MEDIA QUERY HAS THEIR OWN DIFFERENT STYLES THAT APPLIES DEPENDS ON THE SIZE OF THE DEVICES' SCREEN
+
+// MEDIA QUERY USE FOR PC AND LAPTOP SCREENS
+@media screen and (min-width: 800px) and (max-width: 1124px) {
+  .servicetxt {
+    width: 5em;
+    min-height: 2em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .locationtxt {
+    min-width: 5rem;
+    min-height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .searchbtn {
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+}
