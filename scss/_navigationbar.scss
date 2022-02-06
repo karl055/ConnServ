@@ -11,6 +11,7 @@ nav {
   background-image: url("/assets/img/heading_img.png");
   background-size: cover;
   background-color: #252424;
+  z-index: 99;
   .container-fluid {
     display: flex;
   }
