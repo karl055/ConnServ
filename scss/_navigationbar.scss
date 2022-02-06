@@ -1,57 +1,65 @@
 @import "./variables";
-
-#navbar {
-  width: 100vw;
-  height: 20%;
-  position: fixed;
-  overflow: hidden;
-  padding: 10px;
-  transition: 0.4s;
+$txtParentsize: 10rem;
+nav {
   top: 0;
-  z-index: 99;
+  display: flex;
+  position: sticky;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 10vh;
   background-image: url("/assets/img/heading_img.png");
   background-size: cover;
   background-color: #252424;
-  .row {
-    padding: 3% 0% 5%;
-    display: flexbox;
+  .container-fluid {
+    display: flex;
   }
   .logo {
-    width: 40%;
+    width: 30%;
+    .logo-img {
+      width: 10rem;
+      margin: 5px;
+    }
   }
-  .txtSearch {
-    width: 28%;
-    height: 3rem;
-    border-radius: 4px;
-    border: none;
-    padding: 2%;
+  .search-div {
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    .servicetxt {
+      width: 30%;
+      height: 2.5rem;
+      border-radius: 5px;
+      border: none;
+      padding: 5px;
+      margin: 5px;
+    }
+    .locationtxt {
+      width: 20%;
+      height: 2.5rem;
+      border-radius: 5px;
+      border: none;
+      padding: 5px;
+      margin: 5px;
+    }
+    .searchbtn {
+      width: 2.5rem;
+      height: 2.58rem;
+      border-radius: 5px;
+      border: none;
+      margin: 5px 3px;
+    }
   }
-  .btnsignin {
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
     width: 15%;
-    height: 3rem;
-    background: #b42bab;
-    border: none;
+    margin: auto;
+    li {
+      list-style-type: none;
+    }
     a {
-      font-size: var(--fs-1200);
-      color: white;
-    }
-    :hover {
       text-decoration: none;
-    }
-  }
-  .btnaccount {
-    width: 15%;
-    height: 3rem;
-    background: transparent;
-    border: none;
-    a {
-      font-size: var(--fs-1200);
       color: white;
-    }
-    :hover {
-      color: #b42bab;
-      text-decoration: none;
-      transition: 0.3s;
     }
   }
   :focus {
@@ -62,12 +70,23 @@
 // ALL MEDIA QUERY HAS THEIR OWN DIFFERENT STYLES THAT APPLIES DEPENDS ON THE SIZE OF THE DEVICES' SCREEN
 
 // MEDIA QUERY USE FOR PC AND LAPTOP SCREENS
-@media screen and (min-width: 800px) and (max-width: 1024px) {
-  :root {
-    --fs-1200: 0.8rem;
+@media screen and (min-width: 800px) and (max-width: 1124px) {
+  .servicetxt {
+    width: 5em;
+    min-height: 2em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
   }
-
-  .logo {
-    width: 80% !important;
+  .locationtxt {
+    min-width: 5rem;
+    min-height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .searchbtn {
+    min-width: 1rem;
+    min-height: 1rem;
   }
 }

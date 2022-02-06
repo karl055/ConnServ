@@ -4,32 +4,51 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/assets/img/tab_icon.png">
+
+        <!-- Google Font Link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+        <!-- Online Bootstrap Link -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
         <link rel="stylesheet" href="/css/homepage.css">
         <title>ConnServ</title>
     </head>
     <body>
         <!-- This is comment-->
         <!-- HEADER CONTAINER FOR HEADER AND NAVBAR Navbar inside of shrinking header-->
-
-        <header id="navbar">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-4">
-                        <a href="#default" class="logo_Link"><img class="logo" src="/assets/img/ConnServ_Logo.png" alt="ConnServ"></a>
-                    </div>
-                    <div class="col-8" id="navbar-right">
-                        <div id="form">
-                            <input type="text" placeholder="Business" class="txtSearch">
-                            <input type="text" placeholder="Location" class="txtSearch">
-                            <button class="btnsignin"><a class="active" href="#home">Sign In</a></button>
-                            <button class="btnaccount"><a href="#contact">Sign Up</a></button>
-                        </div>
-                    </div>
+        <div class="header_logo">
+            <div class="title_div">
+                <div class="text_margin">
+                    <h2>Find and Hire Near Services</h2>
+                    <h5>Merchants and Freelancers marketplaces, find more!</h5>
                 </div>
             </div>
-        </header>
+        </div>
+        <nav>
+            <div class="container-fluid">
+                <div class="logo">
+                        <img class="logo-img" src="/assets/img/ConnServ_Logo.png" alt="connserv-logo">
+
+                </div>
+                <div class="search-div">
+                    <input class="servicetxt" type="text" placeholder="Service, Business">
+                    <input class="locationtxt" type="text" placeholder="Location">
+                    <button class="searchbtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Signup</a></li>
+                </ul>
+            </div>
+        </nav>
 
         <!--Section with 1 div class column-medium-12 FOR MAIN BODY OF PAGE -->
         <div class="main_body_content">
