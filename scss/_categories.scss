@@ -1,29 +1,47 @@
+$card-size: 10rem;
+
 .categories {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 200px;
   padding: 20px 0;
+
   .card {
     border: 5;
-    height: 10rem;
+    width: 10rem;
+    height: 11rem;
     margin-right: 0.5rem;
-    p {
+    .card-body {
+      text-align: center;
+      :hover {
+        color: #b42bab;
+      }
+    }
+    a {
+      color: black;
+      text-decoration: none;
       text-align: center;
     }
   }
-  a {
-    color: black;
-    text-decoration: none;
-    :hover {
-      color: #b42bab;
-    }
-  }
-}
-@media screen and (min-width: 800px) and (max-width: 1124px) {
+} /* 
+@media screen and (min-width: 1125px) and (max-width: 1220px) {
   .categories {
     .card {
-      height: 9rem;
+      img {
+        width: ;
+        height: auto;
+        background-size: cover;
+      }
+      width: $card-size;
+    }
+  }
+} */
+@media screen and (min-width: 800px) and (max-width: 1124px) {
+  .categories {
+    background-color: white;
+    .card {
+      height: $card-size;
       p {
         text-align: center;
       }
