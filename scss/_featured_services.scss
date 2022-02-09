@@ -1,7 +1,15 @@
+/*
+ FEATURED SERVICES
+
+*/
+
+.featured {
+  padding: 4rem 0;
+}
 .featured-header {
-  text-align: center;
+  text-align: left;
   .featured-title {
-    width: 25rem;
+    width: 15rem;
   }
   h6 {
     padding: 5% 0;
@@ -9,7 +17,7 @@
 }
 .feature_row {
   height: auto;
-  width: 100vw;
+  width: auto;
   .featured-image {
     width: 40%;
   }
@@ -21,8 +29,4 @@
   h6 {
     font-size: 0.9rem;
   }
-}
-
-.warzone {
-  display: flex;
 }
