@@ -42,13 +42,16 @@ $card-size: 10rem;
     }
   }
 } */
-@media screen and (min-width: 800px) and (max-width: 1124px) {
+@media screen and (min-width: 950px) and (max-width: 1124px) {
   .categories {
     background-color: white;
     .card {
       height: $card-size;
       p {
         text-align: center;
+      }
+      a {
+        font-size: 0.7rem;
       }
     }
   }
