@@ -3,31 +3,17 @@
     <head>
         <title>Sample Project</title>
         <style>
-            .showHide { display:none; }
-
-/* Desktop*/
-            @media screen and (min-width: 768px) {
-                .showHide  { display: block; }
-                #leftside > button { display: none; }
+            li:hover:not(:last-child){
+                background-color: black;
             }
         </style>
     </head>
     <body>
-        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5" id="leftside">
-            <div class="noCollapse">
-            <h1>Title</h1>
-            <p class="roles">text for roles</p>
-            <img src="">
-            </div><!-- end of noCollapse -->
-
-            <div class="showHide"><!--expand/collapse div-->
-            <p class="fulldescription">paragraph 1</p>
-            <p class="fulldescription">paragraph 2</p>
-            <img src="">
-            </div><!-- end of showHide -->
-
-            <button type="button" class="btn btn-primary">Show More</button><!-- expand/collapse .showHide -->
-
-        </div>
+        <ul>
+            <li><a href="#">Karl</a></li>
+            <li><a href="#">Karl</a></li>
+            <li><a href="#">Karl</a></li>
+            <li><a href="#">Karl</a></li>
+        </ul>
     </body>
 </html>

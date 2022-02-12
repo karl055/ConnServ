@@ -1,3 +1,5 @@
+@import "./variables";
+
 $image-size: 20 rem;
 
 /*
@@ -7,7 +9,7 @@ $image-size: 20 rem;
   padding: 0;
   margin: 0;
   width: 100%;
-  background-color: #252424;
+  background-color: $font-color-a;
   height: 16rem;
   position: absolute;
   .connserv-container {

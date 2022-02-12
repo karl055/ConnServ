@@ -10,7 +10,7 @@ nav {
   min-height: 10vh;
   background-image: url("/assets/img/heading_img.png");
   background-size: cover;
-  background-color: #252424;
+  background-color: $font-color-a;
   z-index: 99;
 
   .container-fluid {
@@ -58,10 +58,14 @@ nav {
     margin: auto;
     li {
       list-style-type: none;
-    }
-    a {
-      text-decoration: none;
-      color: white;
+      a {
+        color: white;
+        width: 100px;
+      }
+      :hover {
+        color: $font-color-d;
+        text-decoration: none;
+      }
     }
   }
   :focus {

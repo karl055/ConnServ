@@ -1,3 +1,5 @@
+@import "./variables";
+
 $card-size: 10rem;
 
 .category-title {
@@ -20,7 +22,7 @@ $card-size: 10rem;
     .card-body {
       text-align: center;
       :hover {
-        color: #b42bab;
+        color: $font-color-e;
       }
     }
     a {
@@ -29,7 +31,8 @@ $card-size: 10rem;
       text-align: center;
     }
   }
-} /* 
+}
+/* 
 @media screen and (min-width: 1125px) and (max-width: 1220px) {
   .categories {
     .card {
