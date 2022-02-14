@@ -1,10 +1,6 @@
-@import "/login-navigationbar";
+@import "./login-navbar";
 
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-body {
-  height: 2000px;
+  padding: 0;
+  margin: 0;
 }
