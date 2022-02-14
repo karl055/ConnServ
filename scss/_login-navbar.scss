@@ -1,16 +1,15 @@
 @import "./variables";
-$txtParentsize: 10rem;
 nav {
   top: 0;
   display: flex;
-  position: sticky;
+  position: fixed;
   justify-content: space-around;
   align-items: center;
-  max-width: 100vw;
+  width: 100vw;
   min-height: 10vh;
   background-image: url("/assets/img/heading_img.png");
   background-size: cover;
-  background-color: #252424;
+  background-color: $font-color-a;
   z-index: 99;
 
   .container-fluid {
@@ -58,37 +57,17 @@ nav {
     margin: auto;
     li {
       list-style-type: none;
-    }
-    a {
-      text-decoration: none;
-      color: white;
+      a {
+        color: white;
+        width: 100px;
+      }
+      :hover {
+        color: $font-color-d;
+        text-decoration: none;
+      }
     }
   }
   :focus {
     outline: none;
-  }
-}
-
-// ALL MEDIA QUERY HAS THEIR OWN DIFFERENT STYLES THAT APPLIES DEPENDS ON THE SIZE OF THE DEVICES' SCREEN
-
-// MEDIA QUERY USE FOR PC AND LAPTOP SCREENS
-@media screen and (min-width: 800px) and (max-width: 1124px) {
-  .servicetxt {
-    width: 5em;
-    min-height: 2em;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-  }
-  .locationtxt {
-    min-width: 5rem;
-    min-height: 2rem;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-  }
-  .searchbtn {
-    min-width: 1rem;
-    min-height: 1rem;
   }
 }
