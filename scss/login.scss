@@ -4,3 +4,37 @@
   padding: 0;
   margin: 0;
 }
+
+.page-body {
+  min-height: 100vh;
+  display: block;
+  .body-container {
+    padding: 3rem 2rem 3rem;
+    display: flex;
+    max-width: 100%;
+    height: 30rem;
+    .image-container {
+      height: auto;
+
+      img {
+        width: 100%;
+        margin-top: 25%;
+        margin-bottom: 25%;
+      }
+    }
+    .login-container {
+      width: 100%;
+      height: auto;
+      .login-form {
+        width: 70%;
+        height: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        border-style: solid;
+        border-width: 2px;
+      }
+    }
+  }
+}
