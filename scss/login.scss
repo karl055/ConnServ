@@ -76,14 +76,26 @@
                   transition: .3s;
                 }
               }
-              .signup{
+              a{
+                width: 50%;
+                .signup{
+                  border: 1px solid $font-color-b;
+                  width: 100%;
+                  &:hover{
+                    background-color: $font-color-b;
+                    color: white;
+                    transition: .3s;
+                  }
+                }
+              }
+              /* .signup{
                 border: 1px solid $font-color-b;
                 &:hover{
                   background-color: $font-color-b;
                   color: white;
                   transition: .3s;
                 }
-              }
+              } */
             }
             p{
               margin: .7rem .2rem 0;

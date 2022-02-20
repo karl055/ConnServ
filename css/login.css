@@ -180,6 +180,14 @@ nav :focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* .signup{
+                border: 1px solid $font-color-b;
+                &:hover{
+                  background-color: $font-color-b;
+                  color: white;
+                  transition: .3s;
+                }
+              } */
 }
 
 .page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts button {
@@ -203,11 +211,16 @@ nav :focus {
   transition: .3s;
 }
 
-.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup {
-  border: 1px solid #5e0cc4;
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a {
+  width: 50%;
 }
 
-.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup:hover {
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .signup {
+  border: 1px solid #5e0cc4;
+  width: 100%;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .signup:hover {
   background-color: #5e0cc4;
   color: white;
   -webkit-transition: .3s;
