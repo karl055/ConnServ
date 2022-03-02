@@ -1,0 +1,110 @@
+@import "../homepage_styling/navigationbar";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.page-body {
+  min-height: 100vh;
+  display: block;
+  .body-container {
+    padding: 5rem 2rem 3rem;
+    display: flex;
+    max-width: 100%;
+    height: 30rem;
+    .image-container {
+      height: auto;
+
+      img {
+        width: 100%;
+        margin-top: 25%;
+        margin-bottom: 25%;
+      }
+    }
+    .login-container {
+      width: 100%;
+      height: auto;
+      .login-form {
+        width: 40%;
+        height: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;/* 
+        border-style: solid;
+        border-width: 2px; */
+        .inner-container{
+          width: 100%;
+
+          h4{
+            margin-bottom: .5rem;
+          }
+          .form-login{
+            display: block;/* 
+            label{
+              margin-bottom: 0;
+              margin-top: .5rem;
+            } */
+            input[type=text], input[type=password]{
+              width: 100%;
+              border: none;
+              border-bottom: 2px solid $font-color-a;
+              padding: .5rem ;
+              margin-top: .5rem;
+            }
+            :focus{
+              outline: none;
+            }
+            .buttons-accounts{
+              margin-top: 2rem;
+              display: block;
+              button{
+                height: 3rem;
+                width: 100%;
+                border-radius: 5px;
+              }
+              .signup{
+                margin-right: 1rem;
+                background-color: $font-color-b;
+                border: none;
+                color: white;
+                margin-bottom: 1rem;
+                &:hover{
+                  background-color: white;
+                  color: black;
+                  border: 1px solid $font-color-b;
+                  transition: .3s;
+                }
+              }
+              a{
+                width: 50%;
+                .login{
+                  border: 1px solid $font-color-b;
+                  width: 100%;
+                  &:hover{
+                    background-color: $font-color-b;
+                    color: white;
+                    transition: .3s;
+                  }
+                }
+              }
+              /* .signup{
+                border: 1px solid $font-color-b;
+                &:hover{
+                  background-color: $font-color-b;
+                  color: white;
+                  transition: .3s;
+                }
+              } */
+            }
+            p{
+              margin: .7rem .2rem 0;
+              font-size: .8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
