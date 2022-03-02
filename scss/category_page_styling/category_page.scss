@@ -1,7 +1,7 @@
-@import "./variables";
-@import "./navigationbar";
-@import "./category_cards";
-@import "./footer";
+@import "../homepage_styling/variables";
+@import "../homepage_styling/navigationbar";
+@import "category_cards";
+@import "../homepage_styling/footer";
 * {
   margin: 0px;
   padding: 0px;
