@@ -29,6 +29,38 @@ nav .logo .logo-img {
   width: 10rem;
   margin: 5px;
 }
+nav .search-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+  -ms-flex-pack: right;
+  justify-content: right;
+  width: 80%;
+}
+nav .search-div .servicetxt {
+  width: 30%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+nav .search-div .locationtxt {
+  width: 20%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+nav .search-div .searchbtn {
+  width: 2.5rem;
+  height: 2.58rem;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 3px;
+}
 nav .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,36 +84,19 @@ nav .nav-links li :hover {
 nav :focus {
   outline: none;
 }
-
-.category {
-  padding: 5rem 0;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-.category-header {
-  text-align: left;
-}
-.category-header .category-title {
-  width: 15rem;
+.img-fluid {
   padding: 1rem;
 }
-.category-header h6 {
-  padding: 5% 0;
+.card-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
 }
-.category-cards .card-title {
-  color: black;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: large;
-  text-align: center;
+.card-header {
+  background-color: #252424;
+  color: antiquewhite;
 }
-.card-deck {
-  padding: 20px;
-}
-.card-img-top {
-  height: 12rem;
-  width: auto;
-}
+
 @media screen and (min-width: 950px) and (max-width: 1124px) {
   h4 {
     font-size: 0.9rem;
@@ -176,4 +191,10 @@ nav :focus {
 }
 body {
   height: auto;
+}
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
 }
