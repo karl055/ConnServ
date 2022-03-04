@@ -85,16 +85,35 @@ nav :focus {
   outline: none;
 }
 .img-fluid {
-  padding: 1rem;
+  padding: 0.5rem;
+  height: 200px;
+  width: 500px;
+  border-radius: 10%;
+}
+.card {
+  height: 250px;
+  width: 280px;
 }
 .card-title {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
-  font-weight: bold;
+  text-align: center;
 }
 .card-header {
   background-color: #252424;
   color: antiquewhite;
+}
+.service-title {
+  font-family: Helvetica;
+  font-weight: 400;
+  text-align: left;
+  padding: 1rem;
+  margin: 1rem;
+}
+.service-title img {
+  height: 25px;
+  width: 25px;
+  margin-bottom: 15px;
 }
 
 @media screen and (min-width: 950px) and (max-width: 1124px) {
@@ -192,9 +211,43 @@ nav :focus {
 body {
   height: auto;
 }
-#map {
-  height: 400px;
-  /* The height is 400 pixels */
-  width: 100%;
-  /* The width is the width of the web page */
+iframe {
+  height: 300px;
+  width: 280px;
+  margin-left: 1rem;
+}
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 0px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
 }
