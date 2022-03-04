@@ -84,6 +84,8 @@ nav .nav-links li :hover {
 nav :focus {
   outline: none;
 }
+
+/* SERVICE PROFILE AND ADDRESS DESIGN */
 .img-fluid {
   padding: 0.5rem;
   height: 200px;
@@ -103,6 +105,8 @@ nav :focus {
   background-color: #252424;
   color: antiquewhite;
 }
+
+/* SERVICE TITLE DESIGN */
 .service-title {
   font-family: Helvetica;
   font-weight: 400;
@@ -116,6 +120,94 @@ nav :focus {
   margin-bottom: 15px;
 }
 
+/* MAP DESIGN */
+iframe {
+  height: 300px;
+  width: 280px;
+}
+
+/* RATE DESIGN */
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 0px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+/* APPOINTMENT BUTTON */
+.btn {
+  padding: 1em 1em 1.1em;
+  border-radius: 10px;
+  margin: 35px 30px 8px 8px;
+  color: #fbdedb;
+  background-color: #fbdedb;
+  display: inline-block;
+  background: #e74c3c;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.2s;
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+  position: relative;
+}
+.btn:hover,
+.btn:focus {
+  opacity: 0.8;
+}
+.btn:active {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.btn.block {
+  display: block !important;
+}
+.btn.circular {
+  border-radius: 50em !important;
+}
+.purple {
+  background-color: #564f8a;
+}
+
+/* FOOTER DESIGN */
 @media screen and (min-width: 950px) and (max-width: 1124px) {
   h4 {
     font-size: 0.9rem;
@@ -202,6 +294,7 @@ nav :focus {
     font-size: 0.8rem;
   }
 }
+
 * {
   margin: 0px;
   padding: 0px;
@@ -210,44 +303,4 @@ nav :focus {
 }
 body {
   height: auto;
-}
-iframe {
-  height: 300px;
-  width: 280px;
-  margin-left: 1rem;
-}
-.rate {
-  float: left;
-  height: 46px;
-  padding: 0 0px;
-}
-.rate:not(:checked) > input {
-  position: absolute;
-  top: -9999px;
-}
-.rate:not(:checked) > label {
-  float: right;
-  width: 1em;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 30px;
-  color: #ccc;
-}
-.rate:not(:checked) > label:before {
-  content: "★ ";
-}
-.rate > input:checked ~ label {
-  color: #ffc700;
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-  color: #deb217;
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
 }
