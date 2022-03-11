@@ -14,7 +14,7 @@
     <nav>
         <div class="container-fluid">
             <div class="logo">
-                <img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo">
+                <a href="./homepage.php"><img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo"></a>
             </div>
             <div class="search-div">
                 <input class="servicetxt" type="text" placeholder="Service, Business">

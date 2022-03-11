@@ -26,9 +26,9 @@
                                 <input class="pass-txt" type="password" name="password" placeholder="Password">
                                 <div class="buttons-accounts">
                                     <button class="login">Login</button>
-                                    <a href="#"><button class="signup">Create Account</button></a>
                                 </div>
                           </form>
+                                <a href="./signup.php"><button class="signup">Create Account</button></a>
                           <div style="display:flex">
                               <p>Forgot Password?</p><a href="login.html"><p> Click here!</p></a>
                           </div>
