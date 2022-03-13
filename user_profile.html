@@ -48,12 +48,9 @@
                             <img src="./assets/img/categories/computer.png" alt="User Icon" id="photo">
                           </div>
                           <p>User Name</p>
-                          <!-- UPLOAD OR CHANGE ICON -->
-                          <!-- <input type="file" id="file" class="file_upload">
-                          <label for="file" id="uploadBtn">Choose an Image</label> -->
                         </div>
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Account</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Appointments</a>
                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
                         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
                       </div>
@@ -61,10 +58,100 @@
                     <div class="col-9">
                       <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-
+                          <div class="main_content">
+                            <div class="title_head">
+                              <h4>My Profile</h4>
+                              <p>Manage your account</p>
+                            </div>
+                            <div class="content">
+                              <div class="content_format">
+                                <form>
+                                  <h5>Information</h5>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                      <label for="inputUsername">Username</label>
+                                      <input type="text" class="form-control" id="inputUsername" value="Username101" disabled>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                      <label for="inputEmail">Email</label>
+                                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                      <label for="inputPassword">Password</label>
+                                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                      <label for="inputName">Name</label>
+                                      <input type="email" class="form-control" id="inputName" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                      <label for="inputPhone">Phone Number</label>
+                                      <input type="text" class="form-control" id="inputPhone">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                      <label for="inputPassword">Password</label>
+                                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="Male">
+                                        <label class="form-check-label" for="male">Male</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="Female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="Other">
+                                        <label class="form-check-label" for="other">Other</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <h5>Address</h5>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                      <label for="inputHouse">House No.</label>
+                                      <input type="text" class="form-control" id="inputHouse">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                      <label for="inputStreet">Street</label>
+                                      <input type="text" class="form-control" id="inputStreet">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                      <label for="inputBarangay">Barangay</label>
+                                      <input type="text" class="form-control" id="inputBarangay">
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                      <label for="inputCity">City</label>
+                                      <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                      <label for="inputDistrict">District</label>
+                                      <select id="inputDistrict" class="form-control">
+                                        <option selected>North Signal</option>
+                                        <option>South Signal</option>
+                                        <option>Central Signal</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                      <label for="inputZip">Zip</label>
+                                      <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Save</button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-
+                          <p>This is Appointment Content</p>
                         </div>
                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
