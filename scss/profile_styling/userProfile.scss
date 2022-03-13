@@ -1,0 +1,39 @@
+@import "../homepage_styling/_navigationbar";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.body_container{
+    margin: 3rem 0 3rem;
+    .container-fluid{
+        .user_icon{
+            .profile_picture{
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                border-radius: 50%;
+                border: 1px solid black;
+                text-align: center;
+                margin: 1rem 0 1rem;
+                img{
+                    height: 100px;
+                
+                }
+            }
+            .file_upload{
+                display: none;
+            }
+            label{
+                width: auto;
+                border: 1px solid $font-color-b;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        }
+        .nav-link{
+            width: 200px;
+        }
+    }
+}
