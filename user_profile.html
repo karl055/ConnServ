@@ -132,8 +132,8 @@
                                         <div class="profile_picture">
                                           <img src="./assets/img/categories/computer.png" alt="User Icon" id="photo">
                                         </div>
-                                        <p>User Name</p>
-                                        <input type="file" id="file">
+                                        <label id="uploadBtn" for="file">Click to change</label>
+                                        <input type="file" id="file" name="file">
                                       </div>
                                     </div>
                                   </div>
@@ -151,20 +151,48 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                       <label for="inputBarangay">Barangay</label>
-                                      <input type="text" class="form-control" id="inputBarangay">
+                                      <select id="inputBarangay" class="form-control">
+                                        <option value="Bagumbayan" selected>Bagumbayan</option>
+                                        <option value="Bambang">Bambang</option>
+                                        <option value="Calzada">Calzada</option>
+                                        <option value="Central Bicutan">Central Bicutan</option>
+                                        <option value="Central Signal Village">Central Signal Village</option>
+                                        <option value="Fort Bonifacio">Fort Bonifacio</option>
+                                        <option value="Hagonoy">Hagonoy</option>
+                                        <option value="Ibayo Tipas">Ibayo Tipas</option>
+                                        <option value="Katuparan">Katuparan</option>
+                                        <option value="Ligid Tipas">Ligid Tipas</option>
+                                        <option value="Lower Bicutan">Lower Bicutan</option>
+                                        <option value="Maharlika Village">Maharlika Village</option>
+                                        <option value="Napindan">Napindan</option>
+                                        <option value="New Lower Bicutan">New Lower Bicutan</option>
+                                        <option value="North Daang Hari">North Daang Hari</option>
+                                        <option value="North Signal Village">North Signal Village</option>
+                                        <option value="Palingon Tipas">Palingon Tipas</option>
+                                        <option value="Pinagsama">Pinagsama</option>
+                                        <option value="San Miguel">San Miguel</option>
+                                        <option value="Santa Ana">Santa Ana</option>
+                                        <option value="South Daang Hari">South Daang Hari</option>
+                                        <option value="South Signal Village">South Signal Village</option>
+                                        <option value="Tanyag">Tanyag</option>
+                                        <option value="Tuktukan">Tuktukan</option>
+                                        <option value="Ususan">Ususan</option>
+                                        <option value="Upper Bicutan">Upper Bicutan</option>
+                                        <option value="Wawa">Wawa</option>
+                                        <option value="Western Bicutan">Western Bicutan</option>
+                                      </select>
                                     </div>
                                   </div>
                                   <div class="form-row">
                                     <div class="form-group col-md-3">
                                       <label for="inputCity">City</label>
-                                      <input type="text" class="form-control" id="inputCity">
+                                      <input type="text" class="form-control" id="inputCity" value="Taguig City" disabled>
                                     </div>
                                     <div class="form-group col-md-2">
                                       <label for="inputDistrict">District</label>
                                       <select id="inputDistrict" class="form-control">
-                                        <option selected>North Signal</option>
-                                        <option>South Signal</option>
-                                        <option>Central Signal</option>
+                                        <option selected>District 1</option>
+                                        <option>District 2</option>
                                       </select>
                                     </div>
                                     <div class="form-group col-md-2">
