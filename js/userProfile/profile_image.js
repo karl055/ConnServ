@@ -1,3 +1,5 @@
+
+/* Change Profile Picture Function  */
 const imgDiv = document.querySelector('.profile_picture');
 const image = document.querySelector('#photo');
 const file = document.querySelector('#file');
@@ -16,3 +18,6 @@ file.addEventListener('change', function(){
         reader.readAsDataURL(photoChose);
     }
 });
+
+
+
