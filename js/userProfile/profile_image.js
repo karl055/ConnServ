@@ -17,7 +17,7 @@ file.addEventListener('change', function(){
 
         reader.readAsDataURL(photoChose);
     }
-});
+}); 
 
 
 
