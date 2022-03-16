@@ -58,9 +58,9 @@
                   <a class="nav-link" id="pills-notifications-tab" data-toggle="pill" href="#pills-notifications" role="tab" aria-controls="pills-notifications" aria-selected="false">Notifications</a>
                 </li>
                 <!-- Settings Pill -->
-                <li class="nav-item col-2">
+                <!-- <li class="nav-item col-2">
                   <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">Settings</a>
-                </li>
+                </li> -->
                 <!-- Business Pill -->
                 <li class="nav-item col-2">
                   <a class="nav-link" id="pills-business-tab" data-toggle="pill" href="#pills-business" role="tab" aria-controls="pills-business" aria-selected="false">My Business</a>
@@ -71,7 +71,7 @@
                 <div class="tab-content" id="v-pills-tabContent">
 
                         <!-- Profile Contents -->
-                  <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="tab-pane fade show active profile" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                           <div class="main_content">
                             <div class="title_head">
                               <h4>My Profile</h4>
@@ -223,9 +223,13 @@
                         </div>
                         <!-- Appointments Contents -->
                   <div class="tab-pane fade appointments" id="pills-appointment" role="tabpanel" aria-labelledby="pills-appointment-tab">
-                          <h5>You Appointments</h5>
+                    <div class="container row">
+                      <h4>Your Appointments</h4>
+                    </div>
+                    <div class="col-12">
+                      <div class="col-3">
                           <div class="main_content">
-                            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card mb-3" style="max-width: 18rem;">
                               <div class="card-header"><p class="showBtn" onclick="show_hide()">Bonheur Apparel</p></div>
                               <div class="appointment_container">
                                   <div class="card-body">
@@ -235,22 +239,34 @@
                               </div>
                             </div>
                           </div>
+                      </div>
+                    </div>
                   </div>
                         <!-- Messages Contents -->
-                  <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+                  <div class="tab-pane fade messages" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
                         <p>AWDASDAWDSD</p>
                   </div>
                         <!-- Notifications Contents -->
-                  <div class="tab-pane fade" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
+                  <div class="tab-pane fade notifications" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
                         <p>AWDASDAWDADS</p>
                   </div>    
                         <!-- Settings Contents -->
-                  <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
+                  <!-- <div class="tab-pane fade settings" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
                           
-                  </div>
+                  </div> -->
                         <!-- Business Contents -->
-                  <div class="tab-pane fade" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
-                    <button>Create Business</button>
+                  <div class="tab-pane fade business" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
+                    <div class="business_contents">
+                      <div class="contents_container">
+                        <div class="container_display">
+                          <h1>No Business? Create now!</h1>
+                          <a href="./create_business.html" class="createLink">
+                            <button type="submit" class="createBtn">Create Business</button>
+                          </a>
+                          <p>You must use Desktop or Laptop before creating a business.</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
