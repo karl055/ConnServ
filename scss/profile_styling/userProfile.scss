@@ -49,30 +49,33 @@
                 margin: 0.5rem auto;
             }
         }
+        .saveBtn{
+            width: 100%;
+            
+        }
+
+        /* BUSINESS PILL */
+
         .appointments{
             .appointment_container{
                 display: none;
                 transition: height linear 0.5s;
-            }
-            .showBtn{
-                width: 100%;
-                border: none;
-                background-color: transparent;
-                color: white;
-            }
-            .showBtn:focus{
-                outline: none;
             }
         }
 
         .business_body{
             width: 100%;
             height: 100%;
-            button{
-                width: 150px;
-                height: 50px;
-                margin-left: auto;
-                margin-right: auto;
+
+            .form-row{
+
+                .showBtn{
+                    font-size: 2rem;
+                    width: 100%;
+                    height: 50px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
             }
         }
     }
