@@ -1,0 +1,51 @@
+@import "../homepage_styling/navigationbar";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.business_container{
+    margin: 3rem 0 0;
+
+    .tool_tip{
+        font-size: 1rem;
+        color: red;
+    }
+    .business_trade{
+        .business_name{
+            width: 100%;
+            height: 2.4rem;
+        }
+        .trade_name{
+            width: 100%;
+            height: 2.4rem;
+        }
+    }
+    .business_address{
+        .business_unit_no{
+            width: 100%;
+            height: 2.4rem;
+        }
+        .business_building{
+            width: 100%;
+            height: 2.4rem;
+        }
+        .business_street_no{
+            width: 100%;
+            height: 2.4rem;
+        }
+        .business_street{
+            width: 100%;
+            height: 2.4rem;
+        }
+        .business_village{
+            width: 100%;
+            height: 2.4rem;
+        }
+        .business_city{
+            width: 100%;
+            height: 2.4rem;
+        }
+    }
+}
