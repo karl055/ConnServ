@@ -48,4 +48,21 @@
             height: 2.4rem;
         }
     }
+    .business_location{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+        button{
+            background-color: transparent;
+            border: none;
+        }
+        :focus{
+            outline: none;
+        }
+        .appointment_container{
+            display: none;
+            transition: height linear 0.5s;
+        }
+    }
 }
