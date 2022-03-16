@@ -84,6 +84,11 @@ body{
     hr{
         border: 1px solid black;
     }
+    .owner_valid{
+        label{
+            display: block;
+        }
+    }
     .createBtn{
         width: 100%;
         height: 50px;
