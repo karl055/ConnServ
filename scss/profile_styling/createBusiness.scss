@@ -4,9 +4,14 @@
     margin: 0;
     padding: 0;
 }
+body{
+    height: 750px;
+}
 
 .business_container{
-    margin: 3rem 0 0;
+    .container_title{
+        margin: 2rem 0 1rem;
+    }
 
     .tool_tip{
         font-size: 1rem;
@@ -16,41 +21,51 @@
         .business_name{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
         .trade_name{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
     }
     .business_address{
         .business_unit_no{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
         .business_building{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
         .business_street_no{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
         .business_street{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
         .business_village{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
         .business_city{
             width: 100%;
             height: 2.4rem;
+            padding: 5px;
         }
     }
     .business_location{
         width: 100%;
+        padding: 5px;
     }
+    
     .card{
         width: 100%;
         button{
@@ -64,5 +79,18 @@
             display: none;
             transition: height linear 0.5s;
         }
+    }
+
+    hr{
+        border: 1px solid black;
+    }
+    .createBtn{
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        border: none;
+        background-color: $font-color-b;
+        color: white;
+
     }
 }

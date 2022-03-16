@@ -40,6 +40,9 @@
         <div class="body_container">
             <div class="container">
                 <div class="business_container">
+                    <div class="container_title">
+                        <h3>Create Business</h3>
+                    </div>
                     <form action="#">
                         <div class="row">
                             <div class="col-7">
@@ -133,14 +136,14 @@
                                             <input type="text" name="business_city" class="business_city">
                                         </div>
                                         <div class="col-4">
-                                            <label for="business_city">Mobile Number <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                            <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
                                             <input type="text" name="business_city" class="business_city">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
                                             <label for="business_details">About the Business</label>
-                                            <textarea class="form-control" id="business_details" rows="3"></textarea>
+                                            <textarea class="form-control" id="business_details" rows="5" placeholder="What is your business?.."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -153,16 +156,17 @@
                                     </div>
                                       
                                     <div class="business_location">
-                                        <label for="change_icon">Insert Image</label>
+                                        <label for="change_icon">Insert Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
                                         <input type="file" id="change_icon" name="change_icon" style="display: none;">
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <label for="business_location">Insert Embeded HTML</label>
+                                    <hr>
+                                    <label for="business_location">Insert Embeded HTML  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
                                     <input type="text" name="business_location" id="business_location" class="business_location">
                                     
                                     <div class="card mb-3">
-                                        <div class="card-header"><button class="showBtn" onclick="show_hide()">How to insert embeded HTML</button></div>
+                                        <div class="card-header"><label onclick="show_hide()">How to Insert Embeded HTML</label></div>
                                         <div class="appointment_container">
                                             <div class="card-body">
                                                 <h5 class="card-title">In PC</h5>
@@ -177,8 +181,18 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    
+                                    <hr>
+                                    <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
                                     <input type="file" id="file" name="file" multiple>
+                                </div>
+                                <div class="col-12">
+                                    <hr>
+                                    <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                    <input type="file" id="file" name="file" multiple>
+                                </div>
+                                <div class="col-12">
+                                    <hr>
+                                    <button type="submit" name="createBtn" class="createBtn">Create Business</button>
                                 </div>
                             </div>
                         </div>
