@@ -1,0 +1,399 @@
+/*  
+    !COLORS 
+*/
+/*  
+    !COLORS 
+*/
+nav {
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100vw;
+  min-height: 10vh;
+  background-image: url("/assets/img/heading_img.png");
+  background-size: cover;
+  background-color: #252424;
+  z-index: 99;
+}
+
+nav .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .logo {
+  width: 30%;
+}
+
+nav .logo .logo-img {
+  width: 10rem;
+  margin: 5px;
+}
+
+nav .search-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 80%;
+}
+
+nav .search-div .servicetxt {
+  width: 30%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .locationtxt {
+  width: 20%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .searchbtn {
+  width: 2.5rem;
+  height: 2.58rem;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 3px;
+}
+
+nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 15%;
+  margin: auto;
+}
+
+nav .nav-links li {
+  list-style-type: none;
+}
+
+nav .nav-links li a {
+  color: white;
+  width: 100px;
+}
+
+nav .nav-links li :hover {
+  color: #f574ec;
+  text-decoration: none;
+}
+
+nav :focus {
+  outline: none;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  /* .nav-links {
+    li {
+    }
+  } */
+  .servicetxt {
+    width: 5em;
+    min-height: 2em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .locationtxt {
+    min-width: 5rem;
+    min-height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .searchbtn {
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+}
+
+/*  
+    !COLORS 
+*/
+.category-title {
+  padding: 1rem 0 0;
+}
+
+.categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 0 0 20px;
+}
+
+.categories img {
+  width: auto;
+}
+
+.categories .card {
+  border: 5;
+  width: 10rem;
+  height: 11rem;
+  margin-right: 0.5rem;
+}
+
+.categories .card .card-body {
+  text-align: center;
+}
+
+.categories .card .card-body :hover {
+  color: #b42bab;
+}
+
+.categories .card a {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* 
+@media screen and (min-width: 1125px) and (max-width: 1220px) {
+  .categories {
+    .card {
+      img {
+        width: ;
+        height: auto;
+        background-size: cover;
+      }
+      width: $card-size;
+    }
+  }
+} */
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  .categories {
+    background-color: white;
+  }
+  .categories .card p {
+    text-align: center;
+  }
+  .categories .card a {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 949px) {
+  .categories .card p {
+    text-align: center;
+  }
+  .categories .card a {
+    font-size: 0.7rem;
+  }
+  .categories .card:last-child {
+    display: none;
+  }
+}
+
+/*
+
+FEATURED SERVICES
+
+*/
+.featured {
+  padding: 4rem 0;
+}
+
+.featured-header {
+  text-align: left;
+}
+
+.featured-header .featured-title {
+  width: 15rem;
+}
+
+.featured-header h6 {
+  padding: 5% 0;
+}
+
+.featured-services .card-title {
+  color: black;
+  text-decoration: none;
+}
+
+/*
+
+NEW BUSINESSES
+
+*/
+.newbusinesses {
+  padding: 3rem 0;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  h4 {
+    font-size: 0.9rem;
+  }
+  h6 {
+    font-size: 0.9rem;
+  }
+  .featured_services .card a {
+    font-size: 0.7rem;
+  }
+  .featured_services .card p {
+    font-size: 0.7rem;
+  }
+}
+
+/*  
+    !COLORS 
+*/
+/*
+  FOOTER 1st ROW
+*/
+.footer-div {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #252424;
+  height: 16rem;
+  position: absolute;
+}
+
+.footer-div .connserv-container {
+  padding: 1rem 0 0;
+  max-width: 100vw;
+  height: auto;
+}
+
+.footer-div .connserv-container p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  font-weight: 800;
+  color: white;
+}
+
+.footer-div img {
+  padding: 2rem 0 0;
+  width: 20rem;
+  float: right;
+}
+
+.footer-div li {
+  font-size: 0.9rem;
+  list-style-type: none;
+}
+
+.footer-div li a {
+  color: white;
+  text-decoration: none;
+}
+
+/*
+  
+    FOOTER COPYRIGHT
+  */
+.footer-copyright hr {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: 60%;
+}
+
+.footer-copyright p {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  .connserv-container img {
+    width: 15rem;
+  }
+  .connserv-container p {
+    font-size: 0.8rem;
+  }
+  .connserv-container li {
+    font-size: 0.7rem;
+  }
+  .footer-copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 949px) {
+  .connserv-container img {
+    width: 15rem;
+  }
+  .connserv-container p {
+    font-size: 0.8rem;
+  }
+  .connserv-container li {
+    font-size: 0.7rem;
+  }
+  .footer-copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 2000px;
+}
+
+.header_logo {
+  background-image: url(/assets/img/header_img.png);
+  background-size: cover;
+  width: 100%;
+  height: 30rem;
+  position: relative;
+}
+
+.header_logo .title_div {
+  font-family: "Righteous", cursive;
+  color: white;
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.header_logo .title_div .text_margin {
+  margin: 20% auto;
+}
+
+/* NAV BAR */
+/*
+Color Palette:
+color: #252424;
+color: #b42bab;
+color: #5e0cc4;
+*/
+/* -------------- FOOTER ----------------*/
+/*# sourceMappingURL=homepage.css.map */
