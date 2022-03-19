@@ -1,20 +1,31 @@
 <?php
     include '../hostCon.php';
-
-    $email = $_POST['email'];
-    $name = $_POST['fullname'];
-    $houseNum = $_POST['houseNum'];
-    $street = $_POST['houseSt'];
-    $brgy = $_POST['brgy'];
-    $city = $_POST['city'];
-
-    $sql = "UPDATE client SET c_name = '$name',
-    c_add_house_no = '$houseNum',
-    c_add_street = '$street',
-    c_add_brgy = '$brgy',
-    c_add_city ='$city'
-    WHERE c_email = '$email'";
-    mysqli_query($connect, $sql);
-
-    header("Location: ../edit.php?edit=success");
+    session_start();
+    
+    if(!isset($_SESSION['username'])){
+        header("Location: ./login.php");
+        die();
+    }else{
+        $user_id = $_SESSION['username'];
+        $email = $_POST['edit_email'];
+        $password = $_POST['edit_password'];
+        $firstname = $_POST['edit_firstname'];
+        $lastname = $_POST['edit_surname'];
+        $phone = $_POST['edit_phonenumber'];
+        $gender = $_POST['edit_gender'];
+        /* $city = $_POST['city']; */
+    
+        $sql = "UPDATE user_tb SET 
+        user_email = '$email',
+        user_pass = '$password',
+        user_firstname = '$firstname',
+        user_lastname = '$lastname',
+        user_contact ='$phone',
+        user_sex ='$gender'
+        WHERE user_identity = '$user_id'";
+        mysqli_query($connect, $sql);
+    
+        header("Location: ../user_profile.php?edit=success");
+    }
+    
 ?>

@@ -1,3 +1,5 @@
+<?php if(!isset($_SESSION['username'])){session_start();}?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,7 +28,18 @@
                 </button>
             </div>
             <ul class="nav-links">
-                <li><a href="./login.php">Account</a></li>
+
+                
+                <li>
+                <?php
+                if(isset($_SESSION['username'])){
+                    echo "<a href='./user_profile.php' style='color: white;'>Account</a>";
+                }
+                else{
+                    echo "<a href='./login.php' style='color: white;'>Account</a>";
+                }
+                ?>
+                <!-- <a href="./login.php">Account</a> --></li>
             </ul>
         </div>
         </nav>

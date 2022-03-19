@@ -1,9 +1,19 @@
+<?php 
+
+session_start();
+  if(!isset($_SESSION['username'])){
+    header("Location: ./login.php");
+    die();
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/assets/img/tab_icon.png">
+        <link rel="icon" href="./assets/img/tab_icon.png">
 
         <!-- Google Font Link -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,30 +23,11 @@
         <!-- Online Bootstrap Link -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
-        <link rel="stylesheet" href="/css/userProfile.css">
+        <link rel="stylesheet" href="./css/userProfile.css">
         <title>ConnServ</title>
     </head>
     <body>
-      <nav>
-        <div class="container-fluid">
-            <div class="logo">
-                    <img class="logo-img" src="/assets/img/ConnServ_Logo.png" alt="connserv-logo">
-
-            </div>
-            <div class="search-div">
-                <input class="servicetxt" type="text" placeholder="Service, Business">
-                <input class="locationtxt" type="text" placeholder="Location">
-                <button class="searchbtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Sign In/Up</a><!-- <a href="#">Account</a> --></li>
-            </ul>
-        </div>
-      </nav>
+      <?php include "./navbar.php"?>
         <div class="body_container">
             <div class="container-fluid">
 
@@ -65,6 +56,10 @@
                 <li class="nav-item col-2">
                   <a class="nav-link" id="pills-business-tab" data-toggle="pill" href="#pills-business" role="tab" aria-controls="pills-business" aria-selected="false">My Business</a>
                 </li>
+                <!-- Account Pill -->
+                <li class="nav-item col-2">
+                  <a class="nav-link" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="false">My Account</a>
+                </li>
               </ul>
                     
               <div class="col-12 tab_container">
@@ -79,7 +74,7 @@
                             </div>
                             <div class="content">
                               <div class="content_format">
-                                <form>
+                                <form action="./includes/edit.inc.php" method="POST">
                                   <div class="row">
 
                                     <div class="col-9">
@@ -87,15 +82,23 @@
                                       <div class="form-row">
                                         <div class="form-group col-md-3">
                                           <label for="inputUsername">Username</label>
-                                          <input type="text" class="form-control" id="inputUsername" value="Username101" disabled>
+                                          <input type="text" class="form-control" id="inputUsername" value="<?php echo $_SESSION['username'];?>" disabled>
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputEmail">Email</label>
-                                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                          <input type="email" class="form-control" id="inputEmail" name="edit_email" value="<?php echo $_SESSION['email'];?>" placeholder="Email">
                                         </div>
                                         <div class="form-group col-md-3">
-                                          <label for="inputPassword">Password</label>
-                                          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                          
+                                        <label for="inputPassword">Password</label>
+                                          <label class="sr-only" for="inputPassword">Password</label>
+                                          <div class="input-group">
+                                            <input type="password" class="form-control" id="inputPassword" name="edit_password" value="<?php echo $_SESSION['password'];?>" placeholder="Password">
+                                            <div class="input-group-prepend">
+                                              <div class="input-group-text">
+                                                <input type="checkbox" onclick="showPassword()"></div>
+                                            </div>
+                                          </div>
                                         </div>
                                         
                                         <div class="form-group col-md-3">
@@ -103,15 +106,15 @@
                                             <label>Gender</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="Male">
+                                            <input class="form-check-input" type="radio" name="edit_gender" id="male" value="Male">
                                             <label class="form-check-label" for="male">Male</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="Female">
+                                            <input class="form-check-input" type="radio" name="edit_gender" id="female" value="Female">
                                             <label class="form-check-label" for="female">Female</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="Other">
+                                            <input class="form-check-input" type="radio" name="edit_gender" id="other" value="Other">
                                             <label class="form-check-label" for="other">Prefer not to say</label>
                                           </div>
                                         </div>
@@ -119,19 +122,19 @@
                                       <div class="form-row">
                                         <div class="form-group col-md-3">
                                           <label for="inputName">First Name</label>
-                                          <input type="text" class="form-control" id="inputName" placeholder="Ex. Marielle">
+                                          <input type="text" class="form-control" id="inputName" name="edit_firstname" placeholder="Ex. Marielle">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputSurname">Surname</label>
-                                          <input type="text" class="form-control" id="inputSurname" placeholder="Ex. De vera">
+                                          <input type="text" class="form-control" id="inputSurname" name="edit_surname" placeholder="Ex. De vera">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputPhone">Phone Number</label>
-                                          <input type="text" class="form-control" id="inputPhone">
+                                          <input type="text" class="form-control" id="inputPhone" name="edit_phonenumber" >
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputDate">Birthdate</label>
-                                          <input type="date" class="form-control" id="inputDate" min="1950-01-01" max="2010-01-01">
+                                          <input type="date" class="form-control" id="inputDate" name="edit_bdate" min="1950-01-01" max="2010-01-01">
                                         </div>
                                       </div>
                                     </div>
@@ -153,11 +156,11 @@
                                   <div class="form-row">
                                     <div class="form-group col-md-3">
                                       <label for="inputHouse">House No.</label>
-                                      <input type="text" class="form-control" id="inputHouse">
+                                      <input type="text" class="form-control" id="inputHouse" name="edit_house">
                                     </div>
                                     <div class="form-group col-md-3">
                                       <label for="inputStreet">Street</label>
-                                      <input type="text" class="form-control" id="inputStreet">
+                                      <input type="text" class="form-control" id="inputStreet" name="edit_street">
                                     </div>
                                     <div class="form-group col-md-3">
                                       <label for="inputBarangay">Barangay</label>
@@ -219,9 +222,10 @@
                               </div>
                             </div>
                           </div>
-                  
-                        </div>
+                  </div>
+
                         <!-- Appointments Contents -->
+                  
                   <div class="tab-pane fade appointments" id="pills-appointment" role="tabpanel" aria-labelledby="pills-appointment-tab">
                     <div class="container row">
                       <h4>Your Appointments</h4>
@@ -246,14 +250,12 @@
                   <div class="tab-pane fade messages" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
                         <p>AWDASDAWDSD</p>
                   </div>
+
                         <!-- Notifications Contents -->
+                  
                   <div class="tab-pane fade notifications" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
                         <p>AWDASDAWDADS</p>
                   </div>    
-                        <!-- Settings Contents -->
-                  <!-- <div class="tab-pane fade settings" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
-                          
-                  </div> -->
                         <!-- Business Contents -->
                   <div class="tab-pane fade business" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
                     <div class="business_contents">
@@ -268,10 +270,26 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="tab-pane fade messages" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
+                    <form action="./includes/signout.inc.php" method="POST">
+                      <button type="submit" name="logout">Logout</button>
+                    </form>    
+                  </div>
                 </div>
               </div>
             </div>
         </div>
+        <script>
+          function showPassword() {
+              var x = document.getElementById("inputPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+          }
+    </script>
         <script src="./js/userProfile/appointmentCards.js"></script>
         <script src="./js/userProfile/profile_image.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

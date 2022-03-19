@@ -1,64 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
-    <style>
-        .content{
-            display: none;
-            transition: height linear 0.5s;
-        }
-        .showBtn{
-            width: 100%;
-            border: none;
-            background-color: transparent
-        }
-        .showBtn:focus{
-            outline: none;
-        }
-    </style>
-    <title>Document</title>
-</head>
-<body>
-
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-        <div class="card-header"><button class="showBtn" onclick="show_hide()">Bonheur Apparel</button></div>
-        <div class="content">
-
-            <div class="card-body">
-                <h5 class="card-title">Service Title</h5>
-                <p class="card-text">Schedule</p>
-              </div>
-        </div>
-    </div>
-    <p>awdasdsad</p>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Password Show or Hide Toggle | CodeLab</title>
+    <link rel="stylesheet" href="style.css">
     
+        <!-- Google Font Link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+        <!-- Online Bootstrap Link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <style>
+          input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+        </style>
+  </head>
+  <body>
+
+    <div class="col-sm-3 my-1">
+      <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+      <div class="input-group">
+        <input type="password" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <input type="checkbox" onclick="myFunction()"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Password field -->
+Password: <input type="password" value="FakePSW" id="myInput">
+
+<!-- An element to toggle between password visibility -->
+<input type="checkbox" onclick="myFunction()">
     <script>
-        var container = document.querySelector('.content');
-        
-        function show_hide(){
-            if(container.style.display == "none"){
-                container.style.display = "block";
-            }
-            else{
-                container.style.display = "none";
-            }
-        }
-
-/* 
-        if(container.style.height == 200){
-            showBtn.addEventListener('click', function(e){
-                container.style.height = 0 + 'px';
-            });
-        } */
+      function myFunction() {
+  var x = document.getElementById("inlineFormInputGroupUsername");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
     </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-    <script src="./js/userProfile/profile_image.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>

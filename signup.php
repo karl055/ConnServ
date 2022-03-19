@@ -6,7 +6,7 @@
         <link rel="icon" href="./assets/img/tab_icon.png">
 
         <?php include './includes/bootstrap_con.php';?>
-
+        
         <link rel="stylesheet" href="./css/signup.css">
         <title>Sign Up | Connserv PH</title>
     </head>
@@ -22,14 +22,43 @@
                         <div class="inner-container">
                             <h4>Register</h4>
                             <div class="form-login">
-                                <form action="./includes/signup.inc.php" method="post">
-                                    <input type="text" name="fname" placeholder="First Name">
-                                    <input type="text" name="lname" placeholder="Last Name">
-                                    <input type="text" name="email" placeholder="Email">
-                                    <input class="pass-txt" type="password" name="password" placeholder="Password">
-                                    <input class="pass-txt" type="password" name="conf_password" placeholder="Re-enter Password">
+                                <form class="needs-validation" action="./includes/signup.inc.php" method="post" novalidate>
+                                    <div>
+                                        <input type="text" class="form-control" id="validationCustom05" name="fname" placeholder="First Name" required>
+                                        <div class="invalid-feedback">
+                                            <?php if(empty($_POST['fname'])){ echo"Please Provide a valid Input";}?>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="text" class="form-control" id="validationCustom05" name="lname" placeholder="Last Name" required>
+                                        <div class="invalid-feedback">
+                                            <?php if(empty($_POST['lname'])){ echo"Please Provide a valid Input";}?>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="text" class="form-control" id="validationCustom05" name="email" placeholder="Email" required>
+                                        <div class="invalid-feedback">
+                                            <?php if(empty($_POST['email'])){ echo"Please Provide a valid Input";}?>
+                                            
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input class="pass-txt form-control" id="validationCustom05" type="password" name="password" placeholder="Password" required>
+                                        
+                                        <div class="invalid-feedback">
+                                            <?php if(empty($_POST['password'])){ echo "Please Provide a valid Input";}?>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input class="pass-txt form-control" id="validationCustom05" type="password" name="conf_password" placeholder="Re-enter Password" required>
+                                        <div class="invalid-feedback">
+                                            <?php if(empty($_POST['conf_password'])){ echo"Please Provide a valid Input";}?>
+                                        </div>
+                                    </div>
+                                    
                                     <div class="buttons-accounts">
-                                        <button class="signup">Register</button>
+                                        <button class="signup" class="form-control" id="validationCustom05" type="submit">Register</button>
+                                        
                                     </div>
                                 </form>
                                 <div class="buttons-accounts">
@@ -44,5 +73,25 @@
                 </div>
             </div>
         </div>
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                    }, false);
+                });
+                }, false);
+            })();
+      </script>
     </body>
 </html> 
