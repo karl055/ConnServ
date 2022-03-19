@@ -22,13 +22,17 @@
                         <div class="inner-container">
                             <h4>Register</h4>
                             <div class="form-login">
-                                <form action="#">
+                                <form action="./includes/signup.inc.php" method="post">
+                                    <input type="text" name="fname" placeholder="First Name">
+                                    <input type="text" name="lname" placeholder="Last Name">
                                     <input type="text" name="email" placeholder="Email">
                                     <input class="pass-txt" type="password" name="password" placeholder="Password">
                                     <input class="pass-txt" type="password" name="conf_password" placeholder="Re-enter Password">
+                                    <div class="buttons-accounts">
+                                        <button class="signup">Register</button>
+                                    </div>
                                 </form>
                                 <div class="buttons-accounts">
-                                    <button class="signup">Register</button>
                                     <a href="facebook.com"><button class="login">Login with Facebook</button></a>
                                 </div>
                                 <div style="display:flex">

@@ -39,26 +39,30 @@
       </nav>
         <div class="body_container">
             <div class="container-fluid">
-                        <!-- <div class="user_icon">
-                          <div class="profile_picture">
-                            <img src="./assets/img/categories/computer.png" alt="User Icon" id="photo">
-                          </div>
-                          <p>User Name</p>
-                        </div> -->
+
               <ul class="nav nav-pills mb-3 col-12" id="pills-tab" role="tablist">
-                <li class="nav-item">
+                <!-- Profile Pill -->
+                <li class="nav-item col-2">
                   <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">Profile</a>
                 </li>
-                <li class="nav-item">
+                <!-- Appointments Pill -->
+                <li class="nav-item col-2">
                   <a class="nav-link" id="pills-appointment-tab" data-toggle="pill" href="#pills-appointment" role="tab" aria-controls="pills-appointment" aria-selected="false">Appointments</a>
                 </li>
-                <li class="nav-item">
+                <!-- Messages Pill -->
+                <li class="nav-item col-2">
                   <a class="nav-link" id="pills-messages-tab" data-toggle="pill" href="#pills-messages" role="tab" aria-controls="pills-messages" aria-selected="false">Messages</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">Settings</a>
+                <!-- Notifications Pill -->
+                <li class="nav-item col-2">
+                  <a class="nav-link" id="pills-notifications-tab" data-toggle="pill" href="#pills-notifications" role="tab" aria-controls="pills-notifications" aria-selected="false">Notifications</a>
                 </li>
-                <li class="nav-item">
+                <!-- Settings Pill -->
+                <!-- <li class="nav-item col-2">
+                  <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">Settings</a>
+                </li> -->
+                <!-- Business Pill -->
+                <li class="nav-item col-2">
                   <a class="nav-link" id="pills-business-tab" data-toggle="pill" href="#pills-business" role="tab" aria-controls="pills-business" aria-selected="false">My Business</a>
                 </li>
               </ul>
@@ -66,8 +70,8 @@
               <div class="col-12 tab_container">
                 <div class="tab-content" id="v-pills-tabContent">
 
-                        <!-- Profile Pill -->
-                  <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <!-- Profile Contents -->
+                  <div class="tab-pane fade show active profile" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                           <div class="main_content">
                             <div class="title_head">
                               <h4>My Profile</h4>
@@ -93,6 +97,24 @@
                                           <label for="inputPassword">Password</label>
                                           <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                                         </div>
+                                        
+                                        <div class="form-group col-md-3">
+                                          <div>
+                                            <label>Gender</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="Male">
+                                            <label class="form-check-label" for="male">Male</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="Female">
+                                            <label class="form-check-label" for="female">Female</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="Other">
+                                            <label class="form-check-label" for="other">Prefer not to say</label>
+                                          </div>
+                                        </div>
                                       </div>
                                       <div class="form-row">
                                         <div class="form-group col-md-3">
@@ -107,21 +129,9 @@
                                           <label for="inputPhone">Phone Number</label>
                                           <input type="text" class="form-control" id="inputPhone">
                                         </div>
-                                      </div>
-                                      <div class="form-row">
                                         <div class="form-group col-md-3">
-                                          <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="Male">
-                                            <label class="form-check-label" for="male">Male</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="Female">
-                                            <label class="form-check-label" for="female">Female</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="Other">
-                                            <label class="form-check-label" for="other">Other</label>
-                                          </div>
+                                          <label for="inputDate">Birthdate</label>
+                                          <input type="date" class="form-control" id="inputDate" min="1950-01-01" max="2010-01-01">
                                         </div>
                                       </div>
                                     </div>
@@ -200,19 +210,27 @@
                                       <input type="text" class="form-control" id="inputZip">
                                     </div>
                                   </div>
-                                  <button type="submit" class="btn btn-primary">Save</button>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                      <button type="submit" class="btn btn-primary saveBtn">Save</button>
+                                    </div>
+                                  </div>
                                 </form>
                               </div>
                             </div>
                           </div>
-                  </div>
-
-                        <!-- Appointments Pill -->
+                  
+                        </div>
+                        <!-- Appointments Contents -->
                   <div class="tab-pane fade appointments" id="pills-appointment" role="tabpanel" aria-labelledby="pills-appointment-tab">
-                          <h5>You Appointments</h5>
+                    <div class="container row">
+                      <h4>Your Appointments</h4>
+                    </div>
+                    <div class="col-12">
+                      <div class="col-3">
                           <div class="main_content">
-                            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                              <div class="card-header"><button class="showBtn" onclick="show_hide()">Bonheur Apparel</button></div>
+                            <div class="card mb-3" style="max-width: 18rem;">
+                              <div class="card-header"><p class="showBtn" onclick="show_hide()">Bonheur Apparel</p></div>
                               <div class="appointment_container">
                                   <div class="card-body">
                                       <h5 class="card-title">Service Title</h5>
@@ -221,16 +239,34 @@
                               </div>
                             </div>
                           </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="tab-pane fade" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-
+                        <!-- Messages Contents -->
+                  <div class="tab-pane fade messages" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
+                        <p>AWDASDAWDSD</p>
                   </div>
-                  <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
+                        <!-- Notifications Contents -->
+                  <div class="tab-pane fade notifications" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
+                        <p>AWDASDAWDADS</p>
+                  </div>    
+                        <!-- Settings Contents -->
+                  <!-- <div class="tab-pane fade settings" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
                           
-                  </div>
-                  
-                  <div class="tab-pane fade" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
-                          
+                  </div> -->
+                        <!-- Business Contents -->
+                  <div class="tab-pane fade business" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
+                    <div class="business_contents">
+                      <div class="contents_container">
+                        <div class="container_display">
+                          <h1>No Business? Create now!</h1>
+                          <a href="./create_business.html" class="createLink">
+                            <button type="submit" class="createBtn">Create Business</button>
+                          </a>
+                          <p>You must use Desktop or Laptop before creating a business.</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -240,7 +276,7 @@
         <script src="./js/userProfile/profile_image.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/boxaotstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
       </body>
 </html>
