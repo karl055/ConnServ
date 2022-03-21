@@ -74,7 +74,7 @@ session_start();
                             </div>
                             <div class="content">
                               <div class="content_format">
-                                <form action="./includes/edit.inc.php" method="POST">
+                                <form action="./includes/edit.inc.php" class="needs-validation"  method="POST" novalidate>
                                   <div class="row">
 
                                     <div class="col-9">
@@ -86,14 +86,14 @@ session_start();
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputEmail">Email</label>
-                                          <input type="email" class="form-control" id="inputEmail" name="edit_email" value="<?php echo $_SESSION['email'];?>" placeholder="Email">
+                                          <input type="email" class="form-control" id="inputEmail" name="edit_email" value="<?php echo $_SESSION['email'];?>" placeholder="Email" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                           
                                         <label for="inputPassword">Password</label>
                                           <label class="sr-only" for="inputPassword">Password</label>
                                           <div class="input-group">
-                                            <input type="password" class="form-control" id="inputPassword" name="edit_password" value="<?php echo $_SESSION['password'];?>" placeholder="Password">
+                                            <input type="password" class="form-control" id="inputPassword" name="edit_password" value="<?php echo $_SESSION['password'];?>" placeholder="Password" required>
                                             <div class="input-group-prepend">
                                               <div class="input-group-text">
                                                 <input type="checkbox" onclick="showPassword()"></div>
@@ -122,19 +122,19 @@ session_start();
                                       <div class="form-row">
                                         <div class="form-group col-md-3">
                                           <label for="inputName">First Name</label>
-                                          <input type="text" class="form-control" id="inputName" name="edit_firstname" placeholder="Ex. Marielle">
+                                          <input type="text" class="form-control" id="inputName" name="edit_firstname" placeholder="Ex. Marielle" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputSurname">Surname</label>
-                                          <input type="text" class="form-control" id="inputSurname" name="edit_surname" placeholder="Ex. De vera">
+                                          <input type="text" class="form-control" id="inputSurname" name="edit_surname" placeholder="Ex. De vera" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputPhone">Phone Number</label>
-                                          <input type="text" class="form-control" id="inputPhone" name="edit_phonenumber" >
+                                          <input type="text" class="form-control" id="inputPhone" name="edit_phonenumber" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputDate">Birthdate</label>
-                                          <input type="date" class="form-control" id="inputDate" name="edit_bdate" min="1950-01-01" max="2010-01-01">
+                                          <input type="date" class="form-control" id="inputDate" name="edit_bdate" min="1950-01-01" max="2010-01-01" required>
                                         </div>
                                       </div>
                                     </div>
@@ -156,15 +156,15 @@ session_start();
                                   <div class="form-row">
                                     <div class="form-group col-md-3">
                                       <label for="inputHouse">House No.</label>
-                                      <input type="text" class="form-control" id="inputHouse" name="edit_house">
+                                      <input type="text" class="form-control" id="inputHouse" name="edit_house" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                       <label for="inputStreet">Street</label>
-                                      <input type="text" class="form-control" id="inputStreet" name="edit_street">
+                                      <input type="text" class="form-control" id="inputStreet" name="edit_street" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                       <label for="inputBarangay">Barangay</label>
-                                      <select id="inputBarangay" class="form-control">
+                                      <select id="inputBarangay" class="form-control"  name="edit_brgy" required>
                                         <option value="Bagumbayan" selected>Bagumbayan</option>
                                         <option value="Bambang">Bambang</option>
                                         <option value="Calzada">Calzada</option>
@@ -199,18 +199,18 @@ session_start();
                                   <div class="form-row">
                                     <div class="form-group col-md-3">
                                       <label for="inputCity">City</label>
-                                      <input type="text" class="form-control" id="inputCity" value="Taguig City" disabled>
+                                      <input type="text" class="form-control" id="inputCity" name="edit_city" value="Taguig City" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                       <label for="inputDistrict">District</label>
-                                      <select id="inputDistrict" class="form-control">
-                                        <option selected>District 1</option>
-                                        <option>District 2</option>
+                                      <select id="inputDistrict" class="form-control" name="edit_district" required>
+                                        <option selected value="District 1">District 1</option>
+                                        <option value="District 2">District 2</option>
                                       </select>
                                     </div>
                                     <div class="form-group col-md-2">
                                       <label for="inputZip">Zip</label>
-                                      <input type="text" class="form-control" id="inputZip">
+                                      <input type="text" class="form-control" id="inputZip" name="edit_zip" required>
                                     </div>
                                   </div>
                                   <div class="form-row">
