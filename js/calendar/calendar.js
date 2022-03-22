@@ -2,7 +2,6 @@ mobiscroll.setOptions({
     theme: 'ios',
     themeVariant: 'light'
 });
-
 var now = new Date(),
     week = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 6);
 
@@ -43,3 +42,5 @@ document
         instance.open();
         return false;
     });
+
+    
