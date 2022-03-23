@@ -31,6 +31,26 @@
   width: 100%;
 }
 
+.btnAddAppointment .addAppointment {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: white;
+  background-color: #252424;
+}
+
+.btnAddAppointment :hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+  background-color: white;
+  color: #252424;
+}
+
+.btnAddAppointment :focus {
+  outline: none;
+}
+
 /* Calendar STYLE */
 .md-mobile-picker-header {
   font-size: 14px;
@@ -96,7 +116,7 @@ input.md-mobile-picker-input:focus {
 }
 
 .time_content .selectTime {
-  width: 90px;
+  width: 70px;
   height: 45px;
   text-align: center;
   font-size: 16px;
