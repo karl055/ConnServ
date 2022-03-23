@@ -14,6 +14,7 @@
         <link href="./css/create_appointment.css" rel="stylesheet" />
     </head>
     <body>
+        <?php include './navbar.php';?>
         <div class="main_body">
             <form action="#" autocomplete="off">
             <div class="container-fluid row">
@@ -49,6 +50,15 @@
                         <select id="inputSubService" class="form-control" name="inputSubService" required>
                             
                         </select>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="note_title">
+                            <label>Extra Notes: </label>
+                        </div>
+                        <div class="note_content">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="col-7">
@@ -149,6 +159,7 @@
                                         <input type="text" class="txtAddress" name="city" placeholder="City">
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@
 
         <?php include './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/homepage.css">
+        <link rel="stylesheet" href="./css/navbar.css">
         <title>ConnServ</title>
     </head>
     <body>
