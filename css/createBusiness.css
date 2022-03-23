@@ -1,1 +1,232 @@
-nav{top:0;display:-webkit-box;display:-ms-flexbox;display:flex;position:-webkit-sticky;position:sticky;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:100vw;min-height:10vh;background-size:cover;background-color:#252424;z-index:99}nav .container-fluid{display:-webkit-box;display:-ms-flexbox;display:flex}nav .logo{width:30%}nav .logo .logo-img{width:10rem;margin:5px}nav .search-div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:right;-ms-flex-pack:right;justify-content:right;width:80%}nav .search-div .servicetxt{width:30%;height:2.5rem;border-radius:5px;border:none;padding:5px;margin:5px}nav .search-div .locationtxt{width:20%;height:2.5rem;border-radius:5px;border:none;padding:5px;margin:5px}nav .search-div .searchbtn{width:2.5rem;height:2.58rem;border-radius:5px;border:none;margin:5px 3px}nav .nav-links{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;width:15%;margin:auto}nav .nav-links li{list-style-type:none}nav .nav-links li a{color:white;width:100px}nav .nav-links li :hover{color:#f574ec;text-decoration:none}nav :focus{outline:none}@media screen and (min-width: 950px) and (max-width: 1124px){.servicetxt{width:5em;min-height:2em;border-radius:5px;border:none;padding:5px}.locationtxt{min-width:5rem;min-height:2rem;border-radius:5px;border:none;padding:5px}.searchbtn{min-width:1rem;min-height:1rem}}*{margin:0;padding:0}body{height:750px}.business_container .container_title{margin:2rem 0 1rem}.business_container .tool_tip{font-size:1rem;color:red}.business_container .business_trade .business_name{width:100%;height:2.4rem;padding:5px}.business_container .business_trade .trade_name{width:100%;height:2.4rem;padding:5px}.business_container .business_address .business_unit_no{width:100%;height:2.4rem;padding:5px}.business_container .business_address .business_building{width:100%;height:2.4rem;padding:5px}.business_container .business_address .business_house_no{width:100%;height:2.4rem;padding:5px}.business_container .business_address .business_street{width:100%;height:2.4rem;padding:5px}.business_container .business_address .business_village{width:100%;height:2.4rem;padding:5px}.business_container .business_address .business_city{width:100%;height:2.4rem;padding:5px}.business_container .business_location{width:100%;padding:5px}.business_container .card{width:100%}.business_container .card button{background-color:transparent;border:none}.business_container .card :focus{outline:none}.business_container .card .appointment_container{display:none;-webkit-transition:height linear 0.5s;transition:height linear 0.5s}.business_container hr{border:1px solid black}.business_container .owner_valid label{display:block}.business_container .createBtn{width:100%;height:50px;border-radius:5px;border:none;background-color:#5e0cc4;color:white}
+/*  
+    !COLORS 
+*/
+nav {
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100vw;
+  min-height: 10vh;
+  background-size: cover;
+  background-color: #252424;
+  z-index: 99;
+}
+
+nav .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .logo {
+  width: 30%;
+}
+
+nav .logo .logo-img {
+  width: 10rem;
+  margin: 5px;
+}
+
+nav .search-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 80%;
+}
+
+nav .search-div .servicetxt {
+  width: 30%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .locationtxt {
+  width: 20%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .searchbtn {
+  width: 2.5rem;
+  height: 2.58rem;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 3px;
+}
+
+nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 15%;
+  margin: auto;
+}
+
+nav .nav-links li {
+  list-style-type: none;
+}
+
+nav .nav-links li a {
+  color: white;
+  width: 100px;
+}
+
+nav .nav-links li :hover {
+  color: #f574ec;
+  text-decoration: none;
+}
+
+nav :focus {
+  outline: none;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  /* .nav-links {
+    li {
+    }
+  } */
+  .servicetxt {
+    width: 5em;
+    min-height: 2em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .locationtxt {
+    min-width: 5rem;
+    min-height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .searchbtn {
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 750px;
+}
+
+.business_container .container_title {
+  margin: 2rem 0 1rem;
+}
+
+.business_container .tool_tip {
+  font-size: 1rem;
+  color: red;
+}
+
+.business_container .business_trade .business_name {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_trade .trade_name {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_unit_no {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_building {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_house_no {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_street {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_village {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_city {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_location {
+  width: 100%;
+  padding: 5px;
+}
+
+.business_container .card {
+  width: 100%;
+}
+
+.business_container .card button {
+  background-color: transparent;
+  border: none;
+}
+
+.business_container .card :focus {
+  outline: none;
+}
+
+.business_container .card .appointment_container {
+  display: none;
+  -webkit-transition: height linear 0.5s;
+  transition: height linear 0.5s;
+}
+
+.business_container hr {
+  border: 1px solid black;
+}
+
+.business_container .owner_valid label {
+  display: block;
+}
+
+.business_container .createBtn {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: #5e0cc4;
+  color: white;
+}

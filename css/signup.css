@@ -1,1 +1,256 @@
-nav{top:0;display:-webkit-box;display:-ms-flexbox;display:flex;position:-webkit-sticky;position:sticky;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:100vw;min-height:10vh;background-size:cover;background-color:#252424;z-index:99}nav .container-fluid{display:-webkit-box;display:-ms-flexbox;display:flex}nav .logo{width:30%}nav .logo .logo-img{width:10rem;margin:5px}nav .search-div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:right;-ms-flex-pack:right;justify-content:right;width:80%}nav .search-div .servicetxt{width:30%;height:2.5rem;border-radius:5px;border:none;padding:5px;margin:5px}nav .search-div .locationtxt{width:20%;height:2.5rem;border-radius:5px;border:none;padding:5px;margin:5px}nav .search-div .searchbtn{width:2.5rem;height:2.58rem;border-radius:5px;border:none;margin:5px 3px}nav .nav-links{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;width:15%;margin:auto}nav .nav-links li{list-style-type:none}nav .nav-links li a{color:white;width:100px}nav .nav-links li :hover{color:#f574ec;text-decoration:none}nav :focus{outline:none}@media screen and (min-width: 950px) and (max-width: 1124px){.servicetxt{width:5em;min-height:2em;border-radius:5px;border:none;padding:5px}.locationtxt{min-width:5rem;min-height:2rem;border-radius:5px;border:none;padding:5px}.searchbtn{min-width:1rem;min-height:1rem}}*{padding:0;margin:0}.page-body{min-height:100vh;display:block}.page-body .body-container{padding:5rem 2rem 3rem;display:-webkit-box;display:-ms-flexbox;display:flex;max-width:100%;height:30rem}.page-body .body-container .image-container{height:auto}.page-body .body-container .image-container img{width:100%;margin-top:25%;margin-bottom:25%}.page-body .body-container .login-container{width:100%;height:auto}.page-body .body-container .login-container .login-form{width:40%;height:70%;margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto}.page-body .body-container .login-container .login-form .inner-container{width:100%}.page-body .body-container .login-container .login-form .inner-container h4{margin-bottom:.5rem}.page-body .body-container .login-container .login-form .inner-container .form-login{display:block}.page-body .body-container .login-container .login-form .inner-container .form-login input[type=text],.page-body .body-container .login-container .login-form .inner-container .form-login input[type=password]{width:100%;border:none;border-bottom:2px solid #252424;padding:.5rem;margin-top:.5rem}.page-body .body-container .login-container .login-form .inner-container .form-login :focus{outline:none}.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts{margin-top:2rem;display:block}.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts button{height:3rem;width:100%;border-radius:5px}.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup{margin-right:1rem;background-color:#5e0cc4;border:none;color:white;margin-bottom:1rem}.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup:hover{background-color:white;color:black;border:1px solid #5e0cc4;-webkit-transition:.3s;transition:.3s}.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a{width:50%}.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .login{border:1px solid #5e0cc4;width:100%}.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .login:hover{background-color:#5e0cc4;color:white;-webkit-transition:.3s;transition:.3s}.page-body .body-container .login-container .login-form .inner-container .form-login p{margin:.7rem .2rem 0;font-size:.8rem}
+/*  
+    !COLORS 
+*/
+nav {
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100vw;
+  min-height: 10vh;
+  background-size: cover;
+  background-color: #252424;
+  z-index: 99;
+}
+
+nav .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .logo {
+  width: 30%;
+}
+
+nav .logo .logo-img {
+  width: 10rem;
+  margin: 5px;
+}
+
+nav .search-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 80%;
+}
+
+nav .search-div .servicetxt {
+  width: 30%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .locationtxt {
+  width: 20%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .searchbtn {
+  width: 2.5rem;
+  height: 2.58rem;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 3px;
+}
+
+nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 15%;
+  margin: auto;
+}
+
+nav .nav-links li {
+  list-style-type: none;
+}
+
+nav .nav-links li a {
+  color: white;
+  width: 100px;
+}
+
+nav .nav-links li :hover {
+  color: #f574ec;
+  text-decoration: none;
+}
+
+nav :focus {
+  outline: none;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  /* .nav-links {
+    li {
+    }
+  } */
+  .servicetxt {
+    width: 5em;
+    min-height: 2em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .locationtxt {
+    min-width: 5rem;
+    min-height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .searchbtn {
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.page-body {
+  min-height: 100vh;
+  display: block;
+}
+
+.page-body .body-container {
+  padding: 5rem 2rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  height: 30rem;
+}
+
+.page-body .body-container .image-container {
+  height: auto;
+}
+
+.page-body .body-container .image-container img {
+  width: 100%;
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+
+.page-body .body-container .login-container {
+  width: 100%;
+  height: auto;
+}
+
+.page-body .body-container .login-container .login-form {
+  width: 40%;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* 
+        border-style: solid;
+        border-width: 2px; */
+}
+
+.page-body .body-container .login-container .login-form .inner-container {
+  width: 100%;
+}
+
+.page-body .body-container .login-container .login-form .inner-container h4 {
+  margin-bottom: .5rem;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login {
+  display: block;
+  /* 
+            label{
+              margin-bottom: 0;
+              margin-top: .5rem;
+            } */
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login input[type=text], .page-body .body-container .login-container .login-form .inner-container .form-login input[type=password] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #252424;
+  padding: .5rem;
+  margin-top: .5rem;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login :focus {
+  outline: none;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts {
+  margin-top: 2rem;
+  display: block;
+  /* .signup{
+                border: 1px solid $font-color-b;
+                &:hover{
+                  background-color: $font-color-b;
+                  color: white;
+                  transition: .3s;
+                }
+              } */
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts button {
+  height: 3rem;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup {
+  margin-right: 1rem;
+  background-color: #5e0cc4;
+  border: none;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid #5e0cc4;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a {
+  width: 50%;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .login {
+  border: 1px solid #5e0cc4;
+  width: 100%;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .login:hover {
+  background-color: #5e0cc4;
+  color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login p {
+  margin: .7rem .2rem 0;
+  font-size: .8rem;
+}
