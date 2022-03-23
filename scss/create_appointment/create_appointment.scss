@@ -1,3 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    .main_body{
+        margin: 100px 50px 100px;
+
+        .personal_content{
+
+            .full_name{
+                width: 100%;
+                height: 40px;
+                padding: 5px;
+            }
+            .contact_number{
+                width: 100%;
+                height: 40px;
+                padding: 5px;
+            }
+            
+            :focus{
+                outline: none;
+            }
+        }
+        .address_content{
+            
+            :focus{
+                outline: none;
+            }
+        }
+        .container-fluid{
+            width: 100%;
+        }
+    }
+}
+
 /* Calendar STYLE */
 
 .md-mobile-picker-header {
@@ -87,8 +123,8 @@ input.md-mobile-picker-input {
 .address_content{
     .txtAddress{
         height: 40px;
-        width: 45%;
+        width: 100%;
+        margin-top: 5px;
         padding: 5px;
-        margin: 5px 0 0;
     }
 }

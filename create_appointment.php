@@ -14,104 +14,150 @@
         <link href="./css/create_appointment.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="container-fluid row">
-            <div class="col-5">
-                <div class="col-12">
-                    <div class="mbsc-row">
-                        <div class="col-12">
-                            <div class="date_title">
-                                <label>Select Preferred Date</label>
+        <div class="main_body">
+            <div class="container-fluid row">
+                <div class="col-5">
+                    <div class="col-12">
+                        <div class="mbsc-row">
+                            <div class="col-12">
+                                <div class="date_title">
+                                    <label>Select Preferred Date</label>
+                                </div>
+                                <input id="demo-mobile-picker-input" class="md-mobile-picker-input" placeholder="Please Select..." />
                             </div>
-                            <input id="demo-mobile-picker-input" class="md-mobile-picker-input" placeholder="Please Select..." />
                         </div>
                     </div>
+                    <div class="col-12">
+                        <label for="inputService">Type of Service</label>
+                        <select id="inputService" class="form-control" name="inputservice" required>
+                            <option value="ArtandCulture" selected>Art and Culture</option>
+                            <option value="BeautyandWellness">Beauty and Wellness</option>
+                            <option value="Construction">Construction</option>
+                            <option value="Education">Education</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Events">Events</option>
+                            <option value="FoodandBeverages">Food and Beverages</option>
+                            <option value="MedicalCare">Medical Care</option>
+                            <option value="ProfessionalServices">Professional Services</option>
+                            <option value="ShoppingandRetail">Shopping and Retail</option>
+                            <option value="Transportation">Transportation</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputSubService">Type of Sub Service</label>
+                        <select id="inputSubService" class="form-control" name="inputSubService" required>
+                            
+                        </select>
+                    </div>
                 </div>
-                <div class="col-12">
-                    <label for="inputService">Type of Service</label>
-                    <select id="inputService" class="form-control" name="inputservice" required>
-                        <option value="Art and Culture" selected>Art and Culture</option>
-                        <option value="Beauty and Wellness">Beauty and Wellness</option>
-                        <option value="Construction">Construction</option>
-                        <option value="Education">Education</option>
-                        <option value="Electronics">Electronics</option>
-                        <option value="Events">Events</option>
-                        <option value="Food and Beverages">Food and Beverages</option>
-                        <option value="Medical Care">Medical Care</option>
-                        <option value="Shopping and Retail">Shopping and Retail</option>
-                        <option value="Sports and Recreation">Sports and Recreation</option>
-                        <option value="Tourism">Tourism</option>
-                        <option value="Utilities">Utilities</option>
-                    </select>
+                <div class="col-7">
+                    <div class="col-12">
+                        <div class="container-fluid">
+                            <div class="time_title">
+                                <label>Select Preferred Time</label>
+                            </div>
+                            <div class="time_content">
+                                <select name="hour" id="timeHour" class="selectTime"></select>
+                                <span>:</span>
+                                <select name="mins" id="timeMins" class="selectTime"></select>
+                                <input type="radio" name="time" id="am" value="AM">
+                                <label for="am" class="timeLabel">AM</label>
+                                <input type="radio" name="time" id="pm" value="PM">
+                                <label for="pm" class="timeLabel">PM</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="container-fluid">
+                            <div class="personal_container">
+                                <label>Personal Information</label>
+                            </div>
+                            <div class="personal_content row">
+                                <div class="col-5" style="padding-right: 0 !important;">
+                                    <input type="text" class="full_name" name="lastname" id="lname" placeholder="Last Name.." autocomplete="off">
+                                </div>
+                                <div class="col-5" style="padding-right: 0 !important;">
+                                    <input type="text" class="full_name" name="firstname" id="fname" placeholder="First Name.." autocomplete="off">
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="full_name" name="middlename" id="mname" placeholder="M.I" maxlength="2" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="container-fluid"  style="margin-top: 5px;">
+                            <div class="personal_content row">
+                                <div class="col-6" style="padding-right: 0 !important;">
+                                    <input type="text" class="contact_number" name="mobile" id="mobile" placeholder="Mobile Number.." autocomplete="off">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="contact_number" name="landline" id="landline" placeholder="Landline.." autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="container-fluid">
+                            <div class="address_title">
+                                <label>Input Detailed Address</label>
+                            </div>
+                            <div class="address_content">
+                                <div class="col-12" style="padding: 0;display: flex;">
+                                    <div class="col-6" style="padding: 0;">
+                                        <input type="text" class="txtAddress" name="houseNum" placeholder="House Number" autocomplete="off">
+                                    </div>
+                                    <div class="col-6" style="padding-right: 0;">
+                                        <input type="text" class="txtAddress" name="street" placeholder="Street">
+                                    </div>
+                                </div>
+                                <div class="col-12" style="padding: 0;display: flex;">
+                                    <div class="col-6" style="padding: 0;">
+                                        <select id="brgy" class="txtAddress"  name="brgy">
+                                            <option value="Bagumbayan" selected>Bagumbayan</option>
+                                            <option value="Bambang">Bambang</option>
+                                            <option value="Calzada">Calzada</option>
+                                            <option value="Central Bicutan">Central Bicutan</option>
+                                            <option value="Central Signal Village">Central Signal Village</option>
+                                            <option value="Fort Bonifacio">Fort Bonifacio</option>
+                                            <option value="Hagonoy">Hagonoy</option>
+                                            <option value="Ibayo Tipas">Ibayo Tipas</option>
+                                            <option value="Katuparan">Katuparan</option>
+                                            <option value="Ligid Tipas">Ligid Tipas</option>
+                                            <option value="Lower Bicutan">Lower Bicutan</option>
+                                            <option value="Maharlika Village">Maharlika Village</option>
+                                            <option value="Napindan">Napindan</option>
+                                            <option value="New Lower Bicutan">New Lower Bicutan</option>
+                                            <option value="North Daang Hari">North Daang Hari</option>
+                                            <option value="North Signal Village">North Signal Village</option>
+                                            <option value="Palingon Tipas">Palingon Tipas</option>
+                                            <option value="Pinagsama">Pinagsama</option>
+                                            <option value="San Miguel">San Miguel</option>
+                                            <option value="Santa Ana">Santa Ana</option>
+                                            <option value="South Daang Hari">South Daang Hari</option>
+                                            <option value="South Signal Village">South Signal Village</option>
+                                            <option value="Tanyag">Tanyag</option>
+                                            <option value="Tuktukan">Tuktukan</option>
+                                            <option value="Ususan">Ususan</option>
+                                            <option value="Upper Bicutan">Upper Bicutan</option>
+                                            <option value="Wawa">Wawa</option>
+                                            <option value="Western Bicutan">Western Bicutan</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6" style="padding-right: 0;">
+                                        <input type="text" class="txtAddress" name="city" placeholder="City">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-7">
-                <div class="col-12">
-                    <div class="container-fluid">
-                        <div class="time_title row">
-                            <label>Select Preferred Time</label>
-                        </div>
-                        <div class="time_content">
-                            <select name="hour" id="timeHour" class="selectTime"></select>
-                            <span>:</span>
-                            <select name="mins" id="timeMins" class="selectTime"></select>
-                            <input type="radio" name="time" id="am" value="AM">
-                            <label for="am" class="timeLabel">AM</label>
-                            <input type="radio" name="time" id="pm" value="PM">
-                            <label for="pm" class="timeLabel">PM</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="container-fluid">
-                        <div class="address_title">
-                            <label>Input Detailed Address</label>
-                        </div>
-                        <div class="address_content">
-                            <input type="text" class="txtAddress" name="houseNum" placeholder="House Number">
-                            <input type="text" class="txtAddress" name="street" placeholder="Street">
-                            <select id="brgy" class="txtAddress"  name="brgy">
-                                <option value="Bagumbayan" selected>Bagumbayan</option>
-                                <option value="Bambang">Bambang</option>
-                                <option value="Calzada">Calzada</option>
-                                <option value="Central Bicutan">Central Bicutan</option>
-                                <option value="Central Signal Village">Central Signal Village</option>
-                                <option value="Fort Bonifacio">Fort Bonifacio</option>
-                                <option value="Hagonoy">Hagonoy</option>
-                                <option value="Ibayo Tipas">Ibayo Tipas</option>
-                                <option value="Katuparan">Katuparan</option>
-                                <option value="Ligid Tipas">Ligid Tipas</option>
-                                <option value="Lower Bicutan">Lower Bicutan</option>
-                                <option value="Maharlika Village">Maharlika Village</option>
-                                <option value="Napindan">Napindan</option>
-                                <option value="New Lower Bicutan">New Lower Bicutan</option>
-                                <option value="North Daang Hari">North Daang Hari</option>
-                                <option value="North Signal Village">North Signal Village</option>
-                                <option value="Palingon Tipas">Palingon Tipas</option>
-                                <option value="Pinagsama">Pinagsama</option>
-                                <option value="San Miguel">San Miguel</option>
-                                <option value="Santa Ana">Santa Ana</option>
-                                <option value="South Daang Hari">South Daang Hari</option>
-                                <option value="South Signal Village">South Signal Village</option>
-                                <option value="Tanyag">Tanyag</option>
-                                <option value="Tuktukan">Tuktukan</option>
-                                <option value="Ususan">Ususan</option>
-                                <option value="Upper Bicutan">Upper Bicutan</option>
-                                <option value="Wawa">Wawa</option>
-                                <option value="Western Bicutan">Western Bicutan</option>
-                            </select>
-                            <input type="text" class="txtAddress" name="city" placeholder="City">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid row">
-
         </div>
         
         <!-- SCRIPT LINK -->
         <script src="./js/calendar/calendar.js"></script>
-
+        <script src="./js/subservices/dynamic.js"></script>
         <script>
             for(let min = 0; min <= 59; min++){
 
