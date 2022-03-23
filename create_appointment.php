@@ -15,6 +15,7 @@
     </head>
     <body>
         <div class="main_body">
+            <form action="#" autocomplete="off">
             <div class="container-fluid row">
                 <div class="col-5">
                     <div class="col-12">
@@ -153,6 +154,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
         
         <!-- SCRIPT LINK -->
