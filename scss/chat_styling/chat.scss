@@ -1,9 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
-$green: #b42bab;
-$blue: #5e0cc4;
+$pink: #b42bab;
+$violet: #5e0cc4;
 $orange: #e38968;
 $gray: #92959e;
+$light-pink: #f574ec;
+$dark-gray: #252424;
 
 *,
 *:before,
@@ -28,11 +30,11 @@ body {
 .people-list {
   width: 260px;
   float: left;
-  background-color: $blue;
+  background-color: $dark-gray;
 
   .search {
     padding: 20px;
-    color: $blue;
+    color: $violet;
   }
 
   input {
@@ -40,7 +42,7 @@ body {
     border: none;
     padding: 14px;
     color: white;
-    background: lightblue;
+    background: $gray;
     width: 90%;
     font-size: 14px;
   }
@@ -52,7 +54,11 @@ body {
 
   ul {
     padding: 20px;
-    height: 770px;
+    height: 755px;
+    margin-bottom: 0px;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
 
     li {
       padding-bottom: 20px;
@@ -61,6 +67,7 @@ body {
 
   img {
     float: left;
+    background-color: $dark-gray;
   }
 
   .about {
@@ -74,7 +81,19 @@ body {
 
   .status {
     color: $gray;
-    align-content: center;
+  }
+  .name {
+    flex: 1;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #avatar {
+    background: $gray;
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 30px;
   }
 }
 
@@ -85,7 +104,14 @@ body {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 
-  color: #434651;
+  color: $dark-gray;
+
+  #avatar {
+    background: $gray;
+    max-width: 55px;
+    max-height: 55px;
+    border-radius: 30px;
+  }
 
   .chat-header {
     padding: 20px;
@@ -152,21 +178,21 @@ body {
         width: 0;
         position: absolute;
         pointer-events: none;
-        border-bottom-color: $green;
+        border-bottom-color: $pink;
         border-width: 10px;
         margin-left: -10px;
       }
     }
 
     .my-message {
-      background: $green;
+      background: $pink;
     }
 
     .other-message {
-      background: $blue;
+      background: $violet;
 
       &:after {
-        border-bottom-color: $blue;
+        border-bottom-color: $violet;
         left: 93%;
       }
     }
@@ -194,7 +220,7 @@ body {
 
     button {
       float: right;
-      color: $blue;
+      color: $violet;
       font-size: 16px;
       text-transform: uppercase;
       border: none;
@@ -203,7 +229,7 @@ body {
       background: #f2f5f8;
 
       &:hover {
-        color: darken($blue, 7%);
+        color: darken($violet, 7%);
       }
     }
   }
@@ -217,7 +243,7 @@ body {
 }
 
 .online {
-  color: $green;
+  color: $pink;
 }
 
 .offline {
@@ -225,7 +251,7 @@ body {
 }
 
 .me {
-  color: $blue;
+  color: $violet;
 }
 
 .align-left {

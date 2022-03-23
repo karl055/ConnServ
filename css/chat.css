@@ -16,17 +16,19 @@ body {
 .container {
   margin: 0 auto;
   width: 750px;
-  background: #444753;
+  background: #b42bab;
   border-radius: 5px;
 }
 
 .people-list {
   width: 260px;
   float: left;
+  background-color: #252424;
 }
 
 .people-list .search {
   padding: 20px;
+  color: #5e0cc4;
 }
 
 .people-list input {
@@ -34,7 +36,7 @@ body {
   border: none;
   padding: 14px;
   color: white;
-  background: #6a6c75;
+  background: #92959e;
   width: 90%;
   font-size: 14px;
 }
@@ -46,7 +48,11 @@ body {
 
 .people-list ul {
   padding: 20px;
-  height: 770px;
+  height: 755px;
+  margin-bottom: 0px;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
 }
 
 .people-list ul li {
@@ -55,6 +61,7 @@ body {
 
 .people-list img {
   float: left;
+  background-color: #252424;
 }
 
 .people-list .about {
@@ -70,13 +77,37 @@ body {
   color: #92959e;
 }
 
+.people-list .name {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.people-list #avatar {
+  background: #92959e;
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 30px;
+}
+
 .chat {
   width: 490px;
   float: left;
   background: #f2f5f8;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  color: #434651;
+  color: #252424;
+}
+
+.chat #avatar {
+  background: #92959e;
+  max-width: 55px;
+  max-height: 55px;
+  border-radius: 30px;
 }
 
 .chat .chat-header {
@@ -146,21 +177,21 @@ body {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-bottom-color: #86bb71;
+  border-bottom-color: #b42bab;
   border-width: 10px;
   margin-left: -10px;
 }
 
 .chat .chat-history .my-message {
-  background: #86bb71;
+  background: #b42bab;
 }
 
 .chat .chat-history .other-message {
-  background: #94c2ed;
+  background: #5e0cc4;
 }
 
 .chat .chat-history .other-message:after {
-  border-bottom-color: #94c2ed;
+  border-bottom-color: #5e0cc4;
   left: 93%;
 }
 
@@ -187,7 +218,7 @@ body {
 
 .chat .chat-message button {
   float: right;
-  color: #94c2ed;
+  color: #5e0cc4;
   font-size: 16px;
   text-transform: uppercase;
   border: none;
@@ -197,7 +228,7 @@ body {
 }
 
 .chat .chat-message button:hover {
-  color: #75b1e8;
+  color: #4e0aa2;
 }
 
 .online,
@@ -208,7 +239,7 @@ body {
 }
 
 .online {
-  color: #86bb71;
+  color: #b42bab;
 }
 
 .offline {
@@ -216,7 +247,7 @@ body {
 }
 
 .me {
-  color: #94c2ed;
+  color: #5e0cc4;
 }
 
 .align-left {
@@ -239,4 +270,3 @@ body {
   clear: both;
   height: 0;
 }
-/*# sourceMappingURL=chat.css.map */
