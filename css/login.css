@@ -187,7 +187,15 @@ nav :focus {
             } */
 }
 
-.page-body .body-container .login-container .login-form .inner-container .form-login input[type=text], .page-body .body-container .login-container .login-form .inner-container .form-login input[type=password] {
+.page-body .body-container .login-container .login-form .inner-container .form-login input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #252424;
+  padding: .5rem;
+  margin-top: .5rem;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .pass-txt {
   width: 100%;
   border: none;
   border-bottom: 2px solid #252424;

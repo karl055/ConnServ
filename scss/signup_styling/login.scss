@@ -46,7 +46,15 @@
               margin-bottom: 0;
               margin-top: .5rem;
             } */
-            input[type=text], input[type=password]{
+            
+            input{
+              width: 100%;
+              border: none;
+              border-bottom: 2px solid $font-color-a;
+              padding: .5rem ;
+              margin-top: .5rem;
+            }
+            .pass-txt{
               width: 100%;
               border: none;
               border-bottom: 2px solid $font-color-a;

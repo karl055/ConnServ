@@ -131,6 +131,7 @@ nav :focus {
 
 body {
   height: 750px;
+  width: 100vw;
 }
 
 body .back-container {
@@ -187,6 +188,18 @@ body .back-container p {
 }
 
 .business_container .business_address .business_village {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_city {
+  width: 100%;
+  height: 2.4rem;
+  padding: 5px;
+}
+
+.business_container .business_address .business_city {
   width: 100%;
   height: 2.4rem;
   padding: 5px;

@@ -2,8 +2,8 @@
 include './hostCon.php';
 
 if(isset($_POST['login'])){
-  $emailId = $_POST['login_email'];
-  $password = $_POST['login_password'];
+  $emailId = mysqli_real_escape_string($connect, $_POST['login_email']);
+  $password = mysqli_real_escape_string($connect, $_POST['login_password']);
 
   $query = mysqli_query($connect,"SELECT * FROM user_tb WHERE user_email = '$emailId' AND user_pass = '$password'");
 
@@ -53,7 +53,7 @@ if(isset($_POST['login'])){
                       <h4>Login</h4>
                       <div class="form-login">
                           <form action="./login.php" method="POST">
-                                <input type="text" name="login_email" placeholder="Email">
+                                <input class="email_txt" type="text" name="login_email" placeholder="Email" required>
                                 <input class="pass-txt" type="password" name="login_password" placeholder="Password">
                                 <div class="buttons-accounts">
                                     <button class="login" name="login" type="submit">Login</button>

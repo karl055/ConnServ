@@ -18,7 +18,7 @@
     </head>
     <body>
         <?php include './navbar.php';?>
-        <div class="row back-container">
+        <div class="row back-container" style="margin: 0;">
             <div class="col-12">
                 <a href="./user_profile.php">
                     <p>
@@ -40,12 +40,6 @@
                     <form action="#">
                         <div class="row">
                             <div class="col-7">
-                                <!-- <div class="owner">
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                        <label class="custom-control-label" for="customSwitch1">Owner of Business</label>
-                                      </div>
-                                </div> -->
                                 <div class="business_trade">
 
                                     <label for="business_name">Business Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
@@ -54,7 +48,7 @@
                                 <div class="business_trade">
 
                                     <label for="trade_name">Business Email <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                    <input type="text" name="trade_name" class="trade_name">
+                                    <input type="text" name="business_email" class="trade_name">
                                 </div>
                                 <div class="business_address">
                                     <div class="row">
@@ -135,9 +129,33 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-6">
+                                            <label for="inputService">Type of Service</label>
+                                            <select id="inputService" class="form-control" name="inputservice" required>
+                                                <option value="ArtandCulture" selected>Art and Culture</option>
+                                                <option value="BeautyandWellness">Beauty and Wellness</option>
+                                                <option value="Construction">Construction</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Electronics">Electronics</option>
+                                                <option value="Events">Events</option>
+                                                <option value="FoodandBeverages">Food and Beverages</option>
+                                                <option value="MedicalCare">Medical Care</option>
+                                                <option value="ProfessionalServices">Professional Services</option>
+                                                <option value="ShoppingandRetail">Shopping and Retail</option>
+                                                <option value="Transportation">Transportation</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="inputSubService">Sub Service</label>
+                                            <select id="inputSubService" class="form-control" name="inputSubService" required>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-12">
                                             <label for="business_details">Business Description</label>
-                                            <textarea class="form-control" id="business_details" rows="6" placeholder="What is your business?.."></textarea>
+                                            <textarea class="form-control" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +218,7 @@
         </div>
         <script src="./js/userProfile/appointmentCards.js"></script>
         <script src="./js/userProfile/profile_image.js"></script>
-
+        <script src="./js/subservices/dynamic.js"></script>
         <!-- POPPER JS  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/popper.min.js"></script>
 

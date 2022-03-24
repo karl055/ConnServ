@@ -9,7 +9,7 @@
 
     $email_check = mysqli_query($connect, "SELECT * FROM user_tb WHERE user_email = '$email'");
     /* $email_find = mysqli_fetch_array($email_check); */
-    if(mysqli_num_rows($email_check)){
+    if(mysqli_num_rows($email_check)>0){
         header("Location: ../signup.php?email=invalid");
         echo "Email Already in Use";
         /* echo "<script>";
