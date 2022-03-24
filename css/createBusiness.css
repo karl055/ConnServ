@@ -133,6 +133,14 @@ body {
   height: 750px;
 }
 
+body .back-container {
+  padding: 15px 30px 0;
+}
+
+body .back-container p {
+  font-weight: 700;
+}
+
 .business_container .container_title {
   margin: 2rem 0 1rem;
 }
@@ -229,4 +237,8 @@ body {
   border: none;
   background-color: #5e0cc4;
   color: white;
+}
+
+.business_container :focus {
+  outline: none;
 }

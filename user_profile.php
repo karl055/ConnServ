@@ -283,7 +283,7 @@
                       <div class="contents_container">
                         <div class="container_display">
                           <h1>No Business? Create now!</h1>
-                          <a href="./create_business.html" class="createLink">
+                          <a href="./create_business.php" class="createLink">
                             <button type="submit" class="createBtn">Create Business</button>
                           </a>
                           <p>You must use Desktop or Laptop before creating a business.</p>
