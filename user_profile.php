@@ -236,7 +236,6 @@
                                     </div>
                                   </div>
                                 </form>
-                                
                                 <div class="form-group col-md-3">
                                       <button type="submit" class="btn btn-primary saveBtn"  data-toggle="modal" data-target="#saveModal">Save</button>
                                 </div>

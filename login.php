@@ -2,30 +2,37 @@
 include './hostCon.php';
 
 if(isset($_POST['login'])){
-  $emailId = mysqli_real_escape_string($connect, $_POST['login_email']);
-  $password = mysqli_real_escape_string($connect, $_POST['login_password']);
 
-  $query = mysqli_query($connect,"SELECT * FROM user_tb WHERE user_email = '$emailId' AND user_pass = '$password'");
+    if(empty($_POST['login_email']) || empty($_POST['login_password'])){
 
-  $rows = mysqli_fetch_array($query);
-
-  if(mysqli_num_rows($query)>0){
-    if(!isset($_SESSION)) { 
-      session_start(); 
+        header("Location: ./login.php?noinput");
+        exit();
     }
-    $_SESSION['email'] = $rows['user_email'];
-    $_SESSION['password'] = $rows['user_pass'];
-    $_SESSION['username'] = $rows['user_identity'];
-    $_SESSION['firstname'] = $rows['user_firstname'];
-    $_SESSION['lastname'] = $rows['user_lastname'];
-    $_SESSION['gender'] = $rows['user_sex'];
-    header("Location: ./user_profile.php?signup=success");
-  }else{
-    echo "<script type='text/javascript'>";
-    echo "alert('Invalid Email or Password');";
-    echo "window.location.href='login.php'";
-    echo "</script>";
-  }
+    else{
+        $emailId = mysqli_real_escape_string($connect, $_POST['login_email']);
+        $password = mysqli_real_escape_string($connect, $_POST['login_password']);
+
+        $query = mysqli_query($connect,"SELECT * FROM user_tb WHERE user_email = '$emailId' AND userPwd = '$password'");
+
+        $rows = mysqli_fetch_array($query);
+
+        if(mysqli_num_rows($query)>0){
+            if(!isset($_SESSION)) { 
+            session_start(); 
+            }
+            $_SESSION['email'] = $rows['user_email'];
+            $_SESSION['password'] = $rows['user_pass'];
+            $_SESSION['username'] = $rows['user_identity'];
+            $_SESSION['firstname'] = $rows['user_firstname'];
+            $_SESSION['lastname'] = $rows['user_lastname'];
+            $_SESSION['gender'] = $rows['user_sex'];
+            header("Location: ./user_profile.php");
+        }
+        else{
+            header("Location: ./login.php?error=loginfailed");
+        }
+    }
+  
 }
 ?>
 

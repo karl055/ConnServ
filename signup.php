@@ -36,7 +36,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <input type="email" class="form-control" id="validationCustom05" name="email" placeholder="Email" required>
+                                        <input type="text" class="form-control" id="validationCustom05" name="email" placeholder="Email" required>
                                         <div class="invalid-feedback">
                                             <?php if(empty($_POST['email'])){ echo"Please Provide a valid Input";}?>
                                             
