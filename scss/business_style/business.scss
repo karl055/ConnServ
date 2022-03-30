@@ -1,14 +1,71 @@
+@import '../homepage_styling/variables';
 *{
     margin: 0;
     padding: 0;
 }
-
-.profile_picture{
-    height: 250px;
-    width: 250px;
-
-    img{
-        height: 100%;
-        width: 100%;
+section{
+    .accordion{
+        .nav-link:not(.business){
+            background-color: transparent !important;
+            color: #5e0cc4 !important;
+        }
+        .business{
+            font-weight: 500;
+        }
+        .businessLinks{
+            padding: 5px;
+            a{
+                color: black !important;
+            }
+        }
     }
+    .business_content{
+        .title_business{
+            .profile_picture{
+                margin: 0 auto 0;
+                height: 150px;
+                width: 150px;
+                padding: 5px;
+                background: #5e0cc4;
+                border-radius: 50%; 
+                position: relative;
+                
+                img{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+            input[type=file]{
+                display: none;
+            }
+    
+            .title_container{
+                height: 100%;
+                
+                padding: 5% 0;
+                
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                
+            }
+        }
+        .address_bar{
+            table{
+                input{
+                    height: 35px;
+                    padding: 5px;
+                }
+
+                :focus{
+                    outline: none;
+                }
+            }
+        }
+        /* .main_content{
+
+        } */
+    }
+    
 }

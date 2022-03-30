@@ -1,0 +1,68 @@
+/*  
+    !COLORS 
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section .accordion .nav-link:not(.business) {
+  background-color: transparent !important;
+  color: #5e0cc4 !important;
+}
+
+section .accordion .business {
+  font-weight: 500;
+}
+
+section .accordion .businessLinks {
+  padding: 5px;
+}
+
+section .accordion .businessLinks a {
+  color: black !important;
+}
+
+section .business_content {
+  /* .main_content{
+
+        } */
+}
+
+section .business_content .title_business .profile_picture {
+  margin: 0 auto 0;
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  background: #5e0cc4;
+  border-radius: 50%;
+  position: relative;
+}
+
+section .business_content .title_business .profile_picture img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+section .business_content .title_business input[type=file] {
+  display: none;
+}
+
+section .business_content .title_business .title_container {
+  height: 100%;
+  padding: 5% 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+section .business_content .address_bar table input {
+  height: 35px;
+  padding: 5px;
+}
+
+section .business_content .address_bar table :focus {
+  outline: none;
+}
