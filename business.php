@@ -8,38 +8,37 @@
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/business.css">
+        <link rel="stylesheet" href="./css/stylingBusiness.css">
         <title>Document</title>
     </head>
-    <body style="height: 100vh;">
+    <body style="height: 1000px;">
         <?php include_once './navbar.php';?>
         <section class="container-fluid" style="margin: 2rem 0 2rem; height: 100%;">
         <div class="row">
             <div class="col-2 accordion" id="accordionExample">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link business"  data-toggle="collapse" data-target="#collapseBusiness" aria-expanded="true" aria-controls="collapseBusiness">Profile</a>
+                <div>
+                    <p class="parent_link"  data-toggle="collapse" data-target="#collapseBusiness" aria-expanded="true" aria-controls="collapseBusiness">Profile</p>
                     
                     <div id="collapseBusiness" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="nav flex-column nav-pills businessLinks" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link" id="v-pills-business-tab" data-toggle="pill" href="#v-pills-business" role="tab" aria-controls="v-pills-business" aria-selected="false">Business</a>
                             <a class="nav-link" id="v-pills-edit-tab" data-toggle="pill" href="#v-pills-edit" role="tab" aria-controls="v-pills-edit" aria-selected="false">Edit</a>
                             <a class="nav-link" id="v-pills-revenue-tab" data-toggle="pill" href="#v-pills-revenue" role="tab" aria-controls="v-pills-revenue" aria-selected="false">Revenue</a>
                             <a class="nav-link" id="v-pills-other-tab" data-toggle="pill" href="#v-pills-other" role="tab" aria-controls="v-pills-other" aria-selected="false">Others</a>
                         </div>
                     </div>
-                    <a class="nav-link appointment"  data-toggle="collapse" data-target="#collapseAppointment" aria-expanded="true" aria-controls="collapseAppointment">Profile</a>
+                    <p class="parent_link"  data-toggle="collapse" data-target="#collapseAppointment" aria-expanded="true" aria-controls="collapseAppointment">Appointments</p>
                     
                     <div id="collapseAppointment" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link" id="v-pills-appointments-tab" data-toggle="pill" href="#v-pills-appointments" role="tab" aria-controls="v-pills-profile" aria-selected="false">Appointments</a>
+                            <a class="nav-link" id="v-pills-incoming-tab" data-toggle="pill" href="#v-pills-incoming" role="tab" aria-controls="v-pills-incoming" aria-selected="false">Incoming</a>
+                            <a class="nav-link" id="v-pills-approval-tab" data-toggle="pill" href="#v-pills-approval" role="tab" aria-controls="v-pills-approval" aria-selected="false">Approval</a>
                         </div>
                     </div>
-                    <!-- <a class="nav-link" id="v-pills-appointments-tab" data-toggle="pill" href="#v-pills-appointments" role="tab" aria-controls="v-pills-profile" aria-selected="false">Appointments</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a> -->
+                    
                 </div>
             </div>
-            <div class="col-10">
+            <div class="col-9 body_content">
                 <div class="tab-content" id="v-pills-tabContent">
                         <!-- Business Profile TAB -->
                     <div class="tab-pane fade show business_content" id="v-pills-business" role="tabpanel" aria-labelledby="v-pills-business-tab">
@@ -56,58 +55,66 @@
                                 <div class="col-9">
                                     <div class="title_container">
                                         <h2>This is the business Title</h2>
-                                        <h6>This is sub title</h6>
+                                        <h4 class="text-muted">This is sub title</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 row">
-                                <div class="col-3 address_bar">
-                                    <table>
+                            <div class="col-12 tab_contents">
+                                <div class="col-12 address_bar">
+                                    <table class="basic_contact">
                                         <tr>
                                             <th>Owner</th>
+                                            <th>Business Email</th>
+                                            <th>Contact #</th>
                                         </tr>
                                         <tr>
-                                            <th><input type="text"></th>
+                                            <td>Owner's Name</td>
+                                            <td>..@yahoo/gmail.com</td>
+                                            <td>09676842595</td>
                                         </tr>
+                                    </table>
+                                    <table class="address_table">
                                         <tr>
-                                            <th>Owner</th>
-                                        </tr>
-                                        <tr>
-                                            <th><input type="text"></th>
-                                        </tr>
-                                        <tr>
-                                            <th>Owner</th>
-                                        </tr>
-                                        <tr>
-                                            <th><input type="text"></th>
-                                        </tr>
-                                        <tr>
-                                            <th>Owner</th>
-                                        </tr>
-                                        <tr>
-                                            <th><input type="text"></th>
+                                            <th>Unit/House #</th>
+                                            <th>Street</th>
+                                            <th>Barangay</th>
+                                            <th>District</th>
+                                            <th>City</th>
+                                            </tr>
+                                            <tr class="data_even">
+                                            <td>71-e</td>
+                                            <td>Mapagkawanggawa</td>
+                                            <td>Escopa 3</td>
+                                            <td>District 3</td>
+                                            <td>Quezon City</td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="col-9">
+                                <div class="col-12">
                                     <div class="main_content">
-                                        <div class="col-12">
-                                            <select class="form-control">
-                                                <option value="" selected disabled hidden>Choose Category</option>
-                                                <option value="ArtandCulture">Art and Culture</option>
-                                                <option value="BeautyandWellness">Beauty and Wellness</option>
-                                                <option value="Construction">Construction</option>
-                                                <option value="Education">Education</option>
-                                                <option value="Electronics">Electronics</option>
-                                                <option value="Events">Events</option>
-                                                <option value="FoodandBeverages">Food and Beverages</option>
-                                                <option value="MedicalCare">Medical Care</option>
-                                                <option value="ProfessionalServices">Professional Services</option>
-                                                <option value="ShoppingandRetail">Shopping and Retail</option>
-                                                <option value="Transportation">Transportation</option>
-                                            </select>
+                                        <div class="col-12 category_content">
+                                            <div class="col-12 category_title">
+                                                <h5>Service Category</h5>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                                <h5>Sub Service Category</h5>
+                                            </div>
+                                            
+                                            <div class="col-12 category_chosen">
+                                                <h6 class="text-mute">Sample Service</h6>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                                <h6 class="text-mute">Sample Sub Service</h6>
+                                            </div>
                                         </div>
-                                        
+                                        <div class="col-12 description_bar">
+                                            <h6>Description</h6><hr>
+                                            <div class="description_content">
+                                                <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -133,11 +140,11 @@
                         </div>
                     </div>
                         <!-- Appointments TAB -->
-                    <div class="tab-pane fade appointments_content" id="v-pills-appointments" role="tabpanel" aria-labelledby="v-pills-appointments-tab">
-                        <h1>This is appointments page</h1>
+                    <div class="tab-pane fade incoming_content" id="v-pills-incoming" role="tabpanel" aria-labelledby="v-pills-incoming-tab">
+                        <h1>This is Incoming page</h1>
                     </div>
                         <!-- Messages TAB -->
-                    <div class="tab-pane fade messages_content" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <div class="tab-pane fade approval_content" id="v-pills-approval" role="tabpanel" aria-labelledby="v-pills-approval-tab">
                         <h1>This is messages page</h1>
                     </div>
                         <!-- SETTINGS TAB -->
