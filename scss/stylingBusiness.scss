@@ -8,8 +8,11 @@ section{
         height: 100%;
     }
     .accordion{
-        height: 100%;/* 
-        border: 1px solid black; */
+        border: 1px;
+        border-right-color: black;
+        border-right-style: solid;
+        height: 100%;
+        width: 100%;
         position: fixed;
         .parent_link{
             background-color: transparent !important;

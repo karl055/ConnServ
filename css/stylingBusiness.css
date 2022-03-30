@@ -11,9 +11,11 @@ section .row {
 }
 
 section .accordion {
+  border: 1px;
+  border-right-color: black;
+  border-right-style: solid;
   height: 100%;
-  /* 
-        border: 1px solid black; */
+  width: 100%;
   position: fixed;
 }
 

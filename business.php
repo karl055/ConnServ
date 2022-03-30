@@ -4,19 +4,20 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./assets/img/tab_icon.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
         <?php include_once './includes/bootstrap_con.php';?>
 
         <link rel="stylesheet" href="./css/stylingBusiness.css">
-        <title>Document</title>
+        <title>Business</title>
     </head>
     <body style="height: 1000px;">
         <?php include_once './navbar.php';?>
-        <section class="container-fluid" style="margin: 2rem 0 2rem; height: 100%;">
+        <section class="container-fluid" style="height: 100%;">
         <div class="row">
-            <div class="col-2 accordion" id="accordionExample">
-                <div>
+            <div class="col-2 accordion" id="accordionExample"  style="padding-top: 1rem;">
+                <div style="padding-left: 1rem;">
                     <p class="parent_link"  data-toggle="collapse" data-target="#collapseBusiness" aria-expanded="true" aria-controls="collapseBusiness">Profile</p>
                     
                     <div id="collapseBusiness" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -38,8 +39,8 @@
                     
                 </div>
             </div>
-            <div class="col-9 body_content">
-                <div class="tab-content" id="v-pills-tabContent">
+            <div class="col-10 body_content">
+                <div class="tab-content" id="v-pills-tabContent" style="margin: 2rem 0 2rem; ">
                         <!-- Business Profile TAB -->
                     <div class="tab-pane fade show business_content" id="v-pills-business" role="tabpanel" aria-labelledby="v-pills-business-tab">
                         <div class="col-12">
@@ -61,6 +62,11 @@
                             </div>
                             <div class="col-12 tab_contents">
                                 <div class="col-12 address_bar">
+                                    <table style="width: 25%;">
+                                        <tr>
+                                            <th style=" padding-bottom: 1rem !important;"><h5>Basic Information</h5></th>
+                                        </tr>
+                                    </table>
                                     <table class="basic_contact">
                                         <tr>
                                             <th>Owner</th>
@@ -113,6 +119,12 @@
                                             <h6>Description</h6><hr>
                                             <div class="description_content">
                                                 <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 documents_bar">
+                                            <h6>Documents</h6>
+                                            <div class="documents_content">
+                                                
                                             </div>
                                         </div>
                                     </div>
