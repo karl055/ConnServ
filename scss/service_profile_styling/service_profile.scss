@@ -1,5 +1,6 @@
 @import "../homepage_styling/_navigationbar.scss";
 @import "../homepage_styling/_footer.scss";
+@import "./offered_service";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
 $pink: #b42bab;
@@ -46,6 +47,9 @@ $dark-gray: #252424;
     height: 300px;
     width: 280px;
   }
+  h2 {
+    padding: 1rem;
+  }
 }
 
 // CENTER COLLUMN
@@ -91,15 +95,14 @@ $dark-gray: #252424;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
   }
-  h1:hover {
-    overflow: visible;
-  }
+
   .service-title {
     font-family: Helvetica;
     font-weight: 400;
     text-align: left;
-    margin-top: 1rem;
+    margin-top: 30px;
     // max-width: 600px;
   }
   .service-title img {
@@ -160,6 +163,9 @@ $dark-gray: #252424;
   .purple {
     background-color: #564f8a;
   }
+}
+
+.related-service {
   .card p {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
@@ -203,18 +209,18 @@ $dark-gray: #252424;
   .cards {
     width: 100%;
     position: relative;
-    margin-top: 50px;
-    margin-left: auto;
+    margin-top: 10px;
+    margin-left: 50px;
     margin-right: 10px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* align-content: center; */
+    align-content: center;
   }
 
   .card {
-    width: 100%;
+    max-width: 400px;
     position: relative;
     background-color: white;
     margin-right: 25px;
@@ -267,6 +273,9 @@ $dark-gray: #252424;
     background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
   }
   .card2 {
+    background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
+  }
+  .card3 {
     background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
   }
 }

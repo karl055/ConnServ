@@ -2,6 +2,8 @@
 /*  
     !COLORS 
 */
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 nav {
   top: 0;
@@ -219,6 +221,254 @@ nav :focus {
   }
 }
 
+.offered-service {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.offered-service * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.offered-service h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #26384e;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 520px) {
+  .offered-service h1 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.offered-service p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #889db8;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 520px) {
+  .offered-service p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.offered-service .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.offered-service .swiper-container {
+  background: -webkit-gradient(linear, right top, left top, from(#f7f9ff), to(#f2f6ff));
+  background: linear-gradient(270deg, #f7f9ff 0%, #f2f6ff 100%);
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+  position: relative;
+  max-width: 420px;
+  height: 100%;
+  max-height: 420px;
+  border-radius: 10px;
+}
+
+.offered-service .slider-image-wrapper {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.offered-service .slider-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  opacity: 0;
+  background: -webkit-gradient(linear, right top, left top, from(#f7f9ff), to(#f2f6ff));
+  background: linear-gradient(270deg, #f7f9ff 0%, #f2f6ff 100%);
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.offered-service .slider-item-content {
+  padding: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.offered-service .slider-item-content > * {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+.offered-service .swiper-slide-active .slider-item-content > * {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+}
+
+.offered-service .slider-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.offered-service .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
+  z-index: 1;
+  width: auto !important;
+}
+
+.offered-service .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  line-height: 30px;
+  font-size: 12px;
+  opacity: 1;
+  background: rgba(255, 185, 0, 0.3);
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.offered-service .swiper-pagination-bullet-active {
+  background: #ffb200;
+  width: 20px;
+  border-radius: 10px;
+}
+
+.offered-service .slider-buttons {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  padding-top: 8px;
+}
+
+.offered-service .swiper-button-next,
+.offered-service .swiper-button-prev {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  position: relative;
+  margin-left: 4px;
+}
+
+.offered-service .swiper-button-next:before,
+.offered-service .swiper-button-prev:before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  height: 1px;
+  width: 0;
+  left: 0;
+  bottom: -1px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.offered-service .swiper-button-next:hover:before,
+.offered-service .swiper-button-prev:hover:before {
+  width: 100%;
+}
+
+.offered-service .socials {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offered-service .socials .social-link {
+  display: inline-block;
+  margin-left: 8px;
+  color: #fff;
+}
+
+@media screen and (max-width: 520px) {
+  .offered-service .swiper-button-next:hover:before,
+  .offered-service .swiper-button-prev:hover:before {
+    display: none;
+  }
+}
+
 .leftcol {
   -ms-flex-line-pack: center;
       align-content: center;
@@ -263,6 +513,10 @@ nav :focus {
 .leftcol .map {
   height: 300px;
   width: 280px;
+}
+
+.leftcol h2 {
+  padding: 1rem;
 }
 
 .centercol .rate {
@@ -312,17 +566,14 @@ nav :focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.centercol h1:hover {
-  overflow: visible;
+  cursor: pointer;
 }
 
 .centercol .service-title {
   font-family: Helvetica;
   font-weight: 400;
   text-align: left;
-  margin-top: 1rem;
+  margin-top: 30px;
 }
 
 .centercol .service-title img {
@@ -383,7 +634,7 @@ nav :focus {
   background-color: #564f8a;
 }
 
-.rightcol .card p {
+.related-service .card p {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   color: black;
@@ -400,7 +651,7 @@ nav :focus {
   -webkit-transition: ease 1s;
 }
 
-.rightcol .card h3 {
+.related-service .card h3 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   color: black;
@@ -416,20 +667,20 @@ nav :focus {
   -webkit-transition: ease 1s;
 }
 
-.rightcol .title {
+.related-service .title {
   width: 100%;
   margin: auto;
   padding-left: 0px;
   padding-bottom: 0px;
 }
 
-.rightcol .cards {
+.related-service .cards {
   width: 100%;
   position: relative;
-  margin-top: 50px;
-  margin-left: auto;
+  margin-top: 10px;
+  margin-left: 50px;
   margin-right: 10px;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -439,11 +690,12 @@ nav :focus {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  /* align-content: center; */
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-.rightcol .card {
-  width: 100%;
+.related-service .card {
+  max-width: 400px;
   position: relative;
   background-color: white;
   margin-right: 25px;
@@ -458,7 +710,7 @@ nav :focus {
           flex: 1 1 auto;
 }
 
-.rightcol .card:hover {
+.related-service .card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
@@ -466,27 +718,27 @@ nav :focus {
 }
 
 @media screen and (max-width: 1200px) {
-  .rightcol .card {
+  .related-service .card {
     width: 30%;
     margin: 0%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .rightcol .card {
+  .related-service .card {
     width: 45%;
     margin: 2.5%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .rightcol .card {
+  .related-service .card {
     width: 98%;
     margin: 2%;
   }
 }
 
-.rightcol .card_img {
+.related-service .card_img {
   width: 100%;
   height: 150px;
   position: reltive;
@@ -498,10 +750,14 @@ nav :focus {
   -webkit-transition: 1s;
 }
 
-.rightcol .card1 {
+.related-service .card1 {
   background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
 }
 
-.rightcol .card2 {
+.related-service .card2 {
+  background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
+}
+
+.related-service .card3 {
   background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
 }
