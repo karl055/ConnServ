@@ -293,7 +293,7 @@ section .body_content .edit_content .business_container :focus {
   outline: none;
 }
 
-section .body_content .approval_content .approval_container .incoming_content .incoming_table th {
+section .body_content .approval_content .approval_container .incoming_content .incoming_table td {
   text-overflow: ellipsis;
-  color: red;
+  color: red !important;
 }

@@ -9,7 +9,7 @@ section{
     }
     .accordion{
         border: 1px;
-        border-right-color: black;
+        border-right-color: #d4d4d4;
         border-right-style: solid;
         height: 100%;
         width: 100%;
@@ -35,6 +35,7 @@ section{
     }
     .body_content{
         margin-left: 200px;
+        height: 100%;
 
 
         /* BUSINESS CONTENTS */
@@ -85,7 +86,7 @@ section{
                     .address_table{
                         border: 1px;
                         border-bottom-style: solid;
-                        border-bottom-color: black;
+                        border-bottom-color: #d4d4d4;
                     }
                 }
                 .main_content{
@@ -123,7 +124,7 @@ section{
                         margin-top: 2rem;
                         padding-top: 10px;
                         width: 100%;
-                        border: 1px solid black;
+                        border: 1px solid #d4d4d4;
                         .description_content{
                             height: 150px;
                             overflow: scroll;
@@ -135,17 +136,191 @@ section{
                         }
                     }
                     .documents_bar{
+                        display: flex;
+                        border: 1px;
+                        border-bottom-style: solid;
+                        border-bottom-color: #d4d4d4;
                         table{
 
-                            button{
-                                color: red;
+                            td{
+                                width: auto;
                             }
+                            button{
+                                display: inline-block;
+                                width: 100%;
+                                max-width: 100%;
+                                padding: 10px;
+                                border-radius: 5px;
+                                border: 1px solid black;
+                            }
+                            
+                            button:hover{
+                                background-color: #9056ca;
+                                border-color: #9056ca;
+                                color: rgb(206, 206, 206);
+                            }
+                            button:focus{
+                                outline: none;
+                            }
+
+                        }
+                        
+                        .location{
+                            width: 100%;
                         }
                     }
                 }
             }
             
         }
-    }
+
+        
+        .edit_content{
+
+            .business_container{
+
+                .tool_tip{
+                    font-size: 1rem;
+                    color: red;
+                }
+                .business_trade{
+                    .business_name{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .trade_name{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                }
+                .business_address{
+                    .business_unit_no{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .business_building{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .business_house_no{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .business_street{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .business_village{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .business_city{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .business_city{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                    .business_city{
+                        width: 100%;
+                        height: 2.4rem;
+                        padding: 5px;
+                    }
+                }
+                .business_location{
+                    width: 100%;
+                    padding: 5px;
+                }
+                
+                .card{
+                    width: 100%;
+                    button{
+                        background-color: transparent;
+                        border: none;
+                    }
+                    :focus{
+                        outline: none;
+                    }
+                    .appointment_container{
+                        display: none;
+                        transition: height linear 0.5s;
+                    }
+                }
+        
+                hr{
+                    border: 1px solid black;
+                }
+                .owner_valid{
+                    label{
+                        display: block;
+                    }
+                }
+                .createBtn{
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: $font-color-b;
+                    color: white;
+        
+                }
+                :focus{
+                    outline: none;
+                }
+            }
+            
+        }
+
+        .approval_content{
+            width: 100%;
+            height: 100%;
+            .approval_container{
+                width: 100%;
+                height: 100%;
+                .incoming_content{
+                    width: 100%;
+                    height: 100%;
+                    .table_contents{
+                        height: 500px;
+                        border: 1px solid black;
+                        .incoming_table{
+                            width: 100%;
+                            height: auto;
+                            overflow: scroll;
+                            thead tbody{
+                                
+                                width: auto;
+                                color: red !important;
+                            }
+                            thead{
+                                text-align: center;
+                            }
+                            tbody{
     
+                                td.address{
+                                    max-width: 0;
+                                    white-space: nowrap; 
+                                    width: 30%; 
+                                    overflow: hidden;
+                                    text-overflow: ellipsis; 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 }

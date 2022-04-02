@@ -284,9 +284,9 @@ section{
             .approval_container{
                 .incoming_content{
                     .incoming_table{
-                        th{
+                        td{
                             text-overflow: ellipsis;
-                            color: red;
+                            color: red !important;
                         }
                     }
                 }

@@ -9,7 +9,7 @@
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/business.css">
+        <link rel="stylesheet" href="./css/stylingBusiness.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -418,52 +418,61 @@
                                     <h6>Current Date</h6>
                                 </div>
                                 <div class="col-12 incoming_content">
-                                    <table class="table table-hover table-sm incoming_table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Appointment ID#</th>
-                                                <th scope="col">Service Type</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Address</th>
-                                                <th scope="col">Contact #</th>
-                                                <th scope="col">Date of Booking</th>
-                                                <th scope="col">Time of Booking</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1009</th>
-                                                <td>Hardware Repair</td>
-                                                <td>Karl</td>
-                                                <td>Parole</td>
-                                                <td>71e, Mapagkawanggawa</td>
-                                                <td>09676842595</td>
-                                                <td>03/09/22</td>
-                                                <td>7:00 pm</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1009</th>
-                                                <td>Hardware Repair</td>
-                                                <td>Karl</td>
-                                                <td>Parole</td>
-                                                <td>71e, Mapagkawanggawa</td>
-                                                <td>09676842595</td>
-                                                <td>03/09/22</td>
-                                                <td>7:00 pm</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1009</th>
-                                                <td>Hardware Repair</td>
-                                                <td>Karl</td>
-                                                <td>Parole</td>
-                                                <td>71e, Mapagkawanggawa</td>
-                                                <td>09676842595</td>
-                                                <td>03/09/22</td>
-                                                <td>7:00 pm</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="col-12 table_contents">
+                                        <table class="table table-hover table-sm incoming_table" border="1">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Service Type</th>
+                                                    <th scope="col">Last</th>
+                                                    <th scope="col">First</th>
+                                                    <th scope="col">Address</th>
+                                                    <th scope="col">Contact #</th>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Time</th>
+                                                    <th scope="col">Approval</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1009</th>
+                                                    <td>Hardware Repair</td>
+                                                    <td>Parole</td>
+                                                    <td>Karl</td>
+                                                    <td class="address">71e, Mapagkawanggawa</td>
+                                                    <td>09676842595</td>
+                                                    <td>03/09/22</td>
+                                                    <td>7:00 pm</td>
+                                                    <td><button>Approve</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1009</th>
+                                                    <td>Hardware Repair</td>
+                                                    <td>Parole</td>
+                                                    <td>Karl</td>
+                                                    <td class="address">71e, Mapagkawanggawa</td>
+                                                    <td>09676842595</td>
+                                                    <td>03/09/22</td>
+                                                    <td>7:00 pm</td>
+                                                    <td><button>Approve</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1009</th>
+                                                    <td>Hardware Repair</td>
+                                                    <td>Parole</td>
+                                                    <td>Karl</td>
+                                                    <td class="address">71e, Mapagkawanggawa St., Escopa 3, Project 4, Quezon City</td>
+                                                    <td>09676842595</td>
+                                                    <td>03/09/22</td>
+                                                    <td>7:00 pm</td>
+                                                    <td><button>Approve</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>Some text</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
