@@ -9,7 +9,7 @@
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/stylingBusiness.css">
+        <link rel="stylesheet" href="./css/business.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -122,9 +122,71 @@
                                             </div>
                                         </div>
                                         <div class="col-12 documents_bar">
-                                            <h6>Documents</h6>
-                                            <div class="documents_content">
-                                                
+                                            <div class="col-5 documents_content">
+                                                <table class="col-12 table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                        <th scope="col">Documents / IDs</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="row">
+                                                                <p>file name 1</p>
+                                                            </td>
+                                                            <td>
+                                                                <button class="downloadBtn">
+                                                                    <span>Download</span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">
+                                                                <p>file name 1</p>
+                                                            </td>
+                                                            <td>
+                                                                <button class="downloadBtn">
+                                                                    <span>Download</span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">
+                                                                <p>file name 1</p>
+                                                            </td>
+                                                            <td>
+                                                                <button class="downloadBtn">
+                                                                    <span>Download</span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row">
+                                                                <p>file name 1</p>
+                                                            </td>
+                                                            <td>
+                                                                <button class="downloadBtn">
+                                                                    <span>Download</span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                            <div class="col-1">
+                                            <!-- Indention Space GAP -->
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="col-12">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Location via Google Map</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                    <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d341.22631946435195!2d121.07321743123391!3d14.625538873609871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1648740876247!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +198,185 @@
                         <!-- EDIT TAB -->
                     <div class="tab-pane fade edit_content" id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
                         <div class="col-12">
-                            <p>THIS IS EDIT CONTENT</p>
+                            
+                            <div class="business_container">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="business_trade">
+
+                                                <label for="business_name">Business Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                <input type="text" name="business_name" class="business_name">
+                                            </div>
+                                            <div class="business_trade">
+
+                                                <label for="trade_name">Business Email <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                <input type="text" name="business_email" class="trade_name">
+                                            </div>
+                                            <div class="business_address">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label for="business_unit_no">Unit Number</label>
+                                                        <input type="text" name="business_unit_no" class="business_unit_no">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label for="business_building">Building Name</label>
+                                                        <input type="text" name="business_building" class="business_building">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label for="business_house_no">House Number</label>
+                                                        <input type="text" name="business_house_no" class="business_house_no">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label for="business_street">Street Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <input type="text" name="business_street" class="business_street">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <label for="business_village">Village</label>
+                                                        <input type="text" name="business_village" class="business_village">
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="business_street">Barangay <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <select id="inputBarangay" class="form-control business_barangay">
+                                                            <option value="Bagumbayan" selected>Bagumbayan</option>
+                                                            <option value="Bambang">Bambang</option>
+                                                            <option value="Calzada">Calzada</option>
+                                                            <option value="Central Bicutan">Central Bicutan</option>
+                                                            <option value="Central Signal Village">Central Signal Village</option>
+                                                            <option value="Fort Bonifacio">Fort Bonifacio</option>
+                                                            <option value="Hagonoy">Hagonoy</option>
+                                                            <option value="Ibayo Tipas">Ibayo Tipas</option>
+                                                            <option value="Katuparan">Katuparan</option>
+                                                            <option value="Ligid Tipas">Ligid Tipas</option>
+                                                            <option value="Lower Bicutan">Lower Bicutan</option>
+                                                            <option value="Maharlika Village">Maharlika Village</option>
+                                                            <option value="Napindan">Napindan</option>
+                                                            <option value="New Lower Bicutan">New Lower Bicutan</option>
+                                                            <option value="North Daang Hari">North Daang Hari</option>
+                                                            <option value="North Signal Village">North Signal Village</option>
+                                                            <option value="Palingon Tipas">Palingon Tipas</option>
+                                                            <option value="Pinagsama">Pinagsama</option>
+                                                            <option value="San Miguel">San Miguel</option>
+                                                            <option value="Santa Ana">Santa Ana</option>
+                                                            <option value="South Daang Hari">South Daang Hari</option>
+                                                            <option value="South Signal Village">South Signal Village</option>
+                                                            <option value="Tanyag">Tanyag</option>
+                                                            <option value="Tuktukan">Tuktukan</option>
+                                                            <option value="Ususan">Ususan</option>
+                                                            <option value="Upper Bicutan">Upper Bicutan</option>
+                                                            <option value="Wawa">Wawa</option>
+                                                            <option value="Western Bicutan">Western Bicutan</option>
+                                                        </select> 
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <label for="business_street">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <input type="text" name="business_street" class="business_street">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <label for="business_city">City <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <input type="text" name="business_city" class="business_city">
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="business_city">Landline</label>
+                                                        <input type="text" name="business_city" class="business_city">
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <input type="text" name="business_city" class="business_city">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label for="inputService">Type of Service</label>
+                                                        <select id="inputService" class="form-control" name="inputservice" required>
+                                                            <option value="ArtandCulture" selected>Art and Culture</option>
+                                                            <option value="BeautyandWellness">Beauty and Wellness</option>
+                                                            <option value="Construction">Construction</option>
+                                                            <option value="Education">Education</option>
+                                                            <option value="Electronics">Electronics</option>
+                                                            <option value="Events">Events</option>
+                                                            <option value="FoodandBeverages">Food and Beverages</option>
+                                                            <option value="MedicalCare">Medical Care</option>
+                                                            <option value="ProfessionalServices">Professional Services</option>
+                                                            <option value="ShoppingandRetail">Shopping and Retail</option>
+                                                            <option value="Transportation">Transportation</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label for="inputSubService">Sub Service</label>
+                                                        <select id="inputSubService" class="form-control" name="inputSubService" required>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label for="business_details">Business Description</label>
+                                                        <textarea class="form-control" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="col-12">
+
+                                                <div class="business_logo">
+                                                    <img src="./assets/img/ConnServ_Logo_Black.png" alt="..." class="img-thumbnail">
+                                                </div>
+                                                
+                                                <div class="business_location">
+                                                    <label for="change_icon">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                    <input type="file" id="change_icon" name="change_icon" style="display: none;">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                                <label for="business_location">Insert Google Embedded Map  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                <input type="text" name="business_location" id="business_location" class="business_location" placeholder="Insert html here..">
+                                                
+                                                <div class="card mb-3">
+                                                    <div class="card-header"><label onclick="show_hide()">How to Insert Google Embedded Map? <span>Click Here!</span></label></div>
+                                                    <div class="appointment_container">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Step 1. Search for Google Maps.</p>
+                                                            <p>Step 2. Select your business' Location.</p>
+                                                            <p>Step 3. Click 'Share' icon.</p>
+                                                            <p>Step 4. In the tab in window, select 'Embed a map'.</p>
+                                                            <p>Step 5. Click the text 'Copy HTML'.</p>
+                                                            <p>Step 6. Paste in the textbox above this tutorial.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="business_docu">
+                                                    <hr>
+                                                    <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                    <input type="file" id="file" name="file" multiple>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="owner_valid">
+                                                    <hr>
+
+                                                    <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                    <input type="file" id="file" name="file" multiple>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                                <button type="submit" name="createBtn" class="createBtn">Create Business</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                         <!-- REVENUE TAB -->
@@ -153,12 +393,80 @@
                     </div>
                         <!-- Appointments TAB -->
                     <div class="tab-pane fade incoming_content" id="v-pills-incoming" role="tabpanel" aria-labelledby="v-pills-incoming-tab">
-                        <h1>This is Incoming page</h1>
+                        
+                        <div class="col-12 incoming_container">
+                            <div class="col-12 date_title">
+                                <h6>Current Date</h6>
+                            </div>
+                            <div class="col-12 incoming_content">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Service Type</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Client Name</h6>
+                                        <p class="card-text">Description note from the client of what problem to solve.</p>
+                                        <p class="card-text">Chosen Date</p>
+                                        <a class="card-text">Payment Method</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                         <!-- Messages TAB -->
                     <div class="tab-pane fade approval_content" id="v-pills-approval" role="tabpanel" aria-labelledby="v-pills-approval-tab">
-                        <h1>This is messages page</h1>
-                    </div>
+                        <div class="col-12 approval_container">
+                                <div class="col-12 date_title">
+                                    <h6>Current Date</h6>
+                                </div>
+                                <div class="col-12 incoming_content">
+                                    <table class="table table-hover table-sm incoming_table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Appointment ID#</th>
+                                                <th scope="col">Service Type</th>
+                                                <th scope="col">First</th>
+                                                <th scope="col">Last</th>
+                                                <th scope="col">Address</th>
+                                                <th scope="col">Contact #</th>
+                                                <th scope="col">Date of Booking</th>
+                                                <th scope="col">Time of Booking</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1009</th>
+                                                <td>Hardware Repair</td>
+                                                <td>Karl</td>
+                                                <td>Parole</td>
+                                                <td>71e, Mapagkawanggawa</td>
+                                                <td>09676842595</td>
+                                                <td>03/09/22</td>
+                                                <td>7:00 pm</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1009</th>
+                                                <td>Hardware Repair</td>
+                                                <td>Karl</td>
+                                                <td>Parole</td>
+                                                <td>71e, Mapagkawanggawa</td>
+                                                <td>09676842595</td>
+                                                <td>03/09/22</td>
+                                                <td>7:00 pm</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1009</th>
+                                                <td>Hardware Repair</td>
+                                                <td>Karl</td>
+                                                <td>Parole</td>
+                                                <td>71e, Mapagkawanggawa</td>
+                                                <td>09676842595</td>
+                                                <td>03/09/22</td>
+                                                <td>7:00 pm</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                         <!-- SETTINGS TAB -->
                     <div class="tab-pane fade settings_content" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                         <h1>This is setting page</h1>

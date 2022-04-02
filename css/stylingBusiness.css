@@ -146,3 +146,7 @@ section .body_content .business_content .tab_contents .main_content .description
   text-align: justify;
   text-justify: inter-word;
 }
+
+section .body_content .business_content .tab_contents .main_content .documents_bar table button {
+  color: red;
+}
