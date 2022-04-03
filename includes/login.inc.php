@@ -12,9 +12,10 @@
 
       if(mysqli_num_rows($query)>0){
         $_SESSION['email'] = $rows['user_email'];
+        $_SESSION['useridentity'] = $rows['user_identity'];
         $_SESSION['password'] = $rows['user_pass'];
         $_SESSION['name'] = $rows['user_firstname'];
-        header("Location: ../user_profile.php?signup=success");
+        header('Location: ../user_profile.php?email='.$_SESSION['email'].'');
       }else{
         echo "<script type='text/javascript'>";
         echo "alert('Invalid Email or Password');";

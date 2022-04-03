@@ -1,3 +1,13 @@
+<?php
+    session_start();
+if(!isset($_SESSION['businessId'])){
+
+    header("Location: ./login.php");
+
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,7 +46,7 @@
                             <a class="nav-link" id="v-pills-approval-tab" data-toggle="pill" href="#v-pills-approval" role="tab" aria-controls="v-pills-approval" aria-selected="false">Approval</a>
                         </div>
                     </div>
-                    
+                    <a href="./user_profile.php"><button>Back to User Page</button></a>
                 </div>
             </div>
             <div class="col-10 body_content">

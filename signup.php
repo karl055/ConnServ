@@ -25,9 +25,7 @@
                                 <form class="needs-validation" action="./includes/signup.inc.php" method="post" novalidate>
                                     <div>
                                         <input type="text" class="form-control" id="validationCustom05" name="fname" placeholder="First Name" required>
-                                        <div class="invalid-feedback">
-                                            <?php if(empty($_POST['fname'])){ echo"Please Provide a valid Input";}?>
-                                        </div>
+                                        
                                     </div>
                                     <div>
                                         <input type="text" class="form-control" id="validationCustom05" name="lname" placeholder="Last Name" required>

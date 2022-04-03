@@ -1,3 +1,13 @@
+<?php
+    session_start();
+if(!isset($_SESSION['username'])){
+
+    header("Location: ./login.php");
+
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,7 +47,7 @@
                         <h3>Create Business</h3>
                         <h1>Here there and everywhere</h1>
                     </div>
-                    <form action="#">
+                    <form action="./includes/createbusiness.inc.php" method="post">
                         <div class="row">
                             <div class="col-7">
                                 <div class="business_trade">
@@ -78,7 +88,7 @@
                                         </div>
                                         <div class="col-4">
                                             <label for="business_street">Barangay <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <select id="inputBarangay" class="form-control business_barangay">
+                                            <select id="inputBarangay" class="form-control business_barangay" name="business_barangay">
                                                 <option value="Bagumbayan" selected>Bagumbayan</option>
                                                 <option value="Bambang">Bambang</option>
                                                 <option value="Calzada">Calzada</option>
@@ -111,7 +121,7 @@
                                         </div>
                                         <div class="col-3">
                                             <label for="business_street">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_street" class="business_street">
+                                            <input type="text" name="business_zip" class="business_street">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -121,11 +131,11 @@
                                         </div>
                                         <div class="col-4">
                                             <label for="business_city">Landline</label>
-                                            <input type="text" name="business_city" class="business_city">
+                                            <input type="text" name="business_landline" class="business_city">
                                         </div>
                                         <div class="col-4">
                                             <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_city" class="business_city">
+                                            <input type="text" name="business_mobile" class="business_city">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -155,7 +165,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <label for="business_details">Business Description</label>
-                                            <textarea class="form-control" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
+                                            <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
                                         </div>
                                     </div>
                                 </div>
