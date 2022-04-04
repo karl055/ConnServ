@@ -57,8 +57,9 @@ $dark-gray: #252424;
 .centercol {
   .rate {
     float: left;
-    height: 46px;
-    padding: 0 0px;
+    height: 50px;
+    // padding: 0 0px;
+    // margin-right  : 20px;
   }
   .rate:not(:checked) > input {
     position: absolute;
