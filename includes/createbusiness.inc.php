@@ -2,8 +2,10 @@
     include '../hostCon.php';
     session_start();
 
+
     if(isset($_SESSION['username'])){
         if(isset($_POST['createBtn'])){
+
             $userId = $_SESSION['username'];
             $business_name = $_POST['business_name'];
             $business_email = $_POST['business_email'];
@@ -21,7 +23,22 @@
             $business_mobile = $_POST['business_mobile'];
             $business_details = $_POST['business_details'];
     
+            if(empty($business_name) || empty($business_email) || empty($business_category) || empty($business_subcategory)
+            || empty($business_unit_no) || empty($business_building) || empty($business_house_no) || empty($business_street)
+            || empty($business_village) || empty($business_barangay) || empty($business_zip) || empty($business_city)
+            || empty($business_landline) || empty($business_mobile) || empty($business_details)){
+                header("Location: ../create_business.php?error=blankinputs");
+                exit();
+            }
             
+            $sqlEmail = "SELECT * FROM business_tb WHERE business_name = '$business_name'";
+
+            $emailResult = mysqli_query($connect, $sqlEmail);
+            if(mysqli_num_rows($emailResult) == 1){
+                header("Location: ../create_business.php?error=BusinessNameAlreadyExist");
+                exit();
+            }
+
             $sql = "INSERT INTO business_tb 
             SET business_name = '$business_name', business_email = '$business_email', business_category = '$business_category', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
                 business_building ='$business_building', house_no = '$business_house_no', business_street = '$business_street', business_village = '$business_village', business_barangay = '$business_barangay', business_zip = '$business_zip',

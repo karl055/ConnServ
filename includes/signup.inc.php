@@ -25,7 +25,6 @@
                 else{
                     header("Location: ../signup.php?email=invalid");
                 }
-                return $result;
                 header("Location: ../login.php");
             }
         

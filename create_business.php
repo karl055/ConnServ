@@ -53,42 +53,42 @@ if(!isset($_SESSION['username'])){
                                 <div class="business_trade">
 
                                     <label for="business_name">Business Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                    <input type="text" name="business_name" class="business_name">
+                                    <input type="text" name="business_name" class="business_name" required>
                                 </div>
                                 <div class="business_trade">
 
                                     <label for="trade_name">Business Email <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                    <input type="text" name="business_email" class="trade_name">
+                                    <input type="text" name="business_email" class="trade_name" required>
                                 </div>
                                 <div class="business_address">
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="business_unit_no">Unit Number</label>
-                                            <input type="text" name="business_unit_no" class="business_unit_no">
+                                            <input type="text" name="business_unit_no" class="business_unit_no" required>
                                         </div>
                                         <div class="col-6">
                                             <label for="business_building">Building Name</label>
-                                            <input type="text" name="business_building" class="business_building">
+                                            <input type="text" name="business_building" class="business_building" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="business_house_no">House Number</label>
-                                            <input type="text" name="business_house_no" class="business_house_no">
+                                            <input type="text" name="business_house_no" class="business_house_no" required>
                                         </div>
                                         <div class="col-6">
                                             <label for="business_street">Street Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_street" class="business_street">
+                                            <input type="text" name="business_street" class="business_street" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-5">
                                             <label for="business_village">Village</label>
-                                            <input type="text" name="business_village" class="business_village">
+                                            <input type="text" name="business_village" class="business_village" required> 
                                         </div>
                                         <div class="col-4">
                                             <label for="business_street">Barangay <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <select id="inputBarangay" class="form-control business_barangay" name="business_barangay">
+                                            <select id="inputBarangay" class="form-control business_barangay" name="business_barangay" required>
                                                 <option value="Bagumbayan" selected>Bagumbayan</option>
                                                 <option value="Bambang">Bambang</option>
                                                 <option value="Calzada">Calzada</option>
@@ -121,21 +121,21 @@ if(!isset($_SESSION['username'])){
                                         </div>
                                         <div class="col-3">
                                             <label for="business_street">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_zip" class="business_street">
+                                            <input type="text" name="business_zip" class="business_street" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-4">
                                             <label for="business_city">City <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_city" class="business_city">
+                                            <input type="text" name="business_city" class="business_city" required>
                                         </div>
                                         <div class="col-4">
                                             <label for="business_city">Landline</label>
-                                            <input type="text" name="business_landline" class="business_city">
+                                            <input type="text" name="business_landline" class="business_city" required>
                                         </div>
                                         <div class="col-4">
                                             <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_mobile" class="business_city">
+                                            <input type="text" name="business_mobile" class="business_city" required>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -165,7 +165,7 @@ if(!isset($_SESSION['username'])){
                                     <div class="row">
                                         <div class="col-12">
                                             <label for="business_details">Business Description</label>
-                                            <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
+                                            <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.." required></textarea>
                                         </div>
                                     </div>
                                 </div>
