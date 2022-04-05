@@ -22,36 +22,102 @@
             $business_landline = $_POST['business_landline'];
             $business_mobile = $_POST['business_mobile'];
             $business_details = $_POST['business_details'];
+
+            /* LEGAL FILES UPLOAD */
+
+            $legalFiles = $_FILES['legalFiles'];
+
+            $legalFileName = $legalFiles['name'];
+            $legalFileTmpName = $legalFiles['tmp_name'];
+            $legalFileSize= $legalFiles['size'];
+            $legalFileError = $legalFiles['error'];
+            $legalFileType = $legalFiles['type'];
+
+            
+            $legalFileExt = explode('.', $legalFileName);
+            $legalFileActualExt = strtolower(end($legalFileExt));
     
-            if(empty($business_name) || empty($business_email) || empty($business_category) || empty($business_subcategory)
-            || empty($business_unit_no) || empty($business_building) || empty($business_house_no) || empty($business_street)
-            || empty($business_village) || empty($business_barangay) || empty($business_zip) || empty($business_city)
-            || empty($business_landline) || empty($business_mobile) || empty($business_details)){
-                header("Location: ../create_business.php?error=blankinputs");
+            /* LEGAL ID UPLOAD */
+
+
+            $idFiles = $_FILES['idFiles'];
+
+            $idFileName = $idFiles['name'];
+            $idFileTmpName = $idFiles['tmp_name'];
+            $idFileSize= $idFiles['size'];
+            $idFileError = $idFiles['error'];
+            $idFileType = $idFiles['type'];
+
+    
+            $idFileExt = explode('.', $idFileName);
+            $idFileActualExt = strtolower(end($idFileExt));
+
+            $allowed = array('pdf');
+
+            if(in_array($legalFileActualExt, $allowed) && in_array($idFileActualExt, $allowed)){
+                if($legalFileError === 0 && $idFileError === 0){
+        
+                    if($legalFileSize < 500000 && $idFileSize < 500000){
+                        $legalFileNameNew = uniqid('', true). "." .$legalFileActualExt;
+                        $idFileNameNew = uniqid('', true). "." .$idFileActualExt;
+                        mkdir($userId);
+                        $legalFileDestination = '../assets/'.$userId.'/'.$legalFileNameNew;
+                        $idFileDestination = '../assets/'.$userId.'/'.$idFileNameNew;
+                        if(move_uploaded_file($legalFileTmpName, $legalFileDestination) && move_uploaded_file($idFileTmpName, $idFileDestination)){
+        
+
+                            if(empty($business_name) || empty($business_email) || empty($business_category) || empty($business_subcategory)
+                            || empty($business_unit_no) || empty($business_building) || empty($business_house_no) || empty($business_street)
+                            || empty($business_village) || empty($business_barangay) || empty($business_zip) || empty($business_city)
+                            || empty($business_landline) || empty($business_mobile) || empty($business_details)){
+                                header("Location: ../create_business.php?error=blankinputs");
+                                exit();
+                            }
+                            
+                            $sqlEmail = "SELECT * FROM business_tb WHERE business_name = '$business_name'";
+
+                            $emailResult = mysqli_query($connect, $sqlEmail);
+                            
+                            if(!mysqli_num_rows($emailResult) == 0){
+                                header("Location: ../create_business.php?error=BusinessNameAlreadyExist");
+                                exit();
+                            }
+
+                            $sql = "INSERT INTO business_tb 
+                            SET business_name = '$business_name', business_email = '$business_email', business_category = '$business_category', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
+                                business_building ='$business_building', house_no = '$business_house_no', business_street = '$business_street', business_village = '$business_village', business_barangay = '$business_barangay', business_zip = '$business_zip',
+                                business_city ='$business_city', business_landline = '$business_landline', business_mobile = '$business_mobile', business_description = '$business_details',
+                                legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew',
+                                ownerId = (
+                                SELECT user_identity
+                                FROM user_tb
+                                WHERE user_identity = '$userId')";
+                                
+                            mysqli_query($connect, $sql) or die(mysqli_error($connect));
+                            
+                            /* , '$business_email', '$business_category', '$business_subcategory', '$business_unit_no', '$business_building', '$business_house_no', '$business_street', '$business_village', '$business_barangay', '$business_zip', '$business_city', '$business_landline', '$business_mobile', '$business_details' */
+                            /* , business_email, business_category, business_subcategory, unit_no, business_building, house_no, business_street, business_village, business_barangay, business_zip, business_city, business_landline, business_mobile, business_details */
+                            header("Location: ../user_profile.php");
+                        }
+        
+                    }
+                    else{ 
+                        header("Location: ../create_business.php?error=largeFile");
+                        exit();
+                    }
+                }
+                else{  
+                    header("Location: ../create_business.php?error=errorupload");
+                    exit();
+                }
+            }
+            else{
+                header("Location: ../create_business.php?error=invalidFile");
                 exit();
             }
-            
-            $sqlEmail = "SELECT * FROM business_tb WHERE business_name = '$business_name'";
 
-            $emailResult = mysqli_query($connect, $sqlEmail);
-            if(mysqli_num_rows($emailResult) == 1){
-                header("Location: ../create_business.php?error=BusinessNameAlreadyExist");
-                exit();
-            }
 
-            $sql = "INSERT INTO business_tb 
-            SET business_name = '$business_name', business_email = '$business_email', business_category = '$business_category', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
-                business_building ='$business_building', house_no = '$business_house_no', business_street = '$business_street', business_village = '$business_village', business_barangay = '$business_barangay', business_zip = '$business_zip',
-                business_city ='$business_city', business_landline = '$business_landline', business_mobile = '$business_mobile', business_description = '$business_details',
-                ownerId = (
-                SELECT user_identity
-                  FROM user_tb
-                 WHERE user_identity = '$userId')";
-            mysqli_query($connect, $sql) or die(mysqli_error($connect));
             
-            /* , '$business_email', '$business_category', '$business_subcategory', '$business_unit_no', '$business_building', '$business_house_no', '$business_street', '$business_village', '$business_barangay', '$business_zip', '$business_city', '$business_landline', '$business_mobile', '$business_details' */
-            /* , business_email, business_category, business_subcategory, unit_no, business_building, house_no, business_street, business_village, business_barangay, business_zip, business_city, business_landline, business_mobile, business_details */
-            header("Location: ../user_profile.php");
         }
     }
     
