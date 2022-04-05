@@ -1,0 +1,36 @@
+
+.time_content{
+    #am, #pm{
+        display: none;
+    } 
+
+    .timeLabel{
+
+        padding: 10px 20px;
+        position: relative;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    #am #pm:checked + .timeLabel{
+
+        background-color: black;
+        color: white;
+    } 
+    .selectTime{
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 5px;
+        
+        option{
+
+            font-size: 16px;
+        }
+    } 
+    
+    span{
+        font-size: 20px;
+        font-weight: 700;
+    }
+}

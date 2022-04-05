@@ -1,4 +1,5 @@
-@import "./variables";
+@import './variables';
+
 $txtParentsize: 10rem;
 nav {
   top: 0;
@@ -69,33 +70,5 @@ nav {
   }
   :focus {
     outline: none;
-  }
-}
-
-// ALL MEDIA QUERY HAS THEIR OWN DIFFERENT STYLES THAT APPLIES DEPENDS ON THE SIZE OF THE DEVICES' SCREEN
-
-// MEDIA QUERY USE FOR PC AND LAPTOP SCREENS
-@media screen and (min-width: 950px) and (max-width: 1124px) {
-  /* .nav-links {
-    li {
-    }
-  } */
-  .servicetxt {
-    width: 5em;
-    min-height: 2em;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-  }
-  .locationtxt {
-    min-width: 5rem;
-    min-height: 2rem;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-  }
-  .searchbtn {
-    min-width: 1rem;
-    min-height: 1rem;
   }
 }

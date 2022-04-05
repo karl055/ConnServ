@@ -2,29 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
+    <link rel="icon" href="/assets/img/tab_icon.png">
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <!-- Online Bootstrap Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login | Connserv PH</title>
+</head>
   <body>
-    <nav>
-      <div class="container-fluid">
-        <div class="logo">
-                <img class="logo-img" src="/assets/img/ConnServ_Logo.png" alt="connserv-logo">
-        </div>
-        <div class="search-div">
-            <input class="servicetxt" type="text" placeholder="Service, Business">
-            <input class="locationtxt" type="text" placeholder="Location">
-            <button class="searchbtn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </button>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Account</a><!-- <a href="#">Account</a> --></li>
-        </ul>
-    </div>
-    </nav>
+    <div class="page-body">
+      <nav>
+          <div class="container-fluid">
+              <div class="logo">
+                  <a href="homepage.html"><img class="logo-img" src="assets/img/ConnServ_Logo.png" alt="connserv-logo"></a>
+              </div>
+              <div class="search-div">
+                  <input class="servicetxt" type="text" placeholder="Service, Business">
+                  <input class="locationtxt" type="text" placeholder="Location">
+                  <button class="searchbtn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                  </button>
+              </div>
+              <ul class="nav-links">
+                  <li><a href="login.html">Account</a></li>
+              </ul>
+          </div>
+      </nav>
+
+      <div class="body-container">
+          <div class="image-container">
+              <img src="./assets/img/icons/connserv_heading.png" alt="ConnServ Heading Image" class="img-responsive">
+          </div>
+          <div class="login-container">
+              <div class="login-form">
+                  <div class="inner-container">
+                      <h4>Login</h4>
+                      <div class="form-login">
+                          <form action="#">
+                              <input type="email" name="email" placeholder="Email">
+                              <input class="pass-txt" type="password" name="password" placeholder="Password">
+                          </form>
+                          <div class="buttons-accounts">
+                              <button class="login">Login</button>
+                              <a href="facebook.com"><button class="signup">Create Account</button></a>
+                          </div>
+                          <div style="display:flex">
+                              <p>Forgot Password?</p><a href="login.html"><p> Click here!</p></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
   </body>
 </html>

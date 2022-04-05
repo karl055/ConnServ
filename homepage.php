@@ -3,24 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/assets/img/tab_icon.png">
+        <link rel="icon" href="./assets/img/tab_icon.png">
 
-        <!-- Google Font Link -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-
-        <!-- Online Bootstrap Link -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <?php include './includes/bootstrap_con.php';?>
         
-        <link rel="stylesheet" href="/css/homepage.css">
+        <link rel="stylesheet" href="./css/homepage.css">
         <title>ConnServ</title>
     </head>
     <body>
         <!-- This is comment-->
         <!-- HEADER CONTAINER FOR HEADER AND NAVBAR Navbar inside of shrinking header-->
-        <div class="header_logo">
+        <div class="header_logo" style="background-image: url('./assets/img/header_img.png');">
             <div class="title_div">
                 <div class="text_margin">
                     <h2>Find and Hire Near Services</h2>
@@ -28,27 +21,9 @@
                 </div>
             </div>
         </div>
-        <nav>
-            <div class="container-fluid">
-                <div class="logo">
-                        <img class="logo-img" src="/assets/img/ConnServ_Logo.png" alt="connserv-logo">
+        
 
-                </div>
-                <div class="search-div">
-                    <input class="servicetxt" type="text" placeholder="Service, Business">
-                    <input class="locationtxt" type="text" placeholder="Location">
-                    <button class="searchbtn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#">Sign In/Up</a><!-- <a href="#">Account</a> --></li>
-                </ul>
-            </div>
-        </nav>
-
+        <?php include './navbar.php';?>
         <!-- BODY OF THE WEBSITE -->
         
         <!-- CATEGORIES -->
@@ -59,43 +34,43 @@
                 </div>
                 <div class="categories card-deck">
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="/assets/img/categories//another/Academic.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories//another/Academic.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="#" class="card-text stretched-link">Academic</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="/assets/img/categories/another/Clothing.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories/another/Clothing.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="#" class="card-text stretched-link">Clothing</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="/assets/img/categories/another/Catering.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories/another/Catering.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="#" class="card-text stretched-link">Catering</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="assets/img/categories/another/Computer.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories/another/Computer.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="#" class="card-text stretched-link">Computer</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="assets/img/categories/another/construction1.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories/another/construction1.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="#" class="card-text stretched-link">Construction</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="assets/img/categories/another/Electrical.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories/another/Electrical.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="#" class="card-text stretched-link">Electrical</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="assets/img/categories/another/Business.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories/another/Business.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="#" class="card-text stretched-link">Business</a>
                         </div>
@@ -123,7 +98,7 @@
                   <div class="featured-services">
                     <div class="card-deck">
                         <div class="card">
-                          <img src="/assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                             <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -133,7 +108,7 @@
                           </div>
                         </div>
                         <div class="card">
-                          <img src="/assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                             <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -143,7 +118,7 @@
                           </div>
                         </div>
                         <div class="card">
-                          <img src="/assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                             <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -172,7 +147,7 @@
                   <div class="featured-services">
                     <div class="card-deck">
                         <div class="card">
-                          <img src="/assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                             <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -182,7 +157,7 @@
                           </div>
                         </div>
                         <div class="card">
-                          <img src="/assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                             <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -192,7 +167,7 @@
                           </div>
                         </div>
                         <div class="card">
-                          <img src="/assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                             <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -213,7 +188,7 @@
         <footer class="footer-div">
           <div class="container-fluid row connserv-container">
             <div class="col-4">
-              <img class="connserv-logo" src="/assets/img/ConnServ_Logo.png" alt="Connserv Image">
+              <img class="connserv-logo" src="./assets/img/ConnServ_Logo.png" alt="Connserv Image">
             </div>
             <div class="col-8 footer-links">
               <div class="row">
@@ -260,6 +235,5 @@
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    
-      </body>
+    </body>
 </html>

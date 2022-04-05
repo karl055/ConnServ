@@ -187,7 +187,15 @@ nav :focus {
             } */
 }
 
-.page-body .body-container .login-container .login-form .inner-container .form-login input[type=text], .page-body .body-container .login-container .login-form .inner-container .form-login input[type=password] {
+.page-body .body-container .login-container .login-form .inner-container .form-login input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #252424;
+  padding: .5rem;
+  margin-top: .5rem;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .pass-txt {
   width: 100%;
   border: none;
   border-bottom: 2px solid #252424;
@@ -202,14 +210,6 @@ nav :focus {
 .page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts {
   margin-top: 2rem;
   display: block;
-  /* .signup{
-                border: 1px solid $font-color-b;
-                &:hover{
-                  background-color: $font-color-b;
-                  color: white;
-                  transition: .3s;
-                }
-              } */
 }
 
 .page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts button {
@@ -218,34 +218,33 @@ nav :focus {
   border-radius: 5px;
 }
 
-.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup {
-  margin-right: 1rem;
-  background-color: #5e0cc4;
-  border: none;
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .signup:hover {
-  background-color: white;
-  color: black;
-  border: 1px solid #5e0cc4;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a {
-  width: 50%;
-}
-
-.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .login {
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .login {
   border: 1px solid #5e0cc4;
   width: 100%;
 }
 
-.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts a .login:hover {
+.page-body .body-container .login-container .login-form .inner-container .form-login .buttons-accounts .login:hover {
   background-color: #5e0cc4;
   color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .signup {
+  height: 3rem;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  background-color: #5e0cc4;
+  border: none;
+  color: white;
+}
+
+.page-body .body-container .login-container .login-form .inner-container .form-login .signup:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid #5e0cc4;
   -webkit-transition: .3s;
   transition: .3s;
 }

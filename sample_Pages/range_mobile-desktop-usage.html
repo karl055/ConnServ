@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <script>
+        // Ignore this in your implementation
+        window.isMbscDemo = true;
+    </script>
+
+    <title>Mobile & Desktop usage</title>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body,
+    html {
+        height: 100%;
+    }
+
+    .md-mobile-picker-header {
+        font-size: 14px;
+    }
+    
+    input.md-mobile-picker-input {
+        color: initial;
+        width: 100%;
+        padding: 10px;
+        margin: 6px 0 12px 0;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        font-family: arial, verdana, sans-serif;
+        font-size: 14px;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+    }
+    
+    .md-mobile-picker-button.mbsc-button {
+        font-size: 13px;
+        padding: 0 15px;
+        line-height: 36px;
+        float: right;
+        margin: 6px 0;
+        width: 100%;
+    }
+    
+    .mbsc-col-no-padding {
+        padding-left: 0;
+    }
+    
+    .md-mobile-picker-box-label.mbsc-textfield-wrapper-box,
+    .md-mobile-picker-box-label .mbsc-textfield-wrapper-box,
+    .md-mobile-picker-inline {
+        margin: 6px 0 12px 0;
+    }
+    </style>
+
+</head>
+<body>
+
+<div mbsc-page class="demo-mobile-desktop-usage">
+  <div style="height:100%">
+      <div class="mbsc-grid">
+        <div class="mbsc-form-group">
+            <div class="mbsc-row">
+                <div class="mbsc-col-12">
+                    <div class="mbsc-txt-muted md-mobile-picker-header">Use the picker with any inputs & show on focus/click</div>
+                    <input id="demo-mobile-picker-input" class="md-mobile-picker-input" placeholder="Please Select..." />
+                </div>
+            </div>
+        </div>
+        <div class="mbsc-form-group">
+            <div class="mbsc-row">
+                <div class="mbsc-col-12 mbsc-txt-muted md-mobile-picker-header">Disable <code>onClick/onFocus</code> and only show on button</div>
+                <div class="mbsc-col-8">
+                    <input id="demo-mobile-picker-button" class="md-mobile-picker-input" />
+                </div>
+                <div class="mbsc-col-4">
+                    <button mbsc-button data-variant="outline" data-color="primary" id="show-mobile-date-picker" class="md-mobile-picker-button">Show picker</button>
+                </div>
+            </div>
+        </div>
+        <div class=" mbsc-form-group">
+            <div class="mbsc-row">
+                <div class="mbsc-col-12">
+                    <div class="mbsc-txt-muted md-mobile-picker-header">Use the picker with a Mobiscroll input</div>
+                    <label class="md-mobile-picker-box-label">
+                    <input id="demo-mobile-picker-mobiscroll" mbsc-input data-label-style="stacked" data-input-style="box" placeholder="Please Select..." />
+                </label>
+                </div>
+            </div>
+        </div>
+        <div class="mbsc-txt-muted md-mobile-picker-header">Use the picker inline in any page</div>
+    </div>
+    <div class="md-mobile-picker-inline">
+        <div id="demo-mobile-picker-inline"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    mobiscroll.setOptions({
+        locale: mobiscroll.localeEn,  // Specify language like: locale: mobiscroll.localePl or omit setting to use default
+        theme: 'ios',                 // Specify theme like: theme: 'ios' or omit setting to use default
+        themeVariant: 'light'         // More info about themeVariant: https://docs.mobiscroll.com/5-15-1/javascript/range#opt-themeVariant
+    });
+    
+    var now = new Date(),
+        week = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 6);
+    
+    mobiscroll.datepicker('#demo-mobile-picker-input', {
+        controls: ['calendar'],       // More info about controls: https://docs.mobiscroll.com/5-15-1/javascript/range#opt-controls
+        select: 'range',              // More info about select: https://docs.mobiscroll.com/5-15-1/javascript/range#methods-select
+        showRangeLabels: true
+    });
+    
+    var instance = mobiscroll.datepicker('#demo-mobile-picker-button', {
+        controls: ['calendar'],       // More info about controls: https://docs.mobiscroll.com/5-15-1/javascript/range#opt-controls
+        select: 'range',              // More info about select: https://docs.mobiscroll.com/5-15-1/javascript/range#methods-select
+        showRangeLabels: true,
+        showOnClick: false,           // More info about showOnClick: https://docs.mobiscroll.com/5-15-1/javascript/range#opt-showOnClick
+        showOnFocus: false,           // More info about showOnFocus: https://docs.mobiscroll.com/5-15-1/javascript/range#opt-showOnFocus
+    });
+    
+    instance.setVal([now, week]);
+    
+    mobiscroll.datepicker('#demo-mobile-picker-mobiscroll', {
+        controls: ['calendar'],       // More info about controls: https://docs.mobiscroll.com/5-15-1/javascript/range#opt-controls
+        select: 'range',              // More info about select: https://docs.mobiscroll.com/5-15-1/javascript/range#methods-select
+        showRangeLabels: true
+    });
+    
+    var inlineInst = mobiscroll.datepicker('#demo-mobile-picker-inline', {
+        controls: ['calendar'],       // More info about controls: https://docs.mobiscroll.com/5-15-1/javascript/range#opt-controls
+        select: 'range',              // More info about select: https://docs.mobiscroll.com/5-15-1/javascript/range#methods-select
+        showRangeLabels: true,
+        display: 'inline',            // Specify display mode like: display: 'bottom' or omit setting to use default
+    });
+    
+    inlineInst.setVal([now, week]);
+    
+    document
+        .getElementById('show-mobile-date-picker')
+        .addEventListener('click', function () {
+            instance.open();
+            return false;
+        });
+</script>
+
+</body>
+</html>
