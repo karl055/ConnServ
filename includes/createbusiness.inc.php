@@ -60,9 +60,8 @@
                     if($legalFileSize < 500000 && $idFileSize < 500000){
                         $legalFileNameNew = uniqid('', true). "." .$legalFileActualExt;
                         $idFileNameNew = uniqid('', true). "." .$idFileActualExt;
-                        mkdir($userId);
-                        $legalFileDestination = '../assets/'.$userId.'/'.$legalFileNameNew;
-                        $idFileDestination = '../assets/'.$userId.'/'.$idFileNameNew;
+                        $legalFileDestination = '../assets/legalidDocuments/'.$legalFileNameNew;
+                        $idFileDestination = '../assets/legalidDocuments/'.$idFileNameNew;
                         if(move_uploaded_file($legalFileTmpName, $legalFileDestination) && move_uploaded_file($idFileTmpName, $idFileDestination)){
         
 

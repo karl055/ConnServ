@@ -26,7 +26,7 @@
     </head>
     <body>
 
-    
+    <?php include_once './navbar.php';?>
       <div class="col-12" style="display: flex;">
        <div class="col-3">
           <div class="container">
@@ -56,7 +56,7 @@
         <div class="col-9">
           <div class="col-12">
 
-            <div class="service-title col-12">
+            <div class="service-title col-12" style="padding: 4rem 0 1rem;">
               <div class="col-12 top_container" style="display: flex;">
                 <h1 class="font-weight-bold col-11" title="Bonheur Apparel Incorporated Group of Company">Bonheur Apparel Incorporated Group of Company</h1>           
                 <div class="verified-badge col-1">

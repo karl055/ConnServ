@@ -100,7 +100,7 @@
                         <div class="card">
                           <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
+                            <a href="./service_profile.php" class="card-title stretched-link">Bonheur Apparel</a>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                           </div>
                           <div class="card-footer">

@@ -81,16 +81,16 @@ nav .nav-links {
   margin: auto;
 }
 
-nav .nav-links li {
+nav .nav-links .link {
   list-style-type: none;
 }
 
-nav .nav-links li a {
+nav .nav-links .link a {
   color: white;
   width: 100px;
 }
 
-nav .nav-links li :hover {
+nav .nav-links .link :hover {
   color: #f574ec;
   text-decoration: none;
 }

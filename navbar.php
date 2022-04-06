@@ -30,7 +30,7 @@
             <ul class="nav-links">
 
                 
-                <li>
+                <li class="link">
                 <?php
                 if(isset($_SESSION['username'])){
                     echo "<a href='./user_profile.php' style='color: white;'>Account</a>";

@@ -1,0 +1,40 @@
+.search_container {
+  height: 100vh;
+}
+
+.search_container .search_top {
+  padding: 1rem;
+}
+
+.search_container .search_top .search_title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.search_container .main_content {
+  height: 100%;
+}
+
+.search_container .main_content .filter_tab {
+  height: 100%;
+}
+
+.search_container .main_content .filter_tab .filter_check {
+  margin: 1rem 0 1rem;
+}
+
+.search_container .main_content .filter_tab label {
+  margin: 0 0.5rem 0;
+}
+
+.search_container .main_content .search_tab .card_drawer {
+  margin-bottom: 2rem;
+}
+
+.search_container .main_content .search_tab .card .btn {
+  background-color: #5e0cc4;
+  color: white;
+}
+
+.search_container .main_content .search_tab .card img {
+  border-radius: 20px;
+}

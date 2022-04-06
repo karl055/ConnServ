@@ -1,0 +1,54 @@
+
+
+.search_container{
+
+    height: 100vh;
+
+    .search_top{
+        padding: 1rem;
+
+        .search_title{
+    
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    }
+
+    .main_content{
+
+        height: 100%;
+
+        .filter_tab{
+            height: 100%;
+
+            .filter_check{
+                margin: 1rem 0 1rem;
+            }
+            label{
+                margin: 0 0.5rem 0;
+            }
+
+        }
+
+        
+        .search_tab{
+
+            .card_drawer{
+                margin-bottom: 2rem;
+            }
+            .card{
+
+                .btn{
+                    background-color: #5e0cc4;
+                    color: white;
+                }
+
+                img{
+                    border-radius: 20px;
+                }
+            }
+            
+        }
+    }
+    
+
+}
