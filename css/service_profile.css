@@ -221,11 +221,9 @@ nav :focus {
 }
 
 .offered-service {
-  max-width: 920px;
-  max-height: 600px;
   font-family: "Montserrat", sans-serif;
   margin: 0px 10px 10px 10px;
-  width: 920px;
+  width: 100%;
   height: 650px;
   background-image: linear-gradient(45deg, #5e0cc4 14.7%, #b42bab 73%);
   background-size: 200% 200%;
@@ -550,17 +548,50 @@ nav :focus {
   padding: 1rem;
 }
 
-.centercol .rate {
-  float: left;
-  height: 50px;
+.centercol {
+  width: 100%;
 }
 
-.centercol .rate:not(:checked) > input {
+.service-title .top_container h1 {
+  max-width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.service-title .top_container .service-title {
+  font-family: Helvetica;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.service-title .top_container .service-title img {
+  height: 25px;
+  width: 25px;
+  margin-bottom: 15px;
+}
+
+.service-title .top_container .verified-badge {
+  padding: 1rem;
+}
+
+.service-title .bottom_container {
+  padding: 2rem;
+}
+
+.service-title .bottom_container .rate {
+  height: 50px;
+  float: left;
+}
+
+.service-title .bottom_container .rate:not(:checked) > input {
   position: absolute;
   top: -9999px;
 }
 
-.centercol .rate:not(:checked) > label {
+.service-title .bottom_container .rate:not(:checked) > label {
   float: right;
   width: 1em;
   overflow: hidden;
@@ -570,60 +601,30 @@ nav :focus {
   color: #ccc;
 }
 
-.centercol .rate:not(:checked) > label:before {
+.service-title .bottom_container .rate:not(:checked) > label:before {
   content: "★ ";
 }
 
-.centercol .rate > input:checked ~ label {
+.service-title .bottom_container .rate > input:checked ~ label {
   color: #ffc700;
 }
 
-.centercol .rate:not(:checked) > label:hover,
-.centercol .rate:not(:checked) > label:hover ~ label {
+.service-title .bottom_container .rate:not(:checked) > label:hover,
+.service-title .bottom_container .rate:not(:checked) > label:hover ~ label {
   color: #deb217;
 }
 
-.centercol .rate > input:checked + label:hover,
-.centercol .rate > input:checked + label:hover ~ label,
-.centercol .rate > input:checked ~ label:hover,
-.centercol .rate > input:checked ~ label:hover ~ label,
-.centercol .rate > label:hover ~ input:checked ~ label {
+.service-title .bottom_container .rate > input:checked + label:hover,
+.service-title .bottom_container .rate > input:checked + label:hover ~ label,
+.service-title .bottom_container .rate > input:checked ~ label:hover,
+.service-title .bottom_container .rate > input:checked ~ label:hover ~ label,
+.service-title .bottom_container .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
 }
 
-.centercol h1 {
-  max-width: 600px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
-}
-
-.centercol .service-title {
-  font-family: Helvetica;
-  font-weight: 400;
-  text-align: left;
-  margin-top: 30px;
-}
-
-.centercol .service-title img {
-  height: 25px;
-  width: 25px;
-  margin-bottom: 15px;
-}
-
-.centercol .verified-badge {
-  max-width: 25px;
-  max-height: 25px;
-  width: 25px;
-  height: 25px;
-  padding: 5px;
-}
-
-.rightcol .btn {
+.service-title .bottom_container .rightcol .btn {
   padding: 1em 1em 1.1em;
   border-radius: 10px;
-  margin: 30px 35px 8px 8px;
   color: #fbdedb;
   background-color: #fbdedb;
   display: inline-block;
@@ -642,29 +643,64 @@ nav :focus {
   position: relative;
 }
 
-.rightcol .btn:hover,
-.rightcol .btn:focus {
+.service-title .bottom_container .rightcol .btn:hover,
+.service-title .bottom_container .rightcol .btn:focus {
   opacity: 0.8;
 }
 
-.rightcol .btn:active {
+.service-title .bottom_container .rightcol .btn:active {
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
 
-.rightcol .btn.block {
+.service-title .bottom_container .rightcol .btn.block {
   display: block !important;
 }
 
-.rightcol .btn.circular {
+.service-title .bottom_container .rightcol .btn.circular {
   border-radius: 50em !important;
 }
 
-.rightcol .purple {
+.service-title .bottom_container .rightcol .purple {
   background-color: #564f8a;
 }
 
-.related-service .card p {
+.related_container {
+  margin: 3rem 0 0;
+}
+
+.related_container .related-service .cards {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.related_container .related-service .cards .card {
+  max-width: 400px;
+  position: relative;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition: 0.5s;
+  cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.related_container .related-service .cards .card p {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   color: black;
@@ -681,7 +717,7 @@ nav :focus {
   -webkit-transition: ease 1s;
 }
 
-.related-service .card h3 {
+.related_container .related-service .cards .card h3 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   color: black;
@@ -697,50 +733,7 @@ nav :focus {
   -webkit-transition: ease 1s;
 }
 
-.related-service .title {
-  width: 100%;
-  margin: auto;
-  padding-left: 0px;
-  padding-bottom: 0px;
-}
-
-.related-service .cards {
-  width: 100%;
-  position: relative;
-  margin-top: 10px;
-  margin-left: 50px;
-  margin-right: 10px;
-  padding-bottom: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-.related-service .card {
-  max-width: 400px;
-  position: relative;
-  background-color: white;
-  margin-right: 25px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transition: 0.5s;
-  cursor: pointer;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.related-service .card:hover {
+.related_container .related-service .cards .card :hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
@@ -748,27 +741,27 @@ nav :focus {
 }
 
 @media screen and (max-width: 1200px) {
-  .related-service .card {
+  .related_container .related-service .card {
     width: 30%;
     margin: 0%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .related-service .card {
+  .related_container .related-service .card {
     width: 45%;
     margin: 2.5%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .related-service .card {
+  .related_container .related-service .card {
     width: 98%;
     margin: 2%;
   }
 }
 
-.related-service .card_img {
+.related_container .related-service .card_img {
   width: 100%;
   height: 150px;
   position: reltive;
@@ -780,14 +773,14 @@ nav :focus {
   -webkit-transition: 1s;
 }
 
-.related-service .card1 {
+.related_container .related-service .card1 {
   background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
 }
 
-.related-service .card2 {
+.related_container .related-service .card2 {
   background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
 }
 
-.related-service .card3 {
+.related_container .related-service .card3 {
   background-image: url(/assets/img/featured_services/bonheur_apparel/logo.jpg);
 }
