@@ -21,7 +21,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel="stylesheet" href="./css/service_profile.css">
+        <link rel="stylesheet" href="./css/service.css">
         <title>ConnServ</title>
     </head>
     <body>
@@ -78,8 +78,8 @@
                     <label for="star1" title="Good">1 star</label>
                   </div>
                 </div>
-                <div class="rightcol col-4">
-                  <a href="#" class="btn purple block">Book an Appointment</a>
+                <div class="right_col col-4">
+                  <button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button>
                 </div>
               </row> 
               
