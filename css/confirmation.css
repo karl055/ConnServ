@@ -1,0 +1,536 @@
+/*  
+    !COLORS 
+*/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+nav {
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100vw;
+  min-height: 10vh;
+  background-image: url("/assets/img/heading_img.png");
+  background-size: cover;
+  background-color: #252424;
+  z-index: 99;
+}
+
+nav .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .logo {
+  width: 30%;
+}
+
+nav .logo .logo-img {
+  width: 10rem;
+  margin: 5px;
+}
+
+nav .search-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 80%;
+}
+
+nav .search-div .servicetxt {
+  width: 30%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .locationtxt {
+  width: 20%;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav .search-div .searchbtn {
+  width: 2.5rem;
+  height: 2.58rem;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 3px;
+}
+
+nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 15%;
+  margin: auto;
+}
+
+nav .nav-links li {
+  list-style-type: none;
+}
+
+nav .nav-links li a {
+  color: white;
+  width: 100px;
+}
+
+nav .nav-links li :hover {
+  color: #f574ec;
+  text-decoration: none;
+}
+
+nav :focus {
+  outline: none;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  /* .nav-links {
+    li {
+    }
+  } */
+  .servicetxt {
+    width: 5em;
+    min-height: 2em;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .locationtxt {
+    min-width: 5rem;
+    min-height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+  }
+  .searchbtn {
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+}
+
+/*  
+    !COLORS 
+*/
+/*
+  FOOTER 1st ROW
+*/
+.footer-div {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #252424;
+  height: 16rem;
+  position: absolute;
+}
+
+.footer-div .connserv-container {
+  padding: 1rem 0 0;
+  max-width: 100vw;
+  height: auto;
+}
+
+.footer-div .connserv-container p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  font-weight: 800;
+  color: white;
+}
+
+.footer-div img {
+  padding: 2rem 0 0;
+  width: 20rem;
+  float: right;
+}
+
+.footer-div li {
+  font-size: 0.9rem;
+  list-style-type: none;
+}
+
+.footer-div li a {
+  color: white;
+  text-decoration: none;
+}
+
+/*
+  
+    FOOTER COPYRIGHT
+  */
+.footer-copyright hr {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: 60%;
+}
+
+.footer-copyright p {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1124px) {
+  .connserv-container img {
+    width: 15rem;
+  }
+  .connserv-container p {
+    font-size: 0.8rem;
+  }
+  .connserv-container li {
+    font-size: 0.7rem;
+  }
+  .footer-copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 949px) {
+  .connserv-container img {
+    width: 15rem;
+  }
+  .connserv-container p {
+    font-size: 0.8rem;
+  }
+  .connserv-container li {
+    font-size: 0.7rem;
+  }
+  .footer-copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+body {
+  background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
+  color: #444;
+  font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.text-header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #252424;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+}
+
+.text-header mark {
+  background-color: #5e0cc4;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.info-table {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.info-table strong {
+  font-weight: bold;
+}
+
+.info-table table {
+  background: #fff;
+  border-collapse: separate;
+  -webkit-box-shadow: inset 0 1px 0 #fff;
+          box-shadow: inset 0 1px 0 #fff;
+  line-height: 24px;
+  margin: 50px auto;
+  text-align: left;
+  width: 800px;
+}
+
+.info-table th {
+  background: #5e0cc4;
+  -webkit-box-shadow: inset 0 1px 0 #fff;
+          box-shadow: inset 0 1px 0 #fff;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 10px 15px;
+  position: relative;
+  text-shadow: 0 1px 0 #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-table th:after {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.08)));
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.08));
+  content: '';
+  display: block;
+  height: 25%;
+  left: 0;
+  margin: 1px 0 0 0;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+
+.info-table th:first-child {
+  border-left: 1px solid #fff;
+  -webkit-box-shadow: inset 1px 1px 0 #fff;
+          box-shadow: inset 1px 1px 0 #fff;
+}
+
+.info-table th:last-child {
+  -webkit-box-shadow: inset -1px 1px 0 #fff;
+          box-shadow: inset -1px 1px 0 #fff;
+}
+
+.info-table td {
+  border: 0px solid #fff;
+  padding: 10px 15px;
+  position: relative;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  border-radius: 5px;
+}
+
+.info-table td:first-child {
+  -webkit-box-shadow: inset 1px 0 0 #fff;
+          box-shadow: inset 1px 0 0 #fff;
+}
+
+.info-table td:last-child {
+  border-right: 1px solid #e8e8e8;
+  -webkit-box-shadow: inset -1px 0 0 #fff;
+          box-shadow: inset -1px 0 0 #fff;
+}
+
+.info-table tr {
+  background: url(https://jackrugile.com/images/misc/noise-diagonal.png);
+}
+
+.info-table tr:nth-child(odd) td {
+  background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
+}
+
+.info-table tr:last-of-type td {
+  -webkit-box-shadow: inset 0 -1px 0 #fff;
+          box-shadow: inset 0 -1px 0 #fff;
+}
+
+.info-table tr:last-of-type td:first-child {
+  -webkit-box-shadow: inset 1px -1px 0 #fff;
+          box-shadow: inset 1px -1px 0 #fff;
+}
+
+.info-table tr:last-of-type td:last-child {
+  -webkit-box-shadow: inset -1px -1px 0 #fff;
+          box-shadow: inset -1px -1px 0 #fff;
+}
+
+.info-table tbody:hover tr:hover td {
+  color: #444;
+}
+
+.buttons {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 1rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttons .btn {
+  width: 300px;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 10px;
+  color: #fbdedb;
+  background-color: #fbdedb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #e74c3c;
+  -webkit-transition: 0.5s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+  position: relative;
+}
+
+.buttons .btn:hover,
+.buttons .btn:focus {
+  opacity: 0.8;
+}
+
+.buttons .btn:active {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.buttons .btn.block {
+  display: block !important;
+}
+
+.buttons .btn.circular {
+  border-radius: 50em !important;
+}
+
+.buttons .purple {
+  background-color: #564f8a;
+}
+
+.buttons .gray {
+  background-color: #252424;
+}
+
+.buttons .modal-window {
+  position: fixed;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.buttons .modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.buttons .modal-window > div {
+  width: 400px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 5px;
+  background: whitesmoke;
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 10px #92959e;
+          box-shadow: 5px 10px #92959e;
+  scroll-behavior: smooth;
+  overflow: scroll;
+}
+
+.buttons .modal-window header {
+  font-weight: bold;
+}
+
+.buttons .modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.buttons .modal-window img {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.buttons .modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+
+.buttons .modal-close:hover {
+  color: black;
+}
+
+.buttons .modal-close small {
+  color: lightgray;
+}
+
+.buttons .modal-body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttons .modal-body table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons .modal-body table th {
+  border: 1px solid #92959e;
+  font-size: 12px;
+  width: 200px;
+  padding: 1px 5px;
+}
+
+.buttons .modal-body table tr {
+  width: 100%;
+}
+
+.buttons .modal-body table td {
+  color: black;
+  border: 1px solid #92959e;
+  position: relative;
+  padding: 1px 5px;
+  width: 100%;
+  height: 30px;
+  font-size: 12px;
+}
+
+.buttons .modal-body p {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 5px;
+}
