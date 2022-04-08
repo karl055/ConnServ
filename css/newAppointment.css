@@ -20,15 +20,20 @@
 }
 
 * .main_body .buttonBack {
-  width: 100%;
+  width: 20%;
   height: 40px;
 }
 
 * .main_body .buttonBack button {
-  width: 100%;
+  width: 20%;
   height: 40px;
   border: 1px solid black;
   border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+* .main_body .buttonBack button:focus {
+  outline: none;
 }
 
 * .main_body .personal_content .full_name {

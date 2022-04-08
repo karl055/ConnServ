@@ -8,11 +8,12 @@
 
         <?php include './includes/bootstrap_con.php';?>
 
-        <link href="./css/create_appointment.css" rel="stylesheet"/>
+        <link href="./css/newAppointment.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include './navbar.php';?>
         <div class="main_body">
+        <a href="./service_profile.php"  class="buttonBack"><button class="buttonBack">Back</button></a>
             <form action="#" autocomplete="off">
                 <div class="col-12">
                     <div class="col-12">
@@ -37,18 +38,10 @@
                         </div>
                         <div class="col-12">
                             <label for="inputService">Type of Service</label>
-                            <select id="inputService" class="form-control" name="inputservice" disabled>
-                                <option value="ArtandCulture" selected>Art and Culture</option>
-                                <option value="BeautyandWellness">Beauty and Wellness</option>
-                                <option value="Construction">Construction</option>
-                                <option value="Education">Education</option>
-                                <option value="Electronics">Electronics</option>
-                                <option value="Events">Events</option>
-                                <option value="FoodandBeverages">Food and Beverages</option>
-                                <option value="MedicalCare">Medical Care</option>
-                                <option value="ProfessionalServices">Professional Services</option>
-                                <option value="ShoppingandRetail" selected>Shopping and Retail</option>
-                                <option value="Transportation">Transportation</option>
+                            <select id="inputService" class="form-control" name="inputservice">
+                                <option value="tailoring" selected>Tailoring</option>
+                                <option value="BeautyandWellness">Dress Making</option>
+                                <option value="Construction">Bulk Orders</option>
                             </select>
                         </div><!-- 
                         <div class="col-12">
@@ -63,8 +56,11 @@
                                 <label>Extra Notes: </label>
                             </div>
                             <div class="note_content">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                             </div>
+                        </div>
+                        <div class="col-12" style="padding-top: 5px;">
+                            
                         </div>
                     </div>
                     <div class="col-7">
@@ -167,14 +163,14 @@
                         
                         <div class="col-12">
                             <div class="col-12 btnAddAppointment" style="margin: 5px 0 0;">
-                                <div class="col-12">
-                                    <a href="./appointment_confirmation.php" ><button type="button" class="addAppointment">Add My Appointment</button></a>
+                                <div style="display: flex;">
+                                    <a href="./appointment_confirmation.php" class="col-12"><button type="button" class="addAppointment">Add My Appointment</button></a>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
         </div>
         
         <!-- SCRIPT LINK -->

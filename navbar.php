@@ -19,12 +19,12 @@ if(!isset($_SESSION['username'])){
 
         <?php include './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/navbar.css">
+        <link rel="stylesheet" href="./css/new_nav.css">
         <title>ConnServ</title>
     </head>
-    <body><form action="./navbar.php" method="post">
+    <body>
     <nav>
-                
+    <form action="./navbar.php" method="post">
         <div class="container-fluid">
             <div class="logo">
                 <a href="./homepage.php"><img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo"></a>
@@ -40,8 +40,6 @@ if(!isset($_SESSION['username'])){
                 </button>
             </div>
             <ul class="nav-links">
-
-                
                 <li class="link">
                 <?php
                 if(isset($_SESSION['username'])){
@@ -54,8 +52,7 @@ if(!isset($_SESSION['username'])){
                 <!-- <a href="./login.php">Account</a> --></li>
             </ul>
         </div>
-        
+    </form>
         </nav>
-        </form>
     </body>
 </html>

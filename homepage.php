@@ -30,7 +30,7 @@
         <div class="container-fluid">
             <div class="catergory-container">
                 <div class="category-title">
-                    <h4>Explore More Categories</h4>
+                    <a href="./category_page.php"><h4>Explore More Categories</h4></a>
                 </div>
                 <div class="categories card-deck">
                     <div class="card"  style="width: 10rem;">

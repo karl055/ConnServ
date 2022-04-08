@@ -1,3 +1,15 @@
+<?php
+
+if(isset($_POST['searchBtn'])){
+    $service = $_POST['service_name'];
+    header("Location: ./search.php?$service");
+}
+if(!isset($_SESSION['username'])){
+    session_start();
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,7 +46,15 @@
                     </button>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#">Sign In/Up</a><!-- <a href="#">Account</a> --></li>
+                    <li><?php
+                if(isset($_SESSION['username'])){
+                    echo "<a href='./user_profile.php' style='color: white;'>Account</a>";
+                }
+                else{
+                    echo "<a href='./login.php' style='color: white;'>Account</a>";
+                }
+                ?>
+                <!-- <a href="./login.php">Account</a> --></li></li>
                 </ul>
             </div>
         </nav>
@@ -57,7 +77,7 @@
                   <div class="cols">
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Academic.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Academic.jpg)">
                             <div class="inner">
                               <p>Academic</p>
                             </div>
@@ -71,7 +91,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Arts.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Arts.jpg)">
                             <div class="inner">
                               <p>Arts</p>
                             </div>
@@ -85,7 +105,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Automotive.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Automotive.jpg)">
                             <div class="inner">
                               <p>Automotive</p>
                             </div>
@@ -99,7 +119,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Business.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Business.jpg)">
                             <div class="inner">
                               <p>Business</p>
                             </div>
@@ -113,7 +133,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Catering1.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Catering1.jpg)">
                             <div class="inner">
                               <p>Catering</p>
                             </div>
@@ -127,7 +147,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Clothing1.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Clothing1.jpg)">
                             <div class="inner">
                               <p>Clothing</p>
                             </div>
@@ -141,7 +161,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Construction.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Construction.jpg)">
                             <div class="inner">
                               <p>Construction</p>
                             </div>
@@ -155,7 +175,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Computer.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Computer.jpg)">
                             <div class="inner">
                               <p>Computer</p>
                             </div>
@@ -169,7 +189,7 @@
                       </div>
                       <div class="col" ontouchstart="this.classList.toggle('hover');">
                         <div class="container">
-                          <div class="front" style="background-image: url(/assets/img/categories/another/Electrical.jpg)">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
                             <div class="inner">
                               <p>Electrical</p>
                             </div>
