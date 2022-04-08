@@ -19,6 +19,11 @@ section .accordion {
   position: fixed;
 }
 
+section .accordion .backbtn {
+  width: 100%;
+  height: 40px;
+}
+
 section .accordion .parent_link {
   background-color: transparent !important;
   color: black !important;
@@ -55,8 +60,7 @@ section .body_content .business_content .title_business .profile_picture {
 }
 
 section .body_content .business_content .title_business .profile_picture img {
-  height: 100%;
-  width: 100%;
+  overflow: hidden;
   border-radius: 50%;
 }
 

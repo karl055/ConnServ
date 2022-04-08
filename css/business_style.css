@@ -19,10 +19,18 @@ section .accordion {
   position: fixed;
 }
 
-section .accordion .backbtn {
+section .accordion .backbtn button {
   width: 100%;
-  background-color: black;
   height: 40px;
+  border: 1px solid #5e0cc4;
+  border-radius: 10px;
+}
+
+section .accordion .backbtn :hover {
+  background-color: #5e0cc4;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 section .accordion .parent_link {
@@ -46,6 +54,7 @@ section .accordion .collapse :hover {
 
 section .body_content {
   margin-left: 200px;
+  height: 100%;
   /* BUSINESS CONTENTS */
 }
 
@@ -60,6 +69,7 @@ section .body_content .business_content .title_business .profile_picture {
 }
 
 section .body_content .business_content .title_business .profile_picture img {
+  width: 100%;
   height: 100%;
   overflow: hidden;
   border-radius: 50%;
@@ -299,7 +309,45 @@ section .body_content .edit_content .business_container :focus {
   outline: none;
 }
 
-section .body_content .approval_content .approval_container .incoming_content .incoming_table td {
-  text-overflow: ellipsis;
+section .body_content .approval_content {
+  width: 100%;
+  height: 100%;
+}
+
+section .body_content .approval_content .approval_container {
+  width: 100%;
+  height: 100%;
+}
+
+section .body_content .approval_content .approval_container .incoming_content {
+  width: 100%;
+  height: 100%;
+}
+
+section .body_content .approval_content .approval_container .incoming_content .table_contents {
+  height: 500px;
+  border: 1px solid black;
+}
+
+section .body_content .approval_content .approval_container .incoming_content .table_contents .incoming_table {
+  width: 100%;
+  height: auto;
+  overflow: scroll;
+}
+
+section .body_content .approval_content .approval_container .incoming_content .table_contents .incoming_table thead tbody {
+  width: auto;
   color: red !important;
+}
+
+section .body_content .approval_content .approval_container .incoming_content .table_contents .incoming_table thead {
+  text-align: center;
+}
+
+section .body_content .approval_content .approval_container .incoming_content .table_contents .incoming_table tbody td.address {
+  max-width: 0;
+  white-space: nowrap;
+  width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

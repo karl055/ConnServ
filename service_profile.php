@@ -79,7 +79,7 @@
                   </div>
                 </div>
                 <div class="right_col col-4">
-                  <button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button>
+                  <a href="./create_appointment.php"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>
                 </div>
               </row> 
               
