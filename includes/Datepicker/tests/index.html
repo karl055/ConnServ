@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
+
+  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.1/console.js"></script>
+  <script src="lib/jasmine-2.4.1/boot.js"></script>
+
+  <!-- source -->
+  <script src="../dist/datepicker.js"></script>
+
+  <!-- specs -->
+  <script src="spec/methods.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+  if (navigator.userAgent.indexOf("PhantomJS") > 0) {
+    var consoleReporter = new jasmineRequire.ConsoleReporter()({
+      showColors: true,
+      timer: new jasmine.Timer,
+      print: function() {
+        console.log.apply(console, arguments)
+      }
+    });
+
+    jasmine.getEnv().addReporter(consoleReporter);
+  }
+</script>
+
+</body>
+</html>

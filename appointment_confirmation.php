@@ -1,13 +1,4 @@
-<?php
 
-    session_start();
-    if(!isset($_SESSION['username'])){
-
-        header("Location: ./login.php");
-    
-        die();
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,31 +30,35 @@
                 <tbody>
                     <tr>
                         <td><strong>Service Type: </strong></td>
-                        <td>Dressmaking</td>
+                        <td>Shopping and Retail</td>
                     </tr>
                     <tr>
                         <td><strong>Service Provider: </strong></td>
                         <td>Bonheur Apparel</td>
                     </tr>
                     <tr>
-                        <td><strong>Date: </strong></td>
-                        <td>April 29, 2022</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Time: </strong></td>
-                        <td>3:00pm</td>
-                    </tr>					
-                    <tr>
-                        <td><strong>Address: </strong></td>
-                        <td>Brookside Subd. Cainta, Rizal</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Contact Number: </strong></td>
+                        <td><strong>Service Contact:  </strong></td>
                         <td>09101926395</td>
                     </tr>
                     <tr>
+                        <td><strong>Date: </strong></td>
+                        <td>April 29, 2022 - April 29, 2022</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Time: </strong></td>
+                        <td>3:00 PM</td>
+                    </tr>					
+                    <tr>
+                        <td><strong>Client Address: </strong></td>
+                        <td>29 Pres., Aguinaldo St., South Signal Village, District 2, Taguig City</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Client Contact: </strong></td>
+                        <td>09676842595</td>
+                    </tr>
+                    <tr>
                         <td><strong>Client: </strong></td>
-                        <td>James Darren Alcalacal</td>
+                        <td>Karl Parole</td>
                     </tr>
                     <tr>
                         <td><strong>Notes: </strong></td>
@@ -71,7 +66,7 @@
                     </tr>
                     <tr>
                         <td><strong>Payment Method: </strong></td>
-                        <td>Cash on Service</td>
+                        <td>Cash on Service (Default)</td>
                     </tr>
                 </tbody>
             </table>
@@ -91,12 +86,12 @@
                                     <td><u>Bonheur Apparel</u></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Date:  </strong></td>
-                                    <td><u>April 29, 2022</u></td>
+                                    <td><strong>Service Contact:  </strong></td>
+                                    <td><u>09101926395</u></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Contact Number:  </strong></td>
-                                    <td><u>09101926395</u></td>
+                                    <td><strong>Date:  </strong></td>
+                                    <td><u>April 29, 2022</u></td>
                                 </tr>
                                 <tr>
                                     <th>Service Demand</th>
@@ -136,9 +131,9 @@
                                 </tr>
                             </table>
                             <p> Payment Method: <u>Cash on Service</u></p><br>
-                            <p> Client: <u>James Dareen Alcalacal</u></p>
-                            <p> Address: <u>15 Pres. Aguinaldo St. South Signal, Taguig City</u></p>
-                            <p> Contact Number: <u>09101926395</u></p>
+                            <p> Client: <u>Karl Parole</u></p>
+                            <p> Client Address: <u>29 Pres., Aguinaldo St., South Signal Village, District 2, Taguig City</u></p>
+                            <p> Contact Number: <u>09676842595</u></p>
                         </div>
                     </div>
                 </div>

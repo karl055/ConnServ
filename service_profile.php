@@ -41,8 +41,7 @@
               <div class="address text-dark bg-light mb-3 d-inline-block" style="max-width: 20rem;">
                 <div class="card-header">Address</div>
                 <div class="card-body">
-                  <h4 class="card-title">189 Malanday St. Brgy Malamig,
-                    Boni Ave. Mandaluyong </h4>
+                  <h4 class="card-title">29 Pres., Aguinaldo St., South Signal Village, District 2, Taguig City</h4>
                 </div>
               </div>
 
@@ -215,7 +214,7 @@
                     <li><a href="#">Developers</a></li>
                     <li><a href="#">Service Program</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Referral Program</a></li>
+                    <li><a href="./terms_condition.php">Terms & Condition</a></li>
                   </ul>
                 </div>
                 <div class="col-4">

@@ -201,7 +201,7 @@
                     <li><a href="#">Developers</a></li>
                     <li><a href="#">Service Program</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Referral Program</a></li>
+                    <li><a href="./terms_condition.php">Terms & Condition</a></li>
                   </ul>
                 </div>
                 <div class="col-4">

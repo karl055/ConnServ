@@ -8,10 +8,7 @@
 
         <?php include './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./includes/mobiPlugins/mobiscroll.javascript.min.css">
-        <script src="./includes/mobiPlugins/mobiscroll.javascript.min.js"></script>
-
-        <link href="./css/create_appointment.css" rel="stylesheet" />
+        <link href="./css/create_appointment.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include './navbar.php';?>
@@ -26,18 +23,21 @@
                 <div class="col-12 row">
                     <div class="col-5">
                         <div class="col-12">
-                            <div class="mbsc-row">
-                                <div class="col-12">
-                                    <div class="date_title">
-                                        <label>Select Preferred Date</label>
-                                    </div>
-                                    <input id="demo-mobile-picker-input" class="md-mobile-picker-input" placeholder="Please Select..." />
+                                <div class="date_title">
+                                    <label>Select Preferred Date</label>
                                 </div>
+                            <div style="display: flex;">
+                            <div class="col-6">
+                                <input type="date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2022-10-20">
+                            </div>
+                            <div class="col-6">
+                                <input type="date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2050-10-20">
+                            </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <label for="inputService">Type of Service</label>
-                            <select id="inputService" class="form-control" name="inputservice" required>
+                            <select id="inputService" class="form-control" name="inputservice" disabled>
                                 <option value="ArtandCulture" selected>Art and Culture</option>
                                 <option value="BeautyandWellness">Beauty and Wellness</option>
                                 <option value="Construction">Construction</option>
@@ -47,16 +47,16 @@
                                 <option value="FoodandBeverages">Food and Beverages</option>
                                 <option value="MedicalCare">Medical Care</option>
                                 <option value="ProfessionalServices">Professional Services</option>
-                                <option value="ShoppingandRetail">Shopping and Retail</option>
+                                <option value="ShoppingandRetail" selected>Shopping and Retail</option>
                                 <option value="Transportation">Transportation</option>
                             </select>
-                        </div>
+                        </div><!-- 
                         <div class="col-12">
                             <label for="inputSubService">Type of Sub Service</label>
                             <select id="inputSubService" class="form-control" name="inputSubService" required>
                                 
                             </select>
-                        </div>
+                        </div> -->
                         
                         <div class="col-12">
                             <div class="note_title">
@@ -168,7 +168,7 @@
                         <div class="col-12">
                             <div class="col-12 btnAddAppointment" style="margin: 5px 0 0;">
                                 <div class="col-12">
-                                    <button type="submit" class="addAppointment">Add My Appointment</button>
+                                    <a href="./appointment_confirmation.php" ><button type="button" class="addAppointment">Add My Appointment</button></a>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +178,6 @@
         </div>
         
         <!-- SCRIPT LINK -->
-        <script src="./js/calendar/calendar.js"></script>
         <script src="./js/subservices/dynamic.js"></script>
         <script>
             for(let min = 0; min <= 59; min++){

@@ -1,0 +1,37 @@
+{
+  "name": "Datepicker.js",
+  "version": "0.1.1",
+  "description": "A pure JS datepicker",
+  "main": "dist/datepicker.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwilsman/Datepicker.js.git"
+  },
+  "keywords": [
+    "datepicker",
+    "date",
+    "picker",
+    "pikaday"
+  ],
+  "author": "Wil Wilsman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wwilsman/Datepicker.js/issues"
+  },
+  "homepage": "https://wwilsman.github.io/Datepicker.js",
+  "scripts": {
+    "test": "phantomjs tests/run-jasmine.js tests/index.html",
+    "start": "rollup --config --watch",
+    "build": "rollup --config"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0"
+  }
+}
