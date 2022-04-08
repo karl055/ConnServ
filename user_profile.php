@@ -288,9 +288,7 @@
                             $query = mysqli_query($connect,"SELECT * FROM business_tb WHERE ownerId = '$owner'");
                             $rows = mysqli_fetch_array($query);
                             if(mysqli_num_rows($query)>0){
-                              /* 
-                              if(!isset($_SESSION)) { 
-                              } */
+                              
                               $_SESSION['businessId'] = $rows['business_id'];
 
                               echo "<a href='./business.php' class='createdBusinessLink'><button>Open My Business</button></a>";
@@ -303,12 +301,7 @@
                                     </a>";
                               echo "<p>You must use Desktop or Laptop before creating a business.</p>";
                             }
-                          ?><!-- 
-                          <h1>No Business? Create now!</h1>
-                          <a href="./create_business.php" class="createLink">
-                            <button type="submit" class="createBtn">Create Business</button>
-                          </a>
-                          <p>You must use Desktop or Laptop before creating a business.</p> -->
+                          ?>
                         </div>
                       </div>
                     </div>

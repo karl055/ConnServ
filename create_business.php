@@ -47,7 +47,7 @@ if(!isset($_SESSION['username'])){
                         <h3>Create Business</h3>
                         <h1>Here there and everywhere</h1>
                     </div>
-                    <form action="./includes/createbusiness.inc.php" method="post">
+                    <form action="./includes/createbusiness.inc.php" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-7">
                                 <div class="business_trade">
@@ -204,16 +204,16 @@ if(!isset($_SESSION['username'])){
                                 <div class="col-12">
                                     <div class="business_docu">
                                         <hr>
-                                        <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                        <input type="file" id="file" name="file" multiple>
+                                        <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
+                                        <input type="file" id="file" name="legalFiles" multiple required>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="owner_valid">
                                         <hr>
 
-                                        <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                        <input type="file" id="file" name="file" multiple>
+                                        <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
+                                        <input type="file" id="file" name="idFiles" multiple required>
                                     </div>
                                 </div>
                                 <div class="col-12">

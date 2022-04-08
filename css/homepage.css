@@ -8,10 +8,6 @@
           box-sizing: border-box;
 }
 
-body {
-  height: 2000px;
-}
-
 .header_logo {
   background-size: cover;
   width: 100%;

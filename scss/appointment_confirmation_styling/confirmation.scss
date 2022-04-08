@@ -1,0 +1,286 @@
+@import "../homepage_styling/_navigationbar.scss";
+@import "../homepage_styling/_footer.scss";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+$pink: #b42bab;
+$violet: #5e0cc4;
+$orange: #e38968;
+$gray: #92959e;
+$light-pink: #f574ec;
+$dark-gray: #252424;
+
+body {
+	background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
+	color: #444;
+	font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
+	text-shadow: 0 1px 0 #fff;
+}
+
+.text-header{
+    align-items: center;
+    color: $dark-gray;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    
+    mark{
+        background-color: $violet;
+        color: #fff;
+        border-radius: 5px;
+    }
+}
+.info-table{
+    align-items: center;
+    margin: 10px;
+    strong {
+        font-weight: bold; 
+    }
+
+    table {
+        background: #fff;
+        border-collapse: separate;
+        box-shadow: inset 0 1px 0 #fff;
+        line-height: 24px;
+        margin: 50px auto;
+        text-align: left;
+        width: 800px;
+    }	
+
+    th {
+        background:  $violet;
+        box-shadow: inset 0 1px 0 #fff;
+        color: #fff;
+        font-weight: bolder;
+        font-size: 20px;
+        padding: 10px 15px;
+        position: relative;
+        text-shadow: 0 1px 0 #000;	
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    th:after {
+        background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+        content: '';
+        display: block;
+        height: 25%;
+        left: 0;
+        margin: 1px 0 0 0;
+        position: absolute;
+        top: 25%;
+        width: 100%;
+    }
+
+    th:first-child {
+        border-left: 1px solid #fff;	
+        box-shadow: inset 1px 1px 0 #fff;
+    }
+
+    th:last-child {
+        box-shadow: inset -1px 1px 0 #fff;
+    }
+
+    td {
+        border: 0px solid #fff;
+        padding: 10px 15px;
+        position: relative;
+        transition: all 300ms;
+        border-radius: 5px;
+    }
+
+    td:first-child {
+        box-shadow: inset 1px 0 0 #fff;
+    }	
+
+    td:last-child {
+        border-right: 1px solid #e8e8e8;
+        box-shadow: inset -1px 0 0 #fff;
+    }	
+
+    tr {
+        background: url(https://jackrugile.com/images/misc/noise-diagonal.png);	
+    }
+
+    tr:nth-child(odd) td {
+        background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);	
+    }
+
+    tr:last-of-type td {
+        box-shadow: inset 0 -1px 0 #fff; 
+    }
+
+    tr:last-of-type td:first-child {
+        box-shadow: inset 1px -1px 0 #fff;
+    }	
+
+    tr:last-of-type td:last-child {
+        box-shadow: inset -1px -1px 0 #fff;
+    }	
+
+    // tbody:hover td {
+    //     color: transparent;
+    //     // text-shadow: 0 0 3px #aaa;
+    // }
+
+    tbody:hover tr:hover td {
+        color: #444;
+        // text-shadow: 0 1px 0 #fff;
+    }
+}
+
+.buttons{
+    // border: 2px solid black;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-bottom: 1rem;
+    align-content: center;
+    justify-content: center;
+    
+    .btn {
+        width: 300px;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 10px;
+        color: #fbdedb;
+        background-color: #fbdedb;
+        display: flex;
+        background: #e74c3c;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.2s;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+        position: relative;
+      }
+      .btn:hover,
+      .btn:focus {
+        opacity: 0.8;
+      }
+      .btn:active {
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        transform: scale(0.8);
+      }
+      .btn.block {
+        display: block !important;
+      }
+      .btn.circular {
+        border-radius: 50em !important;
+      }
+      .purple {
+        background-color: #564f8a;
+      }
+      .gray{
+          background-color: $dark-gray;
+      }
+
+    //   MODAL
+      .modal-window {
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.25);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 1s;
+        &:target {
+          visibility: visible;
+          opacity: 1;
+          pointer-events: auto;
+        }
+        & > div {
+          width: 400px;
+          height: 500px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 5px;
+          background: whitesmoke;
+          border-radius: 20px;
+          box-shadow: 5px 10px $gray;
+          scroll-behavior: smooth;
+          overflow: scroll;
+        }
+        header {
+          font-weight: bold;
+        }
+        h1 {
+          font-size: 150%;
+          margin: 0 0 15px;
+        }
+        img{
+            max-width: 200px;
+            max-height: 150px;
+        }
+      }
+      
+      .modal-close {
+        color: #aaa;
+        line-height: 50px;
+        font-size: 80%;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 70px;
+        text-decoration: none;
+        &:hover {
+          color: black;
+        }
+          small {
+            color: lightgray;
+          }
+      }
+
+      .modal-body{
+          align-items: center;
+          justify-content: center;
+          table{
+              margin-top: 10px;
+              margin-bottom: 10px;
+              th{
+                border: 1px solid $gray;
+                font-size: 12px;
+                width: 200px;
+                padding: 1px 5px;
+              }
+              tr{
+                  width: 100%;
+              }
+              td{
+                  color: black;
+                  border: 1px solid $gray;
+                  position: relative;
+                  padding: 1px 5px;
+                  width: 100%;
+                  height: 30px;
+                  font-size: 12px;
+              }
+          }
+          p{
+              font-size: 15px;
+              font-weight: 500;
+              margin: 5px;
+          }
+      }
+      
+}

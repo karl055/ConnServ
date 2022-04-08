@@ -19,7 +19,7 @@ if(!isset($_SESSION['businessId'])){
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/stylingBusiness.css">
+        <link rel="stylesheet" href="./css/business_style.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -46,7 +46,7 @@ if(!isset($_SESSION['businessId'])){
                             <a class="nav-link" id="v-pills-approval-tab" data-toggle="pill" href="#v-pills-approval" role="tab" aria-controls="v-pills-approval" aria-selected="false">Approval</a>
                         </div>
                     </div>
-                    <a href="./user_profile.php"><button>Back to User Page</button></a>
+                    <a href="./user_profile.php" class="backbtn"><button>Back to User Page</button></a>
                 </div>
             </div>
             <div class="col-10 body_content">
@@ -58,15 +58,15 @@ if(!isset($_SESSION['businessId'])){
                                 <div class="col-3">
                                     <div class="user_icon">
                                         <div class="profile_picture">
-                                            <img src="./assets/img/categories/computer.png" alt="User Icon" id="photo">
+                                            <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" alt="User Icon" id="photo">
                                         </div>
                                         <input type="file" id="file" name="file">
                                     </div>
                                 </div>
                                 <div class="col-9">
                                     <div class="title_container">
-                                        <h2>This is the business Title</h2>
-                                        <h4 class="text-muted">This is sub title</h4>
+                                        <h2>Ithilien Coffee PH</h2>
+                                        <h4 class="text-muted">Barista and Coffee Tutor</h4>
                                     </div>
                                 </div>
                             </div>
@@ -84,8 +84,8 @@ if(!isset($_SESSION['businessId'])){
                                             <th>Contact #</th>
                                         </tr>
                                         <tr>
-                                            <td>Owner's Name</td>
-                                            <td>..@yahoo/gmail.com</td>
+                                            <td>Parole, Karl</td>
+                                            <td>parolemark@gmail.com</td>
                                             <td>09676842595</td>
                                         </tr>
                                     </table>
@@ -99,10 +99,10 @@ if(!isset($_SESSION['businessId'])){
                                             </tr>
                                             <tr class="data_even">
                                             <td>71-e</td>
-                                            <td>Mapagkawanggawa</td>
-                                            <td>Escopa 3</td>
-                                            <td>District 3</td>
-                                            <td>Quezon City</td>
+                                            <td>Pres St.</td>
+                                            <td>Quezon</td>
+                                            <td>District 2</td>
+                                            <td>Taguig City</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -118,11 +118,11 @@ if(!isset($_SESSION['businessId'])){
                                             </div>
                                             
                                             <div class="col-12 category_chosen">
-                                                <h6 class="text-mute">Sample Service</h6>
+                                                <h6 class="text-mute">Food and Beverages</h6>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                                 </svg>
-                                                <h6 class="text-mute">Sample Sub Service</h6>
+                                                <h6 class="text-mute">Bars and Cafes</h6>
                                             </div>
                                         </div>
                                         <div class="col-12 description_bar">
@@ -142,7 +142,7 @@ if(!isset($_SESSION['businessId'])){
                                                     <tbody>
                                                         <tr>
                                                             <td scope="row">
-                                                                <p>file name 1</p>
+                                                                <p>document1.docx</p>
                                                             </td>
                                                             <td>
                                                                 <button class="downloadBtn">
@@ -152,7 +152,7 @@ if(!isset($_SESSION['businessId'])){
                                                         </tr>
                                                         <tr>
                                                             <td scope="row">
-                                                                <p>file name 1</p>
+                                                                <p>document3.docx</p>
                                                             </td>
                                                             <td>
                                                                 <button class="downloadBtn">
@@ -162,7 +162,7 @@ if(!isset($_SESSION['businessId'])){
                                                         </tr>
                                                         <tr>
                                                             <td scope="row">
-                                                                <p>file name 1</p>
+                                                                <p>document3.docx</p>
                                                             </td>
                                                             <td>
                                                                 <button class="downloadBtn">
@@ -172,7 +172,7 @@ if(!isset($_SESSION['businessId'])){
                                                         </tr>
                                                         <tr>
                                                             <td scope="row">
-                                                                <p>file name 1</p>
+                                                                <p>document4.docx</p>
                                                             </td>
                                                             <td>
                                                                 <button class="downloadBtn">
@@ -337,7 +337,7 @@ if(!isset($_SESSION['businessId'])){
                                             <div class="col-12">
 
                                                 <div class="business_logo">
-                                                    <img src="./assets/img/ConnServ_Logo_Black.png" alt="..." class="img-thumbnail">
+                                                    <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" alt="..." class="img-thumbnail">
                                                 </div>
                                                 
                                                 <div class="business_location">

@@ -100,31 +100,28 @@
                         <div class="card">
                           <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                            <a href="./service_profile.php" class="card-title stretched-link"><h4>Bonheur Apparel</h4></a>
+                            <h6 class="card-text text-muted">Clothing Tailor</h6>
                           </div>
                         </div>
                         <div class="card">
-                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                          <a href="#" class="card-title stretched-link"><h4>Ithilien Coffee PH</h4></a>
+                            <p class="card-text text-muted">Barista and Coffee Tutor</p>
                           </div>
                         </div>
                         <div class="card">
-                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/cr38_solutions/logo.png" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                            <a href="#" class="card-title stretched-link"><h4>CR38 Computer Solutions</h4></a>
+                            <h6 class="card-text text-muted">Computer and Hardware Solutions</h6>
                           </div>
                         </div>
                       </div>
@@ -146,34 +143,31 @@
                 <!---Featured Services -->
                   <div class="featured-services">
                     <div class="card-deck">
-                        <div class="card">
+                    <div class="card">
                           <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                            <a href="./service_profile.php" class="card-title stretched-link"><h4>Bonheur Apparel</h4></a>
+                            <h6 class="card-text text-muted">Clothing Tailor</h6>
                           </div>
                         </div>
                         <div class="card">
-                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                          <a href="#" class="card-title stretched-link"><h4>Ithilien Coffee PH</h4></a>
+                            <p class="card-text text-muted">Barista and Coffee Tutor</p>
                           </div>
                         </div>
                         <div class="card">
-                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
+                          <img src="./assets/img/featured_services/cr38_solutions/logo.png" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <a href="#" class="card-title stretched-link">Bonheur Apparel</a>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                            <a href="#" class="card-title stretched-link"><h4>CR38 Computer Solutions</h4></a>
+                            <h6 class="card-text text-muted">Computer and Hardware Solutions</h6>
                           </div>
                         </div>
                       </div>
@@ -207,7 +201,7 @@
                     <li><a href="#">Developers</a></li>
                     <li><a href="#">Service Program</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Referral Program</a></li>
+                    <li><a href="./terms_condition.php">Terms & Condition</a></li>
                   </ul>
                 </div>
                 <div class="col-4">
