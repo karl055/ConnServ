@@ -22,7 +22,19 @@
             $business_landline = $_POST['business_landline'];
             $business_mobile = $_POST['business_mobile'];
             $business_details = $_POST['business_details'];
+            $business_logo = $_POST['change_icon'];
 
+            /* CHANGE ICON UPLOAD */
+
+            $iconFiles = $_FILES['change_icon'];
+
+            $iconFileName = $iconFiles['name'];
+            $iconFileTmpName = $iconFiles['tmp_name'];
+            $iconFileSize= $iconFiles['size'];
+            $iconFileError = $iconFiles['error'];
+            $iconFileType = $iconFiles['type'];
+
+    
             /* LEGAL FILES UPLOAD */
 
             $legalFiles = $_FILES['legalFiles'];
@@ -33,9 +45,6 @@
             $legalFileError = $legalFiles['error'];
             $legalFileType = $legalFiles['type'];
 
-            
-            $legalFileExt = explode('.', $legalFileName);
-            $legalFileActualExt = strtolower(end($legalFileExt));
     
             /* LEGAL ID UPLOAD */
 
@@ -51,24 +60,38 @@
     
             $idFileExt = explode('.', $idFileName);
             $idFileActualExt = strtolower(end($idFileExt));
+            
+            $legalFileExt = explode('.', $legalFileName);
+            $legalFileActualExt = strtolower(end($legalFileExt));
+            
+            $iconFileExt = explode('.', $iconFileName);
+            $iconFileActualExt = strtolower(end($iconFileExt));
 
             $allowed = array('pdf');
+            $imgAllowed = array('jpeg', 'png', 'jpg');
 
-            if(in_array($legalFileActualExt, $allowed) && in_array($idFileActualExt, $allowed)){
-                if($legalFileError === 0 && $idFileError === 0){
+            if(in_array($legalFileActualExt, $allowed) && in_array($idFileActualExt, $allowed) && in_array($iconFileActualExt, $imgAllowed)){
+
+                if($legalFileError === 0 && $idFileError === 0 && $iconFileError === 0){
         
-                    if($legalFileSize < 500000 && $idFileSize < 500000){
+                    if($legalFileSize < 500000000 && $idFileSize < 500000000 && $iconFileSize < 500000000){
+
                         $legalFileNameNew = uniqid('', true). "." .$legalFileActualExt;
                         $idFileNameNew = uniqid('', true). "." .$idFileActualExt;
+                        $iconFileNameNew = uniqid('', true). "." .$iconFileActualExt;
+
                         $legalFileDestination = '../assets/legalidDocuments/'.$legalFileNameNew;
                         $idFileDestination = '../assets/legalidDocuments/'.$idFileNameNew;
-                        if(move_uploaded_file($legalFileTmpName, $legalFileDestination) && move_uploaded_file($idFileTmpName, $idFileDestination)){
+                        $iconFileDestination = '../assets/img/featured_services/business_icon/'.$iconFileNameNew;
+
+                        if(move_uploaded_file($legalFileTmpName, $legalFileDestination) && move_uploaded_file($idFileTmpName, $idFileDestination) && move_uploaded_file($iconFileTmpName, $iconFileDestination)){
         
 
                             if(empty($business_name) || empty($business_email) || empty($business_category) || empty($business_subcategory)
                             || empty($business_unit_no) || empty($business_building) || empty($business_house_no) || empty($business_street)
                             || empty($business_village) || empty($business_barangay) || empty($business_zip) || empty($business_city)
                             || empty($business_landline) || empty($business_mobile) || empty($business_details)){
+
                                 header("Location: ../create_business.php?error=blankinputs");
                                 exit();
                             }
@@ -86,7 +109,7 @@
                             SET business_name = '$business_name', business_email = '$business_email', business_category = '$business_category', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
                                 business_building ='$business_building', house_no = '$business_house_no', business_street = '$business_street', business_village = '$business_village', business_barangay = '$business_barangay', business_zip = '$business_zip',
                                 business_city ='$business_city', business_landline = '$business_landline', business_mobile = '$business_mobile', business_description = '$business_details',
-                                legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew',
+                                legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew', business_icon = '$iconFileNameNew',
                                 ownerId = (
                                 SELECT user_identity
                                 FROM user_tb

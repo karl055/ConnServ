@@ -12,19 +12,10 @@
         <h1>THIS IS BUSINESS </h1>
         <?php
         
-        $sql = "SELECT * FROM business_tb";
 
-        $result = mysqli_query($connect, $sql);
+        $businessName = $_GET['business'];
 
-        while($row = mysqli_fetch_assoc($result)){
-            
-            echo $row['business_id']."<br>";
-            $array_line = mysqli_fetch_array($result);
-            for($i = 0; $i <= $row; $i++){
-                
-                echo $row['business_name'];
-            }
-        }
+        echo $businessName;
         ?>
     </body>
 </html>

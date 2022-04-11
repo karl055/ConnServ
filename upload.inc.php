@@ -24,31 +24,16 @@ if(isset($_POST['upload'])){
                 
                 $businessName = "KenParole";
                 
-                    $fileDestination = 'assets/'.$fileNameNew;
-                /*  move_uploaded_file($fileTmpName, $fileDestination); */
-                    if(move_uploaded_file($fileTmpName, $fileDestination)){
+                $fileDestination = 'assets/'.$fileNameNew;
+                move_uploaded_file($fileTmpName, $fileDestination);
+                if(move_uploaded_file($fileTmpName, $fileDestination)){
 
-                        $sql = "INSERT INTO file_tb (legalFileName) VALUES ('$fileNameNew')";
-                        $result = mysqli_query($connect, $sql);
-
-                        if($result){
-                            $last_id = mysqli_insert_id($connect);
-                            if($last_id){
-                                $code = rand(100000, 999999);
-                                $userNewId = "BID".$code."2019".$last_id;
-                                
-                                $newQuery = "UPDATE file_tb idFileName = '$userNewId' WHERE file_id = $last_id";
-                                $res = mysqli_query($connect, $newQuery);
-                                header("Location: ./upload.php?uploadsuccess&$last_id&$userNewId"); 
-                            }
-                            
-                        }
-                        /* if(){
-
-                        } */
+                    $sql = "INSERT INTO file_tb (legalFileName) VALUES ('$fileNameNew')";
+                    $result = mysqli_query($connect, $sql);
+                    if($result){
+                        header("Location: ./upload.php");
                     }
-                
-
+                }
             }else{  
                 echo "Your file is too big!";
             }

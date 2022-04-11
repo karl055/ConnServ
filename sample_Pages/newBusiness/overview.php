@@ -1,12 +1,9 @@
 <?php
-
 include_once '../../hostCon.php';
 
-$sql = "SELECT * FROM `business_tb` WHERE datetime_created = (SELECT MAX(datetime_created) FROM business_tb)";
-
+/* $sql = "SELECT * FROM `business_tb` WHERE datetime_created = (SELECT MAX(datetime_created) FROM business_tb)"; */
+$sql = "SELECT * FROM business_tb ORDER BY datetime_created DESC LIMIT 3";
 $result = mysqli_query($connect, $sql);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -24,23 +21,24 @@ $result = mysqli_query($connect, $sql);
 
         <?php 
         
-            if($row = mysqli_fetch_assoc($result)){
+            if(mysqli_fetch_assoc($result)){
 
-                $initial = 1;
-                
+                foreach($result as $row){
+
+                    echo $row['business_name'].'<br><br>';
                     echo "<div class='card'>";
                     echo "<img src='./assets/img/featured_services/bonheur_apparel/logo.jpg' class='card-img-top'>";
                     echo "<div class='card-body'>";
-                    echo "<a href='./viewBusiness.php' class='card-title stretched-link'>'".$row['business_name']."'</a>";
+                    echo "<a href='./viewBusiness.php?business=".$row['business_name']."' class='card-title stretched-link'>'".$row['business_name']."'</a>";
                     echo "<p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>";
                     echo "</div>";
                     echo "<div class='card-footer'>";
                     echo "<small class='text-muted'>Last updated 3 mins ago</small>";
                     echo "</div>";
                     echo "</div>";
+                }
             }
-        ?>
-                        
+        ?>    
             <button type="submit" name="submit">NEWEST CREATED BUSINESS LINK</button>
         </form>
     </body>
