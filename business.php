@@ -20,6 +20,17 @@ $ownerrow = mysqli_fetch_assoc($ownerresult);
 
 $ownerFname = ucfirst($ownerrow['user_firstname']);
 $ownerLname = ucfirst($ownerrow['user_lastname']);
+
+          $id = $_SESSION['username'];
+          $imageSelect = "SELECT * FROM business_tb WHERE ownerId = $id";
+          if($imgResult = mysqli_query($connect, $imageSelect)){
+            
+            if($imgRow = mysqli_fetch_assoc($imgResult)){
+              
+              $imgVar = $imgRow['business_icon'];
+            }
+          }
+         
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +82,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                 <div class="col-3">
                                     <div class="user_icon">
                                         <div class="profile_picture">
-                                            <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" alt="User Icon" id="photo">
+                                            <?php echo "<img src='./assets/img/featured_services/business_icon/".$imgVar."'  alt='User Icon' id='photo'' >";?>
                                         </div>
                                     </div>
                                 </div>

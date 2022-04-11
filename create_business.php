@@ -174,12 +174,12 @@ if(!isset($_SESSION['username'])){
                                 <div class="col-12">
 
                                     <div class="business_logo">
-                                        <img src="./assets/img/ConnServ_Logo_Black.png" alt="..." class="img-thumbnail">
+                                        <img src="./assets/img/ConnServ_Logo_Black.png" id="photo" alt="..." class="img-thumbnail">
                                     </div>
                                       
-                                    <div class="business_location">
-                                        <label for="change_icon">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                        <input type="file" id="change_icon" name="change_icon" style="display: none;">
+                                    <div class="profile_picture">
+                                        <label for="file">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                        <input type="file" id="file" name="change_icon" style="display: none;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -205,7 +205,7 @@ if(!isset($_SESSION['username'])){
                                     <div class="business_docu">
                                         <hr>
                                         <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
-                                        <input type="file" id="file" name="legalFiles" multiple required>
+                                        <input type="file" id="file" name="legalFiles" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -213,7 +213,7 @@ if(!isset($_SESSION['username'])){
                                         <hr>
 
                                         <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
-                                        <input type="file" id="file" name="idFiles" multiple required>
+                                        <input type="file" id="file" name="idFiles" required>
                                     </div>
                                 </div>
                                 <div class="col-12">

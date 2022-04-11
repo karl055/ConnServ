@@ -23,6 +23,7 @@
             $business_mobile = $_POST['business_mobile'];
             $business_details = $_POST['business_details'];
             $business_logo = $_POST['change_icon'];
+            $business_location = $_POST['business_location'];
 
             /* CHANGE ICON UPLOAD */
 
@@ -78,7 +79,7 @@
 
                         $legalFileNameNew = uniqid('', true). "." .$legalFileActualExt;
                         $idFileNameNew = uniqid('', true). "." .$idFileActualExt;
-                        $iconFileNameNew = uniqid('', true). "." .$iconFileActualExt;
+                        $iconFileNameNew = "profile".$userId."." .$iconFileActualExt;
 
                         $legalFileDestination = '../assets/legalidDocuments/'.$legalFileNameNew;
                         $idFileDestination = '../assets/legalidDocuments/'.$idFileNameNew;
@@ -90,7 +91,7 @@
                             if(empty($business_name) || empty($business_email) || empty($business_category) || empty($business_subcategory)
                             || empty($business_unit_no) || empty($business_building) || empty($business_house_no) || empty($business_street)
                             || empty($business_village) || empty($business_barangay) || empty($business_zip) || empty($business_city)
-                            || empty($business_landline) || empty($business_mobile) || empty($business_details)){
+                            || empty($business_landline) || empty($business_mobile) || empty($business_details) || empty($business_location)){
 
                                 header("Location: ../create_business.php?error=blankinputs");
                                 exit();
@@ -109,7 +110,7 @@
                             SET business_name = '$business_name', business_email = '$business_email', business_category = '$business_category', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
                                 business_building ='$business_building', house_no = '$business_house_no', business_street = '$business_street', business_village = '$business_village', business_barangay = '$business_barangay', business_zip = '$business_zip',
                                 business_city ='$business_city', business_landline = '$business_landline', business_mobile = '$business_mobile', business_description = '$business_details',
-                                legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew', business_icon = '$iconFileNameNew',
+                                legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew', business_icon = '$iconFileNameNew', business_map = '$business_location',
                                 ownerId = (
                                 SELECT user_identity
                                 FROM user_tb
