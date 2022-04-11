@@ -1,13 +1,26 @@
 <?php
     session_start();
-if(!isset($_SESSION['businessId'])){
+if(!isset($_SESSION['username'])){
 
     header("Location: ./login.php");
 
     die();
-}
-?>
 
+}
+ require_once './hostCon.php';
+    
+$businessOwner = $_SESSION['username'];
+$businessSql = "SELECT * FROM business_tb WHERE ownerId = $businessOwner";
+$businessresult = mysqli_query($connect, $businessSql);
+$row = mysqli_fetch_assoc($businessresult);
+
+$ownerSql = "SELECT * FROM user_tb WHERE user_identity = $businessOwner";
+$ownerresult = mysqli_query($connect, $ownerSql);
+$ownerrow = mysqli_fetch_assoc($ownerresult);
+
+$ownerFname = ucfirst($ownerrow['user_firstname']);
+$ownerLname = ucfirst($ownerrow['user_lastname']);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +32,7 @@ if(!isset($_SESSION['businessId'])){
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/business_style.css">
+        <link rel="stylesheet" href="./css/stylingBusiness.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -60,12 +73,11 @@ if(!isset($_SESSION['businessId'])){
                                         <div class="profile_picture">
                                             <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" alt="User Icon" id="photo">
                                         </div>
-                                        <input type="file" id="file" name="file">
                                     </div>
                                 </div>
                                 <div class="col-9">
                                     <div class="title_container">
-                                        <h2>Ithilien Coffee PH</h2>
+                                        <h2><?php echo $row['business_name'];?></h2>
                                         <h4 class="text-muted">Barista and Coffee Tutor</h4>
                                     </div>
                                 </div>
@@ -84,9 +96,9 @@ if(!isset($_SESSION['businessId'])){
                                             <th>Contact #</th>
                                         </tr>
                                         <tr>
-                                            <td>Parole, Karl</td>
-                                            <td>parolemark@gmail.com</td>
-                                            <td>09676842595</td>
+                                            <td><?php echo $ownerFname." ".$ownerLname;?></td>
+                                            <td><?php echo $row['business_email'];?></td>
+                                            <td><?php echo $row['business_mobile'];?></td>
                                         </tr>
                                     </table>
                                     <table class="address_table">
@@ -98,11 +110,11 @@ if(!isset($_SESSION['businessId'])){
                                             <th>City</th>
                                             </tr>
                                             <tr class="data_even">
-                                            <td>71-e</td>
-                                            <td>Pres St.</td>
-                                            <td>Quezon</td>
-                                            <td>District 2</td>
-                                            <td>Taguig City</td>
+                                            <td><?php echo $row['house_no'];?></td>
+                                            <td><?php echo $row['business_street'];?></td>
+                                            <td><?php echo $row['business_barangay'];?></td>
+                                            <td><?php echo $row['business_zip'];?></td>
+                                            <td><?php echo $row['business_city'];?></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -118,21 +130,36 @@ if(!isset($_SESSION['businessId'])){
                                             </div>
                                             
                                             <div class="col-12 category_chosen">
-                                                <h6 class="text-mute">Food and Beverages</h6>
+                                                <h6 class="text-mute"><?php echo $row['business_category'];?></h6>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                                 </svg>
-                                                <h6 class="text-mute">Bars and Cafes</h6>
+                                                <h6 class="text-mute"><?php echo $row['business_subcategory'];?></h6>
                                             </div>
                                         </div>
                                         <div class="col-12 description_bar">
                                             <h6>Description</h6><hr>
                                             <div class="description_content">
-                                                <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p>
+                                                <p><?php echo $row['business_description'];?></p>
                                             </div>
                                         </div>
                                         <div class="col-12 documents_bar">
-                                            <div class="col-5 documents_content">
+                                            
+                                            <div class="col-6" style="margin: 0; padding:0;">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Location via Google Map</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                    <div class="location"><?php echo $row['business_map'];?></div>
+                                            </div>
+                                            
+                                            <div class="col-2">
+                                            <!-- Indention Space GAP -->
+                                            </div>
+                                            <div class="col-4 documents_content">
                                                 <table class="col-12 table table-hover">
                                                     <thead>
                                                         <tr>
@@ -142,61 +169,30 @@ if(!isset($_SESSION['businessId'])){
                                                     <tbody>
                                                         <tr>
                                                             <td scope="row">
-                                                                <p>document1.docx</p>
+                                                                <p><?php echo $row['legalFileName'];?></p>
                                                             </td>
                                                             <td>
-                                                                <button class="downloadBtn">
-                                                                    <span>Download</span>
-                                                                </button>
+                                                                <a href="./assets/legalidDocuments/<?php echo $row['legalFileName']?>" download>
+                                                                    <button class="downloadBtn">
+                                                                        <span>Download</span>
+                                                                    </button>
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td scope="row">
-                                                                <p>document3.docx</p>
+                                                                <p><?php echo $row['idFileName'];?></p>
                                                             </td>
                                                             <td>
-                                                                <button class="downloadBtn">
-                                                                    <span>Download</span>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td scope="row">
-                                                                <p>document3.docx</p>
-                                                            </td>
-                                                            <td>
-                                                                <button class="downloadBtn">
-                                                                    <span>Download</span>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td scope="row">
-                                                                <p>document4.docx</p>
-                                                            </td>
-                                                            <td>
-                                                                <button class="downloadBtn">
-                                                                    <span>Download</span>
-                                                                </button>
+                                                                <a href="./assets/legalidDocuments/<?php echo $row['idFileName']?>" download>
+                                                                    <button class="downloadBtn">
+                                                                        <span>Download</span>
+                                                                    </button>
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table> 
-                                            </div>
-                                            <div class="col-1">
-                                            <!-- Indention Space GAP -->
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="col-12">
-                                                    <table class="table table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Location via Google Map</th>
-                                                            </tr>
-                                                        </thead>
-                                                    </table>
-                                                    <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d341.22631946435195!2d121.07321743123391!3d14.625538873609871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1648740876247!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
