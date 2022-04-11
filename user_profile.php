@@ -24,6 +24,20 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
         <link rel="stylesheet" href="./css/userProfile.css">
+        <?php 
+          require_once './hostCon.php';
+          $id = $_SESSION['username'];
+          $imageSelect = "SELECT * FROM user_tb WHERE user_identity = $id";
+          if($imgResult = mysqli_query($connect, $imageSelect)){
+            
+            if($imgRow = mysqli_fetch_assoc($imgResult)){
+              
+              $imgVar = $imgRow['profileImg'];
+            }
+          }
+         
+        ?>
+
         <title>ConnServ</title>
     </head>
     <body>
@@ -74,7 +88,7 @@
                             </div>
                             <div class="content">
                               <div class="content_format">
-                                <form action="./includes/edit.inc.php" class="needs-validation"  method="POST" novalidate>
+                                <form action="./includes/edit.inc.php" class="needs-validation"  method="POST" enctype="multipart/form-data">
                                   <div class="row">
 
                                     <div class="col-9">
@@ -143,7 +157,7 @@
                                     <div class="col-3">
                                       <div class="user_icon">
                                         <div class="profile_picture">
-                                          <img src="./assets/img/categories/computer.png" alt="User Icon" id="photo">
+                                        <?php  echo "<img src='./assets/img/user_profile/".$imgVar."' alt='User Icon' id='photo'>";?>
                                         </div>
                                         <label id="uploadBtn" for="file">Click to change</label>
                                         <input type="file" id="file" name="file">
