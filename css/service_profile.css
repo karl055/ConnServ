@@ -543,6 +543,11 @@ nav :focus {
   width: 280px;
 }
 
+.leftcol .map iframe {
+  width: 270px;
+  height: 250px;
+}
+
 .leftcol h2 {
   padding: 1rem;
 }
@@ -620,6 +625,16 @@ nav :focus {
 .service-title .bottom_container .right_col .btnAppointment {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  background-color: #5e0cc4;
+  border: none;
+  color: white;
+}
+
+.service-title .bottom_container .right_col :hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 80%;
 }
 
 .related_container {

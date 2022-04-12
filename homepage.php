@@ -120,7 +120,7 @@ if(!isset($_SESSION['username'])){
                                 echo "<img src='./assets/img/featured_services/business_icon/".$featureRow['business_icon']."' class='card-img-top'>";
                                 echo "<div class='card-body'></div>";
                                 echo "<div class='card-footer'>";
-                                echo "<a href='./service_profile.php?business=".$featureRow['business_name']."' class='card-title stretched-link'>".$featureRow['business_name']." </a>";
+                                echo "<a href='./service_profile.php?business=".$featureRow['business_icon']."' class='card-title stretched-link'>".$featureRow['business_name']." </a>";
                                 echo "</div>";
                                 echo "</div>";
                             }
@@ -180,7 +180,7 @@ if(!isset($_SESSION['username'])){
                               echo "<img src='./assets/img/featured_services/business_icon/".$addedRow['business_icon']."' class='card-img-top'>";
                               echo "<div class='card-body'></div>";
                               echo "<div class='card-footer'>";
-                              echo "<a href='./service_profile.php?business=".$addedRow['business_name']."' class='card-title stretched-link'>".$addedRow['business_name']." </a>";
+                              echo "<a href='./service_profile.php?business=".$addedRow['business_icon']."' class='card-title stretched-link'>".$addedRow['business_name']." </a>";
                               echo "</div>";
                               echo "</div>";
                           }

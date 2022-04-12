@@ -92,7 +92,7 @@
                     
                     $legalFileNameNew = uniqid('', true). "." .$legalFileActualExt;
                     $idFileNameNew = uniqid('', true). "." .$idFileActualExt;
-                    $iconFileNameNew = "profile".$username."." .$iconFileActualExt;
+                    $iconFileNameNew = uniqid('', true).$username."." .$iconFileActualExt;
 
                     $legalFileDestination = '../assets/legalidDocuments/'.$legalFileNameNew;
                     $idFileDestination = '../assets/legalidDocuments/'.$idFileNameNew;

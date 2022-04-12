@@ -1,3 +1,18 @@
+<?php
+
+if(!isset($_SESSION['username'])){
+  session_start();
+}
+include_once './hostCon.php';
+
+$iconUrl = $_GET['business'];
+
+$sqlGet = "SELECT * FROM business_tb WHERE business_icon = '$iconUrl'";
+$getResult = mysqli_query($connect, $sqlGet);
+    
+$getRow = mysqli_fetch_assoc($getResult);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +36,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel="stylesheet" href="./css/service.css">
+        <link rel="stylesheet" href="./css/service_profile.css">
         <title>ConnServ</title>
     </head>
     <body>
@@ -35,19 +50,32 @@
               <!--SERVICE IMG AND ADDRESS-->
 
               <div class="service-image">
-              <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" width="500px" class="img-fluid">
+                <?php echo '<img src="./assets/img/featured_services/business_icon/'.$getRow['business_icon'].'" class="img-fluid">';?>
+              <!-- <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" width="500px" class="img-fluid"> -->
               </div>
   
-              <div class="address text-dark bg-light mb-3 d-inline-block" style="max-width: 20rem;">
+              <div class="card address text-dark bg-light mb-3 d-inline-block" style="max-width: 20rem;">
                 <div class="card-header">Address</div>
                 <div class="card-body">
-                  <h4 class="card-title">29 Pres., Aguinaldo St., South Signal Village, District 2, Taguig City</h4>
+                  <?php
+                    echo '<ul class="list-group list-group-flush">';
+                    echo '<li class="list-group-item"><strong>Unit:</strong> '.$getRow['unit_no'].'</li>';
+                    echo '<li class="list-group-item"><strong>House:</strong>'.$getRow['house_no'].'</li>';
+                    echo '<li class="list-group-item"><strong>Building:</strong> '.$getRow['business_building'].'</li>';
+                    echo '<li class="list-group-item"><strong>Street:</strong> '.$getRow['business_street'].'</li>';
+                    echo '<li class="list-group-item"><strong>Village:</strong> '.$getRow['business_village'].'</li>';
+                    echo '<li class="list-group-item"><strong>Barangay:</strong> '.$getRow['business_barangay'].'</li>';
+                    echo '<li class="list-group-item"><strong>Zip:</strong> '.$getRow['business_zip'].'</li>';
+                    echo '<li class="list-group-item"><strong>City:</strong> '.$getRow['business_city'].'</li>';
+                    echo '</ul>';
+                  ?>
                 </div>
               </div>
 
                 <!--SERVICE MAP-->
               <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.8365313238559!2d121.0536800182533!3d14.502348022497767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x472aae8a079e213e!2sBAHAY%20NI%20BRYAN!5e0!3m2!1sen!2sph!4v1646320618218!5m2!1sen!2sph" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <?php echo $getRow['business_map'];?>
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.8365313238559!2d121.0536800182533!3d14.502348022497767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x472aae8a079e213e!2sBAHAY%20NI%20BRYAN!5e0!3m2!1sen!2sph!4v1646320618218!5m2!1sen!2sph" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
               </div>
             </div>
           </div>
@@ -57,7 +85,8 @@
 
             <div class="service-title col-12" style="padding: 4rem 0 1rem;">
               <div class="col-12 top_container" style="display: flex;">
-                <h1 class="font-weight-bold col-11" title="Bonheur Apparel Incorporated Group of Company">Bonheur Apparel Incorporated Group of Company</h1>           
+                  <?php echo '<h1 class="font-weight-bold col-11" title="'.$getRow['business_name'].'">'.$getRow['business_name'].'</h1>';?>
+                <!-- <h1 class="font-weight-bold col-11" title="Bonheur Apparel Incorporated Group of Company">Bonheur Apparel Incorporated Group of Company</h1> -->           
                 <div class="verified-badge col-1">
                   <img src="https://img.icons8.com/fluency/48/000000/verified-badge.png" title="Verified">
                 </div>
@@ -92,11 +121,13 @@
                   <div class="swiper-wrapper">
                     <div class="slider-item swiper-slide">
                       <div class="slider-image-wrapper">
+                        <?php echo '<img class="slider-image" src="./assets/img/featured_services/business_icon/'.$getRow['business_icon'].'" alt="SliderImg">';?>
                         <img class="slider-image" src="./assets/img/featured_services/bonheur_apparel/logo.jpg" alt="SliderImg">
                         </div>
                       <div class="slider-item-content">
                         <h1>Description</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                        <?php echo "<p>".$getRow['business_description']."</p>";?>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p> -->
                       </div>
                     </div>
                     <div class="slider-item swiper-slide">

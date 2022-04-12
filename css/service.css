@@ -543,6 +543,11 @@ nav :focus {
   width: 280px;
 }
 
+.leftcol .map iframe {
+  width: 270px;
+  height: 250px;
+}
+
 .leftcol h2 {
   padding: 1rem;
 }
