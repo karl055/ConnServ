@@ -97,7 +97,7 @@
                                 exit();
                             }
                             
-                            $sqlEmail = "SELECT * FROM business_tb WHERE business_name = '$business_name'";
+                            $sqlEmail = "SELECT * FROM business_tb WHERE business_name = '$business_email'";
 
                             $emailResult = mysqli_query($connect, $sqlEmail);
                             

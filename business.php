@@ -43,7 +43,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/stylingBusiness.css">
+        <link rel="stylesheet" href="./css/stylingBusinessNew.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -82,7 +82,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                 <div class="col-3">
                                     <div class="user_icon">
                                         <div class="profile_picture">
-                                            <?php echo "<img src='./assets/img/featured_services/business_icon/".$imgVar."'  alt='User Icon' id='photo'' >";?>
+                                            <?php echo "<img src='./assets/img/featured_services/business_icon/".$imgVar."'  alt='User Icon' >";?>
                                         </div>
                                     </div>
                                 </div>
@@ -217,7 +217,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                         <div class="col-12">
                             
                             <div class="business_container">
-                                <form action="#">
+                                <form action="./includes/businessEdit.inc.php" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-7">
                                             <div class="business_trade">
@@ -228,7 +228,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                             <div class="business_trade">
 
                                                 <label for="trade_name">Business Email <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                <input type="text" name="business_email" class="trade_name">
+                                                <input type="text" name="business_email" class="business_name">
                                             </div>
                                             <div class="business_address">
                                                 <div class="row">
@@ -258,7 +258,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                                     </div>
                                                     <div class="col-4">
                                                         <label for="business_street">Barangay <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <select id="inputBarangay" class="form-control business_barangay">
+                                                        <select id="inputBarangay" name="inputBarangay" class="form-control business_barangay">
                                                             <option value="Bagumbayan" selected>Bagumbayan</option>
                                                             <option value="Bambang">Bambang</option>
                                                             <option value="Calzada">Calzada</option>
@@ -290,22 +290,22 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                                         </select> 
                                                     </div>
                                                     <div class="col-3">
-                                                        <label for="business_street">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" name="business_street" class="business_street">
+                                                        <label for="business_zip">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <input type="text" name="business_zip" class="business_street">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-4">
                                                         <label for="business_city">City <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" name="business_city" class="business_city">
+                                                        <input type="text" name="business_city" class="business_city" required>
                                                     </div>
                                                     <div class="col-4">
                                                         <label for="business_city">Landline</label>
-                                                        <input type="text" name="business_city" class="business_city">
+                                                        <input type="text" name="business_landline" class="business_city" required>
                                                     </div>
                                                     <div class="col-4">
                                                         <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" name="business_city" class="business_city">
+                                                        <input type="text" name="business_mobile" class="business_city" required>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -335,7 +335,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <label for="business_details">Business Description</label>
-                                                        <textarea class="form-control" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
+                                                        <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -344,12 +344,13 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                             <div class="col-12">
 
                                                 <div class="business_logo">
-                                                    <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" alt="..." class="img-thumbnail">
+                                                    <?php echo '<img src="./assets/img/featured_services/business_icon/'.$imgVar.'" id="photo" alt="..." class="img-thumbnail">';?>
+                                                    <!-- <img src="./assets/img/featured_services/business_icon/" id="photo" alt="..." class="img-thumbnail"> -->
                                                 </div>
                                                 
-                                                <div class="business_location">
-                                                    <label for="change_icon">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                    <input type="file" id="change_icon" name="change_icon" style="display: none;">
+                                                <div class="profile_picture">
+                                                    <label for="file">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                    <input type="file" id="file" name="change_icon" style="display: none;">
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -375,7 +376,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                                 <div class="business_docu">
                                                     <hr>
                                                     <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                    <input type="file" id="file" name="file" multiple>
+                                                    <input type="file" name="legalFiles" multiple>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -383,7 +384,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                                     <hr>
 
                                                     <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                    <input type="file" id="file" name="file" multiple>
+                                                    <input type="file" name="idFiles" multiple>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -501,7 +502,9 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
             </div>
         </div>
         </section>
-
+        
+        <script src="./js/userProfile/profile_image.js"></script>
+        <script src="./js/subservices/dynamic.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

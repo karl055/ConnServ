@@ -18,8 +18,40 @@
         </style>
     </head>
     <body>
-        <div class="iconDiv">
-            <img src="../../assets/img/featured_services/ithilien_coffee/logo.jpg" alt="">
+        <div class="business_logo">
+            <img src="./assets/img/ConnServ_Logo_Black.png" id="photo" alt="..." class="img-thumbnail">
         </div>
+                                                
+        <div class="profile_picture">
+            <label for="file">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+            <input type="file" id="file" name="change_icon" style="display: none;">
+        </div>
+
+        <script>
+            
+        /* Change Profile Picture Function  */
+            const imgDiv = document.querySelector('.profile_picture');
+            const image = document.querySelector('#photo');
+            const file = document.querySelector('#file');
+            const uploadBtn = document.querySelector('#uploadBtn');
+
+            file.addEventListener('change', function(){
+                const photoChose = this.files[0];
+
+                if(photoChose){
+                    const reader = new FileReader();
+
+                    reader.addEventListener('load', function(){
+                        image.setAttribute('src', reader.result);
+                    });
+
+                    reader.readAsDataURL(photoChose);
+                }
+            }); 
+
+
+
+
+        </script>
     </body>
 </html>
