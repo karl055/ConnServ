@@ -114,7 +114,7 @@
                                 ownerId = (
                                 SELECT user_identity
                                 FROM user_tb
-                                WHERE user_identity = '$userId')";
+                                WHERE user_identity = $userId)";
                                 
                             mysqli_query($connect, $sql) or die(mysqli_error($connect));
                             

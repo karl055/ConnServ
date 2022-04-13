@@ -120,7 +120,7 @@ if(!isset($_SESSION['username'])){
                                 echo "<img src='./assets/img/featured_services/business_icon/".$featureRow['business_icon']."' class='card-img-top'>";
                                 echo "<div class='card-body'></div>";
                                 echo "<div class='card-footer'>";
-                                echo "<a href='./service_profile.php?business=".$featureRow['business_icon']."' class='card-title stretched-link'>".$featureRow['business_name']." </a>";
+                                echo "<a href='./service_profile.php?businessname=".$featureRow['business_name']."&business=".$featureRow['business_icon']."' class='card-title stretched-link'>".$featureRow['business_name']." </a>";
                                 echo "</div>";
                                 echo "</div>";
                             }

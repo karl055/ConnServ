@@ -51,7 +51,6 @@ $getRow = mysqli_fetch_assoc($getResult);
 
               <div class="service-image">
                 <?php echo '<img src="./assets/img/featured_services/business_icon/'.$getRow['business_icon'].'" class="img-fluid">';?>
-              <!-- <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" width="500px" class="img-fluid"> -->
               </div>
   
               <div class="card address text-dark bg-light mb-3 d-inline-block" style="max-width: 20rem;">
@@ -75,7 +74,6 @@ $getRow = mysqli_fetch_assoc($getResult);
                 <!--SERVICE MAP-->
               <div class="map">
                 <?php echo $getRow['business_map'];?>
-                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.8365313238559!2d121.0536800182533!3d14.502348022497767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x472aae8a079e213e!2sBAHAY%20NI%20BRYAN!5e0!3m2!1sen!2sph!4v1646320618218!5m2!1sen!2sph" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
               </div>
             </div>
           </div>
@@ -86,7 +84,6 @@ $getRow = mysqli_fetch_assoc($getResult);
             <div class="service-title col-12" style="padding: 4rem 0 1rem;">
               <div class="col-12 top_container" style="display: flex;">
                   <?php echo '<h1 class="font-weight-bold col-11" title="'.$getRow['business_name'].'">'.$getRow['business_name'].'</h1>';?>
-                <!-- <h1 class="font-weight-bold col-11" title="Bonheur Apparel Incorporated Group of Company">Bonheur Apparel Incorporated Group of Company</h1> -->           
                 <div class="verified-badge col-1">
                   <img src="https://img.icons8.com/fluency/48/000000/verified-badge.png" title="Verified">
                 </div>
@@ -107,11 +104,9 @@ $getRow = mysqli_fetch_assoc($getResult);
                   </div>
                 </div>
                 <div class="right_col col-4">
-                  <a href="./create_appointment.php"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>
+                  <?php echo '<a href="./create_appointment.php?businessid='.$getRow['business_icon'].'"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';?>
                 </div>
-              </row> 
-              
-              
+              </row>
             </div>
           </div>
           <div class="col-12">
@@ -181,7 +176,7 @@ $getRow = mysqli_fetch_assoc($getResult);
         </div>
       </div>
 
-            <!-- RELATED SERVICE -->
+        <!-- RELATED SERVICE -->
           <div class="col-12 related_container" style="display: flex;">
             <div class="related-service col-12">
               <div class="col-12">
@@ -220,7 +215,6 @@ $getRow = mysqli_fetch_assoc($getResult);
             </div>
           </div>
 
-  
         <!-- FOOTER -->
 
         <footer class="footer-div">

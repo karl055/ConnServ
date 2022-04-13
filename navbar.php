@@ -3,11 +3,11 @@
 if(isset($_POST['searchBtn'])){
     $service = $_POST['service_name'];
     header("Location: ./search.php?$service");
-}
+}/* 
 if(!isset($_SESSION['username'])){
     session_start();
 
-}
+} */
 ?>
 
 <!DOCTYPE html>

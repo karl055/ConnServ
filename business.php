@@ -148,12 +148,23 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                                 <h6 class="text-mute"><?php echo $row['business_subcategory'];?></h6>
                                             </div>
                                         </div>
-                                        <div class="col-12 description_bar">
-                                            <h6>Description</h6><hr>
-                                            <div class="description_content">
-                                                <p><?php echo $row['business_description'];?></p>
+                                        <div class="col-12" style="display: flex;">
+                                            <div class="col-3 description_bar">
+                                                <h6>Service Price</h6><hr>
+                                                <div class="description_content">
+                                                    <p>Starts At: 200pesos</p>
+                                                </div>
                                             </div>
-                                        </div>
+                                            <div class="col-1">
+
+                                            </div>
+                                            <div class="col-8 description_bar">
+                                                <h6>Description</h6><hr>
+                                                <div class="description_content">
+                                                    <p><?php echo $row['business_description'];?></p>
+                                                </div>
+                                            </div>
+                                        </div><br>
                                         <div class="col-12 documents_bar">
                                             
                                             <div class="col-6" style="margin: 0; padding:0;">

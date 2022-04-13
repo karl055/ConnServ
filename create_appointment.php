@@ -1,3 +1,22 @@
+<?php
+
+include_once './hostCon.php';
+session_start();
+$businessImg = $_GET['businessid'];
+
+$businessSql = "SELECT * FROM business_tb WHERE business_icon = '$businessImg'";
+
+$businessResult = mysqli_query($connect, $businessSql);
+$businessRow = mysqli_fetch_assoc($businessResult);
+
+$business = $businessRow['business_icon'];
+
+/* if(isset($_POST['addAppointment'])){
+
+    header("Location: ./includes/createAppointment.inc.php?business=$business");
+} */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +33,7 @@
         <?php include './navbar.php';?>
         <div class="main_body">
         <a href="./service_profile.php"  class="buttonBack"><button class="buttonBack">Back</button></a>
-            <form action="#" autocomplete="off">
+            <form action="./includes/createAppointment.inc.php?business=<?php echo $businessImg;?>" method="post" autocomplete="off">
                 <div class="col-12">
                     <div class="col-12">
 
@@ -29,34 +48,34 @@
                                 </div>
                             <div style="display: flex;">
                             <div class="col-6">
-                                <input type="date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2022-10-20">
+                                <input type="date" name="min_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2022-10-20" value="<?= date('Y-m-d'); ?>">
                             </div>
                             <div class="col-6">
-                                <input type="date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2050-10-20">
+                                <input type="date" name="max_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2050-10-20" value="<?= date('Y-m-d'); ?>">
                             </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <label for="inputService">Type of Service</label>
-                            <select id="inputService" class="form-control" name="inputservice">
-                                <option value="tailoring" selected>Tailoring</option>
-                                <option value="BeautyandWellness">Dress Making</option>
-                                <option value="Construction">Bulk Orders</option>
-                            </select>
-                        </div><!-- 
-                        <div class="col-12">
-                            <label for="inputSubService">Type of Sub Service</label>
-                            <select id="inputSubService" class="form-control" name="inputSubService" required>
-                                
-                            </select>
-                        </div> -->
                         
                         <div class="col-12">
+                            <div class="time_title">
+                                <label>Select Preferred Time</label>
+                            </div>
+                            <div class="time_content">
+                                <select name="hour" id="timeHour" class="selectTime"></select>
+                                <span>:</span>
+                                <select name="mins" id="timeMins" class="selectTime"></select>
+                                <input type="radio" name="time" id="am" value="AM">
+                                <label for="am" class="timeLabel">AM</label>
+                                <input type="radio" name="time" id="pm" value="PM">
+                                <label for="pm" class="timeLabel">PM</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
                             <div class="note_title">
-                                <label>Extra Notes: </label>
+                                <label>Service Needed & Description: </label>
                             </div>
                             <div class="note_content">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="5"></textarea>
                             </div>
                         </div>
                         <div class="col-12" style="padding-top: 5px;">
@@ -65,19 +84,16 @@
                     </div>
                     <div class="col-7">
                         <div class="col-12">
-                            <div class="col-12">
-                                <div class="col-12">
-                                    <div class="time_title">
-                                        <label>Select Preferred Time</label>
+                            <div class="container-fluid">
+                                <div class="personal_container">
+                                    <label>Service Information</label>
+                                </div>
+                                <div class="personal_content"  style="display: flex;">
+                                    <div class="col-6">
+                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_name'] ;?>" readonly="readonly" name="business_name" id="business_name" autocomplete="off">
                                     </div>
-                                    <div class="time_content">
-                                        <select name="hour" id="timeHour" class="selectTime"></select>
-                                        <span>:</span>
-                                        <select name="mins" id="timeMins" class="selectTime"></select>
-                                        <input type="radio" name="time" id="am" value="AM">
-                                        <label for="am" class="timeLabel">AM</label>
-                                        <input type="radio" name="time" id="pm" value="PM">
-                                        <label for="pm" class="timeLabel">PM</label>
+                                    <div class="col-6">
+                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_email'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off">
                                     </div>
                                 </div>
                             </div>
@@ -164,8 +180,9 @@
                         <div class="col-12">
                             <div class="col-12 btnAddAppointment" style="margin: 5px 0 0;">
                                 <div style="display: flex;">
-                                    <a href="./appointment_confirmation.php" class="col-12"><button type="button" class="addAppointment">Add My Appointment</button></a>
-                                    
+                                    <div class="col-12">
+                                        <button type="submit" name="addAppointment" class="addAppointment col-12">Add My Appointment</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
