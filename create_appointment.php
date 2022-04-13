@@ -47,12 +47,12 @@ $business = $businessRow['business_icon'];
                                     <label>Select Preferred Date</label>
                                 </div>
                             <div style="display: flex;">
-                            <div class="col-6">
-                                <input type="date" name="min_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2022-10-20" value="<?= date('Y-m-d'); ?>">
-                            </div>
-                            <div class="col-6">
-                                <input type="date" name="max_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2050-10-20" value="<?= date('Y-m-d'); ?>">
-                            </div>
+                                <div class="col-6">
+                                    <input type="date" name="min_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2022-10-20" value="<?= date('Y-m-d'); ?>">
+                                </div>
+                                <div class="col-6">
+                                    <input type="date" name="max_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2050-10-20" value="<?= date('Y-m-d'); ?>">
+                                </div>
                             </div>
                         </div>
                         

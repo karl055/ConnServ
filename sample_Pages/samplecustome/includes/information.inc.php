@@ -9,6 +9,7 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO sample_tb (username) VALUES ('$username')";
 
     if($result = mysqli_query($connect, $sql)){
+        
         $secondsql = "SELECT * FROM sample_tb WHERE username = '$username'";
         $secondresult = mysqli_query($connect, $secondsql);
         $row = mysqli_fetch_assoc($secondresult);

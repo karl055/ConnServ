@@ -104,7 +104,14 @@ $getRow = mysqli_fetch_assoc($getResult);
                   </div>
                 </div>
                 <div class="right_col col-4">
-                  <?php echo '<a href="./create_appointment.php?businessid='.$getRow['business_icon'].'"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';?>
+                  <?php 
+                  if(!isset($_SESSION['username'])){
+                    echo '<a href="./login.php"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
+                  }
+                  else{
+                    echo '<a href="./create_appointment.php?businessid='.$getRow['business_icon'].'"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
+                  }
+                  ?>
                 </div>
               </row>
             </div>
