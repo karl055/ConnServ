@@ -9,8 +9,6 @@ $businessSql = "SELECT * FROM business_tb WHERE business_icon = '$businessImg'";
 $businessResult = mysqli_query($connect, $businessSql);
 $businessRow = mysqli_fetch_assoc($businessResult);
 
-$business = $businessRow['business_icon'];
-
 /* if(isset($_POST['addAppointment'])){
 
     header("Location: ./includes/createAppointment.inc.php?business=$business");
@@ -48,10 +46,10 @@ $business = $businessRow['business_icon'];
                                 </div>
                             <div style="display: flex;">
                                 <div class="col-6">
-                                    <input type="date" name="min_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2022-10-20" value="<?= date('Y-m-d'); ?>">
+                                    <input type="date" name="min_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2022-10-20" value="<?= date('Y-m-d'); ?>" required>
                                 </div>
                                 <div class="col-6">
-                                    <input type="date" name="max_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2050-10-20" value="<?= date('Y-m-d'); ?>">
+                                    <input type="date" name="max_date" class="first_date" min="<?= date('Y-m-d'); ?>" max="2050-10-20" value="<?= date('Y-m-d'); ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +64,7 @@ $business = $businessRow['business_icon'];
                                 <select name="mins" id="timeMins" class="selectTime"></select>
                                 <input type="radio" name="time" id="am" value="AM">
                                 <label for="am" class="timeLabel">AM</label>
-                                <input type="radio" name="time" id="pm" value="PM">
+                                <input type="radio" name="time" id="pm" value="PM" checked>
                                 <label for="pm" class="timeLabel">PM</label>
                             </div>
                         </div>
@@ -75,7 +73,7 @@ $business = $businessRow['business_icon'];
                                 <label>Service Needed & Description: </label>
                             </div>
                             <div class="note_content">
-                                <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="5" required></textarea>
                             </div>
                         </div>
                         <div class="col-12" style="padding-top: 5px;">
@@ -90,10 +88,10 @@ $business = $businessRow['business_icon'];
                                 </div>
                                 <div class="personal_content"  style="display: flex;">
                                     <div class="col-6">
-                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_name'] ;?>" readonly="readonly" name="business_name" id="business_name" autocomplete="off">
+                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_name'] ;?>" readonly="readonly" name="business_name" id="business_name" autocomplete="off" required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_email'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off">
+                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_email'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
@@ -105,10 +103,10 @@ $business = $businessRow['business_icon'];
                                 </div>
                                 <div class="personal_content"  style="display: flex;">
                                     <div class="col-6">
-                                        <input type="text" class="full_name" name="lastname" id="lname" placeholder="Last Name.." autocomplete="off">
+                                        <input type="text" class="full_name" name="lastname" id="lname" placeholder="Last Name.." autocomplete="off" required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="full_name" name="firstname" id="fname" placeholder="First Name.." autocomplete="off">
+                                        <input type="text" class="full_name" name="firstname" id="fname" placeholder="First Name.." autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
@@ -117,10 +115,10 @@ $business = $businessRow['business_icon'];
                             <div class="container-fluid"  style="margin-top: 5px;">
                                 <div class="personal_content" style="display: flex;">
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" name="mobile" id="mobile" placeholder="Mobile Number.." autocomplete="off">
+                                        <input type="text" class="contact_number" name="mobile" id="mobile" placeholder="Mobile Number.." autocomplete="off" required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" name="landline" id="landline" placeholder="Landline.." autocomplete="off">
+                                        <input type="text" class="contact_number" name="landline" id="landline" placeholder="Landline.." autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
@@ -131,16 +129,16 @@ $business = $businessRow['business_icon'];
                             </div>
                             <div class="address_content col-12" style="display: flex;">
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" name="houseNum" placeholder="House Number" autocomplete="off">
+                                    <input type="text" class="txtAddress" name="houseNum" placeholder="House Number" autocomplete="off" required>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" name="street" placeholder="Street">
+                                    <input type="text" class="txtAddress" name="street" placeholder="Street" required>
                                 </div>
                             </div>
                             
                             <div class="address_content col-12"  style="display: flex;">
                                 <div class="col-6">
-                                    <select id="brgy" class="txtAddress"  name="brgy">
+                                    <select id="brgy" class="txtAddress"  name="brgy" required>
                                         <option value="Bagumbayan" selected>Bagumbayan</option>
                                         <option value="Bambang">Bambang</option>
                                         <option value="Calzada">Calzada</option>
@@ -172,7 +170,7 @@ $business = $businessRow['business_icon'];
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" name="city" placeholder="City">
+                                    <input type="text" class="txtAddress" name="city" placeholder="City" required>
                                 </div>
                             </div>
                         </div>

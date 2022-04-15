@@ -109,7 +109,7 @@ $getRow = mysqli_fetch_assoc($getResult);
                     echo '<a href="./login.php"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
                   }
                   else{
-                    echo '<a href="./create_appointment.php?businessid='.$getRow['business_icon'].'"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
+                    echo '<a href="./create_appointment.php?businessid='.$getRow['business_icon'].'&businesscontact='.$getRow['business_mobile'].'"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
                   }
                   ?>
                 </div>
@@ -147,7 +147,7 @@ $getRow = mysqli_fetch_assoc($getResult);
                         </div>
                       <div class="slider-item-content">
                         <h1>Contacts</h1>
-                        <p>09101926394 / 8398-3724</p>
+                        <p><?php echo $getRow['business_mobile'];?></p>
                       </div>
                     </div>
     
