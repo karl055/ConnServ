@@ -109,7 +109,7 @@ $getRow = mysqli_fetch_assoc($getResult);
                     echo '<a href="./login.php"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
                   }
                   else{
-                    echo '<a href="./create_appointment.php?businessid='.$getRow['business_icon'].'&businesscontact='.$getRow['business_mobile'].'"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
+                    echo '<a href="./create_appointment.php?businessid='.$getRow['business_icon'].'"><button type="submit" name="appointment" class="btnAppointment">Book an Appointment</button></a>';
                   }
                   ?>
                 </div>
@@ -130,15 +130,6 @@ $getRow = mysqli_fetch_assoc($getResult);
                         <h1>Description</h1>
                         <?php echo "<p>".$getRow['business_description']."</p>";?>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p> -->
-                      </div>
-                    </div>
-                    <div class="slider-item swiper-slide">
-                      <div class="slider-image-wrapper">
-                        <img class="slider-image" src="./assets/img/categories/another/Clothing1.jpg" alt="SliderImg">
-                        </div>
-                      <div class="slider-item-content">
-                        <h1>Services</h1>
-                        <p>Tayloring, Dressmaking, Bulk Orders</p>
                       </div>
                     </div>
                     <div class="slider-item swiper-slide">

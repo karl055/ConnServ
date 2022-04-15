@@ -7,23 +7,23 @@
         if(isset($_POST['createBtn'])){
 
             $userId = $_SESSION['username'];
-            $business_name = $_POST['business_name'];
-            $business_email = $_POST['business_email'];
-            $business_category = $_POST['inputservice'];
-            $business_subcategory = $_POST['inputSubService'];
-            $business_unit_no = $_POST['business_unit_no'];
-            $business_building = $_POST['business_building'];
-            $business_house_no = $_POST['business_house_no'];
-            $business_street = $_POST['business_street'];
-            $business_village = $_POST['business_village'];
-            $business_barangay = $_POST['business_barangay'];
-            $business_zip = $_POST['business_zip'];
-            $business_city = $_POST['business_city'];
-            $business_landline = $_POST['business_landline'];
-            $business_mobile = $_POST['business_mobile'];
-            $business_details = $_POST['business_details'];
-            $business_logo = $_POST['change_icon'];
-            $business_location = $_POST['business_location'];
+            $business_name = mysqli_real_escape_string($connect, $_POST['business_name']);
+            $business_email = mysqli_real_escape_string($connect, $_POST['business_email']);
+            $business_category = mysqli_real_escape_string($connect, $_POST['inputservice']);
+            $business_subcategory = mysqli_real_escape_string($connect, $_POST['inputSubService']);
+            $business_unit_no = mysqli_real_escape_string($connect, $_POST['business_unit_no']);
+            $business_building = mysqli_real_escape_string($connect, $_POST['business_building']);
+            $business_house_no = mysqli_real_escape_string($connect, $_POST['business_house_no']);
+            $business_street = mysqli_real_escape_string($connect, $_POST['business_street']);
+            $business_village = mysqli_real_escape_string($connect, $_POST['business_village']);
+            $business_barangay = mysqli_real_escape_string($connect, $_POST['business_barangay']);
+            $business_zip = mysqli_real_escape_string($connect, $_POST['business_zip']);
+            $business_city = mysqli_real_escape_string($connect, $_POST['business_city']);
+            $business_landline = mysqli_real_escape_string($connect, $_POST['business_landline']);
+            $business_mobile = mysqli_real_escape_string($connect, $_POST['business_mobile']);
+            $business_details = mysqli_real_escape_string($connect, $_POST['business_details']);
+            $business_logo = mysqli_real_escape_string($connect, $_POST['change_icon']);
+            $business_location = mysqli_real_escape_string($connect, $_POST['business_location']);
 
             /* CHANGE ICON UPLOAD */
 

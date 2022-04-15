@@ -70,6 +70,14 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                         </div>
                         <div class="col-12">
                             <div class="note_title">
+                                <label>Appointment Title: </label>
+                            </div>
+                            <div class="note_content">
+                                <input type="text" class="form-control" name="service_title" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="note_title">
                                 <label>Service Needed & Description: </label>
                             </div>
                             <div class="note_content">

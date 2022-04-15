@@ -6,6 +6,7 @@
     die();
   }
 
+  $username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,11 @@
 
         <!-- Online Bootstrap Link -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
+        <style>
+          hr{
+            border:2px solid black;
+          }
+        </style>
         <link rel="stylesheet" href="./css/userProfile.css">
         <?php 
           require_once './hostCon.php';
@@ -265,18 +270,46 @@
                       <h4>Your Appointments</h4>
                     </div>
                     <div class="col-12">
-                      <div class="col-3">
-                          <div class="main_content">
-                            <div class="card mb-3" style="max-width: 18rem;">
-                              <div class="card-header"><p class="showBtn" onclick="show_hide()">Bonheur Apparel</p></div>
-                              <div class="appointment_container">
-                                  <div class="card-body">
-                                      <h5 class="card-title">Service Title</h5>
-                                      <p class="card-text">Schedule</p>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
+                      
+                          <?php 
+                          
+                          $appointmentSql = "SELECT * FROM appointment_tb WHERE client_id = '$username'";
+
+                          $appointmenResult = mysqli_query($connect, $appointmentSql);
+                          mysqli_fetch_assoc($appointmenResult);
+
+                          $classHeading = "heading_";
+
+                          $cardCol = 3;
+                          $cardRow = 12;
+                          echo '<div class="accordion row" id="accordionExample">';
+                          foreach($appointmenResult as $appointmentRows){
+                            
+
+                              echo '<div class="col-3" style="margin-top: 2rem;">';
+                                echo '<div class="card">';
+                                  echo '<div class="card card-header">';
+                                    echo '<h2 class="mb-0">';
+                                      echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
+                                    echo '</h2>';
+                                  echo '</div>';
+                                    echo '<div class="card-body">';
+                                      echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                      echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
+                                      echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
+                                      echo '<p class="card-text">Appointment Id</p>';
+                                      echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
+                                      echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
+                                      echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                      echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                    echo '</div>';
+                                    echo '<div class="card-footer text-muted  text-center">';
+                                      echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
+                                    echo '</div>';
+                                echo '</div>';
+                              echo '</div>';
+                          }
+                          ?>
                       </div>
                     </div>
                   </div>
