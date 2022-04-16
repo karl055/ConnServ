@@ -85,7 +85,7 @@
                 <div class="tab-content" id="v-pills-tabContent">
 
                         <!-- Profile Contents -->
-                  <div class="tab-pane fade show active profile" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="tab-pane fade profile" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                           <div class="main_content">
                             <div class="title_head">
                               <h4>My Profile</h4>
@@ -265,36 +265,47 @@
 
                         <!-- Appointments Contents -->
                   
-                  <div class="tab-pane fade appointments" id="pills-appointment" role="tabpanel" aria-labelledby="pills-appointment-tab">
+                  <div class="tab-pane fade show active appointments" id="pills-appointment" role="tabpanel" aria-labelledby="pills-appointment-tab">
                     <div class="container row">
                       <h4>Your Appointments</h4>
                     </div>
-                    <div class="col-12">
-                      
-                          <?php 
-                          
-                          $appointmentSql = "SELECT * FROM appointment_tb WHERE client_id = '$username'";
+                    <div class="col-12" style="display: flex;">
 
-                          $appointmenResult = mysqli_query($connect, $appointmentSql);
-                          mysqli_fetch_assoc($appointmenResult);
+                      <div class="col-2">
+                        
+                        <div class="col-12 filter_check">
+                          <p style="width: 100%; margin: 0;"><b>Filter By</b></p>
+                          <div style="width: 100%;">
+                              <a href="./user_profile.php?alphabet">A-Z</a>
+                          </div>
+                          <div style="width: 100%;">
+                              <a href="./user_profile.php?date">Date Appointed</a>
+                          </div>
+                          <div style="width: 100%;">
+                              <a href="./user_profile.php?reset">Reset</a>
+                          </div>
+                        </div>
 
-                          $classHeading = "heading_";
-
-                          $cardCol = 3;
-                          $cardRow = 12;
+                      </div>
+                      <div class="col-10">
+                        
+                      <?php
+                        if(isset($_GET['date'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = 1020 ORDER BY min_date ASC";
+                          $appointmenResult = mysqli_query($connect, $selection);
+      
                           echo '<div class="accordion row" id="accordionExample">';
                           foreach($appointmenResult as $appointmentRows){
-                            
-
-                              echo '<div class="col-3" style="margin-top: 2rem;">';
-                                echo '<div class="card">';
+                                                                      
+                              echo '<div class="col-4" style="margin-top: 2rem;">';
+                              echo '<div class="card">';
                                   echo '<div class="card card-header">';
-                                    echo '<h2 class="mb-0">';
+                                  echo '<h2 class="mb-0">';
                                       echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
-                                    echo '</h2>';
+                                  echo '</h2>';
                                   echo '</div>';
-                                    echo '<div class="card-body">';
-                                      echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                  echo '<div class="card-body">';
+                                      echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
                                       echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
                                       echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
                                       echo '<p class="card-text">Appointment Id</p>';
@@ -302,14 +313,81 @@
                                       echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
                                       echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
                                       echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
-                                    echo '</div>';
-                                    echo '<div class="card-footer text-muted  text-center">';
+                                  echo '</div>';
+                                  echo '<div class="card-footer text-muted  text-center">';
                                       echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
-                                    echo '</div>';
-                                echo '</div>';
+                                  echo '</div>';
+                              echo '</div>';
                               echo '</div>';
                           }
-                          ?>
+                          echo '</div>';
+                        }
+                          
+                        else if(isset($_GET['alphabet'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = 1020 ORDER BY business_name ASC";
+                          $appointmenResult = mysqli_query($connect, $selection);
+      
+                          echo '<div class="accordion row" id="accordionExample">';
+                          foreach($appointmenResult as $appointmentRows){
+                                                                      
+                              echo '<div class="col-4" style="margin-top: 2rem;">';
+                              echo '<div class="card">';
+                                  echo '<div class="card card-header">';
+                                  echo '<h2 class="mb-0">';
+                                      echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
+                                  echo '</h2>';
+                                  echo '</div>';
+                                  echo '<div class="card-body">';
+                                      echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                      echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
+                                      echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
+                                      echo '<p class="card-text">Appointment Id</p>';
+                                      echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
+                                      echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
+                                      echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                      echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                  echo '</div>';
+                                  echo '<div class="card-footer text-muted  text-center">';
+                                      echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
+                                  echo '</div>';
+                              echo '</div>';
+                              echo '</div>';
+                          }
+                          echo '</div>';
+                        }
+                        else if(!isset($_GET['date']) && !isset($_GET['alphabet']) || isset($_GET['reset'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = 1020";
+                          $appointmenResult = mysqli_query($connect, $selection);
+      
+                          echo '<div class="accordion row" id="accordionExample">';
+                          foreach($appointmenResult as $appointmentRows){
+                                                                      
+                              echo '<div class="col-4" style="margin-top: 2rem;">';
+                              echo '<div class="card">';
+                                  echo '<div class="card card-header">';
+                                  echo '<h2 class="mb-0">';
+                                      echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
+                                  echo '</h2>';
+                                  echo '</div>';
+                                  echo '<div class="card-body">';
+                                      echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                      echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
+                                      echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
+                                      echo '<p class="card-text">Appointment Id</p>';
+                                      echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
+                                      echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
+                                      echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                      echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                  echo '</div>';
+                                  echo '<div class="card-footer text-muted  text-center">';
+                                      echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
+                                  echo '</div>';
+                              echo '</div>';
+                              echo '</div>';
+                          }
+                          echo '</div>';
+                        }
+                        ?>
                       </div>
                     </div>
                   </div>

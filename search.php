@@ -35,7 +35,8 @@
                         <div style="width: 100%;">
                             <input type="checkbox" id="newservice"><label for="newservice"> New Services</label>
                         </div>
-                    </div><div class="col-12 filter_check">
+                    </div>
+                    <div class="col-12 filter_check">
                         <p style="width: 100%; margin: 0;"><b>Sort By</b></p>
                         <div style="width: 100%;">
                             <input type="checkbox" id="alphabetical"><label for="alphabetical"> Alphabetical</label>
