@@ -35,7 +35,7 @@ section{
         .business{
             font-weight: 500;
         }
-        .collapse{
+        .a_links{
             a{
                 color: #5e0cc4 !important;
                 background-color: transparent !important;
@@ -306,37 +306,28 @@ section{
             .approval_container{
                 width: 100%;
                 height: 100%;
-                .incoming_content{
-                    width: 100%;
-                    height: 100%;
                     .table_contents{
                         height: 500px;
+                        width: 100%;
                         border: 1px solid black;
                         .incoming_table{
                             width: 100%;
                             height: auto;
                             overflow: scroll;
-                            thead tbody{
-                                
-                                width: auto;
-                                color: red !important;
-                            }
                             thead{
                                 text-align: center;
                             }
                             tbody{
     
-                                td.address{
+                                .record{
                                     max-width: 0;
                                     white-space: nowrap; 
-                                    width: 30%; 
                                     overflow: hidden;
                                     text-overflow: ellipsis; 
                                 }
                             }
                         }
                     }
-                }
             }
         }
     }

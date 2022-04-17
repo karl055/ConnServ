@@ -63,8 +63,9 @@ if(isset($_POST['addAppointment'])){
 
     $selectCategory = $businessRow['business_subcategory'];
     $selectContact = $businessRow['business_mobile'];
+    $waitingApproval = "waiting";
     
-    $appointmentSql = "INSERT INTO appointment_tb SET appointment_title = '$appointmentTitle', appointment_custom = '$combination', business_id = (SELECT business_id FROM business_tb WHERE business_icon = '$businessImg'), client_id = (SELECT user_identity FROM user_tb WHERE user_identity = '$clientId'), client_firstname = '$clientFName', client_lastname = '$clientLname',
+    $appointmentSql = "INSERT INTO appointment_tb SET approval = '$waitingApproval', appointment_title = '$appointmentTitle', appointment_custom = '$combination', business_id = (SELECT business_id FROM business_tb WHERE business_icon = '$businessImg'), client_id = (SELECT user_identity FROM user_tb WHERE user_identity = '$clientId'), client_firstname = '$clientFName', client_lastname = '$clientLname',
     min_date = '$preferredMinDate', max_date = '$preferredMaxDate', hour_time = '$preferredHourTime', mins_time = '$minsFix', hour_clock = '$preferredTime', service_note = '$description',
     business_name = '$businessName', business_email = '$businessEmail', mobile = '$clientMobile', landline = '$clientLandline',
     houseNum = '$clientHouse', street = '$clientStreet', barangay = '$clientBarangay', city = '$clientCity', business_category = '$selectCategory', business_contact = '$selectContact', payment_method = '$cashOnService'";

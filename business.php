@@ -21,15 +21,18 @@ $ownerrow = mysqli_fetch_assoc($ownerresult);
 $ownerFname = ucfirst($ownerrow['user_firstname']);
 $ownerLname = ucfirst($ownerrow['user_lastname']);
 
-          $id = $_SESSION['username'];
-          $imageSelect = "SELECT * FROM business_tb WHERE ownerId = $id";
-          if($imgResult = mysqli_query($connect, $imageSelect)){
+$id = $_SESSION['username'];
+$imageSelect = "SELECT * FROM business_tb WHERE ownerId = $id";
+if($imgResult = mysqli_query($connect, $imageSelect)){
             
-            if($imgRow = mysqli_fetch_assoc($imgResult)){
-              
-              $imgVar = $imgRow['business_icon'];
-            }
-          }
+    if($imgRow = mysqli_fetch_assoc($imgResult)){
+                
+        $imgVar = $imgRow['business_icon'];
+        
+        $_SESSION['business'] = $imgRow['business_id'];
+        $appointmentAccessId = $_SESSION['business'];
+    }
+}
          
 ?>
 <!DOCTYPE html>
@@ -43,7 +46,7 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/stylingBusinessNew.css">
+        <link rel="stylesheet" href="./css/businessStyling.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -52,22 +55,23 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
         <div class="row">
             <div class="col-2 accordion" id="accordionExample"  style="padding-top: 1rem;">
                 <div style="padding-left: 1rem;">
-                    <p class="parent_link"  data-toggle="collapse" data-target="#collapseBusiness" aria-expanded="true" aria-controls="collapseBusiness">Profile</p>
                     
-                    <div id="collapseBusiness" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <p class="parent_link" data-target="#collapseAppointment" aria-expanded="true" aria-controls="collapseAppointment">Appointments</p>
+                    
+                    <div id="collapseAppointment" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="nav flex-column nav-pills a_links" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link" id="v-pills-incoming-tab" data-toggle="pill" href="#v-pills-incoming" role="tab" aria-controls="v-pills-incoming" aria-selected="false">Incoming</a>
+                            <a class="nav-link" id="v-pills-approval-tab" data-toggle="pill" href="#v-pills-approval" role="tab" aria-controls="v-pills-approval" aria-selected="false">Approval</a>
+                        </div>
+                    </div>
+                    <p class="parent_link" data-target="#collapseBusiness" aria-expanded="true" aria-controls="collapseBusiness">Profile</p>
+                    
+                    <div id="collapseBusiness" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="nav flex-column nav-pills a_links" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link" id="v-pills-business-tab" data-toggle="pill" href="#v-pills-business" role="tab" aria-controls="v-pills-business" aria-selected="false">Business</a>
                             <a class="nav-link" id="v-pills-edit-tab" data-toggle="pill" href="#v-pills-edit" role="tab" aria-controls="v-pills-edit" aria-selected="false">Edit</a>
                             <a class="nav-link" id="v-pills-revenue-tab" data-toggle="pill" href="#v-pills-revenue" role="tab" aria-controls="v-pills-revenue" aria-selected="false">Revenue</a>
                             <a class="nav-link" id="v-pills-other-tab" data-toggle="pill" href="#v-pills-other" role="tab" aria-controls="v-pills-other" aria-selected="false">Others</a>
-                        </div>
-                    </div>
-                    <p class="parent_link"  data-toggle="collapse" data-target="#collapseAppointment" aria-expanded="true" aria-controls="collapseAppointment">Appointments</p>
-                    
-                    <div id="collapseAppointment" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link" id="v-pills-incoming-tab" data-toggle="pill" href="#v-pills-incoming" role="tab" aria-controls="v-pills-incoming" aria-selected="false">Incoming</a>
-                            <a class="nav-link" id="v-pills-approval-tab" data-toggle="pill" href="#v-pills-approval" role="tab" aria-controls="v-pills-approval" aria-selected="false">Approval</a>
                         </div>
                     </div>
                     <a href="./user_profile.php" class="backbtn"><button>Back to User Page</button></a>
@@ -440,62 +444,50 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                             </div>
                         </div>
                     </div>
-                        <!-- Messages TAB -->
+                        <!-- Appointment Approvals TAB -->
                     <div class="tab-pane fade approval_content" id="v-pills-approval" role="tabpanel" aria-labelledby="v-pills-approval-tab">
                         <div class="col-12 approval_container">
                                 <div class="col-12 date_title">
                                     <h6>Current Date</h6>
                                 </div>
-                                <div class="col-12 incoming_content">
                                     <div class="col-12 table_contents">
-                                        <table class="table table-hover table-sm incoming_table" border="1">
+                                        <table class="table table-hover incoming_table" border="1">
                                             <thead>
                                                 <tr>
+                                                    <th scope="col" style="width: 5%;"></th>
                                                     <th scope="col">ID</th>
-                                                    <th scope="col">Service Type</th>
-                                                    <th scope="col">Last</th>
-                                                    <th scope="col">First</th>
-                                                    <th scope="col">Address</th>
-                                                    <th scope="col">Contact #</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Time</th>
-                                                    <th scope="col">Approval</th>
+                                                    <th scope="col" style="width: 10%;">Title</th>
+                                                    <th scope="col" style="width: 10%;">Name</th>
+                                                    <th scope="col" style="width: 20%;">Address</th>
+                                                    <th scope="col" style="width: 11%;">Contact</th>
+                                                    <th scope="col" style="width: 16%;">Date</th>
+                                                    <th scope="col" style="width: 8%;">Time</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">1009</th>
-                                                    <td>Hardware Repair</td>
-                                                    <td>Parole</td>
-                                                    <td>Karl</td>
-                                                    <td class="address">71e, Mapagkawanggawa</td>
-                                                    <td>09676842595</td>
-                                                    <td>03/09/22</td>
-                                                    <td>7:00 pm</td>
-                                                    <td><button>Approve</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1009</th>
-                                                    <td>Hardware Repair</td>
-                                                    <td>Parole</td>
-                                                    <td>Karl</td>
-                                                    <td class="address">71e, Mapagkawanggawa</td>
-                                                    <td>09676842595</td>
-                                                    <td>03/09/22</td>
-                                                    <td>7:00 pm</td>
-                                                    <td><button>Approve</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1009</th>
-                                                    <td>Hardware Repair</td>
-                                                    <td>Parole</td>
-                                                    <td>Karl</td>
-                                                    <td class="address">71e, Mapagkawanggawa St., Escopa 3, Project 4, Quezon City</td>
-                                                    <td>09676842595</td>
-                                                    <td>03/09/22</td>
-                                                    <td>7:00 pm</td>
-                                                    <td><button>Approve</button></td>
-                                                </tr>
+                                                <?php
+
+                                                    $notApprovedSql = "SELECT * FROM appointment_tb WHERE business_id = '$appointmentAccessId' AND approval = 'waiting'";
+                                                    
+                                                    if($notApprovedResult = mysqli_query($connect, $notApprovedSql)){
+                                                        
+                                                        if(mysqli_fetch_assoc($notApprovedResult)){
+                                                            foreach($notApprovedResult as $notApprovedRows){
+
+                                                                echo '<tr>';
+                                                                    echo '<td class="record" scope="row"><input type="checkbox"></td>';
+                                                                    echo '<td class="record"><small>'.$notApprovedRows['appointment_custom'].'</td>';
+                                                                    echo '<td class="record"><small>'.$notApprovedRows['appointment_title'].'</td>';
+                                                                    echo '<td class="record"><small>'.$notApprovedRows['client_lastname']. ", ".$notApprovedRows['client_firstname'].'</td>';
+                                                                    echo '<td class="record" title="'.$notApprovedRows['houseNum'].', '.$notApprovedRows['street'].', '.$notApprovedRows['barangay'].', '.$notApprovedRows['city'].'"><small>'.$notApprovedRows['houseNum'].', '.$notApprovedRows['street'].', '.$notApprovedRows['barangay'].', '.$notApprovedRows['city'].'</td>';
+                                                                    echo '<td class="record"><small>'.$notApprovedRows['mobile'].'</td>';
+                                                                    echo '<td class="record"><small>'.$notApprovedRows['min_date'].' <strong>/</strong> '.$notApprovedRows['max_date'].'</td>';
+                                                                    echo '<td class="record"><small>7:00 pm</td>';
+                                                                echo '</tr>';
+                                                            }
+                                                        }
+                                                    }
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -503,7 +495,6 @@ $ownerLname = ucfirst($ownerrow['user_lastname']);
                                         <p>Some text</p>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                         <!-- SETTINGS TAB -->
                     <div class="tab-pane fade settings_content" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">

@@ -43,12 +43,12 @@ section .accordion .business {
   font-weight: 500;
 }
 
-section .accordion .collapse a {
+section .accordion .a_links a {
   color: #5e0cc4 !important;
   background-color: transparent !important;
 }
 
-section .accordion .collapse :hover {
+section .accordion .a_links :hover {
   color: black !important;
 }
 

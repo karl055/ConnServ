@@ -327,6 +327,7 @@ section .body_content .approval_content .approval_container {
 
 section .body_content .approval_content .approval_container .table_contents {
   height: 500px;
+  width: 100%;
   border: 1px solid black;
 }
 
@@ -340,9 +341,9 @@ section .body_content .approval_content .approval_container .table_contents .inc
   text-align: center;
 }
 
-section .body_content .approval_content .approval_container .table_contents .incoming_table tbody .address {
+section .body_content .approval_content .approval_container .table_contents .incoming_table tbody .record {
   max-width: 0;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: scroll;
+  text-overflow: ellipsis;
 }
