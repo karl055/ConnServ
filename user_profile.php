@@ -51,13 +51,14 @@
             <div class="container-fluid">
 
               <ul class="nav nav-pills mb-3 col-12" id="pills-tab" role="tablist">
-                <!-- Profile Pill -->
-                <li class="nav-item col-2">
-                  <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">Profile</a>
-                </li>
+                
                 <!-- Appointments Pill -->
                 <li class="nav-item col-2">
-                  <a class="nav-link" id="pills-appointment-tab" data-toggle="pill" href="#pills-appointment" role="tab" aria-controls="pills-appointment" aria-selected="false">Appointments</a>
+                  <a class="nav-link active" id="pills-appointment-tab" data-toggle="pill" href="#pills-appointment" role="tab" aria-controls="pills-appointment" aria-selected="false">Appointments</a>
+                </li>
+                <!-- Profile Pill -->
+                <li class="nav-item col-2">
+                  <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">Profile</a>
                 </li>
                 <!-- Messages Pill -->
                 <li class="nav-item col-2">
@@ -67,10 +68,6 @@
                 <li class="nav-item col-2">
                   <a class="nav-link" id="pills-notifications-tab" data-toggle="pill" href="#pills-notifications" role="tab" aria-controls="pills-notifications" aria-selected="false">Notifications</a>
                 </li>
-                <!-- Settings Pill -->
-                <!-- <li class="nav-item col-2">
-                  <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">Settings</a>
-                </li> -->
                 <!-- Business Pill -->
                 <li class="nav-item col-2">
                   <a class="nav-link" id="pills-business-tab" data-toggle="pill" href="#pills-business" role="tab" aria-controls="pills-business" aria-selected="false">My Business</a>
@@ -282,6 +279,12 @@
                               <a href="./user_profile.php?date">Date Appointed</a>
                           </div>
                           <div style="width: 100%;">
+                              <a href="./user_profile.php?approved">Approved</a>
+                          </div>
+                          <div style="width: 100%;">
+                              <a href="./user_profile.php?notapproved">Not Approved</a>
+                          </div>
+                          <div style="width: 100%;">
                               <a href="./user_profile.php?reset">Reset</a>
                           </div>
                         </div>
@@ -291,7 +294,7 @@
                         
                       <?php
                         if(isset($_GET['date'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = 1020 ORDER BY min_date ASC";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' ORDER BY min_date ASC";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           echo '<div class="accordion row" id="accordionExample">';
@@ -310,7 +313,7 @@
                                       echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
                                       echo '<p class="card-text">Appointment Id</p>';
                                       echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
-                                      echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
+                                      echo '<p class="card-text">Date: <small><strong>'.$appointmentRows['min_date'].' / '.$appointmentRows['max_date'].'</strong></small></p><hr>';
                                       echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
                                       echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
                                   echo '</div>';
@@ -322,11 +325,42 @@
                           }
                           echo '</div>';
                         }
-                          
                         else if(isset($_GET['alphabet'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = 1020 ORDER BY business_name ASC";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' ORDER BY business_name ASC";
                           $appointmenResult = mysqli_query($connect, $selection);
       
+                          echo '<div class="accordion row" id="accordionExample">';
+                          foreach($appointmenResult as $appointmentRows){
+                                                                      
+                              echo '<div class="col-4" style="margin-top: 2rem;">';
+                              echo '<div class="card">';
+                                  echo '<div class="card card-header">';
+                                  echo '<h2 class="mb-0">';
+                                      echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
+                                  echo '</h2>';
+                                  echo '</div>';
+                                  echo '<div class="card-body">';
+                                      echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="<strong>'.$appointmentRows['business_name'].'</strong>" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                      echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
+                                      echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
+                                      echo '<p class="card-text">Appointment Id</p>';
+                                      echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
+                                      echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
+                                      echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                      echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                  echo '</div>';
+                                  echo '<div class="card-footer text-muted  text-center">';
+                                      echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
+                                  echo '</div>';
+                              echo '</div>';
+                              echo '</div>';
+                          }
+                          echo '</div>';
+                        }
+                        else if(isset($_GET['approved'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' ";
+                          $appointmenResult = mysqli_query($connect, $selection);
+
                           echo '<div class="accordion row" id="accordionExample">';
                           foreach($appointmenResult as $appointmentRows){
                                                                       
@@ -355,7 +389,40 @@
                           }
                           echo '</div>';
                         }
-                        else if(!isset($_GET['date']) && !isset($_GET['alphabet']) || isset($_GET['reset'])){
+                        
+                        else if(isset($_GET['notapproved'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Not Approved' ";
+                          $appointmenResult = mysqli_query($connect, $selection);
+
+                          echo '<div class="accordion row" id="accordionExample">';
+                          foreach($appointmenResult as $appointmentRows){
+                                                                      
+                              echo '<div class="col-4" style="margin-top: 2rem;">';
+                              echo '<div class="card">';
+                                  echo '<div class="card card-header">';
+                                  echo '<h2 class="mb-0">';
+                                      echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
+                                  echo '</h2>';
+                                  echo '</div>';
+                                  echo '<div class="card-body">';
+                                      echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                      echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
+                                      echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
+                                      echo '<p class="card-text">Appointment Id</p>';
+                                      echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
+                                      echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
+                                      echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                      echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                  echo '</div>';
+                                  echo '<div class="card-footer text-muted  text-center">';
+                                      echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
+                                  echo '</div>';
+                              echo '</div>';
+                              echo '</div>';
+                          }
+                          echo '</div>';
+                        }
+                        else if(!isset($_GET['date']) && !isset($_GET['alphabet']) && !isset($_GET['approved']) || isset($_GET['reset'])){
                           $selection = "SELECT * FROM `appointment_tb` WHERE client_id = 1020";
                           $appointmenResult = mysqli_query($connect, $selection);
       
