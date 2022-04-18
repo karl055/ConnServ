@@ -327,22 +327,47 @@ section .body_content .approval_content .approval_container {
 
 section .body_content .approval_content .approval_container .table_contents {
   height: 500px;
+  width: 100%;
   border: 1px solid black;
+}
+
+section .body_content .approval_content .approval_container .table_contents .approvalClass {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 1rem .5rem 1rem;
+  width: 100px;
+  height: 40px;
 }
 
 section .body_content .approval_content .approval_container .table_contents .incoming_table {
   width: 100%;
-  height: auto;
-  overflow: scroll;
+  overflow-y: auto;
+  height: 106px;
 }
 
 section .body_content .approval_content .approval_container .table_contents .incoming_table thead {
   text-align: center;
 }
 
-section .body_content .approval_content .approval_container .table_contents .incoming_table tbody .address {
+section .body_content .approval_content .approval_container .table_contents .incoming_table tbody .selection {
+  padding: 5px;
+  width: 2rem;
+  border: 1px solid black;
+  color: black;
+}
+
+section .body_content .approval_content .approval_container .table_contents .incoming_table tbody .selection:hover {
+  background-color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: white;
+  text-decoration: none;
+}
+
+section .body_content .approval_content .approval_container .table_contents .incoming_table tbody .record {
   max-width: 0;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: scroll;
+  text-overflow: ellipsis;
 }

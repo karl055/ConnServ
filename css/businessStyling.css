@@ -331,6 +331,10 @@ section .body_content .approval_content .approval_container .table_contents {
   border: 1px solid black;
 }
 
+section .body_content .approval_content .approval_container .table_contents .approvalClass {
+  border: 1px solid black;
+}
+
 section .body_content .approval_content .approval_container .table_contents .incoming_table {
   width: 100%;
   height: auto;

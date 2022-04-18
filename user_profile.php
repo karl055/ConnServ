@@ -267,9 +267,7 @@
                       <h4>Your Appointments</h4>
                     </div>
                     <div class="col-12" style="display: flex;">
-
                       <div class="col-2">
-                        
                         <div class="col-12 filter_check">
                           <p style="width: 100%; margin: 0;"><b>Filter By</b></p>
                           <div style="width: 100%;">
@@ -288,11 +286,10 @@
                               <a href="./user_profile.php?reset">Reset</a>
                           </div>
                         </div>
-
                       </div>
                       <div class="col-10">
                         
-                      <?php
+                        <?php
                         if(isset($_GET['date'])){
                           $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' ORDER BY min_date ASC";
                           $appointmenResult = mysqli_query($connect, $selection);

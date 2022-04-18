@@ -46,7 +46,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/businessStyling.css">
+        <link rel="stylesheet" href="./css/stylingbusiness.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -80,7 +80,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
             <div class="col-10 body_content">
                 <div class="tab-content" id="v-pills-tabContent" style="margin: 2rem 0 2rem; ">
                         <!-- Business Profile TAB -->
-                    <div class="tab-pane fade show business_content" id="v-pills-business" role="tabpanel" aria-labelledby="v-pills-business-tab">
+                    <div class="tab-pane fade business_content" id="v-pills-business" role="tabpanel" aria-labelledby="v-pills-business-tab">
                         <div class="col-12">
                             <div class="col-12 row title_business">
                                 <div class="col-3">
@@ -445,16 +445,19 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                         </div>
                     </div>
                         <!-- Appointment Approvals TAB -->
-                    <div class="tab-pane fade approval_content" id="v-pills-approval" role="tabpanel" aria-labelledby="v-pills-approval-tab">
+                    <div class="tab-pane fade show active approval_content" id="v-pills-approval" role="tabpanel" aria-labelledby="v-pills-approval-tab">
                         <div class="col-12 approval_container">
                                 <div class="col-12 date_title">
                                     <h6>Current Date</h6>
                                 </div>
                                     <div class="col-12 table_contents">
+                                        <form action="./includes/businessinc/businessSearch.inc.php" method="post">
+                                            
                                         <table class="table table-hover incoming_table" border="1">
+
                                             <thead>
                                                 <tr>
-                                                    <th scope="col" style="width: 5%;"></th>
+                                                    <th scope="col" style="width: 10%;"></th>
                                                     <th scope="col">ID</th>
                                                     <th scope="col" style="width: 10%;">Title</th>
                                                     <th scope="col" style="width: 10%;">Name</th>
@@ -464,6 +467,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                                     <th scope="col" style="width: 8%;">Time</th>
                                                 </tr>
                                             </thead>
+
                                             <tbody>
                                                 <?php
 
@@ -473,23 +477,31 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                                         
                                                         if(mysqli_fetch_assoc($notApprovedResult)){
                                                             foreach($notApprovedResult as $notApprovedRows){
-
+    
                                                                 echo '<tr>';
-                                                                    echo '<td class="record" scope="row"><input type="checkbox"></td>';
-                                                                    echo '<td class="record"><small>'.$notApprovedRows['appointment_custom'].'</td>';
-                                                                    echo '<td class="record"><small>'.$notApprovedRows['appointment_title'].'</td>';
-                                                                    echo '<td class="record"><small>'.$notApprovedRows['client_lastname']. ", ".$notApprovedRows['client_firstname'].'</td>';
+                                                                    echo '<td class="record"><small><a href="./includes/businessinc/businessSearch.inc.php?cancel='.$notApprovedRows['appointment_custom'].'" class="selection">&times;</a> <a href="./includes/businessinc/businessSearch.inc.php?approve='.$notApprovedRows['appointment_custom'].'" class="selection">&#10003;</a></td>';
+                                                                    echo '<td class="record"><small title="'.$notApprovedRows['appointment_custom'].'">'.$notApprovedRows['appointment_custom'].'</td>';
+                                                                    echo '<td class="record"><small title="'.$notApprovedRows['appointment_title'].'">'.$notApprovedRows['appointment_title'].'</td>';
+                                                                    echo '<td class="record"><small title="'.$notApprovedRows['client_lastname']. ", ".$notApprovedRows['client_firstname'].'">'.$notApprovedRows['client_lastname']. ", ".$notApprovedRows['client_firstname'].'</td>';
                                                                     echo '<td class="record" title="'.$notApprovedRows['houseNum'].', '.$notApprovedRows['street'].', '.$notApprovedRows['barangay'].', '.$notApprovedRows['city'].'"><small>'.$notApprovedRows['houseNum'].', '.$notApprovedRows['street'].', '.$notApprovedRows['barangay'].', '.$notApprovedRows['city'].'</td>';
-                                                                    echo '<td class="record"><small>'.$notApprovedRows['mobile'].'</td>';
-                                                                    echo '<td class="record"><small>'.$notApprovedRows['min_date'].' <strong>/</strong> '.$notApprovedRows['max_date'].'</td>';
+                                                                    echo '<td class="record"><small title="'.$notApprovedRows['mobile'].'">'.$notApprovedRows['mobile'].'</td>';
+                                                                    echo '<td class="record"><small title="'.$notApprovedRows['min_date'].' <strong>/</strong> '.$notApprovedRows['max_date'].'">'.$notApprovedRows['min_date'].' <strong>/</strong> '.$notApprovedRows['max_date'].'</td>';
                                                                     echo '<td class="record"><small>7:00 pm</td>';
                                                                 echo '</tr>';
                                                             }
+                                                            
                                                         }
+                                                        else{
+                                                            echo "<td colspan='8' class='text-center'><h3><strong>There is no data</strong></h3></td";
+                                                        }
+                                                        
                                                     }
                                                 ?>
                                             </tbody>
                                         </table>
+                                        
+                                        </form>
+                                    </div>
                                     </div>
                                     <div class="col-12">
                                         <p>Some text</p>

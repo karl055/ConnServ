@@ -178,7 +178,7 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" name="city" placeholder="City" required>
+                                    <input type="text" class="txtAddress" name="city" placeholder="City" value="Taguig City" readonly required>
                                 </div>
                             </div>
                         </div>

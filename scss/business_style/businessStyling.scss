@@ -310,6 +310,10 @@ section{
                         height: 500px;
                         width: 100%;
                         border: 1px solid black;
+
+                        .approvalClass{
+                            border: 1px solid black;
+                        }
                         .incoming_table{
                             width: 100%;
                             height: auto;
