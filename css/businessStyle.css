@@ -329,6 +329,7 @@ section .body_content .approval_content .approval_container .table_contents {
   height: 500px;
   width: 100%;
   border: 1px solid black;
+  overflow: scroll;
 }
 
 section .body_content .approval_content .approval_container .table_contents .approvalClass {
@@ -342,11 +343,13 @@ section .body_content .approval_content .approval_container .table_contents .app
 
 section .body_content .approval_content .approval_container .table_contents .incoming_table {
   width: 100%;
-  overflow-y: auto;
-  height: 106px;
 }
 
 section .body_content .approval_content .approval_container .table_contents .incoming_table thead {
+  background-color: white;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
   text-align: center;
 }
 

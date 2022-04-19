@@ -310,19 +310,38 @@ section{
                         height: 500px;
                         width: 100%;
                         border: 1px solid black;
-
+                        overflow: scroll;
                         .approvalClass{
                             border: 1px solid black;
+                            border-radius: 5px;
+                            padding: 5px;
+                            margin: 1rem .5rem 1rem;
+                            width: 100px;
+                            height: 40px;
                         }
                         .incoming_table{
                             width: 100%;
-                            height: auto;
-                            overflow: scroll;
                             thead{
+                                background-color: white;
+                                top: 0;
+                                position: sticky;
                                 text-align: center;
                             }
                             tbody{
-    
+                                .selection{
+                                    padding: 5px;
+                                    width: 2rem;
+                                    border: 1px solid black;
+                                    color: black;
+
+                                    &:hover{
+                                        background-color: black;
+                                        transition: 0.3s;
+                                        color: white;
+                                        text-decoration: none;
+                                    }
+                                }
+
                                 .record{
                                     max-width: 0;
                                     white-space: nowrap; 

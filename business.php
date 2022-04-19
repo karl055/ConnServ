@@ -46,7 +46,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
         
         <?php include_once './includes/bootstrap_con.php';?>
 
-        <link rel="stylesheet" href="./css/stylingbusiness.css">
+        <link rel="stylesheet" href="./css/businessStyle.css">
         <title>Business</title>
     </head>
     <body style="height: 1000px;">
@@ -448,10 +448,10 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                     <div class="tab-pane fade show active approval_content" id="v-pills-approval" role="tabpanel" aria-labelledby="v-pills-approval-tab">
                         <div class="col-12 approval_container">
                                 <div class="col-12 date_title">
-                                    <h6>Current Date</h6>
+                                    <h6>Pending Appointments</h6>
                                 </div>
+                                    <form action="./includes/businessinc/businessSearch.inc.php" method="post">
                                     <div class="col-12 table_contents">
-                                        <form action="./includes/businessinc/businessSearch.inc.php" method="post">
                                             
                                         <table class="table table-hover incoming_table" border="1">
 
@@ -500,8 +500,8 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                             </tbody>
                                         </table>
                                         
-                                        </form>
-                                    </div>
+                                        </div>
+                                    </form>
                                     </div>
                                     <div class="col-12">
                                         <p>Some text</p>
