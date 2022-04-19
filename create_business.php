@@ -142,17 +142,17 @@ if(!isset($_SESSION['username'])){
                                         <div class="col-6">
                                             <label for="inputService">Type of Service</label>
                                             <select id="inputService" class="form-control" name="inputservice" required>
-                                                <option value="ArtandCulture" selected>Art and Culture</option>
-                                                <option value="BeautyandWellness">Beauty and Wellness</option>
+                                                <option value="Art_And_Culture" selected>Art and Culture</option>
+                                                <option value="Beauty_And_Wellness">Beauty and Wellness</option>
                                                 <option value="Construction">Construction</option>
                                                 <option value="Education">Education</option>
                                                 <option value="Electronics">Electronics</option>
                                                 <option value="Events">Events</option>
-                                                <option value="FoodandBeverages">Food and Beverages</option>
-                                                <option value="MedicalCare">Medical Care</option>
-                                                <option value="ProfessionalServices">Professional Services</option>
-                                                <option value="ShoppingandRetail">Shopping and Retail</option>
-                                                <option value="Transportation">Transportation</option>
+                                                <option value="Food_And_Beverages">Food and Beverages</option>
+                                                <option value="Medical_Care">Medical Care</option>
+                                                <option value="Professional_Services">Professional Services</option>
+                                                <option value="Shopping_And_Retail">Shopping and Retail</option>
+                                                <option value="Automotive">Automotive</option>
                                             </select>
                                         </div>
                                         <div class="col-6">
@@ -228,7 +228,41 @@ if(!isset($_SESSION['username'])){
         </div>
         <script src="./js/userProfile/appointmentCards.js"></script>
         <script src="./js/userProfile/profile_image.js"></script>
-        <script src="./js/subservices/dynamic.js"></script>
+        <script>
+            var inputservice = {
+                Art_And_Culture: ['Digital Art', 'Painting', 'Calligraphy'],
+                Beauty_And_Wellness: ['Personal Care', 'Exercises', 'Wellness and Alternatives'],
+                Construction: ['Plumbing', 'Masonry', 'Special Construction'],
+                Education: ['Training and Development', 'Educational Services'],
+                Electronics: ['Computers', 'Communications', 'Cabling', 'Security and Protection'],
+                Events: ['Photography', 'Party Planning Services', 'Memorial Services'],
+                Food_And_Beverages: ['Bars and Cafes', 'Catering', 'Bakeries', 'Restaurants'],
+                Medical_Care: ['Animal Health', 'Health Care Facilities', 'Health Care Services'],
+                Professional_Services: ['Interior Design Services', 'Engineering Services', 'Architectural Services'],
+                Shopping_And_Retail: ['Cooperative Buying', 'Malls', 'Luggage and Bags', 'Safety Gear and Equipment'],
+                Automotive: ['Repair and Maintenance', 'Parts Shop', 'Detail Supplies', 'Towing']
+            }
+
+            var main = document.getElementById('inputService');
+            var sub = document.getElementById('inputSubService');
+
+            main.addEventListener('change', function(){
+
+                var selected_option = inputservice[this.value];
+
+                while(sub.options.length > 0 ){
+
+                    sub.options.remove(0);
+                }
+
+                Array.from(selected_option).forEach(function(el){
+
+                    let option = new Option(el, el);
+
+                    sub.appendChild(option);
+                });
+            });
+        </script>
         <!-- POPPER JS  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/popper.min.js"></script>
 

@@ -137,6 +137,15 @@ $getRow = mysqli_fetch_assoc($getResult);
                         <img class="slider-image" src="./assets/img/bg_image.jpg" alt="SliderImg">
                         </div>
                       <div class="slider-item-content">
+                        <h1>Category <strong>/</strong> Sub Category</h1>
+                        <p><?php echo $getRow['business_category']." / ".$getRow['business_subcategory'];?></p>
+                      </div>
+                    </div>
+                    <div class="slider-item swiper-slide">
+                      <div class="slider-image-wrapper">
+                        <img class="slider-image" src="./assets/img/bg_image.jpg" alt="SliderImg">
+                        </div>
+                      <div class="slider-item-content">
                         <h1>Contacts</h1>
                         <p><?php echo $getRow['business_mobile'];?></p>
                       </div>

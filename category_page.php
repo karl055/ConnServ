@@ -33,7 +33,7 @@ if(!isset($_SESSION['username'])){
         <nav>
             <div class="container-fluid">
                 <div class="logo">
-                        <img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo">
+                  <a href="./homepage.php"><img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo"></a>
 
                 </div>
                 <div class="search-div">
@@ -79,7 +79,7 @@ if(!isset($_SESSION['username'])){
                         <div class="container">
                           <div class="front" style="background-image: url(./assets/img/categories/another/Academic.jpg)">
                             <div class="inner">
-                              <p>Academic</p>
+                              <p>Education</p>
                             </div>
                           </div>
                           <div class="back">
@@ -93,7 +93,7 @@ if(!isset($_SESSION['username'])){
                         <div class="container">
                           <div class="front" style="background-image: url(./assets/img/categories/another/Arts.jpg)">
                             <div class="inner">
-                              <p>Arts</p>
+                              <p>Art and Culture</p>
                             </div>
                           </div>
                           <div class="back">
@@ -121,7 +121,7 @@ if(!isset($_SESSION['username'])){
                         <div class="container">
                           <div class="front" style="background-image: url(./assets/img/categories/another/Business.jpg)">
                             <div class="inner">
-                              <p>Business</p>
+                              <p>Professional Services</p>
                             </div>
                           </div>
                           <div class="back">
@@ -135,7 +135,7 @@ if(!isset($_SESSION['username'])){
                         <div class="container">
                           <div class="front" style="background-image: url(./assets/img/categories/another/Catering1.jpg)">
                             <div class="inner">
-                              <p>Catering</p>
+                              <p>Food and Beverages</p>
                             </div>
                           </div>
                           <div class="back">
@@ -149,7 +149,7 @@ if(!isset($_SESSION['username'])){
                         <div class="container">
                           <div class="front" style="background-image: url(./assets/img/categories/another/Clothing1.jpg)">
                             <div class="inner">
-                              <p>Clothing</p>
+                              <p>Beauty and Wellness</p>
                             </div>
                           </div>
                           <div class="back">
@@ -177,7 +177,7 @@ if(!isset($_SESSION['username'])){
                         <div class="container">
                           <div class="front" style="background-image: url(./assets/img/categories/another/Computer.jpg)">
                             <div class="inner">
-                              <p>Computer</p>
+                              <p>Electronics</p>
                             </div>
                           </div>
                           <div class="back">
@@ -191,7 +191,21 @@ if(!isset($_SESSION['username'])){
                         <div class="container">
                           <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
                             <div class="inner">
-                              <p>Electrical</p>
+                              <p>Medical Care</p>
+                            </div>
+                          </div>
+                          <div class="back">
+                            <div class="inner">
+                              <p>You may discover about the various Electrical services available in Taguig by browsing ConnServ</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                          <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
+                            <div class="inner">
+                              <p>Events</p>
                             </div>
                           </div>
                           <div class="back">

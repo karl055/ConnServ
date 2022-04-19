@@ -420,7 +420,7 @@
                           echo '</div>';
                         }
                         else if(!isset($_GET['date']) && !isset($_GET['alphabet']) && !isset($_GET['approved']) || isset($_GET['reset'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = 1020";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username'";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           echo '<div class="accordion row" id="accordionExample">';
