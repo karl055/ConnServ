@@ -426,22 +426,50 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                     </div>
                         <!-- Appointments TAB -->
                     <div class="tab-pane fade incoming_content" id="v-pills-incoming" role="tabpanel" aria-labelledby="v-pills-incoming-tab">
+                        <div class="col-12">
+                            
+
+                            <div class="col-12 row">
+                            
+                                <?php
+                                
+                                    $selection = "SELECT * FROM `appointment_tb` WHERE business_id = '$appointmentAccessId'";
+                                    $appointmenResult = mysqli_query($connect, $selection);
+                
+                                    foreach($appointmenResult as $appointmentRows){
+                                                                                
+                                        echo '<div class="col-12" style="margin-top: 2rem;">';
+                                        echo '<div class="card">';
+                                            echo '<div class="card card-header">';
+                                            echo '<h2 class="mb-0">';
+                                                echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['client_lastname'].", ".$appointmentRows['client_firstname'].'"> '.$appointmentRows['client_lastname'].", ".$appointmentRows['client_firstname'].' </h6>';
+                                            echo '</h2>';
+                                            echo '</div>';
+                                            echo '<div class="card-body">';
+                                                echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'">'.$appointmentRows['appointment_title'].'</h5>';
+                                                echo '<p class="card-text text-center">'.$appointmentRows['appointment_custom'].'<hr></p>';
+                                                echo '<div style="display:flex;">';
+                                                    echo '<div class="col-6" style="border-right: 1px solid black;">';
+                                                        echo '<p class="card-text">Contact: '.$appointmentRows['mobile'].'</p><hr>';
+                                                        echo '<p class="card-text">Date: '.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</p><hr>';
+                                                        echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                                        echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                                    echo '</div>';
+                                                    echo '<div class="col-6">';
+                                                        echo '<p class="card-text">Service Description:<br></p>';
+                                                        echo '<p class="card-text">'.$appointmentRows['service_note'].'</p>';
+                                                    echo '</div>';
+                                                echo '</div>';
+                                            echo '</div>';
+                                            echo '<div class="card-footer text-muted  text-center">';
+                                                echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
+                                            echo '</div>';
+                                        echo '</div>';
+                                        echo '</div>';
+                                    }
+                                ?>
+                            </div>
                         
-                        <div class="col-12 incoming_container">
-                            <div class="col-12 date_title">
-                                <h6>Current Date</h6>
-                            </div>
-                            <div class="col-12 incoming_content">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Service Type</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Client Name</h6>
-                                        <p class="card-text">Description note from the client of what problem to solve.</p>
-                                        <p class="card-text">Chosen Date</p>
-                                        <a class="card-text">Payment Method</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                         <!-- Appointment Approvals TAB -->
@@ -509,7 +537,8 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                 </div>
                         </div>
                         <!-- SETTINGS TAB -->
-                    <div class="tab-pane fade settings_content" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    
+                        <div class="tab-pane fade settings_content" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                         <h1>This is setting page</h1>
                     </div>
                 </div>
