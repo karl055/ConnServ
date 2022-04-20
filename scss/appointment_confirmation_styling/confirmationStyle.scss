@@ -30,7 +30,6 @@ body {
     }
     .rate {
       height: 50px;
-      float: left;
       
     }
     .rate:not(:checked) > input {
@@ -38,8 +37,8 @@ body {
       top: -9999px;
     }
     .rate:not(:checked) > label {
-      float: right;
       width: 1em;
+      float: right;
       overflow: hidden;
       white-space: nowrap;
       cursor: pointer;

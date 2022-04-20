@@ -243,7 +243,6 @@ body {
 
 .text-header .rate {
   height: 50px;
-  float: left;
 }
 
 .text-header .rate:not(:checked) > input {
@@ -252,8 +251,8 @@ body {
 }
 
 .text-header .rate:not(:checked) > label {
-  float: right;
   width: 1em;
+  float: right;
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;

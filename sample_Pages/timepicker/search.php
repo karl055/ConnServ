@@ -1,18 +1,8 @@
 <?php 
 
 include '../../hostCon.php';
-
-if(isset($_POST['searchbutton'])){
-    $search = mysqli_real_escape_string($connect, $_POST['search']);
-    $sql = "SELECT * FROM business_tb WHERE business_name LIKE '%$search%'";
-    if($result = mysqli_query($connect, $sql)){
-
-        while($row = mysqli_fetch_assoc($result)){
-            echo $row['business_name'];
-        }
-
-    }
-}
+date_default_timezone_set('Asia/Manila');
+        echo $dateTimeCreated = date("Y-m-d G:i:s");
 ?>
 <!DOCTYPE html>
 <html lang="en">
