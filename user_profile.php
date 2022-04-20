@@ -172,7 +172,7 @@
                                   <div class="form-row">
                                     <div class="form-group col-md-3">
                                       <label for="inputHouse">House No.</label>
-                                      <input type="text" onkeypress='return restrictAlphabets(event)' class="form-control" id="inputHouse" name="edit_house" required>
+                                      <input type="text" class="form-control" id="inputHouse" name="edit_house" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                       <label for="inputStreet">Street</label>

@@ -49,9 +49,8 @@ $getRow = mysqli_fetch_assoc($getResult);
 
               <!--SERVICE IMG AND ADDRESS-->
 
-              <div class="service-image">
                 <?php echo '<img src="./assets/img/featured_services/business_icon/'.$getRow['business_icon'].'" class="img-fluid">';?>
-              </div>
+              
   
               <div class="card address text-dark bg-light mb-3 d-inline-block" style="max-width: 20rem;">
                 <div class="card-header">Address</div>
@@ -130,6 +129,15 @@ $getRow = mysqli_fetch_assoc($getResult);
                         <h1>Description</h1>
                         <?php echo "<p>".$getRow['business_description']."</p>";?>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p> -->
+                      </div>
+                    </div>
+                    <div class="slider-item swiper-slide">
+                      <div class="slider-image-wrapper">
+                        <img class="slider-image" src="./assets/img/bg_image.jpg" alt="SliderImg">
+                        </div>
+                      <div class="slider-item-content">
+                        <h1>Price </h1>
+                        <p><small>Starts at: </small><?php echo "&#8369; ".$getRow['price'];?></p>
                       </div>
                     </div>
                     <div class="slider-item swiper-slide">

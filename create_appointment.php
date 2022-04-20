@@ -95,11 +95,14 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                                     <label>Service Information</label>
                                 </div>
                                 <div class="personal_content"  style="display: flex;">
-                                    <div class="col-6">
-                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_name'] ;?>" readonly="readonly" name="business_name" id="business_name" autocomplete="off" required>
+                                    <div class="col-5">
+                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_name'] ;?>" readonly="readonly" name="business_name" id="business_name" autocomplete="off" title="<?php echo $businessRow['business_email'] ;?>" required>
                                     </div>
-                                    <div class="col-6">
-                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_email'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off" required>
+                                    <div class="col-5">
+                                        <input type="text" class="full_name" value="<?php echo $businessRow['business_email'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off" title="<?php echo $businessRow['business_email'] ;?>" required>
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="text" class="full_name" value="&#8369; <?php echo $businessRow['price'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off" title="<?php echo $businessRow['price'] ;?>" required>
                                     </div>
                                 </div>
                             </div>
