@@ -63,17 +63,17 @@ if(!isset($_SESSION['username'])){
                                 <div class="business_address">
                                     <div class="row">
                                         <div class="col-6">
-                                            <label for="business_unit_no">Unit Number</label>
+                                            <label for="business_unit_no">Unit Number <small class="text-muted">Leave if N/A</small></label>
                                             <input type="text" name="business_unit_no" onkeypress='return restrictAlphabets(event)' class="business_unit_no">
                                         </div>
                                         <div class="col-6">
-                                            <label for="business_building">Building Name</label>
+                                            <label for="business_building">Building Name <small class="text-muted">Leave if N/A</small></label>
                                             <input type="text" name="business_building" class="business_building">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <label for="business_house_no">House Number</label>
+                                            <label for="business_house_no">House Number <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
                                             <input type="text" name="business_house_no" onkeypress='return restrictAlphabets(event)' class="business_house_no" required>
                                         </div>
                                         <div class="col-6">
@@ -83,7 +83,7 @@ if(!isset($_SESSION['username'])){
                                     </div>
                                     <div class="row">
                                         <div class="col-5">
-                                            <label for="business_village">Village</label>
+                                            <label for="business_village">Village <small class="text-muted">Leave if N/A</small></label>
                                             <input type="text" name="business_village" class="business_village"> 
                                         </div>
                                         <div class="col-4">
@@ -127,10 +127,10 @@ if(!isset($_SESSION['username'])){
                                     <div class="row">
                                         <div class="col-4">
                                             <label for="business_city">City <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_city" class="business_city" required>
+                                            <input type="text" name="business_city" class="business_city" value="Taguig City" readonly required>
                                         </div>
                                         <div class="col-4">
-                                            <label for="business_city">Landline</label>
+                                            <label for="business_city">Landline <small class="text-muted">Leave if N/A</small></label>
                                             <input type="text" onkeypress='return restrictAlphabets(event)'  maxlength="8" name="business_landline" class="business_city">
                                         </div>
                                         <div class="col-4">

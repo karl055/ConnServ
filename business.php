@@ -85,15 +85,16 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                             <div class="col-12 row title_business">
                                 <div class="col-3">
                                     <div class="user_icon">
-                                        <div class="profile_picture">
-                                            <?php echo "<img src='./assets/img/featured_services/business_icon/".$imgVar."'  alt='User Icon' >";?>
+                                        <div style="width: 100%;">
+                                            <?php echo "<img src='./assets/img/featured_services/business_icon/".$imgVar."' style='width: 100%;' alt='User Icon' >";?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-9">
                                     <div class="title_container">
-                                        <h2><?php echo $row['business_name'];?></h2>
-                                        <h4 class="text-muted">Barista and Coffee Tutor</h4>
+                                        <h1><?php echo $row['business_name'];?></h1>
+                                        <h5 class="text-muted"><?php echo $row['business_category']." / ".$row['business_subcategory'];?></h5>
+                                             
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +157,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                             <div class="col-3 description_bar">
                                                 <h6>Service Price</h6><hr>
                                                 <div>
-                                                    <p>Price Starts At:<br> &#8369;<span><?php echo $row['price'];?></span></p>
+                                                    <p>Price Starts At:<br> <span><?php echo $row['price'];?></span></p>
                                                 </div>
                                             </div>
                                             <div class="col-1">

@@ -26,32 +26,11 @@
         <?php
         if(isset($_POST['submit'])){
 
-            $business_category = $_POST['category'];
-            $business_category_explode = explode("_", $business_category);
-            
-            if(count($business_category_explode)>2){
-                echo implode(" ", $business_category_explode);
-            }
-            else if(count($business_category_explode)<=2){
-                echo implode(" ", $business_category_explode);
-            }
-            /* foreach($business_category_explode as $business_category_fixed){
-                $business_main_category = $business_category_fixed." ";
+            echo $_POST['category'];
 
-                echo $business_main_category;
-            }
-            echo $business_main_category; */
-            
-            /* if($business_category_explode == 2){
-    
-                $business_category_fix = $content['0']." ".$content['1']." ".$content['2'];
-                echo $business_category_fix;
-            }
-            else if(count(explode("_", $business_category)) == 1){
-                $business_category_fix = $business_category_explode['0']." ".$business_category_explode['1'];
-            }else{
-                echo 'error';
-            } */
+            $newdate = date("Y-m-d h:i:s");
+            echo $newdate;
+
         }
         
         ?>

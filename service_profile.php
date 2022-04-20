@@ -137,7 +137,7 @@ $getRow = mysqli_fetch_assoc($getResult);
                         </div>
                       <div class="slider-item-content">
                         <h1>Price </h1>
-                        <p><small>Starts at: </small><?php echo "&#8369; ".$getRow['price'];?></p>
+                        <p><small>Starts at: </small><?php echo $getRow['price'];?></p>
                       </div>
                     </div>
                     <div class="slider-item swiper-slide">
