@@ -76,7 +76,7 @@ if(!isset($_SESSION['username'])){
                 
                 <div class="wrapper">
                   <div class="cols">
-                      <a href="./search.php">
+                      <a href="./search.php?category=Education">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
                             <div class="front" style="background-image: url(./assets/img/categories/another/Academic.jpg)">
@@ -92,7 +92,7 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Art And Culture">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
                             <div class="front" style="background-image: url(./assets/img/categories/another/Arts.jpg)">
@@ -108,7 +108,7 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Automotive">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
                             <div class="front" style="background-image: url(./assets/img/categories/another/Automotive.jpg)">
@@ -124,7 +124,7 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Professional Service">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
                             <div class="front" style="background-image: url(./assets/img/categories/another/Business.jpg)">
@@ -140,7 +140,7 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Food And Beverages">
 
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
@@ -157,7 +157,7 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Beauty And Wellness">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
                             <div class="front" style="background-image: url(./assets/img/categories/another/Clothing1.jpg)">
@@ -173,7 +173,7 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Construction">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
                             <div class="front" style="background-image: url(./assets/img/categories/another/Construction.jpg)">
@@ -189,10 +189,10 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Electronics">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
-                            <div class="front" style="background-image: url(./assets/img/categories/another/Computer.jpg)">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Electronics.jpg)">
                               <div class="inner">
                                 <p>Electronics</p>
                               </div>
@@ -205,10 +205,10 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Medical Care">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
-                            <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Medical_Care.jpg)">
                               <div class="inner">
                                 <p>Medical Care</p>
                               </div>
@@ -221,10 +221,10 @@ if(!isset($_SESSION['username'])){
                           </div>
                         </div>
                       </a>
-                      <a href="./search.php">
+                      <a href="./search.php?category=Events">
                         <div class="col" ontouchstart="this.classList.toggle('hover');">
                           <div class="container">
-                            <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Events.jpg)">
                               <div class="inner">
                                 <p>Events</p>
                               </div>
@@ -232,6 +232,22 @@ if(!isset($_SESSION['username'])){
                             <div class="back">
                               <div class="inner">
                                 <p>You may discover about the various Electrical services available in Taguig by browsing ConnServ</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="./search.php?category=Shopping And Retail">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Retail.jpg)">
+                              <div class="inner">
+                                <p>Shopping & Retail</p>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="inner">
+                                <p>You may discover about the various Shopping & Retail services available in Taguig by browsing ConnServ</p>
                               </div>
                             </div>
                           </div>
