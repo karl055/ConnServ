@@ -146,7 +146,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputPhone">Phone Number</label>
-                                          <input type="text" class="form-control" id="inputPhone" name="edit_phonenumber" required>
+                                          <input type="text"  onkeypress='return restrictAlphabets(event)' maxlength="11" class="form-control" id="inputPhone" name="edit_phonenumber" required>
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputDate">Birthdate</label>
@@ -172,7 +172,7 @@
                                   <div class="form-row">
                                     <div class="form-group col-md-3">
                                       <label for="inputHouse">House No.</label>
-                                      <input type="text" class="form-control" id="inputHouse" name="edit_house" required>
+                                      <input type="text" onkeypress='return restrictAlphabets(event)' class="form-control" id="inputHouse" name="edit_house" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                       <label for="inputStreet">Street</label>
@@ -226,7 +226,7 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                       <label for="inputZip">Zip</label>
-                                      <input type="text" class="form-control" id="inputZip" name="edit_zip" required>
+                                      <input type="text" onkeypress='return restrictAlphabets(event)' class="form-control" id="inputZip" name="edit_zip" required>
                                     </div>
                                   </div>
                                   <div class="form-row">
@@ -506,6 +506,13 @@
             </div>
         </div>
         <script>
+          function restrictAlphabets(e) {
+             var x = e.which || e.keycode;
+             if ((x >= 48 && x <= 57))
+                 return true;
+             else
+                 return false;
+            }
           function showPassword() {
               var x = document.getElementById("inputPassword");
               if (x.type === "password") {

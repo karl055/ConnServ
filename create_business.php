@@ -64,17 +64,17 @@ if(!isset($_SESSION['username'])){
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="business_unit_no">Unit Number</label>
-                                            <input type="text" name="business_unit_no" class="business_unit_no" required>
+                                            <input type="text" name="business_unit_no" onkeypress='return restrictAlphabets(event)' class="business_unit_no">
                                         </div>
                                         <div class="col-6">
                                             <label for="business_building">Building Name</label>
-                                            <input type="text" name="business_building" class="business_building" required>
+                                            <input type="text" name="business_building" class="business_building">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="business_house_no">House Number</label>
-                                            <input type="text" name="business_house_no" class="business_house_no" required>
+                                            <input type="text" name="business_house_no" onkeypress='return restrictAlphabets(event)' class="business_house_no" required>
                                         </div>
                                         <div class="col-6">
                                             <label for="business_street">Street Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
@@ -84,7 +84,7 @@ if(!isset($_SESSION['username'])){
                                     <div class="row">
                                         <div class="col-5">
                                             <label for="business_village">Village</label>
-                                            <input type="text" name="business_village" class="business_village" required> 
+                                            <input type="text" name="business_village" class="business_village"> 
                                         </div>
                                         <div class="col-4">
                                             <label for="business_street">Barangay <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
@@ -131,15 +131,15 @@ if(!isset($_SESSION['username'])){
                                         </div>
                                         <div class="col-4">
                                             <label for="business_city">Landline</label>
-                                            <input type="text" name="business_landline" class="business_city" required>
+                                            <input type="text" onkeypress='return restrictAlphabets(event)'  maxlength="8" name="business_landline" class="business_city">
                                         </div>
                                         <div class="col-4">
                                             <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_mobile" class="business_city" required>
+                                            <input type="text" onkeypress='return restrictAlphabets(event)'  maxlength="11" name="business_mobile" class="business_city" required>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <label for="inputService">Type of Service</label>
                                             <select id="inputService" class="form-control" name="inputservice" required>
                                                 <option value="Art_And_Culture" selected>Art and Culture</option>
@@ -155,11 +155,15 @@ if(!isset($_SESSION['username'])){
                                                 <option value="Automotive">Automotive</option>
                                             </select>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <label for="inputSubService">Sub Service</label>
                                             <select id="inputSubService" class="form-control" name="inputSubService" required>
                                                 
                                             </select>
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="startsPrice">Service Price (Starts At)</label>
+                                            <input type="text" onkeypress='return restrictAlphabets(event)' value="&#8369; " id="startsPrice" class="form-control" name="price" required>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -228,7 +232,16 @@ if(!isset($_SESSION['username'])){
         </div>
         <script src="./js/userProfile/appointmentCards.js"></script>
         <script src="./js/userProfile/profile_image.js"></script>
-        <script>
+        <script type="text/javascript">
+
+            function restrictAlphabets(e) {
+             var x = e.which || e.keycode;
+             if ((x >= 48 && x <= 57))
+                 return true;
+             else
+                 return false;
+            }
+
             var inputservice = {
                 Art_And_Culture: ['Digital Art', 'Painting', 'Calligraphy'],
                 Beauty_And_Wellness: ['Personal Care', 'Exercises', 'Wellness and Alternatives'],

@@ -155,8 +155,8 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                         <div class="col-12" style="display: flex;">
                                             <div class="col-3 description_bar">
                                                 <h6>Service Price</h6><hr>
-                                                <div class="description_content">
-                                                    <p>Starts At: 200pesos</p>
+                                                <div>
+                                                    <p>Price Starts At:<br> &#8369;<span><?php echo $row['price'];?></span></p>
                                                 </div>
                                             </div>
                                             <div class="col-1">
@@ -249,7 +249,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <label for="business_unit_no">Unit Number</label>
-                                                        <input type="text" name="business_unit_no" class="business_unit_no">
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)' name="business_unit_no" class="business_unit_no">
                                                     </div>
                                                     <div class="col-6">
                                                         <label for="business_building">Building Name</label>
@@ -259,7 +259,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <label for="business_house_no">House Number</label>
-                                                        <input type="text" name="business_house_no" class="business_house_no">
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)' name="business_house_no" class="business_house_no">
                                                     </div>
                                                     <div class="col-6">
                                                         <label for="business_street">Street Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
@@ -306,7 +306,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                                     </div>
                                                     <div class="col-3">
                                                         <label for="business_zip">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" name="business_zip" class="business_street">
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)' name="business_zip" class="business_street">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -316,11 +316,11 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                                     </div>
                                                     <div class="col-4">
                                                         <label for="business_city">Landline</label>
-                                                        <input type="text" name="business_landline" class="business_city" required>
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)' maxlength="8" name="business_landline" class="business_city" required>
                                                     </div>
                                                     <div class="col-4">
                                                         <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" name="business_mobile" class="business_city" required>
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)' maxlength="11" name="business_mobile" class="business_city" required>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -548,6 +548,15 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
         
         <script src="./js/userProfile/profile_image.js"></script>
         <script src="./js/subservices/dynamic.js"></script>
+        <script type="text/javascript">
+            function restrictAlphabets(e) {
+             var x = e.which || e.keycode;
+             if ((x >= 48 && x <= 57))
+                 return true;
+             else
+                 return false;
+            }
+        </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
