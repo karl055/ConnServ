@@ -15,15 +15,15 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 750px;
+  width: 100%;
   background: #b42bab;
   border-radius: 5px;
 }
 
 .people-list {
-  width: 260px;
+  width: 300px;
   float: left;
-  background-color: #252424;
+  background-color: white;
 }
 
 .people-list .search {
@@ -95,7 +95,7 @@ body {
 }
 
 .chat {
-  width: 490px;
+  width: 985px;
   float: left;
   background: #f2f5f8;
   border-top-right-radius: 5px;
