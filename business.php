@@ -69,7 +69,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                     <div id="collapseBusiness" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="nav flex-column nav-pills a_links" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link" id="v-pills-business-tab" data-toggle="pill" href="#v-pills-business" role="tab" aria-controls="v-pills-business" aria-selected="false">Business</a>
-                            <a class="nav-link" id="v-pills-edit-tab" data-toggle="pill" href="#v-pills-edit" role="tab" aria-controls="v-pills-edit" aria-selected="false">Edit</a>
+                            <!-- <a class="nav-link" id="v-pills-edit-tab" data-toggle="pill" href="#v-pills-edit" role="tab" aria-controls="v-pills-edit" aria-selected="false">Edit</a> -->
                             <a class="nav-link" id="v-pills-revenue-tab" data-toggle="pill" href="#v-pills-revenue" role="tab" aria-controls="v-pills-revenue" aria-selected="false">Revenue</a>
                             <a class="nav-link" id="v-pills-other-tab" data-toggle="pill" href="#v-pills-other" role="tab" aria-controls="v-pills-other" aria-selected="false">Others</a>
                         </div>
@@ -229,14 +229,14 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                     </div>
 
                         <!-- EDIT TAB -->
-                    <div class="tab-pane fade edit_content" id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
+                    <!-- <div class="tab-pane fade edit_content" id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
                         <div class="col-12">
                             
                             <div class="business_container">
                                 <div class="container_title">
                                     <h3>Edit my Business</h3><span style="color:red;">CAUTION! EDITING WILL REQUIRE YOU TO CHANGE OR INPUT ALL REQUIRED FIELDS!</span>
                                 </div>
-                                <form action="./includes/createbusiness.inc.php" method="post" enctype="multipart/form-data">
+                                <form action="./includes/businessEdit.inc.php" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-7">
                                             <div class="business_trade">
@@ -418,7 +418,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                         <!-- REVENUE TAB -->
                     <div class="tab-pane fade edit_content" id="v-pills-revenue" role="tabpanel" aria-labelledby="v-pills-revenue-tab">
                         <div class="col-12">

@@ -27,7 +27,7 @@ if(!isset($_SESSION['username'])){
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         <link rel="stylesheet" href="./css/category_page.css">
-        <?php include './includes/bootstrap_con.php';?>
+        
         <title>ConnServ</title>
     </head>
     <body>
@@ -76,149 +76,169 @@ if(!isset($_SESSION['username'])){
                 
                 <div class="wrapper">
                   <div class="cols">
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Academic.jpg)">
-                            <div class="inner">
-                              <p>Education</p>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Academic.jpg)">
+                              <div class="inner">
+                                <p>Education</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>Explore the various Academic service offered within Taguig in ConnServ</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Arts.jpg)">
-                            <div class="inner">
-                              <p>Art and Culture</p>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>In ConnServ, you may learn about the numerous arts services available in Taguig</p>
+                            <div class="back">
+                              <div class="inner">
+                                <p>Explore the various Academic service offered within Taguig in ConnServ</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Automotive.jpg)">
-                            <div class="inner">
-                              <p>Automotive</p>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Arts.jpg)">
+                              <div class="inner">
+                                <p>Art and Culture</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>ConnServ offers a variety of automotive services in Taguig</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Business.jpg)">
-                            <div class="inner">
-                              <p>Professional Services</p>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>ConnServ provides a wide range of business services in Taguig</p>
+                            <div class="back">
+                              <div class="inner">
+                                <p>In ConnServ, you may learn about the numerous arts services available in Taguig</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Catering1.jpg)">
-                            <div class="inner">
-                              <p>Food and Beverages</p>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Automotive.jpg)">
+                              <div class="inner">
+                                <p>Automotive</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>In ConnServ, you may learn about the numerous catering services available in Taguig</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Clothing1.jpg)">
-                            <div class="inner">
-                              <p>Beauty and Wellness</p>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>ConnServ can help you learn about the many Clothing services accessible in Taguig</p>
+                            <div class="back">
+                              <div class="inner">
+                                <p>ConnServ offers a variety of automotive services in Taguig</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Construction.jpg)">
-                            <div class="inner">
-                              <p>Construction</p>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Business.jpg)">
+                              <div class="inner">
+                                <p>Professional Services</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>ConnServ can show you about the various Construction services offered in Taguig</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Computer.jpg)">
-                            <div class="inner">
-                              <p>Electronics</p>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>You may learn about the various Computer services offered in Taguig by visiting ConnServ</p>
+                            <div class="back">
+                              <div class="inner">
+                                <p>ConnServ provides a wide range of business services in Taguig</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
-                            <div class="inner">
-                              <p>Medical Care</p>
+                      </a>
+                      <a href="./search.php">
+
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Catering1.jpg)">
+                              <div class="inner">
+                                <p>Food and Beverages</p>
+                              </div>
                             </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>You may discover about the various Electrical services available in Taguig by browsing ConnServ</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                          <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
-                            <div class="inner">
-                              <p>Events</p>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="inner">
-                              <p>You may discover about the various Electrical services available in Taguig by browsing ConnServ</p>
+                            <div class="back">
+                              <div class="inner">
+                                <p>In ConnServ, you may learn about the numerous catering services available in Taguig</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Clothing1.jpg)">
+                              <div class="inner">
+                                <p>Beauty and Wellness</p>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="inner">
+                                <p>ConnServ can help you learn about the many Clothing services accessible in Taguig</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Construction.jpg)">
+                              <div class="inner">
+                                <p>Construction</p>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="inner">
+                                <p>ConnServ can show you about the various Construction services offered in Taguig</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Computer.jpg)">
+                              <div class="inner">
+                                <p>Electronics</p>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="inner">
+                                <p>You may learn about the various Computer services offered in Taguig by visiting ConnServ</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
+                              <div class="inner">
+                                <p>Medical Care</p>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="inner">
+                                <p>You may discover about the various Electrical services available in Taguig by browsing ConnServ</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="./search.php">
+                        <div class="col" ontouchstart="this.classList.toggle('hover');">
+                          <div class="container">
+                            <div class="front" style="background-image: url(./assets/img/categories/another/Electrical.jpg)">
+                              <div class="inner">
+                                <p>Events</p>
+                              </div>
+                            </div>
+                            <div class="back">
+                              <div class="inner">
+                                <p>You may discover about the various Electrical services available in Taguig by browsing ConnServ</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
                     </div>
                  </div>
-              
             </div>
         </div>
         
@@ -226,7 +246,7 @@ if(!isset($_SESSION['username'])){
         ! URGENT DEVELOP!!! Create FOOTER
         -->
 
-        <footer class="footer-div">
+        <footer class="footer-div" style="margin-top: 20rem;">
           <div class="container-fluid row connserv-container">
             <div class="col-4">
               <img class="connserv-logo" src="./assets/img/ConnServ_Logo.png" alt="Connserv Image">
