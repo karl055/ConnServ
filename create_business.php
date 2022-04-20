@@ -74,7 +74,7 @@ if(!isset($_SESSION['username'])){
                                     <div class="row">
                                         <div class="col-6">
                                             <label for="business_house_no">House Number <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_house_no" onkeypress='return restrictAlphabets(event)' class="business_house_no" required>
+                                            <input type="text" name="business_house_no" class="business_house_no" required>
                                         </div>
                                         <div class="col-6">
                                             <label for="business_street">Street Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>

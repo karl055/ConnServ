@@ -8,35 +8,34 @@
     }
     else{
         
-        $user_id = $_SESSION['username'];
-        $email = $_POST['edit_email'];
-        $password = $_POST['edit_password'];
-        $firstname = $_POST['edit_firstname'];
-        $lastname = $_POST['edit_surname'];
-        $phone = $_POST['edit_phonenumber'];
-        $gender = $_POST['edit_gender'];
-        $bdate = $_POST['edit_bdate'];
-        $houseNum = $_POST['edit_house'];
-        $street = $_POST['edit_street'];
-        $brgy = $_POST['edit_brgy'];
-        $city = $_POST['edit_city'];
-        $district = $_POST['edit_district'];
-        $zip = $_POST['edit_zip'];
-
-        $file = $_FILES['file'];
-        $fileName = $file['name'];
-        $fileTmpName = $file['tmp_name'];
-        $fileSize= $file['size'];
-        $fileError = $file['error'];
-        $fileType = $file['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-
-        $allowed = array('jpeg', 'jpg', 'png');
-        
         if(isset($_POST['saveChanges'])){
+            $user_id = $_SESSION['username'];
+            $email = $_POST['edit_email'];
+            $password = $_POST['edit_password'];
+            $firstname = $_POST['edit_firstname'];
+            $lastname = $_POST['edit_surname'];
+            $phone = $_POST['edit_phonenumber'];
+            $gender = $_POST['edit_gender'];
+            $bdate = $_POST['edit_bdate'];
+            $houseNum = $_POST['edit_house'];
+            $street = $_POST['edit_street'];
+            $brgy = $_POST['edit_brgy'];
+            $city = $_POST['edit_city'];
+            $district = $_POST['edit_district'];
+            $zip = $_POST['edit_zip'];
 
+            $file = $_FILES['file'];
+            $fileName = $file['name'];
+            $fileTmpName = $file['tmp_name'];
+            $fileSize= $file['size'];
+            $fileError = $file['error'];
+            $fileType = $file['type'];
+
+            $fileExt = explode('.', $fileName);
+            $fileActualExt = strtolower(end($fileExt));
+
+            $allowed = array('jpeg', 'jpg', 'png');
+        
             if(in_array($fileActualExt, $allowed)){
 
                 if($fileError === 0){

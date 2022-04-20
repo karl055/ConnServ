@@ -233,48 +233,51 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                         <div class="col-12">
                             
                             <div class="business_container">
-                                <form action="./includes/businessEdit.inc.php" method="post" enctype="multipart/form-data">
+                                <div class="container_title">
+                                    <h3>Edit my Business</h3><span style="color:red;">CAUTION! EDITING WILL REQUIRE YOU TO CHANGE OR INPUT ALL REQUIRED FIELDS!</span>
+                                </div>
+                                <form action="./includes/createbusiness.inc.php" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-7">
                                             <div class="business_trade">
 
                                                 <label for="business_name">Business Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                <input type="text" name="business_name" class="business_name">
+                                                <input type="text" name="business_name" class="business_name" required>
                                             </div>
                                             <div class="business_trade">
 
                                                 <label for="trade_name">Business Email <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                <input type="text" name="business_email" class="business_name">
+                                                <input type="text" name="business_email" class="trade_name" value="<?php echo $row['business_email'];?>" readonly required>
                                             </div>
                                             <div class="business_address">
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <label for="business_unit_no">Unit Number</label>
-                                                        <input type="text" onkeypress='return restrictAlphabets(event)' name="business_unit_no" class="business_unit_no">
+                                                        <label for="business_unit_no">Unit Number <small class="text-muted">Leave if N/A</small></label>
+                                                        <input type="text" name="business_unit_no" onkeypress='return restrictAlphabets(event)' class="business_unit_no">
                                                     </div>
                                                     <div class="col-6">
-                                                        <label for="business_building">Building Name</label>
+                                                        <label for="business_building">Building Name <small class="text-muted">Leave if N/A</small></label>
                                                         <input type="text" name="business_building" class="business_building">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <label for="business_house_no">House Number</label>
-                                                        <input type="text" onkeypress='return restrictAlphabets(event)' name="business_house_no" class="business_house_no">
+                                                        <label for="business_house_no">House Number <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <input type="text" name="business_house_no" class="business_house_no" required>
                                                     </div>
                                                     <div class="col-6">
                                                         <label for="business_street">Street Name <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" name="business_street" class="business_street">
+                                                        <input type="text" name="business_street" class="business_street" required>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-5">
-                                                        <label for="business_village">Village</label>
-                                                        <input type="text" name="business_village" class="business_village">
+                                                        <label for="business_village">Village <small class="text-muted">Leave if N/A</small></label>
+                                                        <input type="text" name="business_village" class="business_village"> 
                                                     </div>
                                                     <div class="col-4">
                                                         <label for="business_street">Barangay <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <select id="inputBarangay" name="inputBarangay" class="form-control business_barangay">
+                                                        <select id="inputBarangay" class="form-control business_barangay" name="business_barangay" required>
                                                             <option value="Bagumbayan" selected>Bagumbayan</option>
                                                             <option value="Bambang">Bambang</option>
                                                             <option value="Calzada">Calzada</option>
@@ -306,52 +309,56 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                                         </select> 
                                                     </div>
                                                     <div class="col-3">
-                                                        <label for="business_zip">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" onkeypress='return restrictAlphabets(event)' name="business_zip" class="business_street">
+                                                        <label for="business_street">Zip Code <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                                        <input type="text" name="business_zip" class="business_street" required>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-4">
                                                         <label for="business_city">City <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" name="business_city" class="business_city" required>
+                                                        <input type="text" name="business_city" class="business_city" value="Taguig City" readonly required>
                                                     </div>
                                                     <div class="col-4">
-                                                        <label for="business_city">Landline</label>
-                                                        <input type="text" onkeypress='return restrictAlphabets(event)' maxlength="8" name="business_landline" class="business_city" required>
+                                                        <label for="business_city">Landline <small class="text-muted">Leave if N/A</small></label>
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)'  maxlength="8" name="business_landline" class="business_city">
                                                     </div>
                                                     <div class="col-4">
                                                         <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                        <input type="text" onkeypress='return restrictAlphabets(event)' maxlength="11" name="business_mobile" class="business_city" required>
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)'  maxlength="11" name="business_mobile" class="business_city" required>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <label for="inputService">Type of Service</label>
                                                         <select id="inputService" class="form-control" name="inputservice" required>
-                                                            <option value="ArtandCulture" selected>Art and Culture</option>
-                                                            <option value="BeautyandWellness">Beauty and Wellness</option>
+                                                            <option value="Art_And_Culture" selected>Art and Culture</option>
+                                                            <option value="Beauty_And_Wellness">Beauty and Wellness</option>
                                                             <option value="Construction">Construction</option>
                                                             <option value="Education">Education</option>
                                                             <option value="Electronics">Electronics</option>
                                                             <option value="Events">Events</option>
-                                                            <option value="FoodandBeverages">Food and Beverages</option>
-                                                            <option value="MedicalCare">Medical Care</option>
-                                                            <option value="ProfessionalServices">Professional Services</option>
-                                                            <option value="ShoppingandRetail">Shopping and Retail</option>
-                                                            <option value="Transportation">Transportation</option>
+                                                            <option value="Food_And_Beverages">Food and Beverages</option>
+                                                            <option value="Medical_Care">Medical Care</option>
+                                                            <option value="Professional_Services">Professional Services</option>
+                                                            <option value="Shopping_And_Retail">Shopping and Retail</option>
+                                                            <option value="Automotive">Automotive</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <label for="inputSubService">Sub Service</label>
                                                         <select id="inputSubService" class="form-control" name="inputSubService" required>
                                                             
                                                         </select>
                                                     </div>
+                                                    <div class="col-4">
+                                                        <label for="startsPrice">Service Price (Starts At)</label>
+                                                        <input type="text" onkeypress='return restrictAlphabets(event)' value="&#8369; " id="startsPrice" class="form-control" name="price" required>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <label for="business_details">Business Description</label>
-                                                        <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.."></textarea>
+                                                        <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.." required></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -360,8 +367,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                             <div class="col-12">
 
                                                 <div class="business_logo">
-                                                    <?php echo '<img src="./assets/img/featured_services/business_icon/'.$imgVar.'" id="photo" alt="..." class="img-thumbnail">';?>
-                                                    <!-- <img src="./assets/img/featured_services/business_icon/" id="photo" alt="..." class="img-thumbnail"> -->
+                                                    <img src='./assets/img/featured_services/business_icon/<?php echo $imgVar;?>' id="photo" alt="..." class="img-thumbnail">
                                                 </div>
                                                 
                                                 <div class="profile_picture">
@@ -391,21 +397,21 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                             <div class="col-12">
                                                 <div class="business_docu">
                                                     <hr>
-                                                    <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                    <input type="file" name="legalFiles" multiple>
+                                                    <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
+                                                    <input type="file" id="file" name="legalFiles" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="owner_valid">
                                                     <hr>
 
-                                                    <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                                    <input type="file" name="idFiles" multiple>
+                                                    <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
+                                                    <input type="file" id="file" name="idFiles" required>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <hr>
-                                                <button type="submit" name="createBtn" class="createBtn">Create Business</button>
+                                                <button type="submit" name="updateBusinessBtn" class="createBtn">Update</button>
                                             </div>
                                         </div>
                                     </div>
@@ -557,6 +563,40 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
              else
                  return false;
             }
+
+            var inputservice = {
+                Art_And_Culture: ['Digital Art', 'Painting', 'Calligraphy'],
+                Beauty_And_Wellness: ['Personal Care', 'Exercises', 'Wellness and Alternatives'],
+                Construction: ['Plumbing', 'Masonry', 'Special Construction'],
+                Education: ['Training and Development', 'Educational Services'],
+                Electronics: ['Computers', 'Communications', 'Cabling', 'Security and Protection'],
+                Events: ['Photography', 'Party Planning Services', 'Memorial Services'],
+                Food_And_Beverages: ['Bars and Cafes', 'Catering', 'Bakeries', 'Restaurants'],
+                Medical_Care: ['Animal Health', 'Health Care Facilities', 'Health Care Services'],
+                Professional_Services: ['Interior Design Services', 'Engineering Services', 'Architectural Services'],
+                Shopping_And_Retail: ['Cooperative Buying', 'Malls', 'Luggage and Bags', 'Safety Gear and Equipment'],
+                Automotive: ['Repair and Maintenance', 'Parts Shop', 'Detail Supplies', 'Towing']
+            }
+
+            var main = document.getElementById('inputService');
+            var sub = document.getElementById('inputSubService');
+
+            main.addEventListener('change', function(){
+
+                var selected_option = inputservice[this.value];
+
+                while(sub.options.length > 0 ){
+
+                    sub.options.remove(0);
+                }
+
+                Array.from(selected_option).forEach(function(el){
+
+                    let option = new Option(el, el);
+
+                    sub.appendChild(option);
+                });
+            });
         </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

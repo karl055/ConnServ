@@ -102,7 +102,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="inputEmail">Email</label>
-                                          <input type="email" class="form-control" id="inputEmail" name="edit_email" value="<?php echo $_SESSION['email'];?>" placeholder="Email" required>
+                                          <input type="email" class="form-control" id="inputEmail" name="edit_email" value="<?php echo $_SESSION['email'];?>" placeholder="Email" readonly required>
                                         </div>
                                         <div class="form-group col-md-3">
                                           

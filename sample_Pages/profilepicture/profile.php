@@ -1,3 +1,12 @@
+<?php
+
+include '../../hostCon.php';
+
+$sql = "SELECT * FROM business_tb WHERE business_id = 34";
+
+$result = mysqli_query($connect, $sql);
+$rows = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,20 +28,9 @@
     </head>
     <body>
         <form action="./profile.php" method="post">
-            <input type="text" name="category">
+            <input type="file" name="category" value="AWDASDASD">
             <button type="submit" name="submit">Submit</button>
         </form>
 
-        <?php
-        if(isset($_POST['submit'])){
-
-            echo $_POST['category'];
-
-            $newdate = date("Y-m-d h:i:s");
-            echo $newdate;
-
-        }
-        
-        ?>
     </body>
 </html>
