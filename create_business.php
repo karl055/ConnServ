@@ -162,8 +162,8 @@ if(!isset($_SESSION['username'])){
                                             </select>
                                         </div>
                                         <div class="col-4">
-                                            <label for="startsPrice">Service Price (Starts At)</label>
-                                            <input type="text" onkeypress='return restrictAlphabets(event)' value="&#8369; " id="startsPrice" class="form-control" name="price" required>
+                                            <label for="startsPrice">Service Price (&#8369;, Starts At)</label>
+                                            <input type="text" onkeypress='return restrictAlphabets(event)' id="startsPrice" class="form-control" name="price" required>
                                         </div>
                                     </div>
                                     <div class="row">

@@ -280,7 +280,7 @@
                               <a href="./user_profile.php?approved">Approved</a>
                           </div>
                           <div style="width: 100%;">
-                              <a href="./user_profile.php?notapproved">Not Approved</a>
+                              <a href="./user_profile.php?waiting">Waiting</a>
                           </div>
                           <div style="width: 100%;">
                               <a href="./user_profile.php?reset">Reset</a>
@@ -291,7 +291,7 @@
                         
                         <?php
                         if(isset($_GET['date'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' ORDER BY min_date ASC";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' ORDER BY min_date ASC";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           echo '<div class="accordion row" id="accordionExample">';
@@ -323,7 +323,7 @@
                           echo '</div>';
                         }
                         else if(isset($_GET['alphabet'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' ORDER BY business_name ASC";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' ORDER BY business_name ASC";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           echo '<div class="accordion row" id="accordionExample">';
@@ -387,8 +387,8 @@
                           echo '</div>';
                         }
                         
-                        else if(isset($_GET['notapproved'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Not Approved' ";
+                        else if(isset($_GET['waiting'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'waiting' ";
                           $appointmenResult = mysqli_query($connect, $selection);
 
                           echo '<div class="accordion row" id="accordionExample">';
@@ -420,7 +420,7 @@
                           echo '</div>';
                         }
                         else if(!isset($_GET['date']) && !isset($_GET['alphabet']) && !isset($_GET['approved']) || isset($_GET['reset'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username'";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved'";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           echo '<div class="accordion row" id="accordionExample">';

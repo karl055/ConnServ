@@ -102,7 +102,7 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                                         <input type="text" class="full_name" value="<?php echo $businessRow['business_email'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off" title="<?php echo $businessRow['business_email'] ;?>" required>
                                     </div>
                                     <div class="col-2">
-                                        <input type="text" class="full_name" value=" <?php echo $businessRow['price'] ;?>" readonly="readonly" name="business_email" id="business_name" autocomplete="off" title="<?php echo $businessRow['price'] ;?>" required>
+                                        <input type="text" class="full_name" value=" <?php echo $businessRow['price'] ;?>" readonly="readonly" name="business_price" id="business_price" autocomplete="off" title="<?php echo $businessRow['price'] ;?>" required>
                                     </div>
                                 </div>
                             </div>
@@ -126,10 +126,10 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                             <div class="container-fluid"  style="margin-top: 5px;">
                                 <div class="personal_content" style="display: flex;">
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" name="mobile" id="mobile" placeholder="Mobile Number.." autocomplete="off" required>
+                                        <input type="text" class="contact_number" maxlength="11" name="mobile" id="mobile" placeholder="Mobile Number.." autocomplete="off" required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" name="landline" id="landline" placeholder="Landline.." autocomplete="off" required>
+                                        <input type="text" class="contact_number" maxlength="8" name="landline" id="landline" placeholder="Landline.." autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
@@ -188,11 +188,13 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                         
                         <div class="col-12">
                             <div class="col-12 btnAddAppointment" style="margin: 5px 0 0;">
-                                <div style="display: flex;">
                                     <div class="col-12">
                                         <button type="submit" name="addAppointment" class="addAppointment col-12">Add My Appointment</button>
                                     </div>
-                                </div>
+                                    <div class="col-12">
+                                        
+                                        <a href="./terms_condition.php">Terms & Condition</a>
+                                    </div>
                             </div>
                         </div>
                     </div>
