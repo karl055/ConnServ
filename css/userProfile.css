@@ -262,10 +262,6 @@ nav :focus {
   text-align: center;
 }
 
-.body_container .container-fluid .business .business_contents .contents_container .container_display {
-  margin: 8rem 0 auto;
-}
-
 .body_container .container-fluid .business .business_contents .contents_container .container_display h1 {
   font-family: "Righteous", cursive;
   margin: 2rem;

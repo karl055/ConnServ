@@ -11,7 +11,7 @@ include "../../hostCon.php";
     
         if($searchResult = mysqli_query($connect, $searchSql)){
     
-            header("Location: ../../business.php?");
+            header("Location: ../../user_profile.php?#pills-business");
                 
         }
         else{
@@ -27,7 +27,7 @@ include "../../hostCon.php";
     
         if($searchResult = mysqli_query($connect, $searchSql)){
     
-            header("Location: ../../business.php?");
+            header("Location: ../../user_profile.php?#pills-business");
                 
         }
         else{
@@ -35,25 +35,3 @@ include "../../hostCon.php";
         }
 
     }
-    /* $selectSql = "SELECT * FROM appointment_tb WHERE appointment_custom = '$selectRow'";
-    $selectResult = mysqli_query($connect, $selectSql);
-    if($selectRows = mysqli_fetch_assoc($selectResult)){
-
-        $selectedRow = $_POST['clientCheck'];
-    }
-
-    
-    $searchSql = "UPDATE appointment_tb SET approval = 'Approved' WHERE appointment_custom = '$selectedRow'";
-
-    $searchResult = mysqli_query($connect, $searchSql);
-
-    if($searchRows){
-
-        echo $searchRows['client_firstname']."<br>";
-            
-    }else{
-        mysqli_error($connect);
-    } */
-/* 
-    header("Location: ../../business.php?"); */
-

@@ -25,11 +25,11 @@ if(!isset($_SESSION['username'])){
     <body>
     <nav>
     <form action="./navbar.php" method="post">
-        <div class="container-fluid">
+        <div class="container-fluid col-12">
             <div class="logo">
-                <a href="./homepage.php"><img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo"></a>
+                <a href="./homepage.php" class="col-1"><img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo"></a>
             </div>
-            <div class="search-div">
+            <div class="search-div col-8">
                 <input class="servicetxt" type="text" name="service_name" placeholder="Search Service Name">
 
                 <input class="locationtxt" type="text" placeholder="Location" value="Taguig City" readonly>
@@ -39,18 +39,25 @@ if(!isset($_SESSION['username'])){
                     </svg>
                 </button>
             </div>
-            <ul class="nav-links">
-                <li class="link">
-                <?php
-                if(isset($_SESSION['username'])){
-                    echo "<a href='./user_profile.php' style='color: white;'>Account</a>";
-                }
-                else{
-                    echo "<a href='./login.php' style='color: white;'>Account</a>";
-                }
-                ?>
-                <!-- <a href="./login.php">Account</a> --></li>
-            </ul>
+            <?php
+            
+            if(isset($_SESSION['username'])){
+                echo '<ul class="nav-links col-2">';
+                    echo '<il class="link">';
+                        echo "<a href='./user_profile.php' style='color: white;' class='col-6'>Account </a>";
+                        echo "<a href='./includes/signout.inc.php' style='color: white; border: none; background-color: transparent;' class='col-6' name='logout'>Logout</a>";
+                    echo '</li>';
+                echo '</ul>';
+            }
+            else{
+                echo '<ul class="nav-links col-1">';
+                    echo '<il class="link">';
+                        echo "<a href='./login.php' style='color: white;' class='col-12'>Account</a>";
+                    echo '</li>';
+                echo '</ul>';
+            }
+            
+            ?>
         </div>
     </form>
         </nav>
