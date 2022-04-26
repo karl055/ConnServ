@@ -7,22 +7,45 @@
         if(isset($_POST['createBtn'])){
 
             $userId = $_SESSION['username'];
-            $business_name = $_POST['business_name'];
-            $business_email = $_POST['business_email'];
-            $business_category = $_POST['inputservice'];
-            $business_subcategory = $_POST['inputSubService'];
-            $business_unit_no = $_POST['business_unit_no'];
-            $business_building = $_POST['business_building'];
-            $business_house_no = $_POST['business_house_no'];
-            $business_street = $_POST['business_street'];
-            $business_village = $_POST['business_village'];
-            $business_barangay = $_POST['business_barangay'];
-            $business_zip = $_POST['business_zip'];
-            $business_city = $_POST['business_city'];
-            $business_landline = $_POST['business_landline'];
-            $business_mobile = $_POST['business_mobile'];
-            $business_details = $_POST['business_details'];
+            $business_name = mysqli_real_escape_string($connect, $_POST['business_name']);
+            $business_email = mysqli_real_escape_string($connect, $_POST['business_email']);
+            $business_category = mysqli_real_escape_string($connect, $_POST['inputservice']);
+            $business_subcategory = mysqli_real_escape_string($connect, $_POST['inputSubService']);
+            $business_unit_no = mysqli_real_escape_string($connect, $_POST['business_unit_no']);
+            $business_building = mysqli_real_escape_string($connect, $_POST['business_building']);
+            $business_house_no = mysqli_real_escape_string($connect, $_POST['business_house_no']);
+            $business_street = mysqli_real_escape_string($connect, $_POST['business_street']);
+            $business_village = mysqli_real_escape_string($connect, $_POST['business_village']);
+            $business_barangay = mysqli_real_escape_string($connect, $_POST['business_barangay']);
+            $business_zip = mysqli_real_escape_string($connect, $_POST['business_zip']);
+            $business_city = mysqli_real_escape_string($connect, $_POST['business_city']);
+            $business_landline = mysqli_real_escape_string($connect, $_POST['business_landline']);
+            $business_mobile = mysqli_real_escape_string($connect, $_POST['business_mobile']);
+            $business_details = mysqli_real_escape_string($connect, $_POST['business_details']);
+            $business_logo = mysqli_real_escape_string($connect, $_POST['change_icon']);
+            $business_location = mysqli_real_escape_string($connect, $_POST['business_location']);
+            $business_cost = mysqli_real_escape_string($connect, $_POST['price']);
 
+            $business_category_explode = explode("_", $business_category);
+            
+            if(count($business_category_explode)>2){
+                $business_fixed = implode(" ", $business_category_explode);
+            }
+            else if(count($business_category_explode)<=2){
+                $business_fixed = implode(" ", $business_category_explode);
+            }
+
+            /* CHANGE ICON UPLOAD */
+
+            $iconFiles = $_FILES['change_icon'];
+
+            $iconFileName = $iconFiles['name'];
+            $iconFileTmpName = $iconFiles['tmp_name'];
+            $iconFileSize= $iconFiles['size'];
+            $iconFileError = $iconFiles['error'];
+            $iconFileType = $iconFiles['type'];
+
+    
             /* LEGAL FILES UPLOAD */
 
             $legalFiles = $_FILES['legalFiles'];
@@ -33,9 +56,6 @@
             $legalFileError = $legalFiles['error'];
             $legalFileType = $legalFiles['type'];
 
-            
-            $legalFileExt = explode('.', $legalFileName);
-            $legalFileActualExt = strtolower(end($legalFileExt));
     
             /* LEGAL ID UPLOAD */
 
@@ -51,29 +71,41 @@
     
             $idFileExt = explode('.', $idFileName);
             $idFileActualExt = strtolower(end($idFileExt));
+            
+            $legalFileExt = explode('.', $legalFileName);
+            $legalFileActualExt = strtolower(end($legalFileExt));
+            
+            $iconFileExt = explode('.', $iconFileName);
+            $iconFileActualExt = strtolower(end($iconFileExt));
 
             $allowed = array('pdf');
+            $imgAllowed = array('jpeg', 'png', 'jpg');
 
-            if(in_array($legalFileActualExt, $allowed) && in_array($idFileActualExt, $allowed)){
-                if($legalFileError === 0 && $idFileError === 0){
+            if(in_array($legalFileActualExt, $allowed) && in_array($idFileActualExt, $allowed) && in_array($iconFileActualExt, $imgAllowed)){
+
+                if($legalFileError === 0 && $idFileError === 0 && $iconFileError === 0){
         
-                    if($legalFileSize < 500000 && $idFileSize < 500000){
+                    if($legalFileSize < 500000000 && $idFileSize < 500000000 && $iconFileSize < 500000000){
+
                         $legalFileNameNew = uniqid('', true). "." .$legalFileActualExt;
                         $idFileNameNew = uniqid('', true). "." .$idFileActualExt;
+                        $iconFileNameNew = uniqid('', true).$userId."." .$iconFileActualExt;
+
                         $legalFileDestination = '../assets/legalidDocuments/'.$legalFileNameNew;
                         $idFileDestination = '../assets/legalidDocuments/'.$idFileNameNew;
-                        if(move_uploaded_file($legalFileTmpName, $legalFileDestination) && move_uploaded_file($idFileTmpName, $idFileDestination)){
+                        $iconFileDestination = '../assets/img/featured_services/business_icon/'.$iconFileNameNew;
+
+                        if(move_uploaded_file($legalFileTmpName, $legalFileDestination) && move_uploaded_file($idFileTmpName, $idFileDestination) && move_uploaded_file($iconFileTmpName, $iconFileDestination)){
         
 
-                            if(empty($business_name) || empty($business_email) || empty($business_category) || empty($business_subcategory)
-                            || empty($business_unit_no) || empty($business_building) || empty($business_house_no) || empty($business_street)
-                            || empty($business_village) || empty($business_barangay) || empty($business_zip) || empty($business_city)
-                            || empty($business_landline) || empty($business_mobile) || empty($business_details)){
+                            if(empty($business_cost) || empty($business_name) || empty($business_email) || empty($business_category) || empty($business_subcategory)
+                            || empty($business_house_no) || empty($business_street) || empty($business_barangay) || empty($business_zip) || empty($business_city)
+                            || empty($business_mobile) || empty($business_details) || empty($business_location)){
+
                                 header("Location: ../create_business.php?error=blankinputs");
                                 exit();
                             }
-                            
-                            $sqlEmail = "SELECT * FROM business_tb WHERE business_name = '$business_name'";
+                            $sqlEmail = "SELECT * FROM business_tb WHERE business_name = '$business_email'";
 
                             $emailResult = mysqli_query($connect, $sqlEmail);
                             
@@ -82,15 +114,18 @@
                                 exit();
                             }
 
+                            date_default_timezone_set('Asia/Manila');
+                            $dateTimeCreated = date("Y-m-d G:i:s");
+
                             $sql = "INSERT INTO business_tb 
-                            SET business_name = '$business_name', business_email = '$business_email', business_category = '$business_category', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
+                            SET datetime_created = '$dateTimeCreated', price = '$business_cost',business_name = '$business_name', business_email = '$business_email', business_category = '$business_fixed', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
                                 business_building ='$business_building', house_no = '$business_house_no', business_street = '$business_street', business_village = '$business_village', business_barangay = '$business_barangay', business_zip = '$business_zip',
                                 business_city ='$business_city', business_landline = '$business_landline', business_mobile = '$business_mobile', business_description = '$business_details',
-                                legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew',
+                                legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew', business_icon = '$iconFileNameNew', business_map = '$business_location',
                                 ownerId = (
                                 SELECT user_identity
                                 FROM user_tb
-                                WHERE user_identity = '$userId')";
+                                WHERE user_identity = $userId)";
                                 
                             mysqli_query($connect, $sql) or die(mysqli_error($connect));
                             
@@ -119,4 +154,5 @@
             
         }
     }
+
     

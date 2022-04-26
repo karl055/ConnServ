@@ -46,6 +46,10 @@ $dark-gray: #252424;
   .map {
     height: 300px;
     width: 280px;
+    iframe{
+      width: 270px;
+      height: 250px;
+    }
   }
   h2 {
     padding: 1rem;

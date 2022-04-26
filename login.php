@@ -21,11 +21,12 @@ if(isset($_POST['login'])){
             session_start(); 
             }
             $_SESSION['email'] = $rows['user_email'];
-            $_SESSION['password'] = $rows['user_pass'];
+            $_SESSION['password'] = $rows['userPwd'];
             $_SESSION['username'] = $rows['user_identity'];
             $_SESSION['firstname'] = $rows['user_firstname'];
             $_SESSION['lastname'] = $rows['user_lastname'];
             $_SESSION['gender'] = $rows['user_sex'];
+            $_SESSION['profilePic'] = $rows['profileImg'];
             header("Location: ./user_profile.php");
         }
         else{

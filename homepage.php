@@ -1,3 +1,17 @@
+<?php
+
+if(!isset($_SESSION['username'])){
+
+  session_start();
+}
+  include_once './hostCon.php';
+  $featureSql = "SELECT * FROM business_tb ORDER BY rating DESC LIMIT 3";
+  $addedSql = "SELECT * FROM business_tb ORDER BY datetime_created DESC LIMIT 3";
+
+  $addedResult = mysqli_query($connect, $addedSql);
+  $featureResult = mysqli_query($connect, $featureSql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,7 +44,7 @@
         <div class="container-fluid">
             <div class="catergory-container">
                 <div class="category-title">
-                    <h4>Explore More Categories</h4>
+                    <a href="./category_page.php"><h4>Explore More Categories</h4></a>
                 </div>
                 <div class="categories card-deck">
                     <div class="card"  style="width: 10rem;">
@@ -89,15 +103,27 @@
                     <div class="featured-title">
                         <h4>Featured Services</h4>
                     </div>
-                    <div class="featured-see-all">
-                        <h6>See all services ></h6>
-                    </div>
                 </div>
     
                 <!---Featured Services -->
                   <div class="featured-services">
                     <div class="card-deck">
-                        <div class="card">
+                        <?php
+                        
+                          if(mysqli_fetch_assoc($featureResult)){
+
+                            foreach($featureResult as $featureRow){
+                                echo "<div class='card'>";
+                                echo "<img src='./assets/img/featured_services/business_icon/".$featureRow['business_icon']."' class='card-img-top'>";
+                                echo "<div class='card-body'></div>";
+                                echo "<div class='card-footer'>";
+                                echo "<a href='./service_profile.php?businessname=".$featureRow['business_name']."&business=".$featureRow['business_icon']."' class='card-title stretched-link'>".$featureRow['business_name']." </a>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
+                          }
+                        ?>
+                        <!-- <div class="card">
                           <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
                           <div class="card-body">
                           </div>
@@ -123,7 +149,7 @@
                             <a href="#" class="card-title stretched-link"><h4>CR38 Computer Solutions</h4></a>
                             <h6 class="card-text text-muted">Computer and Hardware Solutions</h6>
                           </div>
-                        </div>
+                        </div> -->
                       </div>
                   </div>
             </div>
@@ -135,41 +161,25 @@
                     <div class="featured-title">
                         <h4>New Services</h4>
                     </div>
-                    <div class="featured-see-all">
-                        <h6>See all new Services ></h6>
-                    </div>
                 </div>
     
                 <!---Featured Services -->
                   <div class="featured-services">
                     <div class="card-deck">
-                    <div class="card">
-                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          </div>
-                          <div class="card-footer">
-                            <a href="./service_profile.php" class="card-title stretched-link"><h4>Bonheur Apparel</h4></a>
-                            <h6 class="card-text text-muted">Clothing Tailor</h6>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          </div>
-                          <div class="card-footer">
-                          <a href="#" class="card-title stretched-link"><h4>Ithilien Coffee PH</h4></a>
-                            <p class="card-text text-muted">Barista and Coffee Tutor</p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <img src="./assets/img/featured_services/cr38_solutions/logo.png" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          </div>
-                          <div class="card-footer">
-                            <a href="#" class="card-title stretched-link"><h4>CR38 Computer Solutions</h4></a>
-                            <h6 class="card-text text-muted">Computer and Hardware Solutions</h6>
-                          </div>
-                        </div>
+                    <?php
+                        if(mysqli_fetch_assoc($addedResult)){
+
+                          foreach($addedResult as $addedRow){
+                              echo "<div class='card'>";
+                              echo "<img src='./assets/img/featured_services/business_icon/".$addedRow['business_icon']."' class='card-img-top'>";
+                              echo "<div class='card-body'></div>";
+                              echo "<div class='card-footer'>";
+                              echo "<a href='./service_profile.php?business=".$addedRow['business_icon']."' class='card-title stretched-link'>".$addedRow['business_name']." </a>";
+                              echo "</div>";
+                              echo "</div>";
+                          }
+                        }
+                      ?>
                       </div>
                   </div>
             </div>

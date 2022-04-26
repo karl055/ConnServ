@@ -1,3 +1,12 @@
+<?php
+
+include './hostCon.php';
+if(!isset($_SESSION['username'])){
+
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,7 +44,8 @@
                         <div style="width: 100%;">
                             <input type="checkbox" id="newservice"><label for="newservice"> New Services</label>
                         </div>
-                    </div><div class="col-12 filter_check">
+                    </div>
+                    <div class="col-12 filter_check">
                         <p style="width: 100%; margin: 0;"><b>Sort By</b></p>
                         <div style="width: 100%;">
                             <input type="checkbox" id="alphabetical"><label for="alphabetical"> Alphabetical</label>
@@ -46,62 +56,606 @@
                     </div>
                 </div>
                 <div class="col-7 search_tab" style="padding: 0;">
-                    
                     <div class="col-12" style="padding: 0;">
-                        <div class="col-12 card_drawer">
-                            <div class="card">
-                                <h5 class="card-header">Bonheur Apparel</h5>
-                                <div class="card-body" style="display: flex;">
-                                    <div class="col-8">
-                                        <h5 class="card-title text-muted">Shopping and Retail</h5>
-                                        <p class="card-text" style="font-size: 14px;">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                                            </svg> 14 Pres., Quezon St., South Signal Village, District 2, Taguig City</p>
-                                        <a href="./service_profile.php" class="btn stretched-link">Go Visit!</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 card_drawer">
-                            <div class="card">
-                                <h5 class="card-header">CR38 Computer Solutions</h5>
-                                <div class="card-body" style="display: flex;">
-                                    <div class="col-8">
-                                        <h5 class="card-title text-muted">Computer Hardware Solutions</h5>
-                                        <p class="card-text" style="font-size: 14px;">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                                            </svg> 71 Pres., Quezon St., South Signal Village, District 2, Taguig City</p>
-                                        <a href="#" class="btn stretched-link">Go Visit!</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <img src="./assets/img/featured_services//cr38_solutions/logo.png" class="card-img-top" alt="...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 card_drawer">
-                            <div class="card">
-                                <h5 class="card-header">Annabelle's Foods and Services</h5>
-                                <div class="card-body" style="display: flex;">
-                                    <div class="col-8">
-                                        <h5 class="card-title">Clothing Service</h5>
-                                        <p class="card-text" style="font-size: 14px;">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                                            </svg> 14 Pres., Quezon St., South Signal Village, District 2, Taguig City</p>
-                                        <a href="#" class="btn stretched-link">Go Visit!</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                    <?php
+                    
+                    if(isset($_GET['category'])){
+
+                        $search = $_GET['category'];
+                        $sql = "SELECT * FROM business_tb WHERE business_category LIKE '%$search%'";
+                        $result = mysqli_query($connect, $sql);
+
+                        switch($search){
+
+                            case "Education":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+
+                            case "Art And Culture":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Automotive":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Professional Service":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Food And Beverages":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Beauty And Wellness":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Construction":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Electronics":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Medical Care":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                            
+                            case "Events":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+
+                            case "Shopping And Retail":
+                                while($row = mysqli_fetch_assoc($result)){
+                                    
+                                    if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+    
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }else{
+                                        echo '<div class="col-12 card_drawer">
+                                            <div class="card">
+                                                <h5 class="card-header">'.$row['business_name'].'</h5>
+                                                <div class="card-body" style="display: flex;">
+                                                    <div class="col-8">
+                                                        <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                        <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                        <p class="card-text" style="font-size: 14px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                            </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                        <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                }
+                            break;
+                        }
+                    }
+
+                    ?>
+                    
+                    <?php
+                    
+                    if(isset($_GET['servicename'])){
+
+                        $search = $_GET['servicename'];
+                        $sql = "SELECT * FROM business_tb WHERE business_name LIKE '%$search%'";
+                        if($result = mysqli_query($connect, $sql)){
+
+                            while($row = mysqli_fetch_assoc($result)){
+                                if($row['unit_no'] != 'N/A' || $row['business_village'] != 'N/A'|| $row['business_landline'] != 'N/A'){
+
+                                    echo '<div class="col-12 card_drawer">
+                                        <div class="card">
+                                            <h5 class="card-header">'.$row['business_name'].'</h5>
+                                            <div class="card-body" style="display: flex;">
+                                                <div class="col-8">
+                                                    <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                    <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                    <p class="card-text" style="font-size: 14px;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                        </svg> '.$row['business_building'].', '.$row['house_no'].', '.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</p>
+                                                    <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                }else{
+                                    echo '<div class="col-12 card_drawer">
+                                        <div class="card">
+                                            <h5 class="card-header">'.$row['business_name'].'</h5>
+                                            <div class="card-body" style="display: flex;">
+                                                <div class="col-8">
+                                                    <h5 class="card-title text-muted">'.$row['business_category'].'</h5>
+                                                    <h5 class="card-title text-muted"><small>'.$row['business_subcategory'].'</small></h5>
+                                                    <p class="card-text" style="font-size: 14px;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                                        </svg> <small>'.$row['unit_no'].','.$row['business_building'].','.$row['house_no'].','.$row['business_village'].','.$row['business_street'].', '.$row['business_barangay'].', '.$row['business_city'].', '.$row['business_zip'].'</small></p>
+                                                    <a href="./service_profile.php?business='.$row['business_icon'].'" class="btn stretched-link">Go Visit!</a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="./assets/img/featured_services/business_icon/'.$row['business_icon'].'" class="card-img-top" alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                }
+                            }
+
+                        }
+                    }
+                    ?>
                     </div>
                 </div>
                 <div class="col-3 nearme_tab">

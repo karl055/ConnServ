@@ -63,17 +63,17 @@ if(!isset($_SESSION['username'])){
                                 <div class="business_address">
                                     <div class="row">
                                         <div class="col-6">
-                                            <label for="business_unit_no">Unit Number</label>
-                                            <input type="text" name="business_unit_no" class="business_unit_no" required>
+                                            <label for="business_unit_no">Unit Number <small class="text-muted">Leave if N/A</small></label>
+                                            <input type="text" name="business_unit_no" onkeypress='return restrictAlphabets(event)' class="business_unit_no">
                                         </div>
                                         <div class="col-6">
-                                            <label for="business_building">Building Name</label>
-                                            <input type="text" name="business_building" class="business_building" required>
+                                            <label for="business_building">Building Name <small class="text-muted">Leave if N/A</small></label>
+                                            <input type="text" name="business_building" class="business_building">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <label for="business_house_no">House Number</label>
+                                            <label for="business_house_no">House Number <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
                                             <input type="text" name="business_house_no" class="business_house_no" required>
                                         </div>
                                         <div class="col-6">
@@ -83,8 +83,8 @@ if(!isset($_SESSION['username'])){
                                     </div>
                                     <div class="row">
                                         <div class="col-5">
-                                            <label for="business_village">Village</label>
-                                            <input type="text" name="business_village" class="business_village" required> 
+                                            <label for="business_village">Village <small class="text-muted">Leave if N/A</small></label>
+                                            <input type="text" name="business_village" class="business_village"> 
                                         </div>
                                         <div class="col-4">
                                             <label for="business_street">Barangay <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
@@ -127,39 +127,43 @@ if(!isset($_SESSION['username'])){
                                     <div class="row">
                                         <div class="col-4">
                                             <label for="business_city">City <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_city" class="business_city" required>
+                                            <input type="text" name="business_city" class="business_city" value="Taguig City" readonly required>
                                         </div>
                                         <div class="col-4">
-                                            <label for="business_city">Landline</label>
-                                            <input type="text" name="business_landline" class="business_city" required>
+                                            <label for="business_city">Landline <small class="text-muted">Leave if N/A</small></label>
+                                            <input type="text" onkeypress='return restrictAlphabets(event)'  maxlength="8" name="business_landline" class="business_city">
                                         </div>
                                         <div class="col-4">
                                             <label for="business_city">Mobile No. <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                            <input type="text" name="business_mobile" class="business_city" required>
+                                            <input type="text" onkeypress='return restrictAlphabets(event)'  maxlength="11" name="business_mobile" class="business_city" required>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <label for="inputService">Type of Service</label>
                                             <select id="inputService" class="form-control" name="inputservice" required>
-                                                <option value="ArtandCulture" selected>Art and Culture</option>
-                                                <option value="BeautyandWellness">Beauty and Wellness</option>
+                                                <option value="Art_And_Culture" selected>Art and Culture</option>
+                                                <option value="Beauty_And_Wellness">Beauty and Wellness</option>
                                                 <option value="Construction">Construction</option>
                                                 <option value="Education">Education</option>
                                                 <option value="Electronics">Electronics</option>
                                                 <option value="Events">Events</option>
-                                                <option value="FoodandBeverages">Food and Beverages</option>
-                                                <option value="MedicalCare">Medical Care</option>
-                                                <option value="ProfessionalServices">Professional Services</option>
-                                                <option value="ShoppingandRetail">Shopping and Retail</option>
-                                                <option value="Transportation">Transportation</option>
+                                                <option value="Food_And_Beverages">Food and Beverages</option>
+                                                <option value="Medical_Care">Medical Care</option>
+                                                <option value="Professional_Services">Professional Services</option>
+                                                <option value="Shopping_And_Retail">Shopping and Retail</option>
+                                                <option value="Automotive">Automotive</option>
                                             </select>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <label for="inputSubService">Sub Service</label>
                                             <select id="inputSubService" class="form-control" name="inputSubService" required>
                                                 
                                             </select>
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="startsPrice">Service Price (&#8369;, Starts At)</label>
+                                            <input type="text" onkeypress='return restrictAlphabets(event)' id="startsPrice" class="form-control" name="price" required>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -174,12 +178,12 @@ if(!isset($_SESSION['username'])){
                                 <div class="col-12">
 
                                     <div class="business_logo">
-                                        <img src="./assets/img/ConnServ_Logo_Black.png" alt="..." class="img-thumbnail">
+                                        <img src="./assets/img/ConnServ_Logo_Black.png" id="photo" alt="..." class="img-thumbnail">
                                     </div>
                                       
-                                    <div class="business_location">
-                                        <label for="change_icon">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                        <input type="file" id="change_icon" name="change_icon" style="display: none;">
+                                    <div class="profile_picture">
+                                        <label for="file">Click here to insert an Image  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
+                                        <input type="file" id="file" name="change_icon" style="display: none;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -205,7 +209,7 @@ if(!isset($_SESSION['username'])){
                                     <div class="business_docu">
                                         <hr>
                                         <label>Business Legal Documents  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
-                                        <input type="file" id="file" name="legalFiles" multiple required>
+                                        <input type="file" id="file" name="legalFiles" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -213,7 +217,7 @@ if(!isset($_SESSION['username'])){
                                         <hr>
 
                                         <label>Owner Valid ID  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">* <small class="text-muted">pdf file only</small></span></label>
-                                        <input type="file" id="file" name="idFiles" multiple required>
+                                        <input type="file" id="file" name="idFiles" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -228,7 +232,50 @@ if(!isset($_SESSION['username'])){
         </div>
         <script src="./js/userProfile/appointmentCards.js"></script>
         <script src="./js/userProfile/profile_image.js"></script>
-        <script src="./js/subservices/dynamic.js"></script>
+        <script type="text/javascript">
+
+            function restrictAlphabets(e) {
+             var x = e.which || e.keycode;
+             if ((x >= 48 && x <= 57))
+                 return true;
+             else
+                 return false;
+            }
+
+            var inputservice = {
+                Art_And_Culture: ['Digital Art', 'Painting', 'Calligraphy'],
+                Beauty_And_Wellness: ['Personal Care', 'Exercises', 'Wellness and Alternatives'],
+                Construction: ['Plumbing', 'Masonry', 'Special Construction'],
+                Education: ['Training and Development', 'Educational Services'],
+                Electronics: ['Computers', 'Communications', 'Cabling', 'Security and Protection'],
+                Events: ['Photography', 'Party Planning Services', 'Memorial Services'],
+                Food_And_Beverages: ['Bars and Cafes', 'Catering', 'Bakeries', 'Restaurants'],
+                Medical_Care: ['Animal Health', 'Health Care Facilities', 'Health Care Services'],
+                Professional_Services: ['Interior Design Services', 'Engineering Services', 'Architectural Services'],
+                Shopping_And_Retail: ['Cooperative Buying', 'Malls', 'Luggage and Bags', 'Safety Gear and Equipment'],
+                Automotive: ['Repair and Maintenance', 'Parts Shop', 'Detail Supplies', 'Towing']
+            }
+
+            var main = document.getElementById('inputService');
+            var sub = document.getElementById('inputSubService');
+
+            main.addEventListener('change', function(){
+
+                var selected_option = inputservice[this.value];
+
+                while(sub.options.length > 0 ){
+
+                    sub.options.remove(0);
+                }
+
+                Array.from(selected_option).forEach(function(el){
+
+                    let option = new Option(el, el);
+
+                    sub.appendChild(option);
+                });
+            });
+        </script>
         <!-- POPPER JS  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/popper.min.js"></script>
 

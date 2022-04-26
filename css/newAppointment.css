@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* .first_date {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+* .first_date:focus {
+  outline: none;
+}
+
+* .main_body {
+  margin: 50px 50px 100px;
+}
+
+* .main_body .buttonBack {
+  width: 20%;
+  height: 40px;
+}
+
+* .main_body .buttonBack button {
+  width: 20%;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+* .main_body .buttonBack button:focus {
+  outline: none;
+}
+
+* .main_body .personal_content .full_name {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+}
+
+* .main_body .personal_content .contact_number {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+}
+
+* .main_body .personal_content :focus {
+  outline: none;
+}
+
+* .main_body .address_content :focus {
+  outline: none;
+}
+
+* .main_body .container-fluid {
+  width: 100%;
+}
+
+.btnAddAppointment .addAppointment[disabled] {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #5e0cc4;
+  color: #5e0cc4;
+  background-color: white;
+}
+
+/* TIME PICKER STYLE */
+.time_content #am, .time_content #pm {
+  display: none;
+}
+
+.time_content .timeLabel {
+  padding: 10px 20px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.time_content #pm:checked + .timeLabel {
+  background-color: black;
+  color: white;
+}
+
+.time_content #am:checked + .timeLabel {
+  background-color: black;
+  color: white;
+}
+
+.time_content .selectTime {
+  width: 70px;
+  height: 45px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.time_content .selectTime option {
+  font-size: 16px;
+}
+
+.time_content span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ADDRESS CONTENT STYLE */
+.address_content .txtAddress {
+  height: 40px;
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+}

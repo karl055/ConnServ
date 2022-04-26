@@ -9,7 +9,7 @@ var inputservice = {
     MedicalCare: ['Animal Health', 'Health Care Facilities', 'Health Care Services'],
     ProfessionalServices: ['Interior Design Services', 'Engineering Services', 'Architectural Services'],
     ShoppingandRetail: ['Cooperative Buying', 'Malls', 'Luggage and Bags', 'Safety Gear and Equipment'],
-    Transportation: ['Passenger Transport', 'Transportation Rental Services']
+    Transportation: ['Repair', 'Carwash']
 }
 
 var main = document.getElementById('inputService');
