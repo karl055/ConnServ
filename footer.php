@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="./css/homepage.css">
     </head>
     <body>
-        <footer class="footer-div">
+      
+    <footer class="footer-div">
           <div class="container-fluid row connserv-container">
             <div class="col-4">
               <img class="connserv-logo" src="./assets/img/ConnServ_Logo.png" alt="Connserv Image">
@@ -33,7 +34,7 @@
                     <li><a href="#">Developers</a></li>
                     <li><a href="#">Service Program</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Referral Program</a></li>
+                    <li><a href="./terms_condition.php">Terms & Condition</a></li>
                   </ul>
                 </div>
                 <div class="col-4">

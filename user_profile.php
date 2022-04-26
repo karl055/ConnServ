@@ -79,20 +79,20 @@
             <div class="profile_nav">
               <ul class="nav nav-pills mb-3 col-12" id="pills-tab" role="tablist">
                 
-                <!-- Notifications Pill -->
-                <!-- <li class="nav-item col-2">
-                  <a class="nav-link active" id="pills-notifications-tab" data-toggle="pill" href="#pills-notifications" role="tab" aria-controls="pills-notifications" aria-selected="false">Notifications</a>
-                </li> -->
-
-
                 <!-- Appointments Pill -->
                 <li class="nav-item col-2">
-                  <a class="nav-link" id="pills-appointment-tab" data-toggle="pill" href="#pills-appointment" role="tab" aria-controls="pills-appointment" aria-selected="false">Appointments</a>
+                  <a class="nav-link active" id="pills-appointment-tab" data-toggle="pill" href="#pills-appointment" role="tab" aria-controls="pills-appointment" aria-selected="false">Appointments</a>
                 </li>
                 <!-- Profile Pill -->
                 <li class="nav-item col-2">
                   <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">Profile</a>
                 </li>
+
+                <!-- Notifications Pill -->
+                <li class="nav-item col-2">
+                  <a class="nav-link" id="pills-notifications-tab" data-toggle="pill" href="#pills-notifications" role="tab" aria-controls="pills-notifications" aria-selected="false">Notifications</a>
+                </li>
+
                 <!-- Messages Pill -->
                 <li class="nav-item col-2">
                   <a class="nav-link" id="pills-messages-tab" data-toggle="pill" href="#pills-messages" role="tab" aria-controls="pills-messages" aria-selected="false">Messages</a>
@@ -115,18 +115,17 @@
                                   <h4>My Profile</h4>
                                   <p>Manage your account</p>
                                   <div class="configureDiv col-8">
-                                    <div class="col-7" style="display: flex;">
+                                    <div class="col-8" style="display: flex;">
                                       <div class="col-4">
                                         <button type="button" class="saveBtn" id="editBtn" onclick="edit()">Update</button>
                                       </div>
                                       <div class="col-4">
-                                        <button type="button" id="saveBtn" class="btn btn-primary saveBtn"  data-toggle="modal" data-target="#saveModal" disabled>Save</button>
+                                        <button type="button" id="saveBtn" class="btn btn-primary saveBtn" data-toggle="modal" data-target="#saveModal" disabled>Save</button>
                                       </div>
                                       <div class="col-4">
-                                        <button type="button" class="saveBtn" id="deactivateFormBtn">Deactivate</button>
+                                        <button type="button" class="saveBtn" id="deactivateFormBtn" data-toggle="modal" data-target="#deleteModal">Delete Account</button>
                                       </div>
                                     </div>
-                                      
                                   </div>
                                 </div>
                                 <div class="content">
@@ -403,7 +402,7 @@
                                           <?php
                                         }
                                       ?>
-                                      
+                                      <!-- SAVE MODAL -->
                                       <div class="form-row">
 
                                         <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -421,6 +420,29 @@
                                               <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                                 <button type="submit" class="btn btn-primary" name="saveChanges">Save changes</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- DELETE MODAL -->
+                                      <div class="form-row">
+
+                                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <p>Are you sure to <b>Delete your Account</b>?</p>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <a href="./includes/delete.inc.php?delete"><button type="button" class="btn btn-primary" name="deleteAccBtn">Delete</button></a>
                                               </div>
                                             </div>
                                           </div>
@@ -466,7 +488,7 @@
                         <?php
                         
                         if(!isset($_GET['history']) && !isset($_GET['waiting']) || isset($_GET['current'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' AND min_date > now() ORDER BY min_date ASC";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' AND min_date > now() AND business_id = (SELECT business_id FROM business_tb WHERE ownerId = '$username' AND business_status = 'active') ORDER BY min_date ASC";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           if(mysqli_fetch_assoc($appointmenResult)){
@@ -507,7 +529,7 @@
                           }
                         }
                         else if(isset($_GET['waiting'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'waiting' ";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'waiting' AND business_id = (SELECT business_id FROM business_tb WHERE ownerId = '$username' AND business_status = 'active')";
                           $appointmenResult = mysqli_query($connect, $selection);
 
                           if(mysqli_fetch_assoc($appointmenResult)){
@@ -548,7 +570,7 @@
                           }
                         }
                         else if(isset($_GET['history'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE min_date < now() AND client_id = 1020 AND approval = 'Approved'";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE min_date < now() AND client_id = '$username' AND approval = 'Approved' AND business_id = (SELECT business_id FROM business_tb WHERE ownerId = '$username' AND business_status = 'active')";
                           $appointmenResult = mysqli_query($connect, $selection);
 
                           if(mysqli_fetch_assoc($appointmenResult)){
@@ -594,15 +616,14 @@
                   </div>
                         <!-- Messages Contents -->
                   <div class="tab-pane fade messages" id="pills-messages" role="tabpanel" aria-labelledby="pills-messages-tab">
-                        <p>AWDASDAWDSD</p>
+                    <p>Under Construction</p>
                   </div>
 
                         <!-- Notifications Contents -->
-                  <!-- 
-                  <div class="tab-pane fade show active notifications" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
-                        <p>AWDASDAWDADS</p>
-                  </div>     -->
-
+                 
+                  <div class="tab-pane fade notifications" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
+                    <p>Under Construction</p>
+                  </div>
 
                         <!-- Business Contents -->
                   <div class="tab-pane fade business" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
@@ -1024,7 +1045,7 @@
                                               
                                                   <?php
                                                   
-                                                      $selection = "SELECT * FROM `appointment_tb` WHERE business_id = '$appointmentAccessId' AND approval = 'Approved'";
+                                                      $selection = "SELECT * FROM `appointment_tb` WHERE business_id = '$appointmentAccessId' AND approval = 'Approved' AND appointment_status = 'active'";
                                                       $appointmenResult = mysqli_query($connect, $selection);
                                   
                                                       foreach($appointmenResult as $appointmentRows){
@@ -1090,7 +1111,7 @@
                                                               <tbody>
                                                                   <?php
 
-                                                                      $notApprovedSql = "SELECT * FROM appointment_tb WHERE business_id = '$appointmentAccessId' AND approval = 'waiting'";
+                                                                      $notApprovedSql = "SELECT * FROM appointment_tb WHERE business_id = '$appointmentAccessId' AND approval = 'waiting' AND appointment_status = 'active'";
                                                                       
                                                                       if($notApprovedResult = mysqli_query($connect, $notApprovedSql)){
                                                                           

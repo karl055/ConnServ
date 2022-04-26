@@ -114,15 +114,15 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
                                         <label>Client Information</label>
                                     </div>
                                     <div class="col-3">
-                                        <button type="button" class="btnEdit" id="editFields" onclick="edit()">Edit Fields</button>
+                                        <button type="button" class="btnEdit" id="editFields" onclick="edit()">Clear Fields</button>
                                     </div>
                                 </div>
                                 <div class="personal_content"  style="display: flex; padding-top: 1rem;">
                                     <div class="col-6">
-                                        <input type="text" class="full_name" name="lastname" id="lname" value="<?php echo $userInfoRow['user_lastname'];?>" placeholder="Last Name.." autocomplete="off" disabled required>
+                                        <input type="text" class="full_name" name="lastname" id="lname" value="<?php echo $userInfoRow['user_lastname'];?>" placeholder="Last Name.." autocomplete="off" required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="full_name" name="firstname" id="fname" value="<?php echo $userInfoRow['user_firstname'];?>" placeholder="First Name.." autocomplete="off" disabled required>
+                                        <input type="text" class="full_name" name="firstname" id="fname" value="<?php echo $userInfoRow['user_firstname'];?>" placeholder="First Name.." autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
@@ -131,10 +131,10 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
                             <div class="container-fluid"  style="margin-top: 5px;">
                                 <div class="personal_content" style="display: flex;">
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" maxlength="11" name="mobile" id="mobile" value="<?php echo $userInfoRow['user_contactnum'];?>" placeholder="Mobile Number.." autocomplete="off" disabled required>
+                                        <input type="text" class="contact_number" maxlength="11" name="mobile" id="mobile" value="<?php echo $userInfoRow['user_contactnum'];?>" placeholder="Mobile Number.." autocomplete="off" required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" maxlength="8" name="landline" id="landline" value="N/A" placeholder="Landline.." autocomplete="off" disabled required>
+                                        <input type="text" class="contact_number" maxlength="8" name="landline" id="landline" value="N/A" placeholder="Landline.." autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
@@ -145,10 +145,10 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
                             </div>
                             <div class="address_content col-12" style="display: flex;">
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" id="address" name="houseNum" value="<?php echo $userInfoRow['user_housenum'];?>" placeholder="House Number" autocomplete="off" disabled required>
+                                    <input type="text" class="txtAddress" id="address" name="houseNum" value="<?php echo $userInfoRow['user_housenum'];?>" placeholder="House Number" autocomplete="off" required>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" id="street" name="street" value="<?php echo $userInfoRow['user_street'];?>" placeholder="Street" disabled required>
+                                    <input type="text" class="txtAddress" id="street" name="street" value="<?php echo $userInfoRow['user_street'];?>" placeholder="Street" required>
                                 </div>
                             </div>
                             
@@ -162,7 +162,7 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
                                                     , 'Maharlika Village', 'Napindan', 'New Lower Bicutan', 'North Daang Hari', 'North Signal Village'
                                                     , 'Palingon Tipas', 'Pinagsama', 'San Miguel', 'Santa Ana', 'South Daang Hari', 'South Signal Village', 'Tanyag'
                                                     , 'Tuktukan', 'Ususan', 'Upper Bicutan', 'Wawa', 'Western Bicutan');
-                                    echo '<select class="txtAddress"  name="brgy" id="brgy" required disabled>';
+                                    echo '<select class="txtAddress"  name="brgy" id="brgy" required>';
 
                                     foreach($options as $option){
                                         if($user_barangay == $option){
@@ -177,7 +177,7 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
                                     
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" id="city" name="city" placeholder="City" value="Taguig City" readonly disabled required>
+                                    <input type="text" class="txtAddress" id="city" name="city" placeholder="City" value="Taguig City" readonly required>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +185,7 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
                         <div class="col-12">
                             <div class="col-12 btnAddAppointment" style="margin: 5px 0 0;">
                                     <div class="col-12">
-                                        <button type="submit" name="addAppointment" id="addBtn" class="addAppointment col-12" disabled>Add My Appointment</button>
+                                        <button type="submit" name="addAppointment" id="addBtn" class="addAppointment col-12">Add My Appointment</button>
                                     </div>
                                     <div class="col-12">
                                         
@@ -201,20 +201,18 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
         <script src="./js/subservices/dynamic.js"></script>
         <script type="text/javascript">
             function edit(){
+
+                document.getElementById("lname").value = "";
+                document.getElementById("fname").value = "";
+
+                document.getElementById("mobile").value = "";
+                document.getElementById("landline").value = "";
+
+                document.getElementById("address").value = "";
+                document.getElementById("street").value = "";
                 
-                document.getElementById("addBtn").disabled = false;
-
-                document.getElementById("lname").disabled = false;
-                document.getElementById("fname").disabled = false;
-
-                document.getElementById("mobile").disabled = false;
-                document.getElementById("landline").disabled = false;
-
-                document.getElementById("address").disabled = false;
-                document.getElementById("street").disabled = false;
-                
-                document.getElementById("brgy").disabled = false;
-                document.getElementById("city").disabled = false;
+                document.getElementById("brgy").value = "Bagumbayan";
+                document.getElementById("city").value = "";
                 /* $("select").prop("disabled", false);
                 $("input").prop("disabled", false);
                 $("#addBtn").prop("disabled", false); */

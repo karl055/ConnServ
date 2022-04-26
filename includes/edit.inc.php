@@ -2,6 +2,7 @@
     include '../hostCon.php';
     session_start();
     
+    
     if(!isset($_SESSION['username'])){
         header("Location: ./login.php");
         die();
@@ -95,7 +96,6 @@
                 echo mysqli_error($connect);
             }
         }
-        
         else{
             echo mysqli_error($connect);
         }

@@ -6,6 +6,7 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $conf_password = $_POST['conf_password'];
+    $activation = "active";
 
     $email_check = mysqli_query($connect, "SELECT * FROM user_tb WHERE user_email = '$email'");
     
@@ -19,7 +20,7 @@
 
                 if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             
-                    $sql = "INSERT INTO user_tb (user_firstname, user_lastname, user_email, userPwd) VALUES ('$fname', '$lname', '$email', '$password')";
+                    $sql = "INSERT INTO user_tb (user_firstname, user_lastname, user_email, userPwd, acc_status) VALUES ('$fname', '$lname', '$email', '$password', '$activation')";
                     mysqli_query($connect, $sql);
                 }
                 else{

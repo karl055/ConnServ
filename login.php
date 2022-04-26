@@ -12,7 +12,7 @@ if(isset($_POST['login'])){
         $emailId = mysqli_real_escape_string($connect, $_POST['login_email']);
         $password = mysqli_real_escape_string($connect, $_POST['login_password']);
 
-        $query = mysqli_query($connect,"SELECT * FROM user_tb WHERE user_email = '$emailId' AND userPwd = '$password'");
+        $query = mysqli_query($connect,"SELECT * FROM user_tb WHERE user_email = '$emailId' AND userPwd = '$password' AND acc_status = 'active'");
 
         $rows = mysqli_fetch_array($query);
 
