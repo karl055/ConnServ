@@ -103,9 +103,6 @@ if(!isset($_SESSION['username'])){
                     <div class="featured-title">
                         <h4>Featured Services</h4>
                     </div>
-                    <div class="featured-see-all">
-                        <h6>See all services ></h6>
-                    </div>
                 </div>
     
                 <!---Featured Services -->
@@ -163,9 +160,6 @@ if(!isset($_SESSION['username'])){
                 <div class="container row featured-header">
                     <div class="featured-title">
                         <h4>New Services</h4>
-                    </div>
-                    <div class="featured-see-all">
-                        <h6>See all new Services ></h6>
                     </div>
                 </div>
     

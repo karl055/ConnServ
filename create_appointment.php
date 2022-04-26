@@ -2,6 +2,7 @@
 
 include_once './hostCon.php';
 session_start();
+$userId = $_SESSION['username'];
 $businessImg = $_GET['businessid'];
 
 $businessSql = "SELECT * FROM business_tb WHERE business_icon = '$businessImg'";
@@ -9,10 +10,9 @@ $businessSql = "SELECT * FROM business_tb WHERE business_icon = '$businessImg'";
 $businessResult = mysqli_query($connect, $businessSql);
 $businessRow = mysqli_fetch_assoc($businessResult);
 
-/* if(isset($_POST['addAppointment'])){
-
-    header("Location: ./includes/createAppointment.inc.php?business=$business");
-} */
+$userInfo = "SELECT * FROM user_tb WHERE user_identity = '$userId'";
+$userInfoResult = mysqli_query($connect, $userInfo);
+$userInfoRow = mysqli_fetch_assoc($userInfoResult);
 ?>
 
 <!DOCTYPE html>
@@ -25,12 +25,11 @@ $businessRow = mysqli_fetch_assoc($businessResult);
 
         <?php include './includes/bootstrap_con.php';?>
 
-        <link href="./css/newAppointment.css" rel="stylesheet"/>
+        <link href="./css/create_appointment.css" rel="stylesheet"/>
     </head>
     <body>
         <?php include './navbar.php';?>
         <div class="main_body">
-        <a href="./service_profile.php"  class="buttonBack"><button class="buttonBack">Back</button></a>
             <form action="./includes/createAppointment.inc.php?business=<?php echo $businessImg;?>" method="post" autocomplete="off">
                 <div class="col-12">
                     <div class="col-12">
@@ -107,17 +106,23 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12" style="padding-top: 1rem;">
                             <div class="container-fluid">
-                                <div class="personal_container">
-                                    <label>Personal Information</label>
+                                <div class="col-12" style="display: flex;">
+
+                                    <div class="personal_container col-9">
+                                        <label>Client Information</label>
+                                    </div>
+                                    <div class="col-3">
+                                        <button type="button" class="btnEdit" id="editFields" onclick="edit()">Edit Fields</button>
+                                    </div>
                                 </div>
-                                <div class="personal_content"  style="display: flex;">
+                                <div class="personal_content"  style="display: flex; padding-top: 1rem;">
                                     <div class="col-6">
-                                        <input type="text" class="full_name" name="lastname" id="lname" placeholder="Last Name.." autocomplete="off" required>
+                                        <input type="text" class="full_name" name="lastname" id="lname" value="<?php echo $userInfoRow['user_lastname'];?>" placeholder="Last Name.." autocomplete="off" disabled required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="full_name" name="firstname" id="fname" placeholder="First Name.." autocomplete="off" required>
+                                        <input type="text" class="full_name" name="firstname" id="fname" value="<?php echo $userInfoRow['user_firstname'];?>" placeholder="First Name.." autocomplete="off" disabled required>
                                     </div>
                                 </div>
                             </div>
@@ -126,10 +131,10 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                             <div class="container-fluid"  style="margin-top: 5px;">
                                 <div class="personal_content" style="display: flex;">
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" maxlength="11" name="mobile" id="mobile" placeholder="Mobile Number.." autocomplete="off" required>
+                                        <input type="text" class="contact_number" maxlength="11" name="mobile" id="mobile" value="<?php echo $userInfoRow['user_contactnum'];?>" placeholder="Mobile Number.." autocomplete="off" disabled required>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="contact_number" maxlength="8" name="landline" id="landline" placeholder="Landline.." autocomplete="off" required>
+                                        <input type="text" class="contact_number" maxlength="8" name="landline" id="landline" value="N/A" placeholder="Landline.." autocomplete="off" disabled required>
                                     </div>
                                 </div>
                             </div>
@@ -140,48 +145,39 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                             </div>
                             <div class="address_content col-12" style="display: flex;">
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" name="houseNum" placeholder="House Number" autocomplete="off" required>
+                                    <input type="text" class="txtAddress" id="address" name="houseNum" value="<?php echo $userInfoRow['user_housenum'];?>" placeholder="House Number" autocomplete="off" disabled required>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" name="street" placeholder="Street" required>
+                                    <input type="text" class="txtAddress" id="street" name="street" value="<?php echo $userInfoRow['user_street'];?>" placeholder="Street" disabled required>
                                 </div>
                             </div>
                             
                             <div class="address_content col-12"  style="display: flex;">
                                 <div class="col-6">
-                                    <select id="brgy" class="txtAddress"  name="brgy" required>
-                                        <option value="Bagumbayan" selected>Bagumbayan</option>
-                                        <option value="Bambang">Bambang</option>
-                                        <option value="Calzada">Calzada</option>
-                                        <option value="Central Bicutan">Central Bicutan</option>
-                                        <option value="Central Signal Village">Central Signal Village</option>
-                                        <option value="Fort Bonifacio">Fort Bonifacio</option>
-                                        <option value="Hagonoy">Hagonoy</option>
-                                        <option value="Ibayo Tipas">Ibayo Tipas</option>
-                                        <option value="Katuparan">Katuparan</option>
-                                        <option value="Ligid Tipas">Ligid Tipas</option>
-                                        <option value="Lower Bicutan">Lower Bicutan</option>
-                                        <option value="Maharlika Village">Maharlika Village</option>
-                                        <option value="Napindan">Napindan</option>
-                                        <option value="New Lower Bicutan">New Lower Bicutan</option>
-                                        <option value="North Daang Hari">North Daang Hari</option>
-                                        <option value="North Signal Village">North Signal Village</option>
-                                        <option value="Palingon Tipas">Palingon Tipas</option>
-                                        <option value="Pinagsama">Pinagsama</option>
-                                        <option value="San Miguel">San Miguel</option>
-                                        <option value="Santa Ana">Santa Ana</option>
-                                        <option value="South Daang Hari">South Daang Hari</option>
-                                        <option value="South Signal Village">South Signal Village</option>
-                                        <option value="Tanyag">Tanyag</option>
-                                        <option value="Tuktukan">Tuktukan</option>
-                                        <option value="Ususan">Ususan</option>
-                                        <option value="Upper Bicutan">Upper Bicutan</option>
-                                        <option value="Wawa">Wawa</option>
-                                        <option value="Western Bicutan">Western Bicutan</option>
-                                    </select>
+                                    <?php 
+                                    
+                                    $user_barangay = $userInfoRow['user_barangay'];
+                                    $options = array('Bagumbayan', 'Bambang', 'Calzada', 'Central Bicutan', 'Central Signal Village'
+                                                    , 'Fort Bonifacio', 'Hagonoy', 'Ibayo Tipas', 'Katuparan', 'Ligid Tipas', 'Lower Bicutan'
+                                                    , 'Maharlika Village', 'Napindan', 'New Lower Bicutan', 'North Daang Hari', 'North Signal Village'
+                                                    , 'Palingon Tipas', 'Pinagsama', 'San Miguel', 'Santa Ana', 'South Daang Hari', 'South Signal Village', 'Tanyag'
+                                                    , 'Tuktukan', 'Ususan', 'Upper Bicutan', 'Wawa', 'Western Bicutan');
+                                    echo '<select class="txtAddress"  name="brgy" id="brgy" required disabled>';
+
+                                    foreach($options as $option){
+                                        if($user_barangay == $option){
+                                            echo "<option selected='selected' value='$option'>$option</option>";
+                                        }
+                                        else{
+                                            echo "<option value='$option'>$option</option>";
+                                        }
+                                    }
+                                    echo '</select>';
+                                    ?>
+                                    
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="txtAddress" name="city" placeholder="City" value="Taguig City" readonly required>
+                                    <input type="text" class="txtAddress" id="city" name="city" placeholder="City" value="Taguig City" readonly disabled required>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +185,7 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                         <div class="col-12">
                             <div class="col-12 btnAddAppointment" style="margin: 5px 0 0;">
                                     <div class="col-12">
-                                        <button type="submit" name="addAppointment" class="addAppointment col-12">Add My Appointment</button>
+                                        <button type="submit" name="addAppointment" id="addBtn" class="addAppointment col-12" disabled>Add My Appointment</button>
                                     </div>
                                     <div class="col-12">
                                         
@@ -203,7 +199,31 @@ $businessRow = mysqli_fetch_assoc($businessResult);
         
         <!-- SCRIPT LINK -->
         <script src="./js/subservices/dynamic.js"></script>
-        <script>
+        <script type="text/javascript">
+            function edit(){
+                
+                document.getElementById("addBtn").disabled = false;
+
+                document.getElementById("lname").disabled = false;
+                document.getElementById("fname").disabled = false;
+
+                document.getElementById("mobile").disabled = false;
+                document.getElementById("landline").disabled = false;
+
+                document.getElementById("address").disabled = false;
+                document.getElementById("street").disabled = false;
+                
+                document.getElementById("brgy").disabled = false;
+                document.getElementById("city").disabled = false;
+                /* $("select").prop("disabled", false);
+                $("input").prop("disabled", false);
+                $("#addBtn").prop("disabled", false); */
+            }
+
+            function selectedBrgy(){
+
+            }
+            
             for(let min = 0; min <= 59; min++){
 
                 var x = document.getElementById("timeMins");
@@ -218,6 +238,7 @@ $businessRow = mysqli_fetch_assoc($businessResult);
                 console.log(option.value);
                 y.appendChild(option);
             }
+
         </script>
     </body>
 </html>

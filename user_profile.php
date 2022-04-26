@@ -294,38 +294,29 @@
                                               <label for="inputStreet">Street</label>
                                               <input type="text" class="form-control" id="inputStreet" value="<?php echo $ownerrow['user_street'];?>" name="edit_street" required disabled>
                                             </div>
+                                            
                                             <div class="form-group col-md-3">
                                               <label for="inputBarangay">Barangay</label>
-                                              <select id="inputBarangay" class="form-control"  name="edit_brgy" required disabled>
-                                                <option value="Bagumbayan" selected>Bagumbayan</option>
-                                                <option value="Bambang">Bambang</option>
-                                                <option value="Calzada">Calzada</option>
-                                                <option value="Central Bicutan">Central Bicutan</option>
-                                                <option value="Central Signal Village">Central Signal Village</option>
-                                                <option value="Fort Bonifacio">Fort Bonifacio</option>
-                                                <option value="Hagonoy">Hagonoy</option>
-                                                <option value="Ibayo Tipas">Ibayo Tipas</option>
-                                                <option value="Katuparan">Katuparan</option>
-                                                <option value="Ligid Tipas">Ligid Tipas</option>
-                                                <option value="Lower Bicutan">Lower Bicutan</option>
-                                                <option value="Maharlika Village">Maharlika Village</option>
-                                                <option value="Napindan">Napindan</option>
-                                                <option value="New Lower Bicutan">New Lower Bicutan</option>
-                                                <option value="North Daang Hari">North Daang Hari</option>
-                                                <option value="North Signal Village">North Signal Village</option>
-                                                <option value="Palingon Tipas">Palingon Tipas</option>
-                                                <option value="Pinagsama">Pinagsama</option>
-                                                <option value="San Miguel">San Miguel</option>
-                                                <option value="Santa Ana">Santa Ana</option>
-                                                <option value="South Daang Hari">South Daang Hari</option>
-                                                <option value="South Signal Village">South Signal Village</option>
-                                                <option value="Tanyag">Tanyag</option>
-                                                <option value="Tuktukan">Tuktukan</option>
-                                                <option value="Ususan">Ususan</option>
-                                                <option value="Upper Bicutan">Upper Bicutan</option>
-                                                <option value="Wawa">Wawa</option>
-                                                <option value="Western Bicutan">Western Bicutan</option>
-                                              </select>
+                                              <?php 
+                                    
+                                              $user_barangay = $ownerrow['user_barangay'];
+                                              $options = array('Bagumbayan', 'Bambang', 'Calzada', 'Central Bicutan', 'Central Signal Village'
+                                                              , 'Fort Bonifacio', 'Hagonoy', 'Ibayo Tipas', 'Katuparan', 'Ligid Tipas', 'Lower Bicutan'
+                                                              , 'Maharlika Village', 'Napindan', 'New Lower Bicutan', 'North Daang Hari', 'North Signal Village'
+                                                              , 'Palingon Tipas', 'Pinagsama', 'San Miguel', 'Santa Ana', 'South Daang Hari', 'South Signal Village', 'Tanyag'
+                                                              , 'Tuktukan', 'Ususan', 'Upper Bicutan', 'Wawa', 'Western Bicutan');
+                                              echo '<select id="inputBarangay" class="form-control"  name="edit_brgy" required disabled>';
+
+                                              foreach($options as $option){
+                                                  if($user_barangay == $option){
+                                                      echo "<option selected='selected' value='$option'>$option</option>";
+                                                  }
+                                                  else{
+                                                      echo "<option value='$option'>$option</option>";
+                                                  }
+                                              }
+                                              echo '</select>';
+                                              ?>
                                             </div>
                                           </div>
                                           <div class="form-row">
