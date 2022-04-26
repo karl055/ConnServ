@@ -252,6 +252,10 @@ nav :focus {
   height: 100%;
 }
 
+.body_container .container-fluid .business .business_contents .contents_container .container_display .createBusiness h1 {
+  color: #5e0cc4;
+}
+
 .body_container .container-fluid .business .business_contents .contents_container .container_display .row {
   height: 100%;
 }

@@ -172,6 +172,12 @@ if(!isset($_SESSION['username'])){
                                             <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.." required></textarea>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label for="business_details">Business Terms & Condition</label>
+                                            <textarea class="form-control" name="business_termsCondition" id="business_details" rows="3" placeholder="What is your business?.." required></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-5">
@@ -189,8 +195,8 @@ if(!isset($_SESSION['username'])){
                                 <div class="col-12">
                                     <hr>
                                     <label for="business_location">Insert Google Embedded Map  <span data-toggle="tooltip" title="Must Fill Up!" class="tool_tip">*</span></label>
-                                    <input type="text" name="business_location" id="business_location" class="business_location" placeholder="Insert html here..">
-                                    
+                                    <input type="text" name="business_location" id="business_location" class="business_location form-control" placeholder="Insert html here..">
+                                    <br>
                                     <div class="card mb-3">
                                         <div class="card-header"><label onclick="show_hide()">How to Insert Google Embedded Map? <span>Click Here!</span></label></div>
                                         <div class="appointment_container">

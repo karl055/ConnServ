@@ -54,7 +54,7 @@
             border:2px solid black;
           }
         </style>
-        <link rel="stylesheet" href="./css/userProfile.css">
+        <link rel="stylesheet" href="./css/userProfileStyling.css">
         <?php 
           require_once './hostCon.php';
           $id = $_SESSION['username'];
@@ -616,11 +616,23 @@
                             $query = mysqli_query($connect,"SELECT * FROM business_tb WHERE ownerId = '$owner'");
                             $rows = mysqli_fetch_array($query);
                             if(!mysqli_num_rows($query)>0){
-                              echo "<h1>No Business? Create now!</h1>";
-                              echo "<a href='./create_business.php' class='createLink'>
-                                        <button type='submit' class='createBtn'>Create Business</button>
-                                    </a>";
-                              echo "<p>You must use Desktop or Laptop before creating a business.</p>";
+
+                              ?>
+                              <div class="createBusiness col-12 text-center">
+
+                                <div class="col-12">
+                                  <h1>No Business? Create now!</h1>
+                                </div>
+                                <div class="col-12">
+                                  <a href='./create_business.php' class='createLink'>
+                                    <button type='submit' class='createBtn'>Create Business</button>
+                                  </a>
+                                </div>
+                                <div class="col-12">
+                                  <p><b>You must use Desktop or Laptop before creating a business.</b></p>
+                                </div>
+                              </div>
+                              <?php
                             }
                             
                             else{
@@ -718,7 +730,10 @@
                                                                   <h6 class="text-mute"><?php echo $row['business_subcategory'];?></h6>
                                                               </div>
                                                           </div>
-                                                          <div class="col-12" style="display: flex;">
+                                                          <div class="col-12">
+                                                            
+                                                            <div class="col-12" style="display: flex;">
+                                                              
                                                               <div class="col-3 description_bar">
                                                                   <h6>Service Price</h6><hr>
                                                                   <div>
@@ -729,11 +744,22 @@
 
                                                               </div>
                                                               <div class="col-8 description_bar">
-                                                                  <h6>Description</h6><hr>
-                                                                  <div class="description_content">
-                                                                      <p><?php echo $row['business_description'];?></p>
-                                                                  </div>
+
+                                                                <h6>Business Terms & Condition</h6><hr>
+                                                                <div class="description_content">
+                                                                    <p><?php echo $row['terms_condition'];?></p>
+                                                                </div>
                                                               </div>
+                                                            </div>
+                                                            <div class="col-12">
+
+                                                              <div class="col-12 description_bar">
+                                                                <h6>Description</h6><hr>
+                                                                <div class="description_content">
+                                                                    <p><?php echo $row['business_description'];?></p>
+                                                                </div>
+                                                              </div>
+                                                            </div>  
                                                           </div><br>
                                                           <div class="col-12 documents_bar">
                                                               
@@ -923,6 +949,12 @@
                                                                       <div class="col-12">
                                                                           <label for="business_details">Business Description</label>
                                                                           <textarea class="form-control" name="business_details" id="business_details" rows="3" placeholder="What is your business?.." required></textarea>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="row">
+                                                                      <div class="col-12">
+                                                                          <label for="business_details">Business Terms & Condition</label>
+                                                                          <textarea class="form-control" name="business_termsCondition" id="business_details" rows="3" placeholder="Place Here.." required></textarea>
                                                                       </div>
                                                                   </div>
                                                               </div>

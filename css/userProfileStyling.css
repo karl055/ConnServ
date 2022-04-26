@@ -210,6 +210,9 @@ nav :focus {
 
 .body_container .container-fluid .saveBtn {
   color: white;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
   width: 100%;
   background-color: #5e0cc4;
 }
@@ -247,6 +250,34 @@ nav :focus {
 
 .body_container .container-fluid .business .business_contents .contents_container {
   height: 100%;
+}
+
+.body_container .container-fluid .business .business_contents .contents_container .container_display .createBusiness .col-12 {
+  padding: .5rem;
+}
+
+.body_container .container-fluid .business .business_contents .contents_container .container_display .createBusiness h1 {
+  color: #5e0cc4;
+}
+
+.body_container .container-fluid .business .business_contents .contents_container .container_display .createBusiness button {
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  border: 1px solid #9056ca;
+  color: #5e0cc4;
+}
+
+.body_container .container-fluid .business .business_contents .contents_container .container_display .createBusiness button:hover {
+  background-color: #5e0cc4;
+  border: none;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.body_container .container-fluid .business .business_contents .contents_container .container_display .createBusiness button:focus {
+  outline: none;
 }
 
 .body_container .container-fluid .business .business_contents .contents_container .container_display .row {

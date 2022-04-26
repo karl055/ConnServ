@@ -180,6 +180,16 @@ $getRow = mysqli_fetch_assoc($getResult);
                         </div>
                       </div>
                     </div>
+                    
+                    <div class="slider-item swiper-slide">
+                      <div class="slider-image-wrapper">
+                        <img class="slider-image" src="./assets/img/bg_image.jpg" alt="SliderImg">
+                        </div>
+                      <div class="slider-item-content">
+                        <h1>Terms & Condition</h1>
+                        <p><?php echo $getRow['terms_condition'];?></p>
+                      </div>
+                    </div>
                   </div>        
                   <div class="swiper-pagination"></div>
                 </div>

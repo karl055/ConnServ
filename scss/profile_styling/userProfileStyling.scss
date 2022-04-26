@@ -78,6 +78,9 @@
         }
         .saveBtn{
             color: white;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
             width: 100%;
             background-color: $font-color-b;
         }
@@ -122,6 +125,30 @@
                     height: 100%;
                     .container_display{
                         
+                        .createBusiness{
+                            .col-12{
+                                padding: .5rem;
+                            }
+                            h1{
+                                color: #5e0cc4;
+                            }
+                            button{
+                                height: 40px;
+                                width: 200px;
+                                border-radius: 10px;
+                                border: 1px solid #9056ca;
+                                color: #5e0cc4;
+                                &:hover{
+                                    background-color: #5e0cc4;
+                                    border: none;
+                                    color: white;
+                                    transition: 0.3s;
+                                }
+                                &:focus{
+                                    outline: none;
+                                }
+                            }
+                        }
                             .row{
                                 height: 100%;
                             }

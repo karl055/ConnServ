@@ -11,6 +11,7 @@
         if($businessrow = mysqli_fetch_assoc($businessresult)){
             echo $businessrow['business_name'];
             $userId = $_SESSION['username'];
+
             $business_name = mysqli_real_escape_string($connect, $_POST['business_name']);
             $business_email = mysqli_real_escape_string($connect, $_POST['business_email']);
             $business_category = mysqli_real_escape_string($connect, $_POST['inputservice']);
@@ -25,6 +26,7 @@
             $business_city = mysqli_real_escape_string($connect, $_POST['business_city']);
             $business_landline = mysqli_real_escape_string($connect, $_POST['business_landline']);
             $business_mobile = mysqli_real_escape_string($connect, $_POST['business_mobile']);
+            $business_termsCondition = mysqli_real_escape_string($connect, $_POST['business_termsCondition']);
             $business_details = mysqli_real_escape_string($connect, $_POST['business_details']);
             $business_logo = mysqli_real_escape_string($connect, $_POST['change_icon']);
             $business_location = mysqli_real_escape_string($connect, $_POST['business_location']);
@@ -123,7 +125,7 @@
                             $dateTimeCreated = date("Y-m-d G:i:s");
 
                             $sql = "UPDATE business_tb 
-                            SET price = '$business_cost',business_name = '$business_name', business_email = '$business_email', business_category = '$business_fixed', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
+                            SET terms_condition = '$business_termsCondition', price = '$business_cost',business_name = '$business_name', business_email = '$business_email', business_category = '$business_fixed', business_subcategory = '$business_subcategory', unit_no = '$business_unit_no',
                                 business_building ='$business_building', house_no = '$business_house_no', business_street = '$business_street', business_village = '$business_village', business_barangay = '$business_barangay', business_zip = '$business_zip',
                                 business_city ='$business_city', business_landline = '$business_landline', business_mobile = '$business_mobile', business_description = '$business_details',
                                 legalFileName = '$legalFileNameNew', idFileName = '$idFileNameNew', business_icon = '$iconFileNameNew', business_map = '$business_location'
