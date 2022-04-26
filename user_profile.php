@@ -54,7 +54,7 @@
             border:2px solid black;
           }
         </style>
-        <link rel="stylesheet" href="./css/userProfileStyling.css">
+        <link rel="stylesheet" href="./css/userProfile.css">
         <?php 
           require_once './hostCon.php';
           $id = $_SESSION['username'];
@@ -80,9 +80,11 @@
               <ul class="nav nav-pills mb-3 col-12" id="pills-tab" role="tablist">
                 
                 <!-- Notifications Pill -->
-                <li class="nav-item col-2">
+                <!-- <li class="nav-item col-2">
                   <a class="nav-link active" id="pills-notifications-tab" data-toggle="pill" href="#pills-notifications" role="tab" aria-controls="pills-notifications" aria-selected="false">Notifications</a>
-                </li>
+                </li> -->
+
+
                 <!-- Appointments Pill -->
                 <li class="nav-item col-2">
                   <a class="nav-link" id="pills-appointment-tab" data-toggle="pill" href="#pills-appointment" role="tab" aria-controls="pills-appointment" aria-selected="false">Appointments</a>
@@ -101,374 +103,384 @@
                 </li>
               </ul>
             </div>
-                    
+
               <div class="col-12 tab_container">
                 <div class="tab-content" id="v-pills-tabContent">
 
                         <!-- Profile Contents -->
                   <div class="tab-pane fade profile" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                          <div class="main_content">
-                            <div class="title_head">
-                              <h4>My Profile</h4>
-                              <p>Manage your account</p>
-                              <div class="configureDiv" style="display: flex;">
-                                <button class="configureBtn" id="updateFormBtn">Update</button>
-                                <button class="configureBtn" id="deactivateFormBtn">Deactivate</button>
-                                <button class="configureBtn" id="saveFormBtn">Save</button>
-                              </div>
-                            </div>
-                            <div class="content">
-                              <div class="content_format">
-                                <form action="./includes/edit.inc.php" class="needs-validation"  method="POST" enctype="multipart/form-data">
-                                  <div class="row">
+                    <form action="./includes/edit.inc.php" class="needs-validation"  method="POST" enctype="multipart/form-data">
+                      <div class="main_content">
+                                <div class="title_head">
+                                  <h4>My Profile</h4>
+                                  <p>Manage your account</p>
+                                  <div class="configureDiv col-8">
+                                    <div class="col-7" style="display: flex;">
+                                      <div class="col-4">
+                                        <button type="button" class="saveBtn" id="editBtn" onclick="edit()">Update</button>
+                                      </div>
+                                      <div class="col-4">
+                                        <button type="button" id="saveBtn" class="btn btn-primary saveBtn"  data-toggle="modal" data-target="#saveModal" disabled>Save</button>
+                                      </div>
+                                      <div class="col-4">
+                                        <button type="button" class="saveBtn" id="deactivateFormBtn">Deactivate</button>
+                                      </div>
+                                    </div>
+                                      
+                                  </div>
+                                </div>
+                                <div class="content">
+                                  <div class="content_format">
+                                    
+                                      <div class="row">
 
-                                    <div class="col-9">
-                                      <h5>Information</h5>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                          <label for="inputUsername">Username</label>
-                                          <input type="text" class="form-control" id="inputUsername" value="<?php echo $_SESSION['username'];?>" disabled>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                          <label for="inputEmail">Email</label>
-                                          <input type="email" class="form-control" id="inputEmail" name="edit_email" value="<?php echo $_SESSION['email'];?>" placeholder="Email" readonly required>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                          
-                                        <label for="inputPassword">Password</label>
-                                          <label class="sr-only" for="inputPassword">Password</label>
-                                          <div class="input-group">
-                                            <input type="password" class="form-control" id="inputPassword" name="edit_password" value="<?php echo $_SESSION['password'];?>" placeholder="Password" required>
-                                            <div class="input-group-prepend">
-                                              <div class="input-group-text">
-                                                <input type="checkbox" onclick="showPassword()"></div>
+                                        <div class="col-9">
+                                          <h5>Information</h5>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                              <label for="inputUsername">Username</label>
+                                              <input type="text" class="form-control" id="inputUsername" value="<?php echo $_SESSION['username'];?>" readonly disabled>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                              <label for="inputEmail">Email</label>
+                                              <input type="email" class="form-control" id="inputEmail" name="edit_email" value="<?php echo $_SESSION['email'];?>" placeholder="Email" readonly disabled required>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                              
+                                            <label for="inputPassword">Password</label>
+                                              <label class="sr-only" for="inputPassword">Password</label>
+                                              <div class="input-group">
+                                                <input type="password" class="form-control" id="inputPassword" name="edit_password" value="<?php echo $ownerrow['userPwd'];?>" placeholder="Password" disabled required>
+                                                <div class="input-group-prepend">
+                                                  <div class="input-group-text">
+                                                    <input type="checkbox" onclick="showPassword()"></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            
+                                            <div class="form-group col-md-3">
+                                              <div>
+                                                <label>Gender</label>
+                                              </div>
+                                              <?php
+                                              
+                                              if($ownerrow['user_sex']=="Male"){
+                                                
+                                                ?>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="edit_gender" id="male" value="Male" checked disabled>
+                                                  <label class="form-check-label" for="male">Male</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="edit_gender" id="female" value="Female" disabled>
+                                                  <label class="form-check-label" for="female">Female</label>
+                                                </div>
+                                                <?php
+                                                
+                                              }
+
+                                              else if($ownerrow['user_sex']=="Female"){
+
+                                                ?>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="edit_gender" id="male" value="Male" disabled>
+                                                  <label class="form-check-label" for="male">Male</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="edit_gender" id="female" value="Female" checked disabled>
+                                                  <label class="form-check-label" for="female">Female</label>
+                                                </div>
+                                                <?php
+                                              }
+                                              else{
+                                                ?>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="edit_gender" id="male" value="Male" >
+                                                  <label class="form-check-label" for="male">Male</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                  <input class="form-check-input" type="radio" name="edit_gender" id="female" value="Female">
+                                                  <label class="form-check-label" for="female">Female</label>
+                                                </div>
+                                                <?php
+                                              }
+                                              ?>
+                                              
                                             </div>
                                           </div>
-                                        </div>
-                                        
-                                        <div class="form-group col-md-3">
-                                          <div>
-                                            <label>Gender</label>
+                                          <div class="form-row">
+                                            <?php
+                                            
+                                            if($ownerrow['user_firstname']!="" && $ownerrow['user_lastname']!="" && $ownerrow['user_contactnum']!="" && $ownerrow['user_birthdate']!=""){
+
+                                              ?>
+                                              
+                                              <div class="form-group col-md-3">
+                                                <label for="inputName">First Name</label>
+                                                <input type="text" class="form-control" id="inputName" name="edit_firstname" value="<?php echo $ownerrow['user_firstname'];?>" required disabled>
+                                              </div>
+                                              <div class="form-group col-md-3">
+                                                <label for="inputSurname">Surname</label>
+                                                <input type="text" class="form-control" id="inputSurname" name="edit_surname" value="<?php echo $ownerrow['user_lastname'];?>" required disabled>
+                                              </div>
+                                              <div class="form-group col-md-3">
+                                                <label for="inputPhone">Phone Number</label>
+                                                <input type="text"  onkeypress='return restrictAlphabets(event)' maxlength="11" value="<?php echo $ownerrow['user_contactnum'];?>" class="form-control" id="inputPhone" name="edit_phonenumber" required disabled>
+                                              </div>
+                                              <div class="form-group col-md-3">
+                                                <label for="inputDate">Birthdate</label>
+                                                <input type="date" class="form-control" id="inputDate" value="<?php echo $ownerrow['user_birthdate'];?>" name="edit_bdate" min="1950-01-01" max="2010-01-01" required disabled>
+                                              </div>
+                                              <?php
+                                            }
+                                            else{
+                                              ?>
+
+                                              <div class="form-group col-md-3">
+                                                <label for="inputName">First Name</label>
+                                                <input type="text" class="form-control" id="inputName" name="edit_firstname" required>
+                                              </div>
+                                              <div class="form-group col-md-3">
+                                                <label for="inputSurname">Surname</label>
+                                                <input type="text" class="form-control" id="inputSurname" name="edit_surname" required>
+                                              </div>
+                                              <div class="form-group col-md-3">
+                                                <label for="inputPhone">Phone Number</label>
+                                                <input type="text"  onkeypress='return restrictAlphabets(event)' maxlength="11" class="form-control" id="inputPhone" name="edit_phonenumber" required>
+                                              </div>
+                                              <div class="form-group col-md-3">
+                                                <label for="inputDate">Birthdate</label>
+                                                <input type="date" class="form-control" id="inputDate" name="edit_bdate" min="1950-01-01" max="2010-01-01" required>
+                                              </div>
+                                              <?php
+                                            }
+                                            ?>
                                           </div>
-                                          <?php
-                                          
-                                          if($ownerrow['user_sex']=="Male"){
+                                        </div>
+      
+                                        <div class="col-3">
+                                          <div class="user_icon">
+                                            <div class="profile_picture">
+                                            <?php  
                                             
+                                              if($ownerrow['profileImg'] != ""){
+                                                echo "<img src='./assets/img/user_profile/".$imgVar."' alt='User Icon' id='photo' >";
+                                              }else{
+                                                echo "<img src='./assets/img/icons/homepage/account.png".$imgVar."' alt='User Icon' id='photo'>";
+                                              }
                                             ?>
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input" type="radio" name="edit_gender" id="male" value="Male" checked>
-                                              <label class="form-check-label" for="male">Male</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input" type="radio" name="edit_gender" id="female" value="Female">
-                                              <label class="form-check-label" for="female">Female</label>
-                                            </div>
-                                            <?php
-                                            
-                                          }
-
-                                          else if($ownerrow['user_sex']=="Female"){
-
-                                            ?>
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input" type="radio" name="edit_gender" id="male" value="Male">
-                                              <label class="form-check-label" for="male">Male</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input" type="radio" name="edit_gender" id="female" value="Female" checked>
-                                              <label class="form-check-label" for="female">Female</label>
-                                            </div>
-                                            <?php
-                                          }
-                                          else{
-                                            ?>
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input" type="radio" name="edit_gender" id="male" value="Male">
-                                              <label class="form-check-label" for="male">Male</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input" type="radio" name="edit_gender" id="female" value="Female">
-                                              <label class="form-check-label" for="female">Female</label>
-                                            </div>
-                                            <?php
-                                          }
-                                          ?>
-                                          
+                                            <label id="uploadBtn" for="file">Click to change</label>
+                                            <input type="file" id="file" name="file" disabled>
+                                          </div>
                                         </div>
                                       </div>
-                                      <div class="form-row">
-                                        <?php
+
+                                      <h5>Address</h5>
+                                      
+                                      <?php
                                         
-                                        if($ownerrow['user_firstname']!="" && $ownerrow['user_lastname']!="" && $ownerrow['user_contactnum']!="" && $ownerrow['user_birthdate']!=""){
+                                        if($ownerrow['user_housenum'] != "" && $ownerrow['user_street'] != "" && $ownerrow['user_barangay'] != ""
+                                        && $ownerrow['user_city'] != ""  && $ownerrow['user_district'] != "" && $ownerrow['user_zip'] != ""){
 
                                           ?>
                                           
-                                          <div class="form-group col-md-3">
-                                            <label for="inputName">First Name</label>
-                                            <input type="text" class="form-control" id="inputName" name="edit_firstname" value="<?php echo $ownerrow['user_firstname'];?>" required>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                              <label for="inputHouse">House No.</label>
+                                              <input type="text" class="form-control" id="inputHouse" value="<?php echo $ownerrow['user_housenum'];?>" name="edit_house" required disabled>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                              <label for="inputStreet">Street</label>
+                                              <input type="text" class="form-control" id="inputStreet" value="<?php echo $ownerrow['user_street'];?>" name="edit_street" required disabled>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                              <label for="inputBarangay">Barangay</label>
+                                              <select id="inputBarangay" class="form-control"  name="edit_brgy" required disabled>
+                                                <option value="Bagumbayan" selected>Bagumbayan</option>
+                                                <option value="Bambang">Bambang</option>
+                                                <option value="Calzada">Calzada</option>
+                                                <option value="Central Bicutan">Central Bicutan</option>
+                                                <option value="Central Signal Village">Central Signal Village</option>
+                                                <option value="Fort Bonifacio">Fort Bonifacio</option>
+                                                <option value="Hagonoy">Hagonoy</option>
+                                                <option value="Ibayo Tipas">Ibayo Tipas</option>
+                                                <option value="Katuparan">Katuparan</option>
+                                                <option value="Ligid Tipas">Ligid Tipas</option>
+                                                <option value="Lower Bicutan">Lower Bicutan</option>
+                                                <option value="Maharlika Village">Maharlika Village</option>
+                                                <option value="Napindan">Napindan</option>
+                                                <option value="New Lower Bicutan">New Lower Bicutan</option>
+                                                <option value="North Daang Hari">North Daang Hari</option>
+                                                <option value="North Signal Village">North Signal Village</option>
+                                                <option value="Palingon Tipas">Palingon Tipas</option>
+                                                <option value="Pinagsama">Pinagsama</option>
+                                                <option value="San Miguel">San Miguel</option>
+                                                <option value="Santa Ana">Santa Ana</option>
+                                                <option value="South Daang Hari">South Daang Hari</option>
+                                                <option value="South Signal Village">South Signal Village</option>
+                                                <option value="Tanyag">Tanyag</option>
+                                                <option value="Tuktukan">Tuktukan</option>
+                                                <option value="Ususan">Ususan</option>
+                                                <option value="Upper Bicutan">Upper Bicutan</option>
+                                                <option value="Wawa">Wawa</option>
+                                                <option value="Western Bicutan">Western Bicutan</option>
+                                              </select>
+                                            </div>
                                           </div>
-                                          <div class="form-group col-md-3">
-                                            <label for="inputSurname">Surname</label>
-                                            <input type="text" class="form-control" id="inputSurname" name="edit_surname" value="<?php echo $ownerrow['user_lastname'];?>" required>
-                                          </div>
-                                          <div class="form-group col-md-3">
-                                            <label for="inputPhone">Phone Number</label>
-                                            <input type="text"  onkeypress='return restrictAlphabets(event)' maxlength="11" value="<?php echo $ownerrow['user_contactnum'];?>" class="form-control" id="inputPhone" name="edit_phonenumber" required>
-                                          </div>
-                                          <div class="form-group col-md-3">
-                                            <label for="inputDate">Birthdate</label>
-                                            <input type="date" class="form-control" id="inputDate" value="<?php echo $ownerrow['user_birthdate'];?>" name="edit_bdate" min="1950-01-01" max="2010-01-01" required>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                              <label for="inputCity">City</label>
+                                              <input type="text" class="form-control" id="inputCity" value="<?php echo $ownerrow['user_city'];?>" name="edit_city" value="Taguig City" required disabled>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                              <label for="inputDistrict">District</label>
+                                              <select id="inputDistrict" class="form-control" name="edit_district" required disabled>
+                                                <option selected value="District 1">District 1</option>
+                                                <option value="District 2">District 2</option>
+                                              </select>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                              <label for="inputZip">Zip</label>
+                                              <input type="text" onkeypress='return restrictAlphabets(event)' value="<?php echo $ownerrow['user_zip'];?>" class="form-control" id="inputZip" name="edit_zip" required disabled>
+                                            </div>
                                           </div>
                                           <?php
                                         }
                                         else{
                                           ?>
-
-                                          <div class="form-group col-md-3">
-                                            <label for="inputName">First Name</label>
-                                            <input type="text" class="form-control" id="inputName" name="edit_firstname" required>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                              <label for="inputHouse">House No.</label>
+                                              <input type="text" class="form-control" id="inputHouse" name="edit_house" required>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                              <label for="inputStreet">Street</label>
+                                              <input type="text" class="form-control" id="inputStreet" name="edit_street" required>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                              <label for="inputBarangay">Barangay</label>
+                                              <select id="inputBarangay" class="form-control"  name="edit_brgy" required>
+                                                <option value="Bagumbayan" selected>Bagumbayan</option>
+                                                <option value="Bambang">Bambang</option>
+                                                <option value="Calzada">Calzada</option>
+                                                <option value="Central Bicutan">Central Bicutan</option>
+                                                <option value="Central Signal Village">Central Signal Village</option>
+                                                <option value="Fort Bonifacio">Fort Bonifacio</option>
+                                                <option value="Hagonoy">Hagonoy</option>
+                                                <option value="Ibayo Tipas">Ibayo Tipas</option>
+                                                <option value="Katuparan">Katuparan</option>
+                                                <option value="Ligid Tipas">Ligid Tipas</option>
+                                                <option value="Lower Bicutan">Lower Bicutan</option>
+                                                <option value="Maharlika Village">Maharlika Village</option>
+                                                <option value="Napindan">Napindan</option>
+                                                <option value="New Lower Bicutan">New Lower Bicutan</option>
+                                                <option value="North Daang Hari">North Daang Hari</option>
+                                                <option value="North Signal Village">North Signal Village</option>
+                                                <option value="Palingon Tipas">Palingon Tipas</option>
+                                                <option value="Pinagsama">Pinagsama</option>
+                                                <option value="San Miguel">San Miguel</option>
+                                                <option value="Santa Ana">Santa Ana</option>
+                                                <option value="South Daang Hari">South Daang Hari</option>
+                                                <option value="South Signal Village">South Signal Village</option>
+                                                <option value="Tanyag">Tanyag</option>
+                                                <option value="Tuktukan">Tuktukan</option>
+                                                <option value="Ususan">Ususan</option>
+                                                <option value="Upper Bicutan">Upper Bicutan</option>
+                                                <option value="Wawa">Wawa</option>
+                                                <option value="Western Bicutan">Western Bicutan</option>
+                                              </select>
+                                            </div>
                                           </div>
-                                          <div class="form-group col-md-3">
-                                            <label for="inputSurname">Surname</label>
-                                            <input type="text" class="form-control" id="inputSurname" name="edit_surname" required>
-                                          </div>
-                                          <div class="form-group col-md-3">
-                                            <label for="inputPhone">Phone Number</label>
-                                            <input type="text"  onkeypress='return restrictAlphabets(event)' maxlength="11" class="form-control" id="inputPhone" name="edit_phonenumber" required>
-                                          </div>
-                                          <div class="form-group col-md-3">
-                                            <label for="inputDate">Birthdate</label>
-                                            <input type="date" class="form-control" id="inputDate" name="edit_bdate" min="1950-01-01" max="2010-01-01" required>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-3">
+                                              <label for="inputCity">City</label>
+                                              <input type="text" class="form-control" id="inputCity" name="edit_city" value="Taguig City" required>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                              <label for="inputDistrict">District</label>
+                                              <select id="inputDistrict" class="form-control" name="edit_district" required>
+                                                <option selected value="District 1">District 1</option>
+                                                <option value="District 2">District 2</option>
+                                              </select>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                              <label for="inputZip">Zip</label>
+                                              <input type="text" onkeypress='return restrictAlphabets(event)' class="form-control" id="inputZip" name="edit_zip" required>
+                                            </div>
                                           </div>
                                           <?php
                                         }
-                                        ?>
-                                      </div>
-                                    </div>
-  
-  
-                                    <div class="col-3">
-                                      <div class="user_icon">
-                                        <div class="profile_picture">
-                                        <?php  
-                                        
-                                          if($ownerrow['profileImg'] != ""){
-                                            echo "<img src='./assets/img/user_profile/".$imgVar."' alt='User Icon' id='photo'>";
-                                          }else{
-                                            echo "<img src='./assets/img/icons/homepage/account.png".$imgVar."' alt='User Icon' id='photo'>";
-                                          }
-                                        ?>
-                                        </div>
-                                        <label id="uploadBtn" for="file">Click to change</label>
-                                        <input type="file" id="file" name="file">
-                                      </div>
-                                    </div>
-                                  </div>
-
-
-                                  <h5>Address</h5>
-                                  
-                                  <?php
-                                    
-                                    if($ownerrow['user_housenum'] != "" && $ownerrow['user_street'] != "" && $ownerrow['user_barangay'] != ""
-                                    && $ownerrow['user_city'] != ""  && $ownerrow['user_district'] != "" && $ownerrow['user_zip'] != ""){
-
                                       ?>
                                       
                                       <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                          <label for="inputHouse">House No.</label>
-                                          <input type="text" class="form-control" id="inputHouse" value="<?php echo $ownerrow['user_housenum'];?>" name="edit_house" required>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                          <label for="inputStreet">Street</label>
-                                          <input type="text" class="form-control" id="inputStreet" value="<?php echo $ownerrow['user_street'];?>" name="edit_street" required>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                          <label for="inputBarangay">Barangay</label>
-                                          <select id="inputBarangay" class="form-control"  name="edit_brgy" required>
-                                            <option value="Bagumbayan" selected>Bagumbayan</option>
-                                            <option value="Bambang">Bambang</option>
-                                            <option value="Calzada">Calzada</option>
-                                            <option value="Central Bicutan">Central Bicutan</option>
-                                            <option value="Central Signal Village">Central Signal Village</option>
-                                            <option value="Fort Bonifacio">Fort Bonifacio</option>
-                                            <option value="Hagonoy">Hagonoy</option>
-                                            <option value="Ibayo Tipas">Ibayo Tipas</option>
-                                            <option value="Katuparan">Katuparan</option>
-                                            <option value="Ligid Tipas">Ligid Tipas</option>
-                                            <option value="Lower Bicutan">Lower Bicutan</option>
-                                            <option value="Maharlika Village">Maharlika Village</option>
-                                            <option value="Napindan">Napindan</option>
-                                            <option value="New Lower Bicutan">New Lower Bicutan</option>
-                                            <option value="North Daang Hari">North Daang Hari</option>
-                                            <option value="North Signal Village">North Signal Village</option>
-                                            <option value="Palingon Tipas">Palingon Tipas</option>
-                                            <option value="Pinagsama">Pinagsama</option>
-                                            <option value="San Miguel">San Miguel</option>
-                                            <option value="Santa Ana">Santa Ana</option>
-                                            <option value="South Daang Hari">South Daang Hari</option>
-                                            <option value="South Signal Village">South Signal Village</option>
-                                            <option value="Tanyag">Tanyag</option>
-                                            <option value="Tuktukan">Tuktukan</option>
-                                            <option value="Ususan">Ususan</option>
-                                            <option value="Upper Bicutan">Upper Bicutan</option>
-                                            <option value="Wawa">Wawa</option>
-                                            <option value="Western Bicutan">Western Bicutan</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                          <label for="inputCity">City</label>
-                                          <input type="text" class="form-control" id="inputCity" value="<?php echo $ownerrow['user_city'];?>" name="edit_city" value="Taguig City" required>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                          <label for="inputDistrict">District</label>
-                                          <select id="inputDistrict" class="form-control" name="edit_district" required>
-                                            <option selected value="District 1">District 1</option>
-                                            <option value="District 2">District 2</option>
-                                          </select>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                          <label for="inputZip">Zip</label>
-                                          <input type="text" onkeypress='return restrictAlphabets(event)' value="<?php echo $ownerrow['user_zip'];?>" class="form-control" id="inputZip" name="edit_zip" required>
-                                        </div>
-                                      </div>
-                                      <?php
-                                    }
-                                    else{
-                                      ?>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                          <label for="inputHouse">House No.</label>
-                                          <input type="text" class="form-control" id="inputHouse" name="edit_house" required>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                          <label for="inputStreet">Street</label>
-                                          <input type="text" class="form-control" id="inputStreet" name="edit_street" required>
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                          <label for="inputBarangay">Barangay</label>
-                                          <select id="inputBarangay" class="form-control"  name="edit_brgy" required>
-                                            <option value="Bagumbayan" selected>Bagumbayan</option>
-                                            <option value="Bambang">Bambang</option>
-                                            <option value="Calzada">Calzada</option>
-                                            <option value="Central Bicutan">Central Bicutan</option>
-                                            <option value="Central Signal Village">Central Signal Village</option>
-                                            <option value="Fort Bonifacio">Fort Bonifacio</option>
-                                            <option value="Hagonoy">Hagonoy</option>
-                                            <option value="Ibayo Tipas">Ibayo Tipas</option>
-                                            <option value="Katuparan">Katuparan</option>
-                                            <option value="Ligid Tipas">Ligid Tipas</option>
-                                            <option value="Lower Bicutan">Lower Bicutan</option>
-                                            <option value="Maharlika Village">Maharlika Village</option>
-                                            <option value="Napindan">Napindan</option>
-                                            <option value="New Lower Bicutan">New Lower Bicutan</option>
-                                            <option value="North Daang Hari">North Daang Hari</option>
-                                            <option value="North Signal Village">North Signal Village</option>
-                                            <option value="Palingon Tipas">Palingon Tipas</option>
-                                            <option value="Pinagsama">Pinagsama</option>
-                                            <option value="San Miguel">San Miguel</option>
-                                            <option value="Santa Ana">Santa Ana</option>
-                                            <option value="South Daang Hari">South Daang Hari</option>
-                                            <option value="South Signal Village">South Signal Village</option>
-                                            <option value="Tanyag">Tanyag</option>
-                                            <option value="Tuktukan">Tuktukan</option>
-                                            <option value="Ususan">Ususan</option>
-                                            <option value="Upper Bicutan">Upper Bicutan</option>
-                                            <option value="Wawa">Wawa</option>
-                                            <option value="Western Bicutan">Western Bicutan</option>
-                                          </select>
-                                        </div>
-                                      </div>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                          <label for="inputCity">City</label>
-                                          <input type="text" class="form-control" id="inputCity" name="edit_city" value="Taguig City" required>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                          <label for="inputDistrict">District</label>
-                                          <select id="inputDistrict" class="form-control" name="edit_district" required>
-                                            <option selected value="District 1">District 1</option>
-                                            <option value="District 2">District 2</option>
-                                          </select>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                          <label for="inputZip">Zip</label>
-                                          <input type="text" onkeypress='return restrictAlphabets(event)' class="form-control" id="inputZip" name="edit_zip" required>
-                                        </div>
-                                      </div>
-                                      <?php
-                                    }
-                                  ?>
-                                  
-                                  <div class="form-row">
 
-                                    <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <div class="modal-body">
-                                            <p>Are you sure to save changes?</p>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <button type="submit" class="btn btn-primary" name="saveChanges">Save changes</button>
+                                        <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <p>Are you sure to save changes?</p>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary" name="saveChanges">Save changes</button>
+                                              </div>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
-                                    </div>
                                   </div>
-                                </form>
-                                <div class="form-group col-md-3">
-                                      <button type="submit" class="btn btn-primary saveBtn"  data-toggle="modal" data-target="#saveModal">Save</button>
                                 </div>
-                              </div>
-                            </div>
-                          </div>
+                      </div>
+                      
+                    </form>
                   </div>
 
                         <!-- Appointments Contents -->
                   
-                  <div class="tab-pane fade appointments" id="pills-appointment" role="tabpanel" aria-labelledby="pills-appointment-tab">
+                  <div class="tab-pane fade appointments show active" id="pills-appointment" role="tabpanel" aria-labelledby="pills-appointment-tab">
                     <div class="container row">
                       <h4>Your Appointments</h4>
                     </div>
                     <div class="col-12" style="display: flex;">
                       <div class="col-2">
                         <div class="col-12 filter_check">
-                          <p style="width: 100%; margin: 0;"><b>Filter By</b></p>
+                          <p style="width: 100%; padding: 0; padding-bottom: .5rem;"><b>Sort</b></p>
+                          
                           <div style="width: 100%;">
-                              <a href="./user_profile.php?alphabet">A-Z</a>
+                              <a href="./user_profile.php?current">Current</a>
                           </div>
                           <div style="width: 100%;">
-                              <a href="./user_profile.php?date">Date Appointed</a>
+                              <a href="./user_profile.php?waiting">Pending</a>
                           </div>
                           <div style="width: 100%;">
-                              <a href="./user_profile.php?approved">Approved</a>
-                          </div>
-                          <div style="width: 100%;">
-                              <a href="./user_profile.php?waiting">Waiting</a>
-                          </div>
-                          <div style="width: 100%;">
-                              <a href="./user_profile.php?reset">Reset</a>
+                              <a href="./user_profile.php?history">History</a>
                           </div>
                         </div>
+                        <!-- <div class="col-12 filter_check" style="margin-top: 1rem;">
+                          <p style="width: 100%; margin: 0;"><b>Filter History</b></p>
+                          <div style="width: 100%;">
+                              <a href="./user_profile.php?history">History</a>
+                          </div>
+                        </div> -->
                       </div>
                       <div class="col-10">
                         
                         <?php
-                        if(isset($_GET['date'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' ORDER BY min_date ASC";
+                        
+                        if(!isset($_GET['history']) && !isset($_GET['waiting']) || isset($_GET['current'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' AND min_date > now() ORDER BY min_date ASC";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           if(mysqli_fetch_assoc($appointmenResult)){
+                            $numberRows = mysqli_num_rows($appointmenResult);
+                            echo '<h3>Current ('.$numberRows.')</h3>';
                             echo '<div class="accordion row" id="accordionExample">';
                             foreach($appointmenResult as $appointmentRows){
                                                                         
@@ -498,88 +510,18 @@
                             echo '</div>';
                           }
                           else{
-                            echo "<h4>THERE IS NO RECORD</h4>";
+                            $numberRows = mysqli_num_rows($appointmenResult);
+                            echo '<h3>Current ('.$numberRows.')</h3>';
+                            echo "<h6>THERE IS NO RECORD</h6>";
                           }
                         }
-                        else if(isset($_GET['alphabet'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' ORDER BY business_name ASC";
-                          $appointmenResult = mysqli_query($connect, $selection);
-      
-                          if(mysqli_fetch_assoc($appointmenResult)){
-                            echo '<div class="accordion row" id="accordionExample">';
-                            foreach($appointmenResult as $appointmentRows){
-                                                                        
-                                echo '<div class="col-4" style="margin-top: 2rem;">';
-                                echo '<div class="card">';
-                                    echo '<div class="card card-header">';
-                                    echo '<h2 class="mb-0">';
-                                        echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
-                                    echo '</h2>';
-                                    echo '</div>';
-                                    echo '<div class="card-body">';
-                                        echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="<strong>'.$appointmentRows['business_name'].'</strong>" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
-                                        echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
-                                        echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
-                                        echo '<p class="card-text">Appointment Id</p>';
-                                        echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
-                                        echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
-                                        echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
-                                        echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
-                                    echo '</div>';
-                                    echo '<div class="card-footer text-muted  text-center">';
-                                        echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
-                                    echo '</div>';
-                                echo '</div>';
-                                echo '</div>';
-                            }
-                            echo '</div>';
-                          }
-                          else{
-                            echo "<h4>THERE IS NO RECORD</h4>";
-                          }
-                        }
-                        else if(isset($_GET['approved'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' ";
-                          $appointmenResult = mysqli_query($connect, $selection);
-                          if(mysqli_fetch_assoc($appointmenResult)){
-                            echo '<div class="accordion row" id="accordionExample">';
-                            foreach($appointmenResult as $appointmentRows){
-                                                                        
-                                echo '<div class="col-4" style="margin-top: 2rem;">';
-                                echo '<div class="card">';
-                                    echo '<div class="card card-header">';
-                                    echo '<h2 class="mb-0">';
-                                        echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
-                                    echo '</h2>';
-                                    echo '</div>';
-                                    echo '<div class="card-body">';
-                                        echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
-                                        echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
-                                        echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
-                                        echo '<p class="card-text">Appointment Id</p>';
-                                        echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
-                                        echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
-                                        echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
-                                        echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
-                                    echo '</div>';
-                                    echo '<div class="card-footer text-muted  text-center">';
-                                        echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
-                                    echo '</div>';
-                                echo '</div>';
-                                echo '</div>';
-                            }
-                            echo '</div>';
-                          }
-                          else{
-                            echo "<h4>THERE IS NO RECORD</h4>";
-                          }
-                        }
-                        
                         else if(isset($_GET['waiting'])){
                           $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'waiting' ";
                           $appointmenResult = mysqli_query($connect, $selection);
 
                           if(mysqli_fetch_assoc($appointmenResult)){
+                            $numberRows = mysqli_num_rows($appointmenResult);
+                            echo '<h3>Pending ('.$numberRows.')</h3>';
                             echo '<div class="accordion row" id="accordionExample">';
                             foreach($appointmenResult as $appointmentRows){
                                                                         
@@ -609,13 +551,18 @@
                             echo '</div>';
                           }
                           else{
-                            echo "<h4>THERE IS NO RECORD</h4>";
+                            $numberRows = mysqli_num_rows($appointmenResult);
+                            echo '<h3>Pending ('.$numberRows.')</h3>';
+                            echo "<h6>THERE IS NO RECORD</h6>";
                           }
                         }
-                        else if(!isset($_GET['date']) && !isset($_GET['alphabet']) && !isset($_GET['approved']) || isset($_GET['reset'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved'";
+                        else if(isset($_GET['history'])){
+                          $selection = "SELECT * FROM `appointment_tb` WHERE min_date < now() AND client_id = 1020 AND approval = 'Approved'";
                           $appointmenResult = mysqli_query($connect, $selection);
+
                           if(mysqli_fetch_assoc($appointmenResult)){
+                            $numberRows = mysqli_num_rows($appointmenResult);
+                            echo '<h3>History ('.$numberRows.')</h3>';
                             echo '<div class="accordion row" id="accordionExample">';
                             foreach($appointmenResult as $appointmentRows){
                                                                         
@@ -645,7 +592,9 @@
                             echo '</div>';
                           }
                           else{
-                            echo "<h4>THERE IS NO RECORD</h4>";
+                            $numberRows = mysqli_num_rows($appointmenResult);
+                            echo '<h3>History ('.$numberRows.')</h3>';
+                            echo "<h6>THERE IS NO RECORD</h6>";
                           }
                         }
                         ?>
@@ -658,10 +607,12 @@
                   </div>
 
                         <!-- Notifications Contents -->
-                  
+                  <!-- 
                   <div class="tab-pane fade show active notifications" id="pills-notifications" role="tabpanel" aria-labelledby="pills-notifications-tab">
                         <p>AWDASDAWDADS</p>
-                  </div>    
+                  </div>     -->
+
+
                         <!-- Business Contents -->
                   <div class="tab-pane fade business" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
                     <div class="business_contents">
@@ -1236,6 +1187,13 @@
                     sub.appendChild(option);
                 });
             });
+        </script>
+        <script type="text/javascript">
+          function edit(){
+            $("select").prop("disabled", false);
+            $("input").prop("disabled", false);
+            $("#saveBtn").prop("disabled", false);
+          }
         </script>
         <script src="./js/userProfile/appointmentCards.js"></script>
         <script src="./js/userProfile/profile_image.js"></script>

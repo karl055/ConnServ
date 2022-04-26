@@ -44,12 +44,8 @@
 
                         $fileNameNew = "profile".$user_id."." .$fileActualExt;
                     
-                        $fileDestination = '../assets/img/user_profile/'.$fileNameNew;
-                        /* 
-                        if(file_exists($fileDestination)){
-                            unlink($fileDestination);
-                            header("Location: ../user_profile.php?fileExists");
-                        } */
+                        $fileDestination = '../assets/img/user_profile/'.$fileNameNew; 
+                        
                         if(move_uploaded_file($fileTmpName, $fileDestination)){
                             
 
@@ -80,9 +76,28 @@
                                 echo mysqli_error($connect);
                             }
                         }
+                        else{
+                            echo mysqli_error($connect);
+                        }
+                    }
+                    
+                    else{
+                        echo mysqli_error($connect);
                     }
                 }
+                
+                else{
+                    echo mysqli_error($connect);
+                }
             }
+            
+            else{
+                echo mysqli_error($connect);
+            }
+        }
+        
+        else{
+            echo mysqli_error($connect);
         }
     }
     
