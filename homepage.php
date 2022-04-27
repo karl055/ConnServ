@@ -66,27 +66,27 @@ if(!isset($_SESSION['username'])){
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="./assets/img/categories/another/Computer.jpg" alt="Card Image Cap">
+                        <img class="card-img-top" src="./assets/img/categories/another/Electronics.jpg" alt="Card Image Cap">
                         <div class="card-body">
-                            <a href="#" class="card-text stretched-link">Computer</a>
+                            <a href="./search.php?category=Electronics" class="card-text stretched-link">Electronics</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
                         <img class="card-img-top" src="./assets/img/categories/another/construction1.jpg" alt="Card Image Cap">
                         <div class="card-body">
-                            <a href="#" class="card-text stretched-link">Construction</a>
+                            <a href="./search.php?category=Construction" class="card-text stretched-link">Construction</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
                         <img class="card-img-top" src="./assets/img/categories/another/Electrical.jpg" alt="Card Image Cap">
                         <div class="card-body">
-                            <a href="#" class="card-text stretched-link">Electrical</a>
+                            <a href="./search.php?category=Electrical" class="card-text stretched-link">Electrical</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
                         <img class="card-img-top" src="./assets/img/categories/another/Business.jpg" alt="Card Image Cap">
                         <div class="card-body">
-                            <a href="#" class="card-text stretched-link">Business</a>
+                            <a href="./search.php?category=Professional Service" class="card-text stretched-link">Professional Services</a>
                         </div>
                     </div>
                 </div>
