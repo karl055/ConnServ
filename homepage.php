@@ -5,8 +5,8 @@ if(!isset($_SESSION['username'])){
   session_start();
 }
   include_once './hostCon.php';
-  $featureSql = "SELECT * FROM business_tb ORDER BY rating DESC LIMIT 3";
-  $addedSql = "SELECT * FROM business_tb ORDER BY datetime_created DESC LIMIT 3";
+  $featureSql = "SELECT * FROM business_tb WHERE business_approval = 'approved' ORDER BY rating DESC LIMIT 3";
+  $addedSql = "SELECT * FROM business_tb WHERE business_approval = 'approved' ORDER BY datetime_created DESC LIMIT 3";
 
   $addedResult = mysqli_query($connect, $addedSql);
   $featureResult = mysqli_query($connect, $featureSql);
@@ -123,33 +123,6 @@ if(!isset($_SESSION['username'])){
                             }
                           }
                         ?>
-                        <!-- <div class="card">
-                          <img src="./assets/img/featured_services/bonheur_apparel/logo.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          </div>
-                          <div class="card-footer">
-                            <a href="./service_profile.php" class="card-title stretched-link"><h4>Bonheur Apparel</h4></a>
-                            <h6 class="card-text text-muted">Clothing Tailor</h6>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <img src="./assets/img/featured_services/ithilien_coffee/logo.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          </div>
-                          <div class="card-footer">
-                          <a href="#" class="card-title stretched-link"><h4>Ithilien Coffee PH</h4></a>
-                            <p class="card-text text-muted">Barista and Coffee Tutor</p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <img src="./assets/img/featured_services/cr38_solutions/logo.png" class="card-img-top" alt="...">
-                          <div class="card-body">
-                          </div>
-                          <div class="card-footer">
-                            <a href="#" class="card-title stretched-link"><h4>CR38 Computer Solutions</h4></a>
-                            <h6 class="card-text text-muted">Computer and Hardware Solutions</h6>
-                          </div>
-                        </div> -->
                       </div>
                   </div>
             </div>

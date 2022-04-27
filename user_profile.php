@@ -49,6 +49,12 @@
 
         <!-- Online Bootstrap Link -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- Custom styles for this template -->
+        <link href="./admin_dashboard/css/sb-admin-2.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="./admin_dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <style>
           hr{
             border:2px solid black;
@@ -1093,7 +1099,7 @@
                                               <form action="./includes/businessinc/businessSearch.inc.php" method="post">
                                                 <div class="col-12 table_contents">
                                                               
-                                                          <table class="table table-hover incoming_table" border="1">
+                                                  <table class="table table-bordered incoming_table" id="dataTable" width="100%" cellspacing="0">
 
                                                               <thead>
                                                                   <tr>

@@ -487,8 +487,7 @@ if($imgResult = mysqli_query($connect, $imageSelect)){
                                     </div>
                                         <form action="./includes/businessinc/businessSearch.inc.php" method="post">
                                         <div class="col-12 table_contents">
-                                                
-                                            <table class="table table-hover incoming_table" border="1">
+                                            <table class="table table-bordered incoming_table" id="dataTable" width="100%" cellspacing="0">
 
                                                 <thead>
                                                     <tr>

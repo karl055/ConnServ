@@ -2,9 +2,11 @@
 .sidebar {
     width: $sidebar-collapsed-width;
     min-height: 100vh;
-
+    background-color: $purple;
+    background: $purple;
     .nav-item {
         position: relative;
+        background-color: $purple;
 
         &:last-child {
             margin-bottom: 1rem;
@@ -140,8 +142,10 @@
         letter-spacing: 0.05rem;
         z-index: 1;
 
-        .sidebar-brand-icon i {
+        .sidebar-brand-icon {
             font-size: 2rem;
+            // max-height: 25px;
+            // max-width: 40px;
         }
 
         .sidebar-brand-text {
@@ -156,7 +160,7 @@
     .sidebar-heading {
         text-align: center;
         padding: 0 1rem;
-        font-weight: 800;
+        font-weight: 500;
         font-size: 0.65rem;
         @extend .text-uppercase;
     }
@@ -172,7 +176,7 @@
         margin-right: 1rem;
         margin-bottom: 1rem;
         padding: 1rem;
-        background-color: fade-out($black, 0.9);
+        background-color: fade-out($purple, 1);
         .sidebar-card-illustration {
             height: 3rem;
             display: block;
@@ -255,8 +259,10 @@
         }
 
         .sidebar-brand {
-            .sidebar-brand-icon i {
+            .sidebar-brand-icon  {
                 font-size: 2rem;
+                    
+                }
             }
 
             .sidebar-brand-text {
@@ -278,11 +284,12 @@
                 .collapse {
                     position: absolute;
                     left: calc(#{$sidebar-collapsed-width} + #{$grid-gutter-width} / 2);
+                    background-color: $purple;
                     z-index: 1;
                     top: 2px;
                     // Grow In Animation for Toggled State
                     animation-name: growIn;
-                    animation-duration: 200ms;
+                    animation-duration: 3000ms;
                     animation-timing-function: transform cubic-bezier(.18, 1.25, .4, 1), opacity cubic-bezier(0, 1, .4, 1);
 
                     .collapse-inner {
@@ -328,6 +335,8 @@
             .sidebar-brand {
                 .sidebar-brand-icon i {
                     font-size: 2rem;
+                    height: 30px;
+                    width: 50px;
                 }
 
                 .sidebar-brand-text {
@@ -340,7 +349,7 @@
             }
         }
     }
-}
+
 
 // Sidebar Color Variants
 
