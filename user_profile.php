@@ -1132,7 +1132,7 @@
                                                                                       echo '<td class="record" title="'.$notApprovedRows['houseNum'].', '.$notApprovedRows['street'].', '.$notApprovedRows['barangay'].', '.$notApprovedRows['city'].'"><small>'.$notApprovedRows['houseNum'].', '.$notApprovedRows['street'].', '.$notApprovedRows['barangay'].', '.$notApprovedRows['city'].'</td>';
                                                                                       echo '<td class="record"><small title="'.$notApprovedRows['mobile'].'">'.$notApprovedRows['mobile'].'</td>';
                                                                                       echo '<td class="record"><small title="'.$notApprovedRows['min_date'].' <strong>/</strong> '.$notApprovedRows['max_date'].'">'.$notApprovedRows['min_date'].' <strong>/</strong> '.$notApprovedRows['max_date'].'</td>';
-                                                                                      echo '<td class="record"><small>7:00 pm</td>';
+                                                                                      echo '<td class="record"><small title="'.$notApprovedRows['hour_time'].': '.$notApprovedRows['mins_time'].' '.$notApprovedRows['hour_clock'].'"> '.$notApprovedRows['hour_time'].': '.$notApprovedRows['mins_time'].' '.$notApprovedRows['hour_clock'].'</td>';
                                                                                   echo '</tr>';
                                                                               }
                                                                               
