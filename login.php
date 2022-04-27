@@ -27,7 +27,7 @@ if(isset($_POST['login'])){
             $_SESSION['lastname'] = $rows['user_lastname'];
             $_SESSION['gender'] = $rows['user_sex'];
             $_SESSION['profilePic'] = $rows['profileImg'];
-            header("Location: ./user_profile.php");
+            header("Location: ./homepage.php");
         }
         else{
             header("Location: ./login.php?error=loginfailed");

@@ -41,7 +41,7 @@ if(isset($_POST['addAppointment'])){
     $char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $char = str_shuffle($char);
     for($i = 0, $rand = '', $l = strlen($char) - 1; $i < 3; $i ++) {
-        $rand .= $char{mt_rand(0, $l)};
+        $rand .= $char [mt_rand(0, $l)];
     }
 
     $shufNum = rand(1111, 9999);

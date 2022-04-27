@@ -639,6 +639,7 @@ nav :focus {
 
 .related_container {
   margin: 3rem 0 0;
+  border: 1px solid black;
 }
 
 .related_container .related-service .cards {
@@ -658,7 +659,7 @@ nav :focus {
 }
 
 .related_container .related-service .cards .card {
-  max-width: 400px;
+  max-width: 600px;
   position: relative;
   background-color: white;
   margin-bottom: 20px;

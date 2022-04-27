@@ -4,6 +4,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .header_logo {
   background-size: cover;
@@ -67,7 +68,29 @@
 $card-size: 10rem;
 
 .category-title {
-  padding: 1rem 0 0;
+  padding: 1.5rem 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-weight: 700;
+  text-align: left;
+  width: 300px;
+  
+    a{
+      color: $font-color-a;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover{
+      color: $font-color-b;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:active{
+      color: $font-color-a;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
 }
 .categories {
   display: flex;
@@ -80,13 +103,17 @@ $card-size: 10rem;
   }
   .card {
     border: 5;
-    width: 10rem;
-    height: 11rem;
+    width: 12rem;
+    max-height: 11rem;
     margin-right: 0.5rem;
+    .card-img-top{
+      max-height: 100px;
+      object-fit: cover;
+    }
     .card-body {
       text-align: center;
       :hover {
-        color: $font-color-e;
+        color: $font-color-b;
       }
     }
     a {

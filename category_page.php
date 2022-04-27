@@ -86,7 +86,7 @@ if(!isset($_SESSION['username'])){
                             </div>
                             <div class="back">
                               <div class="inner">
-                                <p>Explore the various Academic service offered within Taguig in ConnServ</p>
+                                <p>Explore the various Education service offered within Taguig in ConnServ</p>
                               </div>
                             </div>
                           </div>

@@ -144,6 +144,7 @@ $dark-gray: #252424;
 }
 .related_container{
   margin: 3rem 0 0;
+  border: 1px solid black;
   .related-service {
     .cards {
       width: 100%;
@@ -154,7 +155,7 @@ $dark-gray: #252424;
       align-content: center;
       
       .card{
-        max-width: 400px;
+        max-width: 600px;
         position: relative;
         background-color: white;
         margin-bottom: 20px;
