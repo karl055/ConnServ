@@ -163,6 +163,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                                                 echo '<p>'.$detailRows["unit_no"].', '.$detailRows["business_building"].', '.$detailRows["house_no"].', '.$detailRows["business_street"].', '.$detailRows["business_village"].', '.$detailRows["business_barangay"].'</p>';
                                                 echo '<p>'.$detailRows["business_city"].', '.$detailRows["business_zip"].'</p>';
                                             }
+                                            echo "<p>".$detailRows['business_mobile']."</p>";
                                             ?>
                                         </div>
                                     </div>
@@ -185,13 +186,12 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                                     </div>
 
                                     <div class="col-4 rightcol text-left">
-                                        <p>Date Appointed: <u><?php 
+                                        <p>Created: <u><?php 
                                         $dateAndTime = $showRows['timedate_stamp'];
                                         $splitDateTime = explode(" ", $dateAndTime);
                                         $showDate = $splitDateTime[0];
                                         $showTime = $splitDateTime[1];
-                                        echo $showDate;?></u> </p>
-                                        <p>Time Appointed: <u><?php echo $showTime?></u></p>
+                                        echo $showDate. " ". $showTime;?></u> </p>
                                     </div>
                                 </div>
                                 <table>
@@ -223,6 +223,19 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                                     <p> Contact Number: <u><?php echo $showRows['mobile'];?></u></p>
                                 </div>
 
+                                <div class="col-12">
+                                    <div class="col-12" style="text-align: justify; text-justify: inter-word;">
+                                        <p><?php echo $showRows['business_name'];?> Terms & Condition</p>
+                                        <small><?php echo $detailRows['terms_condition'];?></small>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12" style="margin-top: 1rem;">
+                                    <div class="col-12" style="text-align: justify; text-justify: inter-word;">
+                                        <p>Warranty Disclaimer</p>
+                                        <small>Your use of the ConnServ Appointment Service is entirely at your own risk. You acknowledge and agree that our merchant partners' services are given to you "as is" and "as available." Without limiting the generality of the preceding, to the fullest degree permissible by law. ConnServ expressly disclaims any explicit or implied warranties of merchantability, suitability for a specific purpose, and non-infringement. ConnServ makes no representations or warranties of any kind regarding the Services, including any representation or warranty that the use of the Services will be timely, uninterrupted, or error-free, or that they will operate in conjunction with any other hardware, software, system, or data, meet your requirements or expectations, be free of errors or that defects will be corrected, be free of viruses or other harmful components, or be entirely secure or that the information you share with us will be secure.</small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
