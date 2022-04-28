@@ -275,8 +275,12 @@
                                               }
                                             ?>
                                             </div>
-                                            <label id="uploadBtn" for="file">Click to change</label>
-                                            <input type="file" id="file" name="file" disabled>
+                                            <div class="col-12">
+
+                                              <label id="uploadBtn" for="file">Click to change</label>
+                                              <input type="file" id="file" name="file" disabled>
+                                            </div>
+                                            <small class="text-muted">Updating Personal Information will Require Change the Icon</small>
                                           </div>
                                         </div>
                                       </div>
@@ -1243,6 +1247,8 @@
             $("select").prop("disabled", false);
             $("input").prop("disabled", false);
             $("#saveBtn").prop("disabled", false);
+            document.getElementById('editBtn').disabled = true;/* 
+            $("#editBtn").prop("disabled", true); */
           }
         </script>
         <script src="./js/userProfile/appointmentCards.js"></script>
