@@ -217,22 +217,14 @@ nav :focus {
   }
 }
 
-body {
+.main_container body {
   background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
   color: #444;
   font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
   text-shadow: 0 1px 0 #fff;
 }
 
-h5, h4 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
-}
-
-.text-header {
+.main_container .text-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -242,24 +234,24 @@ p {
   margin-top: 20px;
 }
 
-.text-header mark {
+.main_container .text-header mark {
   background-color: #5e0cc4;
   color: #fff;
   border-radius: 5px;
 }
 
-.info-table {
+.main_container .info-table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 10px;
 }
 
-.info-table strong {
+.main_container .info-table strong {
   font-weight: bold;
 }
 
-.info-table table {
+.main_container .info-table table {
   background: #fff;
   border-collapse: separate;
   -webkit-box-shadow: inset 0 1px 0 #fff;
@@ -270,7 +262,7 @@ p {
   width: 800px;
 }
 
-.info-table th {
+.main_container .info-table th {
   background: #5e0cc4;
   -webkit-box-shadow: inset 0 1px 0 #fff;
           box-shadow: inset 0 1px 0 #fff;
@@ -284,7 +276,7 @@ p {
   cursor: pointer;
 }
 
-.info-table th:after {
+.main_container .info-table th:after {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.08)));
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.08));
   content: '';
@@ -297,18 +289,18 @@ p {
   width: 100%;
 }
 
-.info-table th:first-child {
+.main_container .info-table th:first-child {
   border-left: 1px solid #fff;
   -webkit-box-shadow: inset 1px 1px 0 #fff;
           box-shadow: inset 1px 1px 0 #fff;
 }
 
-.info-table th:last-child {
+.main_container .info-table th:last-child {
   -webkit-box-shadow: inset -1px 1px 0 #fff;
           box-shadow: inset -1px 1px 0 #fff;
 }
 
-.info-table td {
+.main_container .info-table td {
   border: 0px solid #fff;
   padding: 10px 15px;
   position: relative;
@@ -317,45 +309,45 @@ p {
   border-radius: 5px;
 }
 
-.info-table td:first-child {
+.main_container .info-table td:first-child {
   -webkit-box-shadow: inset 1px 0 0 #fff;
           box-shadow: inset 1px 0 0 #fff;
 }
 
-.info-table td:last-child {
+.main_container .info-table td:last-child {
   border-right: 1px solid #e8e8e8;
   -webkit-box-shadow: inset -1px 0 0 #fff;
           box-shadow: inset -1px 0 0 #fff;
 }
 
-.info-table tr {
+.main_container .info-table tr {
   background: url(https://jackrugile.com/images/misc/noise-diagonal.png);
 }
 
-.info-table tr:nth-child(odd) td {
+.main_container .info-table tr:nth-child(odd) td {
   background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
 }
 
-.info-table tr:last-of-type td {
+.main_container .info-table tr:last-of-type td {
   -webkit-box-shadow: inset 0 -1px 0 #fff;
           box-shadow: inset 0 -1px 0 #fff;
 }
 
-.info-table tr:last-of-type td:first-child {
+.main_container .info-table tr:last-of-type td:first-child {
   -webkit-box-shadow: inset 1px -1px 0 #fff;
           box-shadow: inset 1px -1px 0 #fff;
 }
 
-.info-table tr:last-of-type td:last-child {
+.main_container .info-table tr:last-of-type td:last-child {
   -webkit-box-shadow: inset -1px -1px 0 #fff;
           box-shadow: inset -1px -1px 0 #fff;
 }
 
-.info-table tbody:hover tr:hover td {
+.main_container .info-table tbody:hover tr:hover td {
   color: #444;
 }
 
-.buttons {
+.main_container .buttons {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -371,7 +363,7 @@ p {
           justify-content: center;
 }
 
-.buttons .btn {
+.main_container .buttons .btn {
   width: 300px;
   padding: 1rem;
   border-radius: 10px;
@@ -396,33 +388,33 @@ p {
   position: relative;
 }
 
-.buttons .btn:hover,
-.buttons .btn:focus {
+.main_container .buttons .btn:hover,
+.main_container .buttons .btn:focus {
   opacity: 0.8;
 }
 
-.buttons .btn:active {
+.main_container .buttons .btn:active {
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
 
-.buttons .btn.block {
+.main_container .buttons .btn.block {
   display: block !important;
 }
 
-.buttons .btn.circular {
+.main_container .buttons .btn.circular {
   border-radius: 50em !important;
 }
 
-.buttons .purple {
+.main_container .buttons .purple {
   background-color: #564f8a;
 }
 
-.buttons .gray {
+.main_container .buttons .gray {
   background-color: #252424;
 }
 
-.buttons .modal-window {
+.main_container .buttons .modal-window {
   position: fixed;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -446,13 +438,13 @@ p {
   transition: all 1s;
 }
 
-.buttons .modal-window:target {
+.main_container .buttons .modal-window:target {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
 
-.buttons .modal-window > div {
+.main_container .buttons .modal-window > div {
   width: 800px;
   height: 500px;
   position: absolute;
@@ -469,21 +461,21 @@ p {
   overflow: scroll;
 }
 
-.buttons .modal-window header {
+.main_container .buttons .modal-window header {
   font-weight: bold;
 }
 
-.buttons .modal-window h1 {
+.main_container .buttons .modal-window h1 {
   font-size: 150%;
   margin: 0 0 15px;
 }
 
-.buttons .modal-window img {
+.main_container .buttons .modal-window img {
   max-width: 200px;
   max-height: 150px;
 }
 
-.buttons .modal-close {
+.main_container .buttons .modal-close {
   color: #aaa;
   line-height: 50px;
   font-size: 80%;
@@ -498,20 +490,20 @@ p {
   text-decoration: none;
 }
 
-.buttons .modal-close:hover {
+.main_container .buttons .modal-close:hover {
   color: black;
 }
 
-.buttons .modal-close small {
+.main_container .buttons .modal-close small {
   color: lightgray;
 }
 
-.buttons .modal-header {
+.main_container .buttons .modal-header {
   position: -webkit-sticky;
   position: sticky;
 }
 
-.buttons .modal-body {
+.main_container .buttons .modal-body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -520,7 +512,7 @@ p {
           justify-content: center;
 }
 
-.buttons .modal-body .company-info {
+.main_container .buttons .modal-body .company-info {
   padding: 5px;
   text-align: center;
   -webkit-box-align: center;
@@ -533,25 +525,25 @@ p {
   line-height: 2;
 }
 
-.buttons .modal-body .company-info .company-name {
+.main_container .buttons .modal-body .company-info .company-name {
   font-weight: 600;
 }
 
-.buttons .modal-body .appoint-num {
+.main_container .buttons .modal-body .appoint-num {
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.buttons .modal-body .appoint-num b {
+.main_container .buttons .modal-body .appoint-num b {
   color: #252424;
   background-color: #ceb6ed;
   padding: 10px;
   border-radius: 20px;
 }
 
-.buttons .modal-body .row {
+.main_container .buttons .modal-body .row {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -561,25 +553,25 @@ p {
   margin: 0px 10px 10px;
 }
 
-.buttons .modal-body .row .centercol {
+.main_container .buttons .modal-body .row .centercol {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.buttons .modal-body .row .centercol h1 {
+.main_container .buttons .modal-body .row .centercol h1 {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
 }
 
-.buttons .modal-body table {
+.main_container .buttons .modal-body table {
   margin-top: 0;
   margin-bottom: 10px;
   width: 100%;
 }
 
-.buttons .modal-body table th {
+.main_container .buttons .modal-body table th {
   border: 1px solid #252424;
   font-size: 14px;
   padding: 1px 5px;
@@ -588,11 +580,11 @@ p {
   font-weight: 600;
 }
 
-.buttons .modal-body table tr {
+.main_container .buttons .modal-body table tr {
   color: #000;
 }
 
-.buttons .modal-body table td {
+.main_container .buttons .modal-body table td {
   color: black;
   border: 1px solid #252424;
   position: relative;
@@ -601,7 +593,7 @@ p {
   font-size: 12px;
 }
 
-.buttons .modal-body table tr:hover {
+.main_container .buttons .modal-body table tr:hover {
   background-color: #cccccc;
   color: white !important;
   cursor: pointer;
@@ -634,8 +626,69 @@ p {
   }
 }
 
-.buttons .modal-body p {
+.main_container .buttons .modal-body p {
   font-size: 15px;
   font-weight: 500;
   margin: 5px;
+}
+
+.footer-div {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #252424;
+  height: 16rem;
+  position: absolute;
+}
+
+.footer-div ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-div .connserv-container {
+  padding: 1rem 0 0;
+  max-width: 100vw;
+  height: auto;
+}
+
+.footer-div .connserv-container p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  font-weight: 800;
+  color: white;
+}
+
+.footer-div img {
+  padding: 2rem 0 0;
+  width: 20rem;
+  float: right;
+}
+
+.footer-div li {
+  font-size: 0.9rem;
+  list-style-type: none;
+}
+
+.footer-div li a {
+  color: white;
+  text-decoration: none;
+}
+
+/*
+  
+    FOOTER COPYRIGHT
+  */
+.footer-copyright hr {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: 60%;
+}
+
+.footer-copyright p {
+  text-align: center;
+  color: white;
+  width: 100%;
 }

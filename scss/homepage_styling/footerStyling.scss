@@ -51,44 +51,6 @@ $image-size: 20 rem;
       width: 100%;
     }
   }
-  
-  @media screen and (min-width: 950px) and (max-width: 1124px) {
-    .connserv-container {
-      img {
-        width: 15rem;
-      }
-      p {
-        font-size: 0.8rem;
-      }
-      li {
-        font-size: 0.7rem;
-      }
-    }
-    .footer-copyright {
-      p {
-        font-size: 0.8rem;
-      }
-    }
-  }
-  
-  @media screen and (min-width: 850px) and (max-width: 949px) {
-    .connserv-container {
-      img {
-        width: 15rem;
-      }
-      p {
-        font-size: 0.8rem;
-      }
-      li {
-        font-size: 0.7rem;
-      }
-    }
-    .footer-copyright {
-      p {
-        font-size: 0.8rem;
-      }
-    }
-  }
 }
 /*
   

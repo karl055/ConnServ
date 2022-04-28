@@ -1,7 +1,7 @@
 /*  
     !COLORS 
 */
-nav {
+.navbarStyle {
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,33 +13,29 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 100vw;
+  max-width: 100%;
   min-height: 10vh;
   background-size: cover;
   background-color: #252424;
   z-index: 99;
 }
 
-nav form {
-  width: 100%;
-}
-
-nav .container-fluid {
+.navbarStyle .container-fluid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-nav .logo {
+.navbarStyle .logo {
   width: 30%;
 }
 
-nav .logo .logo-img {
+.navbarStyle .logo .logo-img {
   width: 10rem;
   margin: 5px;
 }
 
-nav .search-div {
+.navbarStyle .search-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,7 +45,7 @@ nav .search-div {
   width: 80%;
 }
 
-nav .search-div .servicetxt {
+.navbarStyle .search-div .servicetxt {
   width: 30%;
   height: 2.5rem;
   border-radius: 5px;
@@ -58,7 +54,7 @@ nav .search-div .servicetxt {
   margin: 5px;
 }
 
-nav .search-div .locationtxt {
+.navbarStyle .search-div .locationtxt {
   width: 20%;
   height: 2.5rem;
   border-radius: 5px;
@@ -67,7 +63,7 @@ nav .search-div .locationtxt {
   margin: 5px;
 }
 
-nav .search-div .searchbtn {
+.navbarStyle .search-div .searchbtn {
   width: 2.5rem;
   height: 2.58rem;
   border-radius: 5px;
@@ -75,7 +71,7 @@ nav .search-div .searchbtn {
   margin: 5px 3px;
 }
 
-nav .nav-links {
+.navbarStyle .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,20 +81,20 @@ nav .nav-links {
   margin: auto;
 }
 
-nav .nav-links .link {
+.navbarStyle .nav-links .link {
   list-style-type: none;
 }
 
-nav .nav-links .link a {
+.navbarStyle .nav-links .link a {
   color: white;
   width: 100px;
 }
 
-nav .nav-links .link :hover {
+.navbarStyle .nav-links .link :hover {
   color: #f574ec;
   text-decoration: none;
 }
 
-nav :focus {
+.navbarStyle :focus {
   outline: none;
 }

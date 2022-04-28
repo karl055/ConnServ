@@ -13,8 +13,8 @@ if(!isset($_SESSION['username'])){
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <?php include './includes/bootstrap_con.php';?>
@@ -23,7 +23,7 @@ if(!isset($_SESSION['username'])){
         <title>ConnServ</title>
     </head>
     <body>
-        <nav>
+        <nav class="navbarStyle">
             <form action="./navbar.php" method="post">
                 <div class="container-fluid col-12">
                     <div class="logo">

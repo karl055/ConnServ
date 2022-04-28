@@ -8,11 +8,11 @@
         
         <?php include './includes/bootstrap_con.php';?>
         
-        <link rel="stylesheet" href="./css/homepage.css">
+        <link rel="stylesheet" href="./css/footer.css">
     </head>
     <body>
       
-    <footer class="footer-div">
+      <footer class="footerDiv">
           <div class="container-fluid row connserv-container">
             <div class="col-4">
               <img class="connserv-logo" src="./assets/img/ConnServ_Logo.png" alt="Connserv Image">
@@ -22,17 +22,15 @@
                 <div class="col-4">
                   <p>COMPANY</p>
                   <ul>
-                    <li><a href="#">News</a></li>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="./news.php">News</a></li>
+                    <li><a href="#">The Team</a></li>
                   </ul>
                 </div>
                 <div class="col-4">
                   <p>LEARN MORE</p>
                   <ul>
                     <li><a href="#">Support</a></li>
-                    <li><a href="#">Developers</a></li>
-                    <li><a href="#">Service Program</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="./terms_condition.php">Terms & Condition</a></li>
                   </ul>

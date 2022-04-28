@@ -1,7 +1,7 @@
 /*  
     !COLORS 
 */
-nav {
+.navbar {
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,22 +20,22 @@ nav {
   z-index: 99;
 }
 
-nav .container-fluid {
+.navbar .container-fluid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-nav .logo {
+.navbar .logo {
   width: 30%;
 }
 
-nav .logo .logo-img {
+.navbar .logo .logo-img {
   width: 10rem;
   margin: 5px;
 }
 
-nav .search-div {
+.navbar .search-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,7 +45,7 @@ nav .search-div {
   width: 80%;
 }
 
-nav .search-div .servicetxt {
+.navbar .search-div .servicetxt {
   width: 30%;
   height: 2.5rem;
   border-radius: 5px;
@@ -54,7 +54,7 @@ nav .search-div .servicetxt {
   margin: 5px;
 }
 
-nav .search-div .locationtxt {
+.navbar .search-div .locationtxt {
   width: 20%;
   height: 2.5rem;
   border-radius: 5px;
@@ -63,7 +63,7 @@ nav .search-div .locationtxt {
   margin: 5px;
 }
 
-nav .search-div .searchbtn {
+.navbar .search-div .searchbtn {
   width: 2.5rem;
   height: 2.58rem;
   border-radius: 5px;
@@ -71,7 +71,7 @@ nav .search-div .searchbtn {
   margin: 5px 3px;
 }
 
-nav .nav-links {
+.navbar .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,20 +81,20 @@ nav .nav-links {
   margin: auto;
 }
 
-nav .nav-links .link {
+.navbar .nav-links .link {
   list-style-type: none;
 }
 
-nav .nav-links .link a {
+.navbar .nav-links .link a {
   color: white;
   width: 100px;
 }
 
-nav .nav-links .link :hover {
+.navbar .nav-links .link :hover {
   color: #f574ec;
   text-decoration: none;
 }
 
-nav :focus {
+.navbar :focus {
   outline: none;
 }

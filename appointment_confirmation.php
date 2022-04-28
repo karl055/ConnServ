@@ -57,17 +57,17 @@ $detailRows = mysqli_fetch_assoc($detailResult);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="./assets/img/tab_icon.png">
         <?php include_once './includes/bootstrap_con.php';?>
-        <link rel="stylesheet" href="./css/confirmation.css">
+        <link rel="stylesheet" href="./css/confirmationStyle.css">
         <title>ConnServ</title>
     </head>
     <body>
         <!-- NAVIGATION BAR -->
     <?php require_once './navbar.php';?>
 
-    <div class="col-12">
+    <div class="col-12 main_container">
         <div class="text-header">
             <div class="col-12">
-                <h1>Book Request Sent</h1>
+                <h1>Appointment Request Sent</h1>
             </div>
             <div class="col-12">
                 <Br><p class="lead"> Booking ID: <mark><?php echo $showRows['appointment_custom'];?></mark></p>
@@ -134,7 +134,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
         </div>
         <row>
             <div class="col-md-12 buttons">
-                <a href="#open-modal" class="btn purple block">View Reciept</a>
+                <a href="#open-modal" class="btn purple block">View Transaction</a>
                 <a href="./homepage.php" class="btn gray block">To Homepage</a>
                 <div id="open-modal" class="modal-window">
                     
@@ -216,7 +216,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                                 </table>
                                 <div class="container p-3">
                                     <p> Payment Method: <u><?php echo $showRows['payment_method'];?></u></p>
-                                    <p> Address: <u>
+                                    <p> Address: <u> 
                                         <?php 
                                     
                                         echo $showRows["houseNum"].', '.$showRows["street"].', '.$showRows["barangay"].', '.$showRows["city"];?></u></p>
@@ -257,15 +257,13 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                         <ul>
                             <li><a href="#">News</a></li>
                             <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">The Team</a></li>
                         </ul>
                     </div>
                     <div class="col-4">
                         <p>LEARN MORE</p>
                         <ul>
                             <li><a href="#">Support</a></li>
-                            <li><a href="#">Developers</a></li>
-                            <li><a href="#">Service Program</a></li>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="#">Referral Program</a></li>
                         </ul>

@@ -1,16 +1,12 @@
 @import './variables';
 
-$txtParentsize: 10rem;
-nav {
-    form{
-        width: 100%;
-    }
+.navbarStyle {
   top: 0;
   display: flex;
   position: sticky;
   justify-content: space-around;
   align-items: center;
-  max-width: 100vw;
+  max-width: 100%;
   min-height: 10vh;
   background-size: cover;
   background-color: $font-color-a;
