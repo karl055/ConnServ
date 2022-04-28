@@ -36,7 +36,7 @@ $getRow = mysqli_fetch_assoc($getResult);
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel="stylesheet" href="./css/service_profile.css">
+        <link rel="stylesheet" href="./css/service.css">
         <title>ConnServ</title>
     </head>
     <body>
@@ -207,7 +207,7 @@ $getRow = mysqli_fetch_assoc($getResult);
               <div class="col-12">
                 <h2>Related Service</h2>
               </div>
-              <div class="cards col-12">
+              <div class="cards col-12" style="display: flex;">
                 <div class="card col-4">
                   <div class="card_img card1">
                   </div>
@@ -242,44 +242,43 @@ $getRow = mysqli_fetch_assoc($getResult);
 
         <!-- FOOTER -->
 
-        <footer class="footer-div">
+        <footer class="footerDiv">
+          
           <div class="container-fluid row connserv-container">
             <div class="col-4">
               <img class="connserv-logo" src="./assets/img/ConnServ_Logo.png" alt="Connserv Image">
             </div>
             <div class="col-8 footer-links">
-              <div class="row">
-                <div class="col-4">
-                  <p>COMPANY</p>
-                  <ul>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
+                <div class="row">
+                    <div class="col-4">
+                        <p>COMPANY</p>
+                        <ul>
+                            <li><a href="./new">News</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">The Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <p>LEARN MORE</p>
+                        <ul>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Referral Program</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <p>CONNECT WITH US</p>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Google+</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-4">
-                  <p>LEARN MORE</p>
-                  <ul>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Developers</a></li>
-                    <li><a href="#">Service Program</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="./terms_condition.php">Terms & Condition</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <p>CONNECT WITH US</p>
-                  <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Google+</a></li>
-                    <li><a href="#">Instagram</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
-          <div class="footer-copyright">
+          <div class="footer-copyright" style="padding: 1rem;">
               <hr>
               <div>
                 <p>Copyright @ 2019 All Rights Reserved. Connserv Philippines Corporation</p>

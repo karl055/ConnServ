@@ -172,7 +172,7 @@ if(!isset($_SESSION['username'])){
                     <div class="col-4">
                         <p>COMPANY</p>
                         <ul>
-                            <li><a href="#">News</a></li>
+                            <li><a href="./new">News</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">The Team</a></li>
                         </ul>

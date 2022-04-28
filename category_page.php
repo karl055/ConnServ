@@ -274,40 +274,39 @@ if(!isset($_SESSION['username'])){
         -->
 
         <footer class="footer-div" style="margin-top: 20rem;">
+          
           <div class="container-fluid row connserv-container">
             <div class="col-4">
               <img class="connserv-logo" src="./assets/img/ConnServ_Logo.png" alt="Connserv Image">
             </div>
             <div class="col-8 footer-links">
-              <div class="row">
-                <div class="col-4">
-                  <p>COMPANY</p>
-                  <ul>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
+                <div class="row">
+                    <div class="col-4">
+                        <p>COMPANY</p>
+                        <ul>
+                            <li><a href="./new">News</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">The Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <p>LEARN MORE</p>
+                        <ul>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Referral Program</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <p>CONNECT WITH US</p>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Google+</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-4">
-                  <p>LEARN MORE</p>
-                  <ul>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Developers</a></li>
-                    <li><a href="#">Service Program</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Referral Program</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <p>CONNECT WITH US</p>
-                  <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Google+</a></li>
-                    <li><a href="#">Instagram</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
           <div class="footer-copyright">

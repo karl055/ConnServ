@@ -639,26 +639,19 @@ nav :focus {
 
 .related_container {
   margin: 3rem 0 0;
+  border: 1px solid black;
 }
 
 .related_container .related-service .cards {
-  width: 100%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 .related_container .related-service .cards .card {
-  max-width: 400px;
+  margin: 1rem;
+  max-width: 600px;
   position: relative;
   background-color: white;
   margin-bottom: 20px;
@@ -736,7 +729,7 @@ nav :focus {
 .related_container .related-service .card_img {
   width: 100%;
   height: 150px;
-  position: reltive;
+  position: relative;
   border-radius: 5px 5px 0px 0px;
   background-size: cover;
   background-position: center center;
@@ -755,4 +748,60 @@ nav :focus {
 
 .related_container .related-service .card3 {
   background-image: url("../assets/img/featured_services/bonheur_apparel/logo.jpg");
+}
+
+.footerDiv {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #252424;
+  height: 16rem;
+}
+
+.footerDiv ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footerDiv .connserv-container {
+  padding: 1rem 0 0;
+  max-width: 100vw;
+  height: auto;
+}
+
+.footerDiv .connserv-container p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  font-weight: 800;
+  color: white;
+}
+
+.footerDiv img {
+  padding: 2rem 0 0;
+  width: 20rem;
+  float: right;
+}
+
+.footerDiv li {
+  font-size: 0.9rem;
+  list-style-type: none;
+}
+
+.footerDiv li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footerDiv .footer-copyright hr {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: 60%;
+}
+
+.footerDiv .footer-copyright p {
+  text-align: center;
+  color: white;
+  width: 100%;
 }

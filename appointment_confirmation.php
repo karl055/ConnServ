@@ -255,7 +255,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                     <div class="col-4">
                         <p>COMPANY</p>
                         <ul>
-                            <li><a href="#">News</a></li>
+                            <li><a href="./">News</a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">The Team</a></li>
                         </ul>
