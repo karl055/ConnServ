@@ -212,7 +212,6 @@ $userInfoRow = mysqli_fetch_assoc($userInfoResult);
                 document.getElementById("street").value = "";
                 
                 document.getElementById("brgy").value = "Bagumbayan";
-                document.getElementById("city").value = "";
                 /* $("select").prop("disabled", false);
                 $("input").prop("disabled", false);
                 $("#addBtn").prop("disabled", false); */

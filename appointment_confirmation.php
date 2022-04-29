@@ -182,7 +182,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                                     </div>
 
                                     <div class="col-4 centercol">
-                                        <h1>Receipt</h1>
+                                        <h1>Transaction</h1>
                                     </div>
 
                                     <div class="col-4 rightcol text-left">
@@ -225,7 +225,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
 
                                 <div class="col-12">
                                     <div class="col-12" style="text-align: justify; text-justify: inter-word;">
-                                        <p><?php echo $showRows['business_name'];?> Terms & Condition</p>
+                                        <p><?php echo $showRows['business_name'];?> Terms & Conditions</p>
                                         <small><?php echo $detailRows['terms_condition'];?></small>
                                     </div>
                                 </div>

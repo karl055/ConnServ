@@ -44,7 +44,7 @@ if(!isset($_SESSION['username'])){
                     if(isset($_SESSION['username'])){
                         echo '<ul class="nav-links col-2">';
                             echo '<il class="link">';
-                                echo "<a href='./user_profile.php' style='color: white;' class='col-6'>Account </a>";
+                                echo "<a href='./user_profile.php' style='color: white;' class='col-6'>Profile </a>";
                                 echo "<a href='./includes/signout.inc.php' style='color: white; border: none; background-color: transparent;' class='col-6' name='logout'>Logout</a>";
                             echo '</li>';
                         echo '</ul>';

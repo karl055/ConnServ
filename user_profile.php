@@ -474,10 +474,10 @@
                     <div class="col-12" style="display: flex;">
                       <div class="col-2">
                         <div class="col-12 filter_check">
-                          <p style="width: 100%; padding: 0; padding-bottom: .5rem;"><b>Sort</b></p>
+                          <p style="width: 100%; padding: 0; padding-bottom: .5rem;"><b>Filter</b></p>
                           
                           <div style="width: 100%;">
-                              <a href="./user_profile.php?current">Current</a>
+                              <a href="./user_profile.php?current">Incoming</a>
                           </div>
                           <div style="width: 100%;">
                               <a href="./user_profile.php?waiting">Pending</a>
@@ -498,12 +498,12 @@
                         <?php
                         
                         if(!isset($_GET['history']) && !isset($_GET['waiting']) || isset($_GET['current'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' AND min_date > now() AND business_id = (SELECT business_id FROM business_tb WHERE ownerId = '$username' AND business_status = 'active') ORDER BY min_date ASC";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'Approved' AND min_date > now() AND appointment_status = 'active'";
                           $appointmenResult = mysqli_query($connect, $selection);
       
                           if(mysqli_fetch_assoc($appointmenResult)){
                             $numberRows = mysqli_num_rows($appointmenResult);
-                            echo '<h3>Current ('.$numberRows.')</h3>';
+                            echo '<h3>Incoming ('.$numberRows.')</h3>';
                             echo '<div class="accordion row" id="accordionExample">';
                             foreach($appointmenResult as $appointmentRows){
                                                                         
@@ -539,7 +539,7 @@
                           }
                         }
                         else if(isset($_GET['waiting'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'waiting' AND business_id = (SELECT business_id FROM business_tb WHERE ownerId = '$username' AND business_status = 'active')";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE client_id = '$username' AND approval = 'waiting' AND min_date > now() AND appointment_status = 'active'";
                           $appointmenResult = mysqli_query($connect, $selection);
 
                           if(mysqli_fetch_assoc($appointmenResult)){
@@ -580,7 +580,7 @@
                           }
                         }
                         else if(isset($_GET['history'])){
-                          $selection = "SELECT * FROM `appointment_tb` WHERE min_date < now() AND client_id = '$username' AND approval = 'Approved' AND business_id = (SELECT business_id FROM business_tb WHERE ownerId = '$username' AND business_status = 'active')";
+                          $selection = "SELECT * FROM `appointment_tb` WHERE min_date < now() AND client_id = '$username' AND approval = 'Approved'";
                           $appointmenResult = mysqli_query($connect, $selection);
 
                           if(mysqli_fetch_assoc($appointmenResult)){
@@ -618,6 +618,41 @@
                             $numberRows = mysqli_num_rows($appointmenResult);
                             echo '<h3>History ('.$numberRows.')</h3>';
                             echo "<h6>THERE IS NO RECORD</h6>";
+                          }
+                          
+                          $expiredSql = "SELECT * FROM appointment_tb WHERE min_date < now() AND client_id = '$username' AND approval = 'waiting'";
+                          $expiredResults = mysqli_query($connect, $expiredSql);
+
+                          if(mysqli_fetch_assoc($expiredResults)){
+                            $countRows = mysqli_num_rows($expiredResults);
+                            echo '<br><h3>Expired ('.$countRows.')</h3>';
+                            echo '<div class="accordion row" id="accordionExample">';
+                            foreach($expiredResults as $expiredRows){
+                                                                        
+                                echo '<div class="col-4" style="margin-top: 2rem;">';
+                                echo '<div class="card">';
+                                    echo '<div class="card card-header">';
+                                    echo '<h2 class="mb-0">';
+                                        echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
+                                    echo '</h2>';
+                                    echo '</div>';
+                                    echo '<div class="card-body">';
+                                        echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                        echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
+                                        echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
+                                        echo '<p class="card-text">Appointment Id</p>';
+                                        echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
+                                        echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
+                                        echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                        echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                    echo '</div>';
+                                    echo '<div class="card-footer text-muted  text-center">';
+                                        echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
+                                    echo '</div>';
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                            echo '</div>';
                           }
                         }
                         ?>
