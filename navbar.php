@@ -24,7 +24,7 @@ if(!isset($_SESSION['username'])){
     </head>
     <body>
         <nav class="navbarStyle">
-            <form action="./navbar.php" method="post">
+            <form action="./navbar.php" method="post" style="width: 100%;">
                 <div class="container-fluid col-12">
                     <div class="logo">
                         <a href="./homepage.php" class="col-1"><img class="logo-img" src="./assets/img/ConnServ_Logo.png" alt="connserv-logo"></a>
@@ -59,7 +59,7 @@ if(!isset($_SESSION['username'])){
                     
                     ?>
                 </div>
-            </form>
+                    </form>
         </nav>
     </body>
 </html>

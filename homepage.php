@@ -48,27 +48,9 @@ if(!isset($_SESSION['username'])){
                 </div>
                 <div class="categories card-deck">
                     <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="./assets/img/categories//another/Academic.jpg" alt="Card Image Cap">
-                        <div class="card-body">
-                            <a href="./search.php?category=Education" class="card-text stretched-link">Education</a>
-                        </div>
-                    </div>
-                    <div class="card"  style="width: 10rem;">
                         <img class="card-img-top" src="./assets/img/categories/another/Arts.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="./search.php?category=Art And Culture" class="card-text stretched-link">Arts and Culture</a>
-                        </div>
-                    </div>
-                    <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="./assets/img/categories/another/Catering.jpg" alt="Card Image Cap">
-                        <div class="card-body">
-                            <a href="./search.php?category=Food And Beverages" class="card-text stretched-link">Food and Beverage</a>
-                        </div>
-                    </div>
-                    <div class="card"  style="width: 10rem;">
-                        <img class="card-img-top" src="./assets/img/categories/another/Electronics.jpg" alt="Card Image Cap">
-                        <div class="card-body">
-                            <a href="./search.php?category=Electronics" class="card-text stretched-link">Electronics</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
@@ -78,9 +60,27 @@ if(!isset($_SESSION['username'])){
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">
+                        <img class="card-img-top" src="./assets/img/categories/another/Academic.jpg" alt="Card Image Cap">
+                        <div class="card-body">
+                            <a href="./search.php?category=Education" class="card-text stretched-link">Education</a>
+                        </div>
+                    </div>
+                    <div class="card"  style="width: 10rem;">
                         <img class="card-img-top" src="./assets/img/categories/another/Electrical.jpg" alt="Card Image Cap">
                         <div class="card-body">
                             <a href="./search.php?category=Electrical" class="card-text stretched-link">Electrical</a>
+                        </div>
+                    </div>
+                    <div class="card"  style="width: 10rem;">
+                        <img class="card-img-top" src="./assets/img/categories/another/Electronics.jpg" alt="Card Image Cap">
+                        <div class="card-body">
+                            <a href="./search.php?category=Electronics" class="card-text stretched-link">Electronics</a>
+                        </div>
+                    </div>
+                    <div class="card"  style="width: 10rem;">
+                        <img class="card-img-top" src="./assets/img/categories/another/Catering.jpg" alt="Card Image Cap">
+                        <div class="card-body">
+                            <a href="./search.php?category=Food And Beverages" class="card-text stretched-link">Food and Beverage</a>
                         </div>
                     </div>
                     <div class="card"  style="width: 10rem;">

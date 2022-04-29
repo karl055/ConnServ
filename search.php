@@ -16,7 +16,7 @@ if(!isset($_SESSION['username'])){
         <link rel="icon" href="./assets/img/tab_icon.png">
         <link rel="stylesheet" href="./css/filter.css">
         <link rel="stylesheet" href="./css/footer.css">
-        <title>ConnServ</title>
+        <title>Results | Connserv</title>
     </head>
     <body>
         <?php include_once './includes/bootstrap_con.php';?>
