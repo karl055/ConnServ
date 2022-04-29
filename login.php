@@ -3,12 +3,8 @@ include './hostCon.php';
 
 if(isset($_POST['login'])){
 
-    if(empty($_POST['login_email']) || empty($_POST['login_password'])){
+    if(!empty($_POST['login_email']) || !empty($_POST['login_password'])){
 
-        header("Location: ./login.php?noinput");
-        exit();
-    }
-    else{
         $emailId = mysqli_real_escape_string($connect, $_POST['login_email']);
         $password = mysqli_real_escape_string($connect, $_POST['login_password']);
 
@@ -23,15 +19,38 @@ if(isset($_POST['login'])){
             $_SESSION['email'] = $rows['user_email'];
             $_SESSION['password'] = $rows['userPwd'];
             $_SESSION['username'] = $rows['user_identity'];
-            $_SESSION['firstname'] = $rows['user_firstname'];
-            $_SESSION['lastname'] = $rows['user_lastname'];
-            $_SESSION['gender'] = $rows['user_sex'];
-            $_SESSION['profilePic'] = $rows['profileImg'];
             header("Location: ./homepage.php");
         }
         else{
-            header("Location: ./login.php?error=loginfailed");
+            $username = mysqli_real_escape_string($connect, $_POST['login_email']);
+            $password = mysqli_real_escape_string($connect, $_POST['login_password']);
+
+            $query = mysqli_query($connect,"SELECT * FROM admin_tb WHERE admin_username = '$username' AND admin_password = '$password'");
+
+            $rows = mysqli_fetch_array($query);
+
+            if(mysqli_num_rows($query)>0){
+                if(!isset($_SESSION)) { 
+                    session_start(); 
+                }
+                $_SESSION['admin'] = $rows['admin_username'];
+                $_SESSION['password'] = $rows['admin_password'];
+                $_SESSION['userrole'] = $rows['admin_role'];
+                header("Location: ./admin_dashboard/index.php");
+            }
+            else{
+                
+        
+                header("Location: ./login.php?invalid=invalidemail");
+                exit();
+            }
+    
         }
+    }
+    else{
+        
+        header("Location: ./login.php?noinput");
+        exit();
     }
   
 }

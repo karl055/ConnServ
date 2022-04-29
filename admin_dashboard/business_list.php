@@ -5,7 +5,9 @@ include './hostcon.php';
 if(!isset($_SESSION['admin'])){
     header("Location: ../login.php");
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +20,7 @@ if(!isset($_SESSION['admin'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin | Businesses</title>
+    <title>ConnServ Admin Confirmation</title>
     <link rel="icon" href="../assets/img/tab_icon.png">
 
     <!-- Custom fonts for this template -->
@@ -39,7 +41,7 @@ if(!isset($_SESSION['admin'])){
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+        
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar" style="position: fixed;">
 
@@ -102,81 +104,62 @@ if(!isset($_SESSION['admin'])){
 
         </ul>
 
-
                 <!-- Begin Page Content -->
+
+                
                 <div class="container-fluid" style="padding-top: 2rem; margin-left: 250px;">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Merchant Approval Page</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Merchant List</h1>
                     <p class="mb-4">This table where the admins will manually accept and review  newly 
-                        registered merchants.
-                    </p>
-
+                        registered merchants.</p>
+                        
+                    
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
+
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form action="./includes/business_approval.inc.php" method="post">
-                                 
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Business ID</th>
-                                                <th>Business Name</th>
-                                                <th>Owner Name</th>
-                                                <th>Email</th>
-                                                <th>Phone Number</th>
-                                                <th>Address</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Business ID</th>
-                                                <th>Business Name</th>
-                                                <th>Owner Name</th>
-                                                <th>Email</th>
-                                                <th>Phone Number</th>
-                                                <th>Address</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                            <?php 
-                                                $businessTblSql = "SELECT * FROM business_tb WHERE business_status = 'active' ";
-                                                $businessOwnerTblSql = "SELECT business_tb.*, user_tb.*
-                                                FROM user_tb
-                                                RIGHT JOIN business_tb ON business_tb.ownerId = user_tb.user_identity
-                                                WHERE business_tb.business_approval = 'pending' ";
-                                                if ($businessResult = mysqli_query($connect, $businessOwnerTblSql)) {
-                                                    foreach ($businessResult as $businessRow) {
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Status</th>
+                                            <th>Price</th>
+                                            <th>Created</th>
+                                            <th>Category</th>
+                                            <th>Sub Category</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php 
+                                                $userTblSql = "SELECT * FROM business_tb WHERE business_approval = 'approved' ";
+                                                if ($userResult = mysqli_query($connect, $userTblSql)) {
+                                                    foreach ($userResult as $userRow) {
                                                         ?>
 
                                             <tr>
-                                                <td><?php echo $businessRow['business_id'];?></td>
-                                                <td><?php echo $businessRow['business_name'];?></td>
-                                                <td><?php echo $businessRow['user_firstname'] .' '. $businessRow['user_lastname'];?></td>
-                                                <td><?php echo $businessRow['business_email'];?></td>
-                                                <td><?php echo $businessRow['business_mobile'];?></td>
-                                                <td><?php echo $businessRow['house_no'] .' '. $businessRow['business_street'] .' '. 
-                                                $businessRow['business_barangay'];?></td>
+                                                <td><?php echo $userRow['business_id'];?></td>
+                                                <td><?php echo $userRow['business_name'];?></td>
+                                                <td><?php echo $userRow['business_email'];?></td>
+                                                <td><?php echo $userRow['business_status'];?></td>
+                                                <td><?php echo $userRow['price'];?></td>
+                                                <td><?php echo $userRow['datetime_created'];?></td>
+                                                <td><?php echo $userRow['business_category'];?></td>
+                                                <td><?php echo $userRow['business_subcategory'];?></td>
                                                 
-                                                <td><a href="./includes/business_approval.inc.php?cancel=<?php echo $businessRow['business_id']; ?>" name="approvebtn" type="submit" class="btn-sm btn-primary btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-check"></i>
-                                                    </span>
-                                                    <span class="text">Approve</span>
-                                                    </a></td>
+                                                
                                             </tr>
                                                         <?php
 
                                                     }
                                                 }
                                             ?>
-                                            
-                                        </tbody>
-                                    </table>
-                                </form>
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -207,6 +190,7 @@ if(!isset($_SESSION['admin'])){
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

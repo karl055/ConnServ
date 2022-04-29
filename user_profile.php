@@ -143,7 +143,7 @@
                                           <h5>Information</h5>
                                           <div class="form-row">
                                             <div class="form-group col-md-3">
-                                              <label for="inputUsername">Username</label>
+                                              <label for="inputUsername">User ID</label>
                                               <input type="text" class="form-control" id="inputUsername" value="<?php echo $_SESSION['username'];?>" readonly disabled>
                                             </div>
                                             <div class="form-group col-md-3">
