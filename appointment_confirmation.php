@@ -136,6 +136,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
             <div class="col-md-12 buttons">
                 <a href="#open-modal" class="btn purple block">View Transaction</a>
                 <a href="./homepage.php" class="btn gray block">To Homepage</a>
+
                 <div id="open-modal" class="modal-window">
                     
                 
@@ -238,7 +239,7 @@ $detailRows = mysqli_fetch_assoc($detailResult);
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
                 
             </div>
         </row>

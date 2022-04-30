@@ -508,29 +508,27 @@
                             foreach($appointmenResult as $appointmentRows){
                                                                         
                                 echo '<div class="col-4" style="margin-top: 2rem;">';
-                                echo '<div class="card">';
-                                    echo '<div class="card card-header">';
-                                    echo '<h2 class="mb-0">';
-                                        echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
-                                    echo '</h2>';
-                                    echo '</div>';
-                                    echo '<div class="card-body">';
-                                        echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
-                                        echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
-                                        echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
-                                        echo '<p class="card-text">Appointment Id</p>';
-                                        echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
-                                        echo '<p class="card-text">Date: <small><strong>'.$appointmentRows['min_date'].' / '.$appointmentRows['max_date'].'</strong></small></p><hr>';
-                                        echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
-                                        echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
-                                    echo '</div>';
-                                    echo '<div class="card-footer text-muted  text-center">';
-                                        echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
-                                    echo '</div>';
-                                echo '</div>';
+                                  echo '<div class="card">';
+                                      echo '<div class="card card-header">';
+                                        echo '<h2 class="mb-0">';
+                                            echo '<h6 style="width: 200px; white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['appointment_title'].'"> '.$appointmentRows['appointment_title'].' </h6>';
+                                        echo '</h2>';
+                                      echo '</div>';
+                                      echo '<div class="card-body">';
+                                          echo '<h5 class="card-title text-center"  style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; padding: 10px;"  data-toggle="tooltip" data-placement="top" title="'.$appointmentRows['business_name'].'" value="'.$appointmentRows['business_name'].'">'.$appointmentRows['business_name'].'</h5>';
+                                          echo '<p class="card-text text-center"><strong>'.$appointmentRows['business_category'].'</strong></p>';
+                                          echo '<p class="card-text text-center">'.$appointmentRows['business_contact'].'<hr></p>';
+                                          echo '<p class="card-text">Appointment Id</p>';
+                                          echo '<p class="card-text"><small>'.$appointmentRows['appointment_custom'].'</small></p><hr>';
+                                          echo '<p class="card-text">Date: <small><strong>'.$appointmentRows['min_date'].' / '.$appointmentRows['max_date'].'</strong></small></p><hr>';
+                                          echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
+                                          echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
+                                      echo '</div>';
+                                  echo '</div>';
                                 echo '</div>';
                             }
                             echo '</div>';
+
                           }
                           else{
                             $numberRows = mysqli_num_rows($appointmenResult);
@@ -564,9 +562,6 @@
                                         echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
                                         echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
                                         echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
-                                    echo '</div>';
-                                    echo '<div class="card-footer text-muted  text-center">';
-                                        echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
                                     echo '</div>';
                                 echo '</div>';
                                 echo '</div>';
@@ -606,9 +601,6 @@
                                         echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
                                         echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
                                     echo '</div>';
-                                    echo '<div class="card-footer text-muted  text-center">';
-                                        echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
-                                    echo '</div>';
                                 echo '</div>';
                                 echo '</div>';
                             }
@@ -645,9 +637,6 @@
                                         echo '<p class="card-text">Date: <small>'.$appointmentRows['min_date'].' <strong>/</strong> '.$appointmentRows['max_date'].'</small></p><hr>';
                                         echo '<p class="card-text">Time: <small>'.$appointmentRows['hour_time'].' <strong>:</strong> '.$appointmentRows['mins_time'].' '.$appointmentRows['hour_clock'].'</small></p><hr>';
                                         echo '<p class="card-text">Payment Method: <small>'.$appointmentRows['payment_method'].'</small></p>';
-                                    echo '</div>';
-                                    echo '<div class="card-footer text-muted  text-center">';
-                                        echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
                                     echo '</div>';
                                 echo '</div>';
                                 echo '</div>';
@@ -1090,9 +1079,9 @@
                                               
                                                   <?php
                                                   
-                                                      $selection = "SELECT * FROM `appointment_tb` WHERE business_id = '$appointmentAccessId' AND approval = 'Approved' AND appointment_status = 'active'";
+                                                      $selection = "SELECT * FROM `appointment_tb` WHERE business_id = '$appointmentAccessId' AND approval = 'Approved' AND min_date > now() AND appointment_status = 'active'";
                                                       $appointmenResult = mysqli_query($connect, $selection);
-                                  
+                                                      echo "<h3>Incoming Appointments (".mysqli_num_rows($appointmenResult).")</h3>";
                                                       foreach($appointmenResult as $appointmentRows){
                                                                                                   
                                                           echo '<div class="col-12" style="margin-top: 2rem;">';
@@ -1117,9 +1106,6 @@
                                                                           echo '<p class="card-text">'.$appointmentRows['service_note'].'</p>';
                                                                       echo '</div>';
                                                                   echo '</div>';
-                                                              echo '</div>';
-                                                              echo '<div class="card-footer text-muted  text-center">';
-                                                                  echo '<a href="#" class="btn btn-primary">Show Receipt</a>';
                                                               echo '</div>';
                                                           echo '</div>';
                                                           echo '</div>';
@@ -1156,7 +1142,7 @@
                                                               <tbody>
                                                                   <?php
 
-                                                                      $notApprovedSql = "SELECT * FROM appointment_tb WHERE business_id = '$appointmentAccessId' AND approval = 'waiting' AND appointment_status = 'active'";
+                                                                      $notApprovedSql = "SELECT * FROM appointment_tb WHERE business_id = '$appointmentAccessId' AND approval = 'waiting' AND min_date > now() AND appointment_status = 'active'";
                                                                       
                                                                       if($notApprovedResult = mysqli_query($connect, $notApprovedSql)){
                                                                           
